@@ -51,7 +51,7 @@
     </v-content>
 <template>
   <div>
-    <v-alert v-model="wd.state" :type="wd.type" dismissible >
+    <v-alert :v-model="wd.state" :type="wd.type" dismissible >
       {{wd.msg}}
     </v-alert>
   </div>
@@ -92,7 +92,9 @@
         console.log('call reg function');
         //location.href = '/reg' //normal move
         this.ps.bus.$on('test', (code) => {
-          
+          this.wd.type = 'success'
+          this.wd.state = true
+          this.wd.msg = '등록 성공'
         })
         this.$modal.show(Register,
           {
