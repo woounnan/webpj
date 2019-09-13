@@ -87,9 +87,8 @@ export default {
       pw : ''
       }
     }
-  },props : [
-      'test'
-  ],methods : {
+  },
+  methods : {
       sub(){
         console.log('call the sub function');
         
