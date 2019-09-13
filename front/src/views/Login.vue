@@ -92,7 +92,7 @@
         console.log('call reg function');
         //location.href = '/reg' //normal move
         this.ps.bus.$on('test', (code) => {
-          console.log('감지되었다 감지 code::'+code)
+          
         })
         this.$modal.show(Register,
           {
@@ -113,6 +113,7 @@
       check(){
         var id = this.form.id
         var pw = this.form.pw
+        console.log('type:'+this.wd.type)
         if(id == '' || pw == ''){
           this.wd.state = true
           return -1
