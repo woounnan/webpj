@@ -51,7 +51,7 @@
     </v-content>
 <template>
   <div>
-    <v-alert v-model="wd.state" type="wd.type" dismissible >
+    <v-alert v-model="wd.state" type="error" dismissible >
       {{wd.msg}}
     </v-alert>
   </div>
