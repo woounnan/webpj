@@ -83,7 +83,7 @@
           type: 'error'
         },
         ps:{
-          bus = new Vue()
+          bus : new Vue()
         }
       }
     },
