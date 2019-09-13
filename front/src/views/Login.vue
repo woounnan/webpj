@@ -51,7 +51,7 @@
     </v-content>
 <template>
   <div>
-    <v-alert v-model="wd.state" type="error" dismissible >
+    <v-alert v-model="wd.state" :type="wd.type" dismissible >
       {{wd.msg}}
     </v-alert>
   </div>
@@ -80,7 +80,7 @@
         wd: {
           msg: '잘못된 입력',
           state: false,
-          type: 'error'
+          type: "error"
         },
         ps:{
           bus : new Vue()
