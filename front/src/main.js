@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify';
 import VModal from 'vue-js-modal'
 
 Vue.use(VModal)
+
 Vue.config.productionTip = false
 
 new Vue({

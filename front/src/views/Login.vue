@@ -60,6 +60,7 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import Register from './Register.vue'
   import axios from 'axios'
   export default {
