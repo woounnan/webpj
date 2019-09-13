@@ -89,7 +89,6 @@
     },
     methods: {
       reg(){
-        console.log('test: '+ this.test);
         console.log('call reg function');
         //location.href = '/reg' //normal move
         this.ps.bus.$on('test', (code) => {
