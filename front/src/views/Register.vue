@@ -95,7 +95,7 @@ export default {
       sub(){
         console.log('call the sub function');
         
-        this.bus.$emit('test', 1)
+       this.bus.$emit('test', 1)
         this.closeWindow();
       },
       closeWindow(){
