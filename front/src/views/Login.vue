@@ -64,9 +64,6 @@
   import Register from './Register.vue'
   import axios from 'axios'
   export default {
-    props : [
-      'test'
-    ],
     mounted() {
       console.log('mounted!')
       this.$modal.on('show', (event, id) => {
@@ -84,6 +81,9 @@
           msg: '잘못된 입력',
           state: false,
           type: 'error'
+        },
+        ps:{
+          bus = new Vue()
         }
       }
     },
@@ -92,12 +92,12 @@
         console.log('test: '+ this.test);
         console.log('call reg function');
         //location.href = '/reg' //normal move
-        var bus = new Vue()
-        bus.$on('test', (code) => {
+        this.ps.bus.$on('test', (code) => {
           console('감지되었다 감지')
         })
         this.$modal.show(Register,
           {
+            bus : this.ps.bus,
             modal : this.$modal
           },
           {
@@ -107,7 +107,7 @@
             draggable: true
           }, {
           'closed' : (event) => {
-            console.log(event);
+            console.log('event occured of close');
           }}
         )
       },

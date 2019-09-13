@@ -80,6 +80,9 @@
 <script>
 import Vue from 'vue'
 export default {
+  props: [
+    'bus'
+  ],
   data () {
     return {
       v_user : { 
@@ -92,8 +95,7 @@ export default {
       sub(){
         console.log('call the sub function');
         
-        var bus = new Vue()
-        bus.$on('test', 1)
+        this.bus.$on('test', 1)
         this.closeWindow();
       },
       closeWindow(){
