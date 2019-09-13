@@ -91,7 +91,7 @@
       reg(){
         console.log('call reg function');
         //location.href = '/reg' //normal move
-        this.ps.bus.$on('test', (code) => {
+        this.ps.bus.$on('test', () => {
           console('감지되었다 감지')
         })
         this.$modal.show(Register,
