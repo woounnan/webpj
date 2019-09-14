@@ -134,11 +134,12 @@ export default {
     },
     searchCp(){
       console.log('call SearchCp')
-      for(c in v_companys){
-        console.log('sources: '+c.name )
+      var len = Object.keys(v_companys).length
+      for(int i=0; i<len; i++){
+        console.log('sources: '+v_companys[i].name )
         console.log('target: '+this.v_user.cp)
-        if(c.name.includes(this.v_user.cp)){
-          this.v_searchCp.push(c)
+        if(v_companys[i].name.includes(this.v_user.cp)){
+          this.v_searchCp.push(v_companys[i])
           console.log('Yeah... I\'d founded!')
         }
       }
