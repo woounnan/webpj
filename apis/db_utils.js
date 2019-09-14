@@ -19,18 +19,6 @@ router.post('/addCp', (req, res, next) => {
 			res.send({code:-1})
 			return console.error(e)
 		}
-		else if(!r){
-			console.log('Can create!')
-			var users = new User(user)
-			users.save( (e, users) =>{
-				if(e){
-					res.send({code: -1})
-					return console.error('login.js::10....occurred at users.save')
-				}
-					console.log('User created')
-			})
-			res.send({code: 1})
-		}
 		else{
 			console.log('Cant create T.t')
 			res.send({code: -1})
