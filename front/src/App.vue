@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>WorkTalk</span><v-icon>smile</v-icon>
+        <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
