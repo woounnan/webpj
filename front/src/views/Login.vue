@@ -73,14 +73,14 @@
     },
     data () {
       return {
-          up : true,
+          up : "true",
         form: {
           id: '',
           pw: ''
         },
         wd: {
           msg: '잘못된 입력',
-          state: false,
+          state: "false",
           type: "error"
         },
         ps:{
