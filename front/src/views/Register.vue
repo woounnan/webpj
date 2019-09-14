@@ -99,7 +99,7 @@ export default {
         item1 : 'num1',
         item2 : 'num2',
         item3 : 'num3'
-      }
+      },
       v_user : { 
       name : '',
       pw : '',
