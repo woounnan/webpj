@@ -20,7 +20,7 @@
         <v-icon>done</v-icon>
         </v-btn>
       </v-list-title>
-      </v-list>
+     <v-list-title v-else>
         <v-btn
           text
           @click="out"
@@ -28,6 +28,8 @@
         <span class="mr-2">로그아웃</span>
         <v-icon>close</v-icon>
         </v-btn>
+      </v-list-title>
+      </v-list>
     </v-app-bar>
 
     <v-content>
