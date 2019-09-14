@@ -14,8 +14,10 @@
         text
         @click="$router.push('/login')"
       >
-        <span class="mr-2" v-if="">로그인</span>
-        <v-icon>done</v-icon>
+        <div v-if="!$store.state.tk">
+          <span class="mr-2">로그인</span>
+          <v-icon>done</v-icon>
+        </div>
       </v-btn>
     </v-app-bar>
 
