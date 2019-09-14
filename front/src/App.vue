@@ -6,7 +6,8 @@
         text
         @click="$router.push('/')"
         >
-        <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
+          <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
+        </v-btn>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
