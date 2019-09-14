@@ -9,12 +9,6 @@ const userSchema = new mongoose.Schema({
 })
 
 
-const companySchema = new mongoose.Schema({
-	name: { type: String, required: true, unique: true, trim: true, index: true}
-})
-
 var User = mongoose.model('User', userSchema, 'list_user')
-var Company = mongoose.model('Company', companySchema, 'list_company')
 
 module.exports = User
-module.exports = Company
