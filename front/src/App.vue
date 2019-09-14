@@ -42,7 +42,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 
-Vue.use(vuetify)
+Vue.use(Vuetify)
 export default {
   name: 'App',
   data: () => ({
