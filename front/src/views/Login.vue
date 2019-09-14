@@ -132,7 +132,7 @@
               this.wd.type = 'error'
             }
             else{
-              locatStorage.setItem('tk', r.data.tk)
+              localStorage.setItem('tk', r.data.tk)
               location.href='/'
             }
           })
