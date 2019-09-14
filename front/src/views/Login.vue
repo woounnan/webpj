@@ -116,18 +116,13 @@
       check(){
         var id = this.form.id
         var pw = this.form.pw
-        console.log('type:'+this.wd.type)
-        if(id == '' || pw == ''){
-          this.wd.state = true
-          return -1
-        }
+
         this.login(id.split(' ').join(''), pw.split(' ').join(''))
       },
       login(id, pw){
         axios.post(`http://webhacker.xyz:8000/apis/login`, {id: id, pw: pw})
           .then(r => {
             if(r.data.code != 1){
-              console.log('show error')
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
