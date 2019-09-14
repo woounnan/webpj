@@ -133,10 +133,11 @@ export default {
       .then(r => {
         ret = r.data.code
         console.log('ret::' + ret)
+        this.bus.$emit('exit', ret)
       })
       .catch(e => console.error(e))
       console.log('@@@@@@@@@@@@')
-      this.bus.$emit('exit', ret)
+      
       this.closeWindow();
     },
     closeWindow(){
