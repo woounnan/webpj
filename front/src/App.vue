@@ -5,7 +5,12 @@
         <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-        <span class="mr-2" v-if="" router-link to='/login'>로그인</span>
+      <v-btn
+        text
+        href="/login"
+        target="_blank"
+      >
+        <span class="mr-2" v-if="">로그인</span>
         <v-icon>done</v-icon>
       </v-btn>
     </v-app-bar>
