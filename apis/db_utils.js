@@ -33,7 +33,10 @@ router.post('/addCp', (req, res, next) => {
 	if(ret == 1){
 		var users = new User(user)
 		users.save( (e, users) =>{
-			if(e) return console.error('login.js::10....occurred at users.save')
+			if(e){
+				res.send({code: -1})
+				return console.error('login.js::10....occurred at users.save')
+			}
 				console.log('User created')
 		})
 	}
@@ -41,10 +44,10 @@ router.post('/addCp', (req, res, next) => {
 })
 
 router.post('/getCp', (req, res, next) => {
-	console.log(Company.find((e, cps) => {
+	Company.find((e, cps) => {
 		if(e) res.send('error!!: ' + e)
 		res.json(cps)
-	}))
+	})
 })
 
 module.exports = router
