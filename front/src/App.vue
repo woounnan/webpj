@@ -7,8 +7,7 @@
       <v-spacer></v-spacer>
       <v-btn
         text
-        href="/login"
-        target="_blank"
+        @click="()=>{location.href='/login'}"
       >
         <span class="mr-2" v-if="">로그인</span>
         <v-icon>done</v-icon>
