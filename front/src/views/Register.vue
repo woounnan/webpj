@@ -65,7 +65,7 @@
             </v-list-item-content>
           </v-list-item>
              <!--show list result for searching -->
-        <v-list-item v-if="v_searchCp.state" v-for="(cp) in v_searchCp">
+        <v-list-item v-if="v_searchCp.state" v-for="(cp) in v_searchCp.cps">
           <v-list-item-action>
             <v-icon>search</v-icon>
           </v-list-item-action>
@@ -139,7 +139,7 @@ export default {
         console.log('sources: '+this.v_companys[i].name )
         console.log('target: '+this.v_user.cp)
         if(this.v_companys[i].name.includes(this.v_user.cp)){
-          this.v_searchCp.push(this.v_companys[i])
+          this.v_searchCp.cps.push(this.v_companys[i])
           console.log('Yeah... I\'d founded!')
         }
       }
