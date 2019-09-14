@@ -132,6 +132,7 @@ export default {
       axios.post(`http://webhacker.xyz:8000/apis/db/addCp`, this.v_user)
       .then(r => {
         ret = r.data.code
+        console.log('ret::' + ret)
       })
       .catch(e => console.error(e))
       this.bus.$emit('exit', ret)
