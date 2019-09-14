@@ -89,7 +89,7 @@
 
 <script>
 import Vue from 'vue'
-
+import axios from 'axios'
 export default {
   props: [
     'bus'
@@ -106,7 +106,13 @@ export default {
     }
   },
   mounted () {
-
+    getListCp(){
+      axios.post('http://webhacker.xyz:8000/apis/db/getCp')
+        .the(r => {
+          console.log(r.data)
+          console.log(Object.keys(r.data).length)
+        })
+    }
   },
   methods : {
     sub(){
@@ -119,7 +125,8 @@ export default {
         console.log('call the closeWindow function');
         this.$emit('close')
     }
-  },created () {
+  },
+  created () {
   }
 }
 </script>
