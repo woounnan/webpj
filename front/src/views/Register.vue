@@ -39,10 +39,9 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-text-field
+              <v-text-field placeholder="패스워드 입력"
                     v-model="v_user.pw"
                     type="password"
-                    value="패스워드 입력"
                   ></v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -56,7 +55,7 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>mcbeal@example.com</v-list-item-title>
+              <v-list-item-title></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -68,7 +67,7 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>Orlando, FL 79938</v-list-item-title>
+              <v-list-item-title></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
