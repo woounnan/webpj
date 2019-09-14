@@ -16,10 +16,6 @@ router.post('/addCp', (req, res, next) => {
 		division: req.body.div,
 		company: req.body.cp
 	}
-	console.log('@@@id: ' + user.id)
-	console.log('@@@id: ' + user.password)
-	console.log('@@@id: ' + user.division)
-	console.log('@@@id: ' + user.company)
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
 		if(e){
