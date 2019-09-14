@@ -115,7 +115,6 @@ export default {
     axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
-          this.v_user.state = true
           this.v_companys = r.data
         }
       })
@@ -133,6 +132,7 @@ export default {
       this.$emit('close')
     },
     searchCp(){
+      v_searchCp.cps = []
       console.log('call SearchCp')
       var len = Object.keys(this.v_companys).length
       for(var i=0; i<len; i++){
@@ -140,6 +140,7 @@ export default {
         console.log('target: '+this.v_user.cp)
         if(this.v_companys[i].name.includes(this.v_user.cp)){
           this.v_searchCp.cps.push(this.v_companys[i])
+          this.v_searchCp.state = true
           console.log('Yeah... I\'d founded!')
         }
       }
