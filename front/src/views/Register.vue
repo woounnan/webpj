@@ -26,7 +26,7 @@
               <v-text-field
                     v-model="v_user.name"
                     type="text"
-                    value="아이디 입력"
+                    placeholder="아이디 입력"
                   ></v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -39,10 +39,11 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-text-field placeholder="패스워드 입력"
-                    v-model="v_user.pw"
-                    type="password"
-                  ></v-text-field>
+              <v-text-field 
+                placeholder="패스워드 입력"
+                v-model="v_user.pw"
+                type="password"
+              ></v-text-field>
             </v-list-item-content>
           </v-list-item>
 
@@ -51,11 +52,15 @@
 
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>mdi-email</v-icon>
+              <v-icon>face</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title></v-list-item-title>
+              <v-text-field 
+                placeholder="소속 검색"
+                v-model="v_user.company"
+                type="text"
+              ></v-text-field>
             </v-list-item-content>
           </v-list-item>
 
