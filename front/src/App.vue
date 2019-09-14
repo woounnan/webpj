@@ -11,7 +11,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-list>
-      <v-list-tile v-if="!$store.state.tk" name='test'>
+      <v-list-tile v-if="!$store.state.tk">
         <v-btn
           text
           @click="logIn"
@@ -39,7 +39,10 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Vuetify from 'vuetify'
 
+Vue.use(vuetify)
 export default {
   name: 'App',
   data: () => ({
