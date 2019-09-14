@@ -21,7 +21,6 @@
         </v-btn>
       </v-list-title>
       </v-list>
-      <div v-else>
         <v-btn
           text
           @click="out"
@@ -29,7 +28,6 @@
         <span class="mr-2">로그아웃</span>
         <v-icon>close</v-icon>
         </v-btn>
-      </div>
     </v-app-bar>
 
     <v-content>
