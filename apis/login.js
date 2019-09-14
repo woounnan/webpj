@@ -1,7 +1,7 @@
 var express = require('express')
 var createError = require('http-errors')
 var router = express.Router()
-var User = require('./model/model_user')
+var User = require('./models/model_user')
 const jwt = require('jsonwebtoken')
 
 
