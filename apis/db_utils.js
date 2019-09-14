@@ -13,7 +13,7 @@ router.post('/addCp', (req, res, next) => {
 	var user = {}
 	user = req.body
 	res.send('name: ' + user)
-	console.log('name: ' + user)
+	console.log('name: ' + JSON.parse(user.name))
 })
 
 router.post('/getCp', (req, res, next) => {
