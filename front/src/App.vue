@@ -10,7 +10,8 @@
         </v-btn>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <div v-if="!$store.state.tk">
+      <v-list>
+      <v-list-title v-if="!$store.state.tk">
         <v-btn
           text
           @click="$router.push('/login')"
@@ -18,7 +19,7 @@
         <span class="mr-2">로그인</span>
         <v-icon>done</v-icon>
         </v-btn>
-      </div>
+      </v-list-title>
       <div v-else>
         <v-btn
           text
