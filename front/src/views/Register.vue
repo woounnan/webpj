@@ -135,6 +135,7 @@ export default {
         console.log('ret::' + ret)
       })
       .catch(e => console.error(e))
+      console.log('@@@@@@@@@@@@')
       this.bus.$emit('exit', ret)
       this.closeWindow();
     },
