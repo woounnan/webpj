@@ -16,6 +16,7 @@ router.post('/addCp', (req, res, next) => {
 		division: res.body.div,
 		company: res.body.cp
 	}
+	console.log('????')
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
 		if(e){
