@@ -98,9 +98,9 @@
 import Vue from 'vue'
 import axios from 'axios'
 export default {
-  props: [
+  /*props: [
     'bus'
-  ],
+  ],*/
   data () {
     return {
       v_companys : {},
@@ -133,7 +133,8 @@ export default {
       .then(r => {
         ret = r.data.code
         console.log('ret::' + ret)
-        this.bus.$emit('exit', ret)
+        //this.bus.$emit('exit', ret)
+        this.store.state.bus.$emit('exit', ret)
       })
       .catch(e => console.error(e))
       console.log('@@@@@@@@@@@@')

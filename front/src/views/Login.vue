@@ -79,17 +79,18 @@
           msg: '',
           state: false,
           type: ''
-        },
+        }/*,
         ps:{
           bus : new Vue()
-        }
+        }*/
       }
     },
     methods: {
       reg(){
         console.log('call reg function');
         //location.href = '/reg' //normal move
-        this.ps.bus.$on('exit', (code) => {
+        //this.ps.bus.$on('exit', (code) => {
+          this.$store.state.bus.$on('exit', (code) => {
           if(code == 1){
             this.wd.type = 'success'
             this.wd.state = true
@@ -102,7 +103,7 @@
         })
         this.$modal.show(Register,
           {
-            bus : this.ps.bus,
+            //bus : this.ps.bus,
             modal : this.$modal
           },
           {
