@@ -138,7 +138,7 @@ export default {
       for(var i=0; i<len; i++){
         console.log('sources: '+this.v_companys[i].name )
         console.log('target: '+this.v_user.cp)
-        if(this.v_companys[i].name.includes(this.v_user.cp)){
+        if( (this.v_companys[i].name.includes(this.v_user.cp)) && (this.v_user.cp.length) > 0){
           this.v_searchCp.cps.push(this.v_companys[i])
           this.v_searchCp.state = true
           console.log('Yeah... I\'d founded!')
