@@ -107,7 +107,7 @@ export default {
       v_user : { 
       name : '',
       pw : '',
-      cp : []
+      cp : ''
       }
     }
   },
@@ -144,6 +144,7 @@ export default {
     },
     getCp(name){
       this.v_searchCp.cps = []
+      this.v_user.cp = name
       console.log('selected name: ' + name)
     }
   },
