@@ -14,14 +14,6 @@ export new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/*',
-      name: 'check',
-      beforeEnter: (to, from, next) => {
-        console.log('before')
-        next()
-      }
-    },
-    {
       path: '/',
       name: 'home',
       component: Home
