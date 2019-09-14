@@ -31,6 +31,7 @@ router.post('/addCp', (req, res, next) => {
 		}
 	})
 	if(ret == 1){
+		console.log('!!!!!!!!!!!!1')
 		var users = new User(user)
 		users.save( (e, users) =>{
 			if(e){
