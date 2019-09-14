@@ -135,7 +135,7 @@ export default {
     searchCp(){
       console.log('call SearchCp')
       var len = Object.keys(v_companys).length
-      for(int i=0; i<len; i++){
+      for(var i=0; i<len; i++){
         console.log('sources: '+v_companys[i].name )
         console.log('target: '+this.v_user.cp)
         if(v_companys[i].name.includes(this.v_user.cp)){
