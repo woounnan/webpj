@@ -96,6 +96,7 @@
             this.wd.state = true
             this.wd.msg = '등록 성공'
         }else{
+          if(code == '1')
           console.log('등록실패...')
           this.wd.type = 'error'
           this.wd.state = true
