@@ -62,9 +62,9 @@
                 type="text"
               ></v-text-field>
               <!--show list result for searching -->
-              <v-list-item v-if="v_user.state" v-for="(item) in items">
+              <v-list-item v-if="v_user.state" v-for="(company) in v_companys">
                 <v-list-item-content>
-                  <v-list-item-title>{{item}}</v-list-item-title>
+                  <v-list-item-title>{{company}}</v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
               <!-- -->
@@ -89,16 +89,14 @@
 
 <script>
 import Vue from 'vue'
+
 export default {
   props: [
     'bus'
   ],
   data () {
     return {
-      items : {
-        item1 : 'num1',
-        item2 : 'num2',
-        item3 : 'num4'
+      v_companys : {
       },
       v_user : { 
       name : '',
@@ -107,8 +105,11 @@ export default {
       }
     }
   },
+  mounted () {
+
+  },
   methods : {
-      sub(){
+    sub(){
         console.log('call the sub function');
         
        this.bus.$emit('test', 1)
@@ -117,7 +118,7 @@ export default {
       closeWindow(){
         console.log('call the closeWindow function');
         this.$emit('close')
-      }
+    }
   },created () {
   }
 }
