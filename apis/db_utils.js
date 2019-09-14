@@ -10,9 +10,10 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/addCp', (req, res, next) => {
-	var name = req.body
-	res.send('name: ' + name)
-	console.log('name: ' + name)
+	var user = {}
+	user = req.body
+	res.send('name: ' + user)
+	console.log('name: ' + user)
 })
 
 router.post('/getCp', (req, res, next) => {
