@@ -133,6 +133,7 @@
             }
             else{
               locatStorage.setItem('tk', r.data.tk)
+              location.href='/'
             }
           })
           .catch(e => console.error(e.message))
