@@ -10,7 +10,7 @@
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
-        <span class="mr-2" v-if="" router-link to='/'>로그인</span>
+        <span class="mr-2" v-if="" router-link to='/login'>로그인</span>
         <v-icon>done</v-icon>
       </v-btn>
     </v-app-bar>
