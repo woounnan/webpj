@@ -95,7 +95,6 @@
             this.wd.state = true
             this.wd.msg = '등록 성공'
         }else{
-          console.log('code:'+code)
           this.wd.type = 'error'
           this.wd.state = true
           this.wd.msg = '등록 실패'
@@ -131,7 +130,9 @@
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
             }
-            console.log(r.data)
+            else{
+              locatStorage.setItem('tk', r.data.tk)
+            }
           })
           .catch(e => console.error(e.message))
       }
