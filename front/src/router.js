@@ -6,16 +6,19 @@ import Register from './views/Register.vue'
 
 Vue.use(Router)
 
-const router = new Router()
-
-router.beforeEach((to, from, next) => {
-  next('/login')
-})
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    {
+      path: '*',
+      name: 'check',
+      beforeEnter: (to, from, next) => {
+        console.log('before')
+        next('/login')
+      }
+    },
     {
       path: '/',
       name: 'home',
