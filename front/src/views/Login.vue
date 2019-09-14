@@ -66,6 +66,7 @@
   export default {
     mounted() {
       console.log('mounted!')
+      console.log('state : '+ wd.state)
       this.$modal.on('show', (event, id) => {
         console.log('Modal is about to be shown', event, id);
       })
