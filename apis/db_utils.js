@@ -37,7 +37,7 @@ router.post('/addCp', (req, res, next) => {
 			})
 		}
 		else{
-			console.log('Cant create T.t')
+			console.log('Cant create T.T')
 			res.send({code: -1})
 			return 
 		}
