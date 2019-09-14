@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 	next()
 })
 router.get('/getCompanys', (req, res, next) => {
-	res.send(models)
+	console.log(models)
 })
 
 module.exports = router
