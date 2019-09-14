@@ -6,7 +6,7 @@ import Register from './views/Register.vue'
 
 Vue.use(Router)
 
-const router = new VueRouter({ ... })
+const router = new Router()
 
 router.beforeEach((to, from, next) => {
   next('/login')
