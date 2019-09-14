@@ -67,7 +67,7 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-alert v-model="state" type="error" dismissible >
-              {{wd.msg}}
+              테스트 메시지입니다.
             </v-alert>
             <v-list-item-action>
               <v-icon>mdi-map-marker</v-icon>
