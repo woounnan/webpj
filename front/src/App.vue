@@ -11,7 +11,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-list>
-      <v-list-tile v-if="!$store.state.tk">
+      <v-list-tile v-if="!$store.state.tk" name='test'>
         <v-btn
           text
           @click="logIn"
@@ -20,7 +20,7 @@
         <v-icon>done</v-icon>
         </v-btn>
       </v-list-tile>
-     <v-list-tile v-else>
+     <v-list-tile v-else name='test'>
         <v-btn
           text
           @click="logOut"
