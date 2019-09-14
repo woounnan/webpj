@@ -132,7 +132,7 @@ export default {
       this.$emit('close')
     },
     searchCp(){
-      v_searchCp.cps = []
+      this.v_searchCp.cps = []
       console.log('call SearchCp')
       var len = Object.keys(this.v_companys).length
       for(var i=0; i<len; i++){
