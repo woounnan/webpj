@@ -111,7 +111,6 @@ export default {
         console.log(r.data)
         console.log(Object.keys(r.data).length)
       })
-    }
   },
   methods : {
     sub(){
