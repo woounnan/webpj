@@ -6,12 +6,13 @@ import Register from './views/Register.vue'
 
 Vue.use(Router)
 
-const router = new Router()
+const router = new VueRouter({ ... })
 
-router.beforeEach((to, from, next) =>{
-  console.log('beforeEach')
-  next()
+router.beforeEach((to, from, next) => {
+  console.log('TTTTTTTTTTTT')
+  next(false)
 })
+
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
