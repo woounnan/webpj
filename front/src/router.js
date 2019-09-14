@@ -7,9 +7,9 @@ import Register from './views/Register.vue'
 Vue.use(Router)
 
 
-var router = new VueRouter();
 
-export default new Router({
+
+router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -46,3 +46,5 @@ export default new Router({
     }
   ]
 })
+
+export default router
