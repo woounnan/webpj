@@ -60,6 +60,7 @@
                 placeholder="소속 검색"
                 v-model="v_user.company"
                 type="text"
+                v-on:keyup="keyPress"
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -124,9 +125,12 @@ export default {
        this.bus.$emit('test', 1)
         this.closeWindow();
       },
-      closeWindow(){
-        console.log('call the closeWindow function');
-        this.$emit('close')
+    closeWindow(){
+      console.log('call the closeWindow function');
+      this.$emit('close')
+    },
+    keyPress(){
+      console.log('키가 눌렸어요!!')
     }
   },
   created () {
