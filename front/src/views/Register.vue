@@ -70,7 +70,7 @@
             <v-icon>search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
+            <v-list-item-title @click="getCp(cp.name)" v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <!-- -->
@@ -136,14 +136,14 @@ export default {
       console.log('call SearchCp')
       var len = Object.keys(this.v_companys).length
       for(var i=0; i<len; i++){
-        console.log('sources: '+this.v_companys[i].name )
-        console.log('target: '+this.v_user.cp)
         if( (this.v_companys[i].name.includes(this.v_user.cp)) && (this.v_user.cp.length) > 0){
           this.v_searchCp.cps.push(this.v_companys[i])
           this.v_searchCp.state = true
-          console.log('Yeah... I\'d founded!')
         }
       }
+    },
+    getCp(name){
+      console.log('selected name: ' + name)
     }
   },
   created () {
