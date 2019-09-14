@@ -11,12 +11,11 @@ router.get('/', (req, res, next) => {
 
 router.post('/addCp', (req, res, next) => {
 	var user = {
-		id: res.body.id,
-		password: res.body.pw,
-		division: res.body.div,
-		company: res.body.cp
+		id: req.body.id,
+		password: req.body.pw,
+		division: req.body.div,
+		company: req.body.cp
 	}
-	console.log('????')
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
 		if(e){
