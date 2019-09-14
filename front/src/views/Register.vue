@@ -64,7 +64,7 @@
               <!--show list result for searching -->
               <v-list-item v-if="v_user.state" v-for="(company) in v_companys">
                 <v-list-item-content>
-                  <v-list-item-title>{{company}}</v-list-item-title>
+                  <v-list-item-title>{{company.name}}</v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
               <!-- -->
