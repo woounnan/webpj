@@ -58,19 +58,19 @@
             <v-list-item-content>
               <v-text-field 
                 placeholder="소속 검색"
-                v-model="v_user.company"
+                v-model="v_user.cp"
                 type="text"
-                v-on:keyup="keyPress"
+                v-on:keyup="searchCp"
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
              <!--show list result for searching -->
-        <v-list-item v-if="v_user.state" v-for="(company) in v_companys">
+        <v-list-item v-if="v_searchCp.state" v-for="(cp) in v_searchCp">
           <v-list-item-action>
             <v-icon>search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-bind:style="{color: 'gray'}">{{company.name}}</v-list-item-title>
+            <v-list-item-title v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <!-- -->
@@ -99,12 +99,15 @@ export default {
   ],
   data () {
     return {
-      v_companys : {
+      v_companys : {},
+      v_searchCp : {
+        cps: [],
+        state: false
       },
       v_user : { 
       name : '',
       pw : '',
-      state : false
+      cp : []
       }
     }
   },
@@ -129,8 +132,16 @@ export default {
       console.log('call the closeWindow function');
       this.$emit('close')
     },
-    keyPress(){
-      console.log('키가 눌렸어요!!')
+    searchCp(){
+      console.log('call SearchCp')
+      for(cp in v_companys){
+        console.log('sources: '+cp.name )
+        console.log('target: '+this.v_user.cp)
+        if(cp.name.includes(this.v_user.cp)){
+          this.v_searchCp.push(cp)
+          console.log('Yeah... I\'d founded!')
+        }
+      }
     }
   },
   created () {
