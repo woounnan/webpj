@@ -103,7 +103,7 @@ export default {
       v_user : { 
       name : '',
       pw : '',
-      state : true
+      state : false
       }
     }
   },
