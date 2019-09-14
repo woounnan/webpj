@@ -92,10 +92,16 @@
       reg(){
         console.log('call reg function');
         //location.href = '/reg' //normal move
-        this.ps.bus.$on('test', (code) => {
+        this.ps.bus.$on('exit', (code) => {
+          if(code == 1){
           this.wd.type = 'success'
           this.wd.state = true
           this.wd.msg = '등록 성공'
+        }else{
+          this.wd.type = 'error'
+          this.wd.state = true
+          this.wd.msg = '등록 실패'
+        }
         })
         this.$modal.show(Register,
           {
@@ -130,11 +136,6 @@
             console.log(r.data)
           })
           .catch(e => console.error(e.message))
-      },
-      showing(){
-        this.wd.state = true;
-        this.wd.type = 'success';
-        this.wd.msg = '등록완료';
       }
     }
 }

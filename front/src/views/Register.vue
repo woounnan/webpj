@@ -111,8 +111,8 @@ export default {
       v_user : { 
       name : '',
       pw : '',
-      cp : '',
-      div : ''
+      div : '',
+      cp : ''
       }
     }
   },
@@ -127,11 +127,16 @@ export default {
   },
   methods : {
     sub(){
-        console.log('call the sub function');
-        
-       this.bus.$emit('test', 1)
-        this.closeWindow();
-      },
+      var ret = 0
+      console.log('call the sub function');
+      axios.post(`http://webhacker.xyz:8000/apis/db/addCp`, this.v_user)
+      .then(r => {
+        ret = r.data.code
+      })
+      .catch(e => console.error(e))
+      this.bus.$emit('exit', ret)
+      this.closeWindow();
+    },
     closeWindow(){
       console.log('call the closeWindow function');
       this.$emit('close')
@@ -151,7 +156,7 @@ export default {
       this.v_searchCp.cps = []
       this.v_user.cp = name
       console.log('selected name: ' + name)
-    }
+    },
   },
   created () {
   }

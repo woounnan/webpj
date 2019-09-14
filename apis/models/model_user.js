@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
 	id: { type: String, required: true, unique: true, trim: true, index: true},
 	password: { type: String, required: true, unique: true, trim: true },
 	key: { type: String, required: true, unique: true, default: Date.now},
-	name: { type: String, required: true, trim: true},
+	division: { type: String, required: true, trim: true},
 	company: { type: String, required: true, trim: true}
 })
 
