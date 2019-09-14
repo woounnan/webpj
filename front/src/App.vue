@@ -14,7 +14,7 @@
       <v-list-title v-if="!$store.state.tk">
         <v-btn
           text
-          @click="$router.push('/login')"
+          @click="in"
         >
         <span class="mr-2">로그인</span>
         <v-icon>done</v-icon>
@@ -45,5 +45,11 @@ export default {
   data: () => ({
     
   }),
+  methods: () {
+    in(){
+      console.log('call login function')
+      console.log('tk:' + this.$store.state.tk)
+    }
+  }
 };
 </script>
