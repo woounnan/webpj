@@ -29,20 +29,19 @@ router.post('/addCp', (req, res, next) => {
 			res.send({code: -1})
 			return 
 		}
+
+		if(ret == 1){
+			console.log('!!!!!!!!!!!!1')
+			var users = new User(user)
+			users.save( (e, users) =>{
+				if(e){
+					res.send({code: -1})
+					return console.error('login.js::10....occurred at users.save')
+				}
+					console.log('User created')
+			})
+		}
 	})
-	console.log('@@@@@@@@@2')
-	console.log('ret: '+ ret)
-	if(ret == 1){
-		console.log('!!!!!!!!!!!!1')
-		var users = new User(user)
-		users.save( (e, users) =>{
-			if(e){
-				res.send({code: -1})
-				return console.error('login.js::10....occurred at users.save')
-			}
-				console.log('User created')
-		})
-	}
 	res.send({code: 1})
 })
 
