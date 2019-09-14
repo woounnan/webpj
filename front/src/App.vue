@@ -17,6 +17,7 @@
         >
         <span class="mr-2">로그인</span>
         <v-icon>done</v-icon>
+        </v-btn>
       </div>
       <div v-else>
         <v-btn
@@ -25,8 +26,8 @@
         >
         <span class="mr-2">로그아웃</span>
         <v-icon>close</v-icon>
+        </v-btn>
       </div>
-      </v-btn>
     </v-app-bar>
 
     <v-content>
