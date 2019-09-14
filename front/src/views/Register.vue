@@ -64,11 +64,10 @@
             </v-list-item-content>
           </v-list-item>
              <!--show list result for searching -->
-             <v-divider inset></v-divider>   
               <v-list-item v-if="v_user.state" v-for="(company) in v_companys">
                 <v-icon>search</v-icon>
                 <v-list-item-content>
-                  <v-list-item-title>{{company.name}}</v-list-item-title>
+                  {{company.name}}
                 </v-list-item-content>
               </v-list-item>
               <!-- -->
