@@ -22,16 +22,6 @@ router.post('/addCp', (req, res, next) => {
 		}
 		if(!r){
 			console.log('Can create!')
-			ret = 1
-		}
-		else{
-			console.log('Cant create T.t')
-			res.send({code: -1})
-			return 
-		}
-
-		if(ret == 1){
-			console.log('!!!!!!!!!!!!1')
 			var users = new User(user)
 			users.save( (e, users) =>{
 				if(e){
@@ -40,9 +30,14 @@ router.post('/addCp', (req, res, next) => {
 				}
 					console.log('User created')
 			})
+			res.send({code: 1})
+		}
+		else{
+			console.log('Cant create T.t')
+			res.send({code: -1})
+			return 
 		}
 	})
-	res.send({code: 1})
 })
 
 router.post('/getCp', (req, res, next) => {
