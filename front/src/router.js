@@ -18,7 +18,7 @@ export default new Router({
       name: 'check',
       beforeEnter: (to, from, next) => {
         console.log('before')
-        next('/login')
+        next()
       }
     },
     {
