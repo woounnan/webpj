@@ -61,14 +61,14 @@
                 v-model="v_user.company"
                 type="text"
               ></v-text-field>
+              <v-alert v-model="state" type="error" dismissible >
+                테스트 메시지입니다.
+              </v-alert>
             </v-list-item-content>
           </v-list-item>
 
           <v-divider inset></v-divider>            
           <v-list-item @click="">
-            <v-alert v-model="state" type="error" dismissible >
-              테스트 메시지입니다.
-            </v-alert>
             <v-list-item-action>
               <v-icon>mdi-map-marker</v-icon>
             </v-list-item-action>
