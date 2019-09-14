@@ -8,11 +8,17 @@ router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
 	next()
 })
-router.get('/getCompanys', (req, res, next) => {
-	console.log(Company.find((e, companys) => {
+/*
+router.get('/addCp', (req, res, next) => {
+	var name = req.body
+	console.log
+})
+*/
+router.get('/getCp', (req, res, next) => {
+	console.log(Company.find((e, cps) => {
 		if(e) res.send('error!!: ' + e)
-		console.log(companys)
-		res.json(companys)
+		console.log(cps)
+		res.json(cps)
 	}))
 })
 
