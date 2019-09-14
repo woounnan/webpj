@@ -20,6 +20,7 @@
         <v-icon>done</v-icon>
         </v-btn>
       </v-list-title>
+      </v-list>
       <div v-else>
         <v-btn
           text
