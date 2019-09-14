@@ -62,28 +62,9 @@
                 type="text"
               ></v-text-field>
               <!--show list result for searching -->
-              <v-list-item>
+              <v-list-item v-for="(item) in items">
                 <v-list-item-content>
-                  <v-list-item-title>Single-line item</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-
-              <v-list-item two-line>
-                <v-list-item-content>
-                  <v-list-item-title>Two-line item</v-list-item-title>
-                  <v-list-item-subtitle>Secondary text</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-
-              <v-list-item three-line>
-                <v-list-item-content>
-                  <v-list-item-title>Three-line item</v-list-item-title>
-                  <v-list-item-subtitle>
-                    Secondary line text Lorem ipsum dolor sit amet,
-                  </v-list-item-subtitle>
-                  <v-list-item-subtitle>
-                    consectetur adipiscing elit.
-                  </v-list-item-subtitle>
+                  <v-list-item-title>{{item}}</v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
               <!-- -->
@@ -114,6 +95,11 @@ export default {
   ],
   data () {
     return {
+      items : {
+        item1 : 'num1',
+        item2 : 'num2',
+        item3 : 'num3'
+      }
       v_user : { 
       name : '',
       pw : '',
