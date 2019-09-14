@@ -30,6 +30,8 @@ router.post('/addCp', (req, res, next) => {
 			return 
 		}
 	})
+	console.log('@@@@@@@@@2')
+	console.log('ret: '+ ret)
 	if(ret == 1){
 		console.log('!!!!!!!!!!!!1')
 		var users = new User(user)
