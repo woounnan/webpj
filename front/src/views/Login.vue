@@ -79,9 +79,9 @@
           pw: ''
         },
         wd: {
-          msg: '잘못된 입력',
+          msg: '',
           state: false,
-          type: "error"
+          type: ''
         },
         ps:{
           bus : new Vue()
@@ -128,6 +128,8 @@
           .then(r => {
             if(r.data.code != 1){
               this.wd.state = true
+              this.wd.msg = '잘못된 입력'
+              this.wd.type = 'error'
             }
             console.log(r.data)
           })
