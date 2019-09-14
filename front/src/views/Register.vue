@@ -74,7 +74,7 @@
           </v-list-item-content>
         </v-list-item>
         <!-- -->
-          <v-divider inset></v-divider>            
+         
           <v-list-item @click="">
             <v-list-item-action>
               <v-icon>mdi-map-marker</v-icon>
@@ -143,6 +143,7 @@ export default {
       }
     },
     getCp(name){
+      this.v_searchCp.cps = []
       console.log('selected name: ' + name)
     }
   },
