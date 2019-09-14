@@ -2,6 +2,10 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
+        <v-btn
+        text
+        @click="$router.push('/')"
+        >
         <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
       </v-toolbar-title>
       <v-spacer></v-spacer>
