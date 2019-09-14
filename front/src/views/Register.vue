@@ -108,8 +108,10 @@ export default {
   mounted: function () {
     axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
-        console.log(r.data)
-        console.log(Object.keys(r.data).length)
+        if(Object.keys(r.data).length > 0){
+          this.state = true
+          this.v_companys = r.data
+        }
       })
       .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
   },
