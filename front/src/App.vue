@@ -13,6 +13,7 @@
       <v-list>
       <v-list-title v-if="!$store.state.tk">
         <v-btn
+          text
           @click="logIn"
         >
         <span class="mr-2">로그인</span>
@@ -21,6 +22,7 @@
       </v-list-title>
      <v-list-title v-else>
         <v-btn
+          text
           @click="logOut"
         >
         <span class="mr-2">로그아웃</span>
@@ -46,7 +48,7 @@ export default {
   methods: {
     logIn(){
       console.log('call login function')
-      console.log('tk:' + this.$store.state.tk)
+      console.log('tk:' + !this.$store.state.tk)
     }
   }
 };
