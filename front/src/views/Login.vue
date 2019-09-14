@@ -91,13 +91,11 @@
         //location.href = '/reg' //normal move
         this.ps.bus.$on('exit', (code) => {
           if(code == 1){
-            console.log('등록성공인디?...')
             this.wd.type = 'success'
             this.wd.state = true
             this.wd.msg = '등록 성공'
         }else{
-          if(code == '1')
-          console.log('등록실패...')
+          console.log('code:'+code)
           this.wd.type = 'error'
           this.wd.state = true
           this.wd.msg = '등록 실패'
