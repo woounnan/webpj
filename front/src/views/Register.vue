@@ -109,7 +109,7 @@ export default {
     axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
-          this.state = true
+          this.v_user.state = true
           this.v_companys = r.data
         }
       })
