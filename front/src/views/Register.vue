@@ -106,11 +106,12 @@ export default {
     }
   },
   mounted: function () {
-    axios.post('http://webhacker.xyz:8000/apis/db/getCp')
-      .the(r => {
+    axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
+      .then(r => {
         console.log(r.data)
         console.log(Object.keys(r.data).length)
       })
+      .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
   },
   methods : {
     sub(){
