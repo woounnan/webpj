@@ -25,7 +25,7 @@ router.post('/addCp', (req, res, next) => {
 			users.save( (e, users) =>{
 				if(e){
 					res.send({code: -1})
-					return console.error('login.js::10....occurred at users.save')
+					return console.error(e)
 				}
 				else{
 					console.log('User created')
