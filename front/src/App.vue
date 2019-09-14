@@ -13,7 +13,7 @@
       <div v-if="!$store.state.tk">
         <v-btn
           text
-          @click="logIn"
+          @click="$router.push('/login')"
         >
         <span class="mr-2">로그인</span>
         <v-icon>done</v-icon>
@@ -47,9 +47,9 @@ export default {
     
   }),
   methods: {
-    logIn(){
-      console.log('call login function')
-      console.log('tk:' + this.$store.state.tk)
+    logOut(){
+      console.log('call logOut function')
+      this.$store.commit('delToken')
     }
   }
 };
