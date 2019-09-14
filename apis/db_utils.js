@@ -19,7 +19,7 @@ router.post('/addCp', (req, res, next) => {
 			res.send({code:-1})
 			return console.error(e)
 		}
-		if(!r){
+		else if(!r){
 			console.log('Can create!')
 			var users = new User(user)
 			users.save( (e, users) =>{
