@@ -9,8 +9,7 @@ Vue.use(Router)
 const router = new VueRouter({ ... })
 
 router.beforeEach((to, from, next) => {
-  console.log('TTTTTTTTTTTT')
-  next(false)
+  next('/login')
 })
 
 export default new Router({
