@@ -14,7 +14,7 @@ router.get('/addCp', (req, res, next) => {
 	console.log
 })
 */
-router.get('/getCp', (req, res, next) => {
+router.post('/getCp', (req, res, next) => {
 	console.log(Company.find((e, cps) => {
 		if(e) res.send('error!!: ' + e)
 		console.log(cps)
