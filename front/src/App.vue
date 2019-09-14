@@ -45,7 +45,7 @@ export default {
   data: () => ({
     
   }),
-  methods: () {
+  methods: {
     in(){
       console.log('call login function')
       console.log('tk:' + this.$store.state.tk)
