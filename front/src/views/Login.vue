@@ -67,9 +67,6 @@
     mounted() {
       console.log('mounted!')
       console.log('state : '+ this.wd.state)
-      this.$modal.on('show', (event, id) => {
-        console.log('Modal is about to be shown', event, id);
-      })
     },
     data () {
       return {
