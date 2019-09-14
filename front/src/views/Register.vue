@@ -61,9 +61,32 @@
                 v-model="v_user.company"
                 type="text"
               ></v-text-field>
-              <v-alert v-model="state" type="error" dismissible >
-                테스트 메시지입니다.
-              </v-alert>
+              <!--show list result for searching -->
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>Single-line item</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Two-line item</v-list-item-title>
+                  <v-list-item-subtitle>Secondary text</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+
+              <v-list-item three-line>
+                <v-list-item-content>
+                  <v-list-item-title>Three-line item</v-list-item-title>
+                  <v-list-item-subtitle>
+                    Secondary line text Lorem ipsum dolor sit amet,
+                  </v-list-item-subtitle>
+                  <v-list-item-subtitle>
+                    consectetur adipiscing elit.
+                  </v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <!-- -->
             </v-list-item-content>
           </v-list-item>
 
