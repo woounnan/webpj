@@ -69,7 +69,7 @@
             <v-icon>search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{company.name}}</v-list-item-title>
+            <v-list-item-title class="gray--text">{{company.name}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <!-- -->
