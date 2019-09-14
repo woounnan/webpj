@@ -64,9 +64,11 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-divider inset></v-divider>
-
+          <v-divider inset></v-divider>            
           <v-list-item @click="">
+            <v-alert v-model="state" type="error" dismissible >
+              {{wd.msg}}
+            </v-alert>
             <v-list-item-action>
               <v-icon>mdi-map-marker</v-icon>
             </v-list-item-action>
@@ -91,7 +93,8 @@ export default {
     return {
       v_user : { 
       name : '',
-      pw : ''
+      pw : '',
+      state : true
       }
     }
   },
