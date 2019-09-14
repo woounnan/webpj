@@ -9,10 +9,9 @@ export default new Vuex.Store({
   	tk: undefined
   },
   mutations: {
-  	setTk(state){
-  		console.log('call the setTk in store.js')
-		state.tk = localStorage.getItem('token')
-  	}
+  	getToken (state) {
+      state.tk = localStorage.getItem('tk')
+    }
   },
   actions: {
 

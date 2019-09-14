@@ -133,7 +133,7 @@
             }
             else{
               localStorage.setItem('tk', r.data.tk)
-              this.$store.commit('setTk')
+              this.$store.commit('getToken')
               location.href='/'
             }
           })
