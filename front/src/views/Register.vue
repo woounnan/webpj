@@ -98,7 +98,7 @@ export default {
       items : {
         item1 : 'num1',
         item2 : 'num2',
-        item3 : 'num3'
+        item3 : 'num4'
       },
       v_user : { 
       name : '',
