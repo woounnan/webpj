@@ -7,7 +7,7 @@
       <v-spacer></v-spacer>
       <v-btn
         text
-        @click="location.href='/login'"
+        @click="$router.push('/login')"
       >
         <span class="mr-2" v-if="">로그인</span>
         <v-icon>done</v-icon>
