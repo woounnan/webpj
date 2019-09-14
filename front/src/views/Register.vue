@@ -65,7 +65,7 @@
             </v-list-item-content>
           </v-list-item>
              <!--show list result for searching -->
-        <v-list-item v-if="v_searchCp.state" v-for="(cp) in v_searchCp.cps">
+        <v-list-item @click="" v-if="v_searchCp.state" v-for="(cp) in v_searchCp.cps">
           <v-list-item-action>
             <v-icon>search</v-icon>
           </v-list-item-action>
@@ -74,7 +74,7 @@
           </v-list-item-content>
         </v-list-item>
         <!-- -->
-         
+          <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
               <v-icon>mdi-map-marker</v-icon>
