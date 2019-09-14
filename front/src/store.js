@@ -11,7 +11,7 @@ export default new Vuex.Store({
   mutations: {
   	setToken (state) {
       state.tk = localStorage.getItem('tk')
-    }
+    },
     delToken (state) {
     	state.tk = null
     }
