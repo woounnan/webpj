@@ -105,13 +105,12 @@ export default {
       }
     }
   },
-  mounted () {
-    getListCp(){
-      axios.post('http://webhacker.xyz:8000/apis/db/getCp')
-        .the(r => {
-          console.log(r.data)
-          console.log(Object.keys(r.data).length)
-        })
+  mounted: function () {
+    axios.post('http://webhacker.xyz:8000/apis/db/getCp')
+      .the(r => {
+        console.log(r.data)
+        console.log(Object.keys(r.data).length)
+      })
     }
   },
   methods : {
