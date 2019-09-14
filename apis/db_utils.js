@@ -7,7 +7,6 @@ var User = require('./models/model_user')
 
 router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
-	next()
 })
 
 router.post('/addCp', (req, res, next) => {
