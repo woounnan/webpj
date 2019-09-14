@@ -13,7 +13,6 @@
       <v-list>
       <v-list-title v-if="!$store.state.tk">
         <v-btn
-          text
           @click="in"
         >
         <span class="mr-2">로그인</span>
@@ -22,7 +21,6 @@
       </v-list-title>
      <v-list-title v-else>
         <v-btn
-          text
           @click="out"
         >
         <span class="mr-2">로그아웃</span>
