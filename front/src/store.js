@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
   	bus: new Vue(),
-  	tk: undefined
+  	tk: localStorage.getItem('tk')
   },
   mutations: {
   	getToken (state) {
