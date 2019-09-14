@@ -91,10 +91,12 @@
         //location.href = '/reg' //normal move
         this.ps.bus.$on('exit', (code) => {
           if(code == 1){
-          this.wd.type = 'success'
-          this.wd.state = true
-          this.wd.msg = '등록 성공'
+            console.log('등록성공인디?...')
+            this.wd.type = 'success'
+            this.wd.state = true
+            this.wd.msg = '등록 성공'
         }else{
+          console.log('등록실패...')
           this.wd.type = 'error'
           this.wd.state = true
           this.wd.msg = '등록 실패'
@@ -125,7 +127,7 @@
       login(id, pw){
         axios.post(`http://webhacker.xyz:8000/apis/login`, {id: id, pw: pw})
           .then(r => {
-            if(r.data.code != 1){
+            if(r.data.code != '1'){
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
