@@ -24,7 +24,7 @@
 
             <v-list-item-content>
               <v-text-field
-                    v-model="v_user.name"
+                    v-model="v_user.id"
                     type="text"
                     placeholder="아이디 입력"
                   ></v-text-field>
@@ -109,7 +109,7 @@ export default {
         state: false
       },
       v_user : { 
-      name : '',
+      id : '',
       pw : '',
       div : '',
       cp : ''
