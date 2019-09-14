@@ -6,6 +6,12 @@ var logger = require('morgan');
 const cors =require('cors')
 
 
+mongoose.connect('mongodb://localhost:27017/users', {useNewUrlParser: true}, (err) =>{
+	if(err) return console.error('connection error occured in test_mg.js + ['+err + ']')
+	console.log('connection succeeded!')
+});
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apisRouter = require('./apis/index');
