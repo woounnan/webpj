@@ -11,7 +11,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-list>
-      <v-list-title v-if="!$store.state.tk">
+      <v-list-tile v-if="!$store.state.tk">
         <v-btn
           text
           @click="logIn"
@@ -19,8 +19,8 @@
         <span class="mr-2">로그인</span>
         <v-icon>done</v-icon>
         </v-btn>
-      </v-list-title>
-     <v-list-title v-else>
+      </v-list-tile>
+     <v-list-tile v-else>
         <v-btn
           text
           @click="logOut"
@@ -28,7 +28,7 @@
         <span class="mr-2">로그아웃</span>
         <v-icon>close</v-icon>
         </v-btn>
-      </v-list-title>
+      </v-list-tile>
       </v-list>
     </v-app-bar>
 
