@@ -48,7 +48,7 @@ export default {
   methods: {
     logIn(){
       console.log('call login function')
-      console.log('tk:' + this.$store.state.tk)
+      console.log('tk:' + $store.state.tk)
     }
   }
 };
