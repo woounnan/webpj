@@ -52,7 +52,7 @@
 
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>face</v-icon>
+              <v-icon>mdi-map-marker</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -77,11 +77,15 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>mdi-map-marker</v-icon>
+              <v-icon>face</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title></v-list-item-title>
+                <v-text-field 
+                placeholder="직책 입력"
+                v-model="v_user.div"
+                type="text"
+              ></v-text-field>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -107,7 +111,8 @@ export default {
       v_user : { 
       name : '',
       pw : '',
-      cp : ''
+      cp : '',
+      div : ''
       }
     }
   },
