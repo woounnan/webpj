@@ -62,7 +62,7 @@
                 type="text"
               ></v-text-field>
               <!--show list result for searching -->
-              <v-list-item v-for="(item) in items">
+              <v-list-item v-model="v_user.state" v-for="(item) in items">
                 <v-list-item-content>
                   <v-list-item-title>{{item}}</v-list-item-title>
                 </v-list-item-content>
