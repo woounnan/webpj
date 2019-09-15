@@ -28,15 +28,19 @@ export default new Router({
       component: Login
     },
     {
-      path: '/',
-      name: 'home',
-      component: Home,
-      beforeEnter: requireAuth
-    },
-    {
       path: '/reg',
       name: 'register',
       component: Register
+    },
+    {
+      path: '/*',
+      name: 'check',
+      beforeEnter: requireAuth
+    }
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
     },
     {
       path: '/about',
