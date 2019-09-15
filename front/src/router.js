@@ -31,14 +31,10 @@ export default new Router({
       component: Register
     },
     {
-      path: '/*',
-      name: 'check',
-      beforeEnter: requireAuth
-    },
-    {
       path: '/',
       name: 'home',
       component: Home,
+      beforeEnter: requireAuth
     },
     {
       path: '/about',
@@ -47,6 +43,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      beforeEnter: requireAuth
     }
   ]
 })
