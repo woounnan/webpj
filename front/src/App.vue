@@ -50,6 +50,7 @@ export default {
     logOut(){
       console.log('call logOut function')
       this.$store.commit('delToken')
+      localStorage.removeItem('tk')
     }
   }
 };
