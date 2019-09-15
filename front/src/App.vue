@@ -30,10 +30,6 @@
       </div>
     </v-app-bar>
 
-    <v-content>
-      <router-view/>
-    </v-content>
-
 <v-navigation-drawer
       expand-on-hover
       permanent
@@ -88,6 +84,10 @@
       </v-list>
     </v-navigation-drawer>
   </v-app>
+
+      <v-content>
+      <router-view/>
+    </v-content>
 </template>
 
 <script>
