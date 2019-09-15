@@ -33,7 +33,14 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 
 // Create component
 const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview);
-
+const pond = FilePond.create();
+pond.on('addfile', (error, file) => {
+    if (error) {
+        console.log('Oh no');
+        return;
+    }
+    console.log('File added', file);
+});
 export default {
     name: 'app',
     data: function() {
