@@ -10,5 +10,5 @@ router.get('/', (req, res, next) => {
 
 router.use('/login', require('./login'))
 router.use('/db', require('./db_utils'))
-
+router.use('/file', require('./file'))
 module.exports = router
