@@ -7,9 +7,9 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex';
-import MessageList from '@/components/Chat/MessageList.vue';
-import MessageForm from '@/components/Chat/MessageForm.vue';
-import Constant from '@/Constant';
+import MessageList from '../components/Chat/MessageList.vue';
+import MessageForm from '../components/Chat/MessageForm.vue';
+import Constant from '../Constant';
 
 export default {
   name: 'ChatRoom',
