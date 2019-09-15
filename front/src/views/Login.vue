@@ -50,9 +50,6 @@
       </v-container>
     </v-content>
   <div>
-     <v-alert :value="true" type="error">
-      This is a error alert.
-    </v-alert>
     <v-alert v-model="wd.state" :type="wd.type" dismissible >
       {{wd.msg}}
     </v-alert>
