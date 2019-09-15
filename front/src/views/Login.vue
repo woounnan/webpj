@@ -91,6 +91,7 @@
         //location.href = '/reg' //normal move
         //this.ps.bus.$on('exit', (code) => {
           this.$store.state.bus.$on('exit', (code) => {
+          console.log('code:' + code)
           if(code == 1){
             this.wd.type = 'success'
             this.wd.state = true
