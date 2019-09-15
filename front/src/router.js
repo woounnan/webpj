@@ -15,7 +15,7 @@ const requireAuth = (to, from, next) =>{
         console.log(store.state.tk)
 
         console.log(!store.state.tk)
-        console.log(JSON.stringify(next))
+        console.log(JSON.stringify(next.url))
 }
 
 export default new Router({
