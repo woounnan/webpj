@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+import File from './views/File.vue'
 import store from './store'
 
 Vue.use(Router)
@@ -26,6 +27,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/file',
+      name: 'file',
+      component: File
     },
     {
       path: '/reg',
