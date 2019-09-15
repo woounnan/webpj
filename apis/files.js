@@ -8,3 +8,5 @@ router.post('/save', (req, res, next) => {
 	console.log('call fileSave on server')
 	res.send(JSON.stringify(recv))
 })
+
+module.exports = router
