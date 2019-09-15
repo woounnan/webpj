@@ -33,8 +33,8 @@
     <v-content>
       <router-view/>
     </v-content>
-  </v-app>
-    <v-navigation-drawer
+
+<v-navigation-drawer
       expand-on-hover
       permanent
     >
@@ -87,6 +87,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+  </v-app>
 </template>
 
 <script>
