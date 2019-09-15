@@ -22,7 +22,9 @@ export default new Router({
       path: '/*',
       name: 'auth',
       beforeEnter: (to, from, next) =>{
-        next('/login')
+        if(!this.$store.state.tk)
+          next('/login')
+        next()
       }
     },
     {
