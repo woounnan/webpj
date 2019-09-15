@@ -86,7 +86,7 @@ export default {
           }
         },
         {
-          icon: 'view',
+          icon: 'assignment',
           title: 'View',
           to: {
             path: '/about'
