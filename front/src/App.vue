@@ -38,7 +38,7 @@
     <div v-if="!$store.state.tk">
       <v-btn
         text
-        @click="myNext('/login')"
+        @click="$router.push('/login')"
       >
       <span class="mr-2">로그인</span>
       <v-icon>done</v-icon>
