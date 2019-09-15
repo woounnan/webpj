@@ -124,6 +124,7 @@ export default {
             path: '/about'
           }
         }
+    ]
   }),
   methods: {
     myNext(path){
