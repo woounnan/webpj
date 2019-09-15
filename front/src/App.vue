@@ -83,11 +83,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-app>
-
+    
       <v-content>
       <router-view/>
     </v-content>
+  </v-app>
 </template>
 
 <script>
