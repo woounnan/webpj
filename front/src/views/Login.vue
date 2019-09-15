@@ -41,6 +41,7 @@
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
+                <v-btn color="primary" @click="regCp">부대 등록</v-btn>
                 <v-btn color="primary" @click="reg">등록</v-btn>
                 <v-btn color="primary" @click="check">로그인</v-btn>
               </v-card-actions>
@@ -62,6 +63,7 @@
 <script>
   import Vue from 'vue'
   import Register from './Register.vue'
+  import RegisterCompany from './RegisterCompany.vue'
   import axios from 'axios'
   export default {
     mounted() {
@@ -86,6 +88,37 @@
       }
     },
     methods: {
+      regCp(){
+        console.log('call regCp function');
+        //location.href = '/reg' //normal move
+        //this.ps.bus.$on('exit', (code) => {
+          this.$store.state.bus.$on('exit', (code) => {
+          if(code == 1){
+            this.wd.type = 'success'
+            this.wd.state = true
+            this.wd.msg = '등록 성공'
+        }else{
+          this.wd.type = 'error'
+          this.wd.state = true
+          this.wd.msg = '등록 실패'
+        }
+        })
+        this.$modal.show(Register,
+          {
+            //bus : this.ps.bus,
+            modal : this.$modal
+          },
+          {
+            name: 'dynamic-modal',
+            width: '100%',
+            height: '100%',
+            draggable: true
+          }, {
+          'closed' : (event) => {
+            console.log('event occured of close');
+          }}
+        )
+      },
       reg(){
         console.log('call reg function');
         //location.href = '/reg' //normal move

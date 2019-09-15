@@ -120,7 +120,7 @@ export default {
     axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
-          this.v_companys = r.data
+          this.v_companys = r.data.name
         }
       })
       .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
@@ -129,7 +129,7 @@ export default {
     sub(){
       var ret = 0
       console.log('call the sub function');
-      axios.post(`http://webhacker.xyz:8000/apis/db/addCp`, this.v_user)
+      axios.post(`http://webhacker.xyz:8000/apis/db/addUser`, this.v_user)
       .then(r => {
         ret = r.data.code
         //this.bus.$emit('exit', ret)
