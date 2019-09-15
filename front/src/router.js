@@ -32,6 +32,7 @@ export default new Router({
       }
     },
     {
+      console.log('Here is at home')
       path: '/',
       name: 'home',
       component: Home
