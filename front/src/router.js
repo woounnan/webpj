@@ -9,6 +9,14 @@ Vue.use(Router)
 
 
 
+const requireAuth = (to, from, next) =>{
+  if(!store.state.tk)
+          next('/login')
+        console.log(store.state.tk)
+
+        console.log(!store.state.tk)
+        next()
+}
 
 export default new Router({
   mode: 'history',
@@ -20,21 +28,10 @@ export default new Router({
       component: Login
     },
     {
-      path: '/*',
-      name: 'auth',
-      beforeEnter: (to, from, next) =>{
-        if(!store.state.tk)
-          next('/login')
-        console.log(store.state.tk)
-
-        console.log(!store.state.tk)
-        next()
-      }
-    },
-    {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      beforeEnter: requireAuth
     },
     {
       path: '/reg',
