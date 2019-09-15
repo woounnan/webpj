@@ -80,6 +80,7 @@ Vue.use(Vuetify)
 export default {
   name: 'App',
   data: () => ({
+    drawer: null,
     items: [
         {
           icon: 'home',
