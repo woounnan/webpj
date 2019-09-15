@@ -25,6 +25,9 @@ export default new Router({
       beforeEnter: (to, from, next) =>{
         if(!store.state.tk)
           next('/login')
+        console.log(store.state.tk)
+
+        console.log(!store.state.tk)
         next()
       }
     },
