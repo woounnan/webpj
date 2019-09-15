@@ -41,7 +41,6 @@
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="primary" @click="regCp">부대 등록</v-btn>
                 <v-btn color="primary" @click="reg">등록</v-btn>
                 <v-btn color="primary" @click="check">로그인</v-btn>
               </v-card-actions>
