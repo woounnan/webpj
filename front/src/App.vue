@@ -4,7 +4,7 @@
       <v-toolbar-title class="headline text-uppercase">
         <v-btn
         text
-        @click="$router.push('/')"
+        @click="myNext('/')"
         >
           <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
         </v-btn>
@@ -13,7 +13,7 @@
       <div v-if="!$store.state.tk">
         <v-btn
           text
-          @click="$router.push('/about')"
+          @click="myNext('/login')"
         >
         <span class="mr-2">로그인</span>
         <v-icon>done</v-icon>
@@ -47,11 +47,13 @@ export default {
     
   }),
   methods: {
+    myNext(path){
+      lcation.href=path
+    },
     logOut(){
       console.log('call logOut function')
       this.$store.commit('delToken')
       localStorage.removeItem('tk')
-      console.log(this.$store.state.tk)
       location.href='/'
     }
   }
