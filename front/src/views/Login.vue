@@ -49,13 +49,11 @@
         </v-row>
       </v-container>
     </v-content>
-<template>
   <div>
     <v-alert v-model="wd.state" :type="wd.type" dismissible >
       {{wd.msg}}
     </v-alert>
   </div>
-</template>
   </v-app>
 </template>
 
