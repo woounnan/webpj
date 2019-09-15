@@ -6,7 +6,6 @@
         ref="pond"
         label-idle="Drop files here..."
         v-bind:allow-multiple="true"
-        accepted-file-types="image/jpeg, image/png"
         server="/api"
         v-bind:files="myFiles"
         v-on:init="handleFilePondInit"/>
