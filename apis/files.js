@@ -7,21 +7,18 @@ router.get('/', (req, res, next) => {
 	res.send('hi! Im files.js')
 })
 
-router.get('/save', (req, res, next) => {
-	var recv = res.body
-	console.log('call fileSave on server ::get')
-	res.send(JSON.stringify(recv))
-})
 
 router.post('/save', (req, res, next) => {
 	var recv = res.body
 	console.log('call fileSave on server ::post')
 	res.send(JSON.stringify(recv))
+	console.log(recv)
 })
 router.options('/save', (req, res, next) => {
 	var recv = res.body
 	console.log('call fileSave on server ::options')
 	res.send(JSON.stringify(recv))
+	console.log(recv)
 })
 
 module.exports = router
