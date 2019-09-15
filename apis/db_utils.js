@@ -4,7 +4,7 @@ var router = express.Router()
 var createError = require('http-errors')
 var Company = require('./models/model_company')
 var User = require('./models/model_user')
-var Promise = require('Proise')
+
 
 
 router.get('/', (req, res, next) => {
