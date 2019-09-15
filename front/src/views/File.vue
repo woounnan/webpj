@@ -6,7 +6,7 @@
         ref="pond"
         label-idle="Drop files here..."
         v-bind:allow-multiple="true"
-        server="http://localhost:8000/apis/files/save"
+        server="http://webhacker.xyz:8000/apis/files/save"
         v-bind:files="myFiles"
         v-on:init="handleFilePondInit"/>
 
