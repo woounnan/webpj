@@ -40,11 +40,6 @@ export default new Router({
       beforeEnter: requireAuth
     },
     {
-      path: '/char-room/:username',
-      name: 'ChatRoom',
-      component: ChatRoom,
-    },
-    {
       path: '/about',
       name: 'about',
       // route level code-splitting
