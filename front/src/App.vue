@@ -51,7 +51,7 @@ export default {
       console.log('call logOut function')
       this.$store.commit('delToken')
       localStorage.removeItem('tk')
-      this.$router.push('/')
+      location.href='/'
     }
   }
 };
