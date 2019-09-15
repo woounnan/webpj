@@ -32,10 +32,14 @@ export default new Router({
       }
     },
     {
-      console.log('Here is at home')
       path: '/',
       name: 'home',
       component: Home
+      beforeEnter: (to, from, next) =>{
+
+        console.log('Here is at home')
+        next()
+      }
     },
     {
       path: '/reg',
