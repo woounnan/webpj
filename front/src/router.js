@@ -28,7 +28,7 @@ export default new Router({
         console.log(store.state.tk)
 
         console.log(!store.state.tk)
-        console.log('to:'+to)
+        return next()
       }
     },
     {
