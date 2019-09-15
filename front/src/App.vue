@@ -1,5 +1,7 @@
 <template>
   <v-app>
+    <v-container class="grey lighten-5">
+    <v-row no-gutters>
     <v-app-bar app>
     <v-toolbar-title class="headline text-uppercase">
       <v-btn
@@ -29,7 +31,7 @@
       </v-btn>
     </div>
   </v-app-bar>
-    <v-container class="grey lighten-5">
+</v-row>
         <v-row no-gutters>
             <v-col :key="1">
               <v-card
