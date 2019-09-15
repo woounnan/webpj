@@ -96,10 +96,12 @@
             this.wd.type = 'success'
             this.wd.state = true
             this.wd.msg = '등록 성공'
+            console.log('!!!!!!!!!')
         }else{
           this.wd.type = 'error'
           this.wd.state = true
           this.wd.msg = '등록 실패'
+          console.log('@@@@@@@@@')
         }
         })
         this.$modal.show(Register,
