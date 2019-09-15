@@ -13,6 +13,7 @@ const requireAuth = (to, from, next) =>{
   if(!store.state.tk)
           next('/login')
   console.log('move to next')
+  console.log('token: '+store.state.tk)
   next()
 } 
 
