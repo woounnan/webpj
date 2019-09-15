@@ -7,8 +7,8 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex';
-import MessageList from '../components/Chat/MessageList.vue';
-import MessageForm from '../components/Chat/MessageForm.vue';
+import MessageList from '../components/MessageList.vue';
+import MessageForm from '../components/MessageForm.vue';
 import Constant from '../Constant';
 
 export default {
