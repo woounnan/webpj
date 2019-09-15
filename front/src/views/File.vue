@@ -6,7 +6,7 @@
         ref="pond"
         label-idle="Drop files here..."
         v-bind:allow-multiple="true"
-        server="/api/files/save"
+        server="http://localhost:8000/api/files/save"
         v-bind:files="myFiles"
         v-on:init="handleFilePondInit"/>
 
@@ -32,11 +32,7 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 
 // Create component
 const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview);
-this.$refs.pond.setOptions({
-    server:{
-        url: 'http://localhost:8000'
-    }
-})
+
 export default {
     name: 'app',
     data: function() {
