@@ -36,7 +36,7 @@ export default new Router({
       path: '/*',
       name: 'check',
       beforeEnter: requireAuth
-    }
+    },
     {
       path: '/',
       name: 'home',
