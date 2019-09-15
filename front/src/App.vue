@@ -51,6 +51,7 @@ export default {
       console.log('call logOut function')
       this.$store.commit('delToken')
       localStorage.removeItem('tk')
+      console.log(this.$store.state.tk)
       location.href='/'
     }
   }
