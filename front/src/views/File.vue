@@ -32,7 +32,7 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 
 // Create component
 const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview);
-
+const pond = document.querySelector('.filepond--root');
 export default {
     name: 'app',
     data: function() {
@@ -41,8 +41,8 @@ export default {
     methods: {
         handleFilePondInit: function() {
             console.log('FilePond has initialized');
-            
-            FilePond.addFile('./my-file.jpg');
+
+            pond.addFile('./my-file.jpg');
             // FilePond instance methods are available on `this.$refs.pond`
         }
     },
