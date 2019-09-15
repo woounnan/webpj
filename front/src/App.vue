@@ -48,7 +48,7 @@ export default {
   }),
   methods: {
     myNext(path){
-      lcation.href=path
+      location.href=path
     },
     logOut(){
       console.log('call logOut function')
