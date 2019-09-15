@@ -32,7 +32,7 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 
 // Create component
 const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview);
-FilePond.setOptions({
+this.$refs.pond.setOptions({
     server:{
         url: 'http://localhost:8000'
     }
