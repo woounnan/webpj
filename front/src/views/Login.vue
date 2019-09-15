@@ -44,15 +44,18 @@
                 <v-btn color="primary" @click="reg">등록</v-btn>
                 <v-btn color="primary" @click="check">로그인</v-btn>
               </v-card-actions>
-                  <v-alert v-model="wd.state" :type="wd.type" dismissible >
-      {{wd.msg}}
-    </v-alert>
             </v-card>
           </v-col>
         </v-row>
       </v-container>
     </v-content>
   <div>
+     <v-alert :value="true" type="error">
+      This is a error alert.
+    </v-alert>
+    <v-alert v-model="wd.state" :type="wd.type" dismissible >
+      {{wd.msg}}
+    </v-alert>
   </div>
   </v-app>
 </template>
