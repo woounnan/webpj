@@ -42,7 +42,7 @@ export default {
         handleFilePondInit: function() {
             console.log('FilePond has initialized');
 
-            pond.addFile('./my-file.jpg');
+            console.log('pond: '+pond)
             // FilePond instance methods are available on `this.$refs.pond`
         }
     },
