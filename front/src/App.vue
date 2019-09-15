@@ -2,12 +2,13 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
+        <router-link :to="'/'">
         <v-btn
         text
-        @click="myNext('/')"
         >
           <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
         </v-btn>
+      </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div v-if="!$store.state.tk">
