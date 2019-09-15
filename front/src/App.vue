@@ -4,7 +4,7 @@
       <v-toolbar-title class="headline text-uppercase">
         <v-btn
         text
-        @click="$router.push('/')"
+        :to='/'
         >
           <span>WorkTalk</span><v-icon>chat_bubble_outline</v-icon>
         </v-btn>
