@@ -17,7 +17,7 @@ const requireAuth = (to, from, next) =>{
   next()
 } 
 
-export default new Router({
+let router =  Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -48,3 +48,5 @@ export default new Router({
     }
   ]
 })
+
+export default new router
