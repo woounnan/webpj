@@ -34,7 +34,6 @@
       <router-view/>
     </v-content>
   </v-app>
- <v-card>
     <v-navigation-drawer
       expand-on-hover
       permanent
@@ -88,7 +87,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-card>
 </template>
 
 <script>
