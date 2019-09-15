@@ -1,5 +1,7 @@
 <template>
   <v-app>
+    <v-container class="grey lighten-5">
+    <v-row no-gutters>
     <v-app-bar app>
     <v-toolbar-title class="headline text-uppercase">
       <v-btn
