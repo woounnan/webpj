@@ -1,6 +1,25 @@
 <template>
   <v-app>
-    
+    <v-container class="grey lighten-5">
+        <v-row no-gutters>
+            <v-col :key="n">
+              <v-card
+                class="pa-2"
+                outlined
+                tile
+              >
+                Column
+              </v-card>
+            </v-col>
+            <v-responsive
+              v-if="n === 2"
+              :key="`width-${n}`"
+              width="100%"
+            ></v-responsive>
+        </v-row>
+      </v-container>
+
+
 <v-navigation-drawer
       expand-on-hover
       permanent
