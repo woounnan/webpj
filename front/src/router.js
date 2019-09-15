@@ -12,11 +12,9 @@ Vue.use(Router)
 const requireAuth = (to, from, next) =>{
   if(!store.state.tk)
           next('/login')
-        console.log(store.state.tk)
-
-        console.log(!store.state.tk)
-        location.href = next
-}
+  console.log('move to next')
+  next()
+} 
 
 export default new Router({
   mode: 'history',
