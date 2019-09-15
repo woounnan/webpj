@@ -77,7 +77,7 @@
         },
         wd: {
           msg: '',
-          state: false,
+          state: true,
           type: ''
         }/*,
         ps:{
