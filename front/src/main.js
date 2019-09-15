@@ -4,9 +4,7 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import VModal from 'vue-js-modal'
-import './plugins/socketPlugin'
-import Directives from './plugins/directives';
-Vue.use(Directives);
+
 
 Vue.use(VModal, { dynamic: true })
 

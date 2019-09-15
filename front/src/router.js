@@ -4,7 +4,6 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import store from './store'
-import ChatRoom from './views/ChatRoom.vue';
 
 Vue.use(Router)
 
