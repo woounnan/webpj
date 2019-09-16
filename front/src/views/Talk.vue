@@ -1,6 +1,5 @@
 
 <template>
-<!--
   <div>
 
       <Chat 
@@ -30,18 +29,17 @@
        :submitIconSize="submitIconSize"/>
 
    </div>
--->
 </template>
 
 <script>
 
-//import { Chat } from 'vue-quick-chat'
+import { Chat } from 'vue-quick-chat'
 
 export default {
 
   components: {
 
-    this.Chat
+    Chat
 
   },
 
@@ -182,12 +180,13 @@ export default {
     onType: function (event){
 
       //here you can set any behavior
-
+      console.log(event))
     },
 
     onMessageSubmit: function(message){
 
       //here you can set any behavior
+      console.log(message)
 
     }
 
