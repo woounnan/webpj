@@ -4,7 +4,9 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import File from './views/File.vue'
+import Chat from './views/Talk.vue'
 import store from './store'
+
 
 Vue.use(Router)
 
@@ -33,6 +35,11 @@ export default new Router({
       name: 'file',
       component: File
     },
+		{
+			path: '/chat',
+			name: 'chat',
+			component: Chat
+		},
     {
       path: '/reg',
       name: 'register',
