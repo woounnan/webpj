@@ -35,13 +35,13 @@
 
 <script>
 
-import { Chat } from 'vue-quick-chat'
+//import { Chat } from 'vue-quick-chat'
 
 export default {
 
   components: {
 
-    Chat
+    //Chat
 
   },
 
