@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import VModal from 'vue-js-modal'
-
+import { Chat } from 'vue-quick-chat'
 
 Vue.use(VModal, { dynamic: true })
 
