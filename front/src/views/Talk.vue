@@ -180,7 +180,7 @@ export default {
     onType: function (event){
 
       //here you can set any behavior
-      console.log(event))
+      console.log(event)
     },
 
     onMessageSubmit: function(message){
