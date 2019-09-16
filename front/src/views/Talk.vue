@@ -1,6 +1,6 @@
-<!--
-<template>
 
+<template>
+<!--
   <div>
 
       <Chat 
@@ -30,7 +30,7 @@
        :submitIconSize="submitIconSize"/>
 
    </div>
-
+-->
 </template>
 
 <script>
@@ -194,4 +194,3 @@ export default {
   }
 }
 </script>
--->
