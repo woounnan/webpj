@@ -26,7 +26,7 @@ export default{
 		}
 	},
 	methods: {
-		testServe: function(){
+		testServ: function(){
 			console.log('Testing server')
 			this.$socket.emit('sendMsg', 'Do you know GangNam Style?')
 			this.$socket.on('msg', (msg) => {
