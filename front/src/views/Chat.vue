@@ -1,14 +1,14 @@
 <template>
 	<basic-vue-chat />
 
-	<v-container>
+	<div>
 	<v-text-field
             v-model="test"
             label="Test"
             solo
           ></v-text-field>
      <v-icon @click="testServ">home</v-icon>
- </v-container>
+</div>
 </template>
 
 <script>
