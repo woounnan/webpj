@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import File from './views/File.vue'
-import Chat from './views/Talk.vue'
+import Chat from './views/Chat.vue'
 import store from './store'
 
 
