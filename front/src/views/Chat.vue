@@ -1,5 +1,10 @@
 <template>
 	<basic-vue-chat />
+
+	<v-textfield 
+		placeholder = "Test"
+	>
+	</v-textfield>
 </template>
 
 <script>
