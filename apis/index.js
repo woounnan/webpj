@@ -11,4 +11,5 @@ router.get('/', (req, res, next) => {
 router.use('/login', require('./login'))
 router.use('/db', require('./db_utils'))
 router.use('/files', require('./files'))
+router.use('/chat', require('./chat'))
 module.exports = router
