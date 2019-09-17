@@ -1,5 +1,5 @@
 <template>
-	<basic-vue-chat />
+	<!--<basic-vue-chat /> -->
 
 	<div>
 	<v-text-field
