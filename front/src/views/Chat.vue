@@ -6,7 +6,6 @@
             label="Test"
             solo
           ></v-text-field>
-          <v-icon @click="testServ">home</v-icon>
 </template>
 
 <script>
