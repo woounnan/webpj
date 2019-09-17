@@ -25,6 +25,15 @@ export default{
 			test : ''
 		}
 	},
+	sockets: {
+    connect: function() {
+     console.log('socket connected')
+ }
+  },
+  customEmit: function(val) {
+    console.log('this method was fired by the socket server. eg:')
+    io.emit("sendMsg", '12345')
+   },
 	methods: {
 		testServ: function(){
 			console.log('Testing server')
