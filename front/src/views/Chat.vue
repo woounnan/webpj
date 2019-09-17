@@ -7,7 +7,7 @@
             label="Test"
             solo
           ></v-text-field>
-     <v-icon @click="testServ">home</v-icon>
+     <v-btn @click="testServ">home</v-btn>
 </div>
 </template>
 
