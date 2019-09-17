@@ -22,7 +22,7 @@ export default{
 			message: {},
 			test : ''
 		}
-	}
+	},
 	methods: {
 		testServe: (){
 			console.log('Testing server')
