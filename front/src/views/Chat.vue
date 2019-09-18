@@ -1,5 +1,5 @@
 <template>
-	<!--<basic-vue-chat /> -->
+	<basic-vue-chat />
 
 	<div>
 	<v-text-field
@@ -9,15 +9,18 @@
           ></v-text-field>
      <v-btn @click="testServ">home</v-btn>
 </div>
+<List />
+
 </template>
 <script src='/socket.io/socket.io.js'></script>
 <script>
 import BasicVueChat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
-
+import List from './List.vue'
 export default{
 	name: 'App',
 	components: {
-		BasicVueChat
+		BasicVueChat,
+		List
 	},
 	data: function (){
 		return {
