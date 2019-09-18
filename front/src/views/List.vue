@@ -8,9 +8,8 @@
       color="indigo"
       dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Inbox</v-toolbar-title>
+      <v-toolbar-title>목록</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
 
@@ -23,7 +22,6 @@
       </v-btn>
     </v-toolbar>
     <v-list>
-       <template v-slot:activator="{ on }">
         <v-list-item
           v-for="item in list_user"
           :key="item.title"
@@ -37,7 +35,6 @@
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
         </v-list-item>
-      </template>
     </v-list>
   </v-card>
 </template>
