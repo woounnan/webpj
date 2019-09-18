@@ -38,15 +38,6 @@
           </v-list-item-avatar>
         </v-list-item>
       </template>
-              <v-list>
-                <v-list-item
-                  v-for="(item, i) in subView"
-                  :key="i"
-                  @click="() => {}"
-                >
-                  <v-list-item-title>{{ item }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
     </v-list>
   </v-card>
 </template>
