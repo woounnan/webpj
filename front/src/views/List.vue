@@ -23,7 +23,7 @@
       </v-btn>
     </v-toolbar>
     <v-list>
-      <template v-slot:activator="{ on }">
+       <template v-slot:activator="{ on }">
         <v-list-item
           v-for="item in list_user"
           :key="item.title"
