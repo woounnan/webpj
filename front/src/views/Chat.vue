@@ -36,11 +36,17 @@ export default{
    },
 	methods: {
 		testServ: function(){
+			var socket = io.connect('http://webhacker.xyz:8001')
+			var socket.on('sendMsg', (data) => {
+				console.log('from server: ' + data)
+				socket.emit('msg', 'Hello! Im client!!')
+			})/*
 			console.log('Testing server')
 			this.$socket.emit('sendMsg', 'Do you know GangNam Style?')
 			this.$socket.on('msg', (msg) => {
 				console.log('recieve the message : ' + msg)
 			})
+			*/
 		}
 	}
 };
