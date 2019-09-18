@@ -45,6 +45,7 @@ io.on('connection', function(socket){
 		console.log('from client: ' + data)
 	})
 	socket.interval = setInterval(() => {
+		console.log('send msg to client')
 		socket.emit('msg', 'Hi ! im server')
 	}, 3000)
 })
