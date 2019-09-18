@@ -24,7 +24,6 @@ router.use('/con', (req, res, next) =>{
 		socket.on('msg', (data) => {
 			console.log('from client: ' + data)
 		})
-		})
 	})
 })
 
