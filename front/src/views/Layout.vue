@@ -7,7 +7,7 @@
     >
       <v-col
     v-for="m in n"        
-    cols="1"
+    cols="m"
       >
         <v-card
           v-if="m"
@@ -27,7 +27,7 @@
     data (){
       return {
         layout: [
-          [1, 0, 0, 1]
+          [1, 0, 0, 4]
         ]
       }
     }
