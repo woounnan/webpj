@@ -1,7 +1,8 @@
 <template>
+	<div>
 	<basic-vue-chat />
 
-	<div>
+
 	<v-text-field
             v-model="test"
             label="Test"
