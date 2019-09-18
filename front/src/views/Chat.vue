@@ -23,7 +23,11 @@ export default{
 	data: function (){
 		return {
 			message: {},
-			test : ''
+			test : '',
+			layout: [
+	          [1, 1, 1, 4],
+	          [2, 0, 1, 0]
+        	]
 		}
 	},
 	sockets: {
