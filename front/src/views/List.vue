@@ -21,8 +21,8 @@
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-toolbar>
-     <v-slot:activator="{ on }">
     <v-list>
+        <v-slot:activator="{ on }">
         <v-list-item
           v-for="item in list_user"
           :key="item.title"
@@ -36,8 +36,9 @@
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
         </v-list-item>
+                  </v-slot>
     </v-list>
-  </v-slot>
+
   </v-card>
 </template>
 
