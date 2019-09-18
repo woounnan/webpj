@@ -34,7 +34,6 @@ app.use('/users', usersRouter);
 app.use('/apis', apisRouter);
 
 
-const app = express()
 const server = app.listen(8001, () => {
 	console.log('server running on port 8001')
 })
