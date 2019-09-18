@@ -3,11 +3,7 @@
 	<basic-vue-chat />
 
 
-	<v-text-field
-            v-model="test"
-            label="Test"
-            solo
-          ></v-text-field>
+
      <v-btn @click="testServ">home</v-btn>
 
 <List />
