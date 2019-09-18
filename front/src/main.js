@@ -7,7 +7,7 @@ import VModal from 'vue-js-modal'
 import VueSocketIO from 'vue-socket.io'
 import io from 'socket.io-client'
  
-Vue.use(new VueSocketIO({
+console.log(Vue.use(new VueSocketIO({
     debug: true,
     connection: 'http://webhacker.xyz:8081',
     vuex: {
@@ -15,7 +15,7 @@ Vue.use(new VueSocketIO({
         actionPrefix: 'SOCKET_',
         mutationPrefix: 'SOCKET_'
     }
-}))
+})))
 
 
 
