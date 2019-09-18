@@ -20,8 +20,8 @@ router.use('/con', (req, res, next) =>{
 	const io = require('socket.io')(server)
 	io.on('connection', function(socket){
 		console.log('id: ' + socket.id)
-		socket.emit('sendMsg', 'Hi! im server!')
-		socket.on('msg', (data) => {
+		socket.on('sendMsg', 'Hi! im server!')
+		socket.emit('msg', (data) => {
 			console.log('from client: ' + data)
 		})
 	})
