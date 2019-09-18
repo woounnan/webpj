@@ -14,7 +14,6 @@
 <script>
 import BasicVueChat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
 
-var socket = io()
 export default{
 	name: 'App',
 	components: {
@@ -33,15 +32,14 @@ export default{
   },
   customEmit: function(val) {
     console.log('this method was fired by the socket server. eg:')
-    io.emit("sendMsg", '12345')
    },
 	methods: {
 		testServ: function(){
 			
 			console.log('Testing server')
-			console.log('socket:' + socket)
-			socket('sendMsg', 'Do you know GangNam Style?')
-			socket.on('msg', (msg) => {
+			console.log('socket:' + this.$socket)
+			this.$socket.emit('sendMsg', 'Do you know GangNam Style?')
+			this.$socket.on('msg', (msg) => {
 				console.log('recieve the message : ' + msg)
 			})
 		}
