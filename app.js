@@ -44,7 +44,9 @@ io.on('connection', function(socket){
 	socket.on('sendMsg', function(data){
 		console.log('from client: ' + data)
 	})
-	socket.emit('msg', 'Hi ! im server')
+	socket.interval = setInterval(() => {
+		socket.emit('msg', 'Hi ! im server')
+	}, 3000)
 })
 
 // catch 404 and forward to error handler
