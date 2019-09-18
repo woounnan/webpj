@@ -34,7 +34,7 @@ export default new Router({
       path: '/lay',
       name: 'layouy',
       component: () => import('./views/About.vue'),
-    }
+    },
     {
       path: '/file',
       name: 'file',
