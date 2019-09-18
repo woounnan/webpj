@@ -9,7 +9,7 @@ import io from 'socket.io-client'
  
 Vue.use(new VueSocketIO({
     debug: true,
-    connection: 'http://webhacker.xyz:8001',
+    connection: 'http://webhacker.xyz:8081',
     vuex: {
         store,
         actionPrefix: 'SOCKET_',
