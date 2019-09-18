@@ -41,10 +41,10 @@ const server = app.listen(8081, () => {
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
-	socket.on('sendMsg', 'Hi! im server!')
-	socket.emit('msg', (data) => {
+	socket.on('sendMsg', function(data){
 		console.log('from client: ' + data)
 	})
+	socket.emit('msg', 'Hi ! im server')
 })
 
 // catch 404 and forward to error handler
