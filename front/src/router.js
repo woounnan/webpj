@@ -31,6 +31,11 @@ export default new Router({
       component: Login
     },
     {
+      path: '/lay',
+      name: 'layouy',
+      component: () => import('./views/About.vue'),
+    }
+    {
       path: '/file',
       name: 'file',
       component: File
