@@ -22,7 +22,6 @@
       </v-btn>
     </v-toolbar>
     <v-list>
-        <v-slot:activator="{ on }">
         <v-list-item
           v-for="item in list_user"
           :key="item.title"
@@ -36,7 +35,6 @@
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
         </v-list-item>
-                  </v-slot>
     </v-list>
 
   </v-card>
