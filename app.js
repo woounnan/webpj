@@ -33,6 +33,21 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/apis', apisRouter);
 
+
+const app = express()
+const server = app.listen(8001, () => {
+	console.log('server running on port 8001')
+})
+
+const io = require('socket.io')(server)
+io.on('connection', function(socket){
+	console.log('id: ' + socket.id)
+	socket.on('sendMsg', 'Hi! im server!')
+	socket.emit('msg', (data) => {
+		console.log('from client: ' + data)
+	})
+})
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
