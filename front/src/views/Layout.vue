@@ -7,7 +7,7 @@
     >
       <v-col
     v-for="m in n"        
-    cols="4"
+    cols="1"
       >
         <v-card
           v-if="m"
