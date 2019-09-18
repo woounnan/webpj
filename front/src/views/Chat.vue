@@ -8,8 +8,9 @@
             solo
           ></v-text-field>
      <v-btn @click="testServ">home</v-btn>
-</div>
+
 <List />
+</div>
 
 </template>
 <script src='/socket.io/socket.io.js'></script>
