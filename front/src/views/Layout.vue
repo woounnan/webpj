@@ -1,28 +1,16 @@
 <template>
   <v-container class="grey lighten-5">
     <v-row
+      v-for="n in layout"
       class="mb-6"
       no-gutters
     >
       <v-col
-        v-for="n in 4"
+    v-for="m in n"        
+    cols="2"
       >
         <v-card
-          class="pa-2"
-          tile
-          outlined
-        >
-          col
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <v-row no-gutters>
-      <v-col
-        v-for="n in 2"        
-        :cols="n === 1 ? 8 : 4"
-      >
-        <v-card
+          v-if="m"
           class="pa-2"
           tile
           outlined
@@ -33,3 +21,14 @@
     </v-row>
   </v-container>
 </template>
+
+<script>
+  export default{
+    data (){
+      return {
+        layout: [
+        [1, 0, 0, 1]
+      }
+    }
+  }
+</script>
