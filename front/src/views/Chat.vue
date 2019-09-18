@@ -44,6 +44,9 @@ export default{
 			console.log('Testing server')
 			console.log('socket:', this.$socket)
 			this.$socket.emit('sendMsg', 'Do you know GangNam Style?')
+			this.$socket.on('msg', function(data){
+				console.log('from server: ' + data)
+			})
 			
 		}
 	}
