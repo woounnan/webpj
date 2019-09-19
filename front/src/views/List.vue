@@ -9,6 +9,7 @@
       offset-y
       style="max-width: 600px"
     >
+      <template v-slot:activator="{ on }">
         <v-card
           class="portrait"
           img="https://cdn.vuetifyjs.com/images/cards/girl.jpg"
@@ -16,6 +17,7 @@
           width="600"
           v-on="on"
         ></v-card>
+      </template>
 
       <v-list>
         <v-list-item
