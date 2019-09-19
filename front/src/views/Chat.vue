@@ -10,7 +10,6 @@
 </div>
 
 </template>
-<script src='/socket.io/socket.io.js'></script>
 <script>
 import BasicVueChat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
 import List from './List.vue'

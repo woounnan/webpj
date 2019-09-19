@@ -16,7 +16,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apisRouter = require('./apis/index');
 
-var app = express();
 
 app.use(cors())
 // view engine setup
@@ -33,22 +32,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/apis', apisRouter);
 
-
-const server = app.listen(8081, () => {
-	console.log('server running on port 8081')
-})
-
-const io = require('socket.io')(server)
-io.on('connection', function(socket){
-	console.log('id: ' + socket.id)
-	socket.on('sendMsg', function(data){
-		console.log('from client: ' + data)
-	})
-	socket.interval = setInterval(() => {
-		console.log('send msg to client')
-		socket.send('Hi ! im server')
-	}, 500)
-})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
