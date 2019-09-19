@@ -38,7 +38,7 @@ export default{
   customEmit: function(val) {
     console.log('this method was fired by the socket server. eg:')
    },
-   mounted: {
+   created: {
    	this.$socket.on('msg', function(data){
     console.log('Chat.vue::from server: ' + data)
    }
