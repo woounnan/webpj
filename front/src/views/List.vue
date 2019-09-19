@@ -60,7 +60,7 @@
           'Ganeey',
           'Morning',
           'Parari'
-        ]
+        ],
         list_user: [
           { icon: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
           { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
