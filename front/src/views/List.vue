@@ -41,11 +41,11 @@
         </template>
           <v-list>
             <v-list-item
-              v-for="(item, index) in items"
+              v-for="(item, index) in sub"
               :key="index"
               @click=""
             >
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title>{{ item }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -59,7 +59,7 @@
       <v-subheader>Previous chats</v-subheader>
 
       <v-list-item
-        v-for="item in sub"
+        v-for="item in items2"
         :key="item"
         @click=""
       >
