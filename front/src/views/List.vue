@@ -21,13 +21,14 @@
     <v-list subheader>
       <v-subheader>Recent chat</v-subheader>
 
+
+      <v-menu offset-y>
+      <template v-slot:activator="{ on }">
       <v-list-item
         v-for="item in items"
         :key="item.title"
         @click="on"
       >
-        <v-menu offset-y>
-        <template v-slot:activator="{ on }">
           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
