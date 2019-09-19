@@ -36,6 +36,7 @@
               <v-list-item-avatar>
                 <v-img :src="item.avatar"></v-img>
               </v-list-item-avatar>
+            </template>
             <v-list>
               <v-list-item
                 v-for="(item, index) in items"
