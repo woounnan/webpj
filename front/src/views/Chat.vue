@@ -41,13 +41,13 @@ export default{
 		}
 	},
 	created(){
-		this.socket = io('webhacker.xyz:8081')
+		//this.socket_recv = io('webhacker.xyz:8081')
 	},
   	customEmit: function(val) {
     	console.log('this method was fired by the socket server. eg:')
    	},
    	mounted(){
-   		this.socket.on('test', data =>{
+   		this.$socket.on('test', data =>{
    			console.log('from server:', data)
    		})
    	},
