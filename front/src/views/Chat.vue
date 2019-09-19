@@ -2,26 +2,30 @@
 	<div>
 	<basic-vue-chat />
 <List />
+<Bar />
 </div>
 
 </template>
 <script>
-import BasicVueChat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
+import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
+import Bar from './Bar.vue'
 import List from './List.vue'
 import io from 'socket.io-client'
 export default{
 	name: 'App',
 	components: {
-		BasicVueChat,
-		List
+		Chat,
+		List,
+		Bar
 	},
 	data: function (){
 		return {
 			message: {},
 			test : '',
 			layout: [
-	          [1, 1, 1, 4],
-	          [2, 0, 1, 0]
+	          [1, 1, 'list'],
+	          [1, 1],
+	          ['bar']
         	]
 		}
 	},
