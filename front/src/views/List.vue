@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Users from 'Users.vue'
+import Users from './Users.vue'
   export default {
     data: () => ({
       showMenu: false,
