@@ -1,3 +1,4 @@
+
 <template>
   <v-row
     class="d-flex"
@@ -10,16 +11,22 @@
       style="max-width: 600px"
     >
       <template v-slot:activator="{ on }">
-        <Users v-on="on"/>
+        <v-card
+          class="portrait"
+          img="https://cdn.vuetifyjs.com/images/cards/girl.jpg"
+          height="300"
+          width="600"
+          v-on="on"
+        ></v-card>
       </template>
 
       <v-list>
         <v-list-item
-          v-for="(item, index) in sub"
+          v-for="(item, index) in items"
           :key="index"
           @click=""
         >
-          <v-list-item-title>{{ item}}</v-list-item-title>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -27,18 +34,15 @@
 </template>
 
 <script>
-import Users from './Users.vue'
-export default {
-    components: {
-      Users
-    },
+  export default {
     data: () => ({
       showMenu: false,
-      sub: [
-        '대화하기',
-        '작업 확인',
-        '상태'
-      ]
+      items: [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' },
+      ],
     }),
-}
+  }
 </script>
