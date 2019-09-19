@@ -10,13 +10,7 @@
       style="max-width: 600px"
     >
       <template v-slot:activator="{ on }">
-        <v-card
-          class="portrait"
-          img="https://cdn.vuetifyjs.com/images/cards/girl.jpg"
-          height="300"
-          width="600"
-          v-on="on"
-        ></v-card>
+        <v-list-item-title v-on="on">test</v-list-item-title>
       </template>
 
       <v-list>
