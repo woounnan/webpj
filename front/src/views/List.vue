@@ -15,7 +15,7 @@
 
       <v-list>
         <v-list-item
-          v-for="(item, index) in items"
+          v-for="(item, index) in sub"
           :key="index"
           @click=""
         >
@@ -33,6 +33,7 @@ export default {
       Users
     },
     data: () => ({
+      showMenu: false,
       sub: [
         '대화하기',
         '작업 확인',
