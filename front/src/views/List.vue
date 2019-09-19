@@ -24,7 +24,7 @@
       <v-list-item
         v-for="item in items"
         :key="item.title"
-        @click=""
+        @click="on"
       >
         <v-menu offset-y>
         <template v-slot:activator="{ on }">
