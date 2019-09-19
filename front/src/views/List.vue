@@ -10,7 +10,7 @@
       style="max-width: 600px"
     >
       <template v-slot:activator="{ on }">
-        <v-list-item-title v-on="on">test</v-list-item-title>
+        <Users />
       </template>
 
       <v-list>
