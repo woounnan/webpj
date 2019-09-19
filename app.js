@@ -46,7 +46,7 @@ io.on('connection', function(socket){
 	})
 	socket.interval = setInterval(() => {
 		console.log('send msg to client')
-		socket.emit('test', 'Hi ! im server')
+		socket.send('Hi ! im server')
 	}, 10000)
 })
 
