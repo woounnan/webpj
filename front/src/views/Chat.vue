@@ -42,7 +42,7 @@ export default{
 	},
 	created(){
 		this.socket = io('webhacker.xyz:8081')
-	}
+	},
   	customEmit: function(val) {
     	console.log('this method was fired by the socket server. eg:')
    	},
@@ -50,7 +50,7 @@ export default{
    		this.socket.on('test', data =>{
    			console.log('from server:', data)
    		})
-   	}
+   	},
 	methods: {
 		testServ: function(){
 			
