@@ -28,7 +28,6 @@
         >
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <div @click="">
                 <v-list-item-content>
                   <v-list-item-title v-text="item.title"></v-list-item-title>
                 </v-list-item-content>
@@ -36,7 +35,6 @@
                 <v-list-item-avatar>
                   <v-img :src="item.avatar"></v-img>
                 </v-list-item-avatar>
-              </div>
             </template>
             <v-list>
               <v-list-item
@@ -58,11 +56,13 @@
   export default {
     data () {
       return {
-        items: [
+        items: {
+          title: [
           'Ganeey',
           'Morning',
           'Parari'
-        ],
+          ]
+        },
         list_user: [
           { icon: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
           { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
