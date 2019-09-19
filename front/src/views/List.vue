@@ -28,9 +28,7 @@
         >
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-btn
-                v-on="on"
-              >
+              <div @click="">
                 <v-list-item-content>
                   <v-list-item-title v-text="item.title"></v-list-item-title>
                 </v-list-item-content>
@@ -38,7 +36,7 @@
                 <v-list-item-avatar>
                   <v-img :src="item.avatar"></v-img>
                 </v-list-item-avatar>
-              </v-btn>
+              </div>
             </template>
             <v-list>
               <v-list-item
