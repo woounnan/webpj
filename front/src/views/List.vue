@@ -22,26 +22,27 @@
       <v-subheader>Recent chat</v-subheader>
 
 
-      <v-menu offset-y>
-      <template v-slot:activator="{ on }">
+
       <v-list-item
         v-for="item in items"
         :key="item.title"
         @click="on"
       >
-          <v-list-item-avatar>
+            <v-menu offset-y>
+            <template v-slot:activator="{ on }">
+          <v-list-item-avatar         @click="on">
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
 
-          <v-list-item-content>
+          <v-list-item-content         @click="on">
             <v-list-item-title v-text="item.title"></v-list-item-title>
           </v-list-item-content>
 
-          <v-list-item-icon>
+          <v-list-item-icon         @click="on">
             <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
           </v-list-item-icon>
-        </v-list-item>
         </template>
+          </v-menu>
           <v-list>
             <v-list-item
               v-for="(item, index) in sub"
@@ -51,7 +52,6 @@
               <v-list-item-title>{{ item }}</v-list-item-title>
             </v-list-item>
           </v-list>
-        </v-menu>
       </v-list-item>
     </v-list>
 
