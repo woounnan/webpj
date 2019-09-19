@@ -1,4 +1,3 @@
-
 <template>
   <v-row
     class="d-flex"
@@ -10,11 +9,13 @@
       offset-y
       style="max-width: 600px"
     >
-      <template v-slot:activator="{ on }">
-         
-       
-        <Users v-on="on"/>
-      </template>
+        <v-card
+          class="portrait"
+          img="https://cdn.vuetifyjs.com/images/cards/girl.jpg"
+          height="300"
+          width="600"
+          v-on="on"
+        ></v-card>
 
       <v-list>
         <v-list-item
