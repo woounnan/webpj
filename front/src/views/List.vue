@@ -34,7 +34,7 @@ import Users from './Users.vue'
   export default {
     components: {
       Users
-    }
+    },
     data: () => ({
       showMenu: false,
       items: [
