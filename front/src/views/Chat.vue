@@ -13,6 +13,7 @@
 <script>
 import BasicVueChat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
 import List from './List.vue'
+import io from 'socket.io-client'
 export default{
 	name: 'App',
 	components: {
@@ -39,9 +40,17 @@ export default{
 	 		console.log(this.$socket)
 		}
 	},
+	created(){
+		this.socket = io('webhacker.xyz:8081')
+	}
   	customEmit: function(val) {
     	console.log('this method was fired by the socket server. eg:')
    	},
+   	mounted(){
+   		this.socket.on('test', data =>{
+   			console.log('from server:', data)
+   		})
+   	}
 	methods: {
 		testServ: function(){
 			
