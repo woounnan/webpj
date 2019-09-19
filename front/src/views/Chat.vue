@@ -31,13 +31,14 @@ export default{
 		}
 	},
 	sockets: {
-    connect: function() {
-	    console.log('socket connected')
+	    connect: function() {
+		    console.log('socket connected')
 
-	   	this.$socket.on('msg', function(data){
-	    	console.log('Chat.vue::from server: ' + data)
- 		})
-	}
+		   	this.$socket.on('msg', function(data){
+		    	console.log('Chat.vue::from server: ' + data)
+	 		})
+	 		console.log(this.$socket)
+		}
 	},
   	customEmit: function(val) {
     	console.log('this method was fired by the socket server. eg:')
