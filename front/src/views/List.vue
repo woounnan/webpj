@@ -25,17 +25,20 @@
         <v-list-item
           v-for="item in list_user"
           :key="item.title"
-          @click="on"
         >
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
-              <v-list-item-content>
-                <v-list-item-title v-text="item.title"></v-list-item-title>
-              </v-list-item-content>
+              <v-btn
+                v-on="on"
+              >
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </v-list-item-content>
 
-              <v-list-item-avatar>
-                <v-img :src="item.avatar"></v-img>
-              </v-list-item-avatar>
+                <v-list-item-avatar>
+                  <v-img :src="item.avatar"></v-img>
+                </v-list-item-avatar>
+              </v-btn>
             </template>
             <v-list>
               <v-list-item
