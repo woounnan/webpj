@@ -42,7 +42,7 @@
             <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
           </v-list-item-icon>
         </template>
-          </v-menu>
+
           <v-list>
             <v-list-item
               v-for="(item, index) in sub"
@@ -52,6 +52,7 @@
               <v-list-item-title>{{ item }}</v-list-item-title>
             </v-list-item>
           </v-list>
+           </v-menu>
       </v-list-item>
     </v-list>
 
