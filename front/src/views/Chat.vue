@@ -1,11 +1,6 @@
 <template>
 	<div>
 	<basic-vue-chat />
-
-
-
-     <v-btn @click="testServ">home</v-btn>
-
 <List />
 </div>
 
