@@ -18,6 +18,7 @@
           width="600"
           v-on="on"
         ></v-card>
+        <Users v-on="on"/>
       </template>
 
       <v-list>
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+import Users from 'Users.vue'
   export default {
     data: () => ({
       showMenu: false,
