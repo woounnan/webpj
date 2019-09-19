@@ -29,7 +29,7 @@
 <script>
 import Users from './Users.vue'
 export default {
-    components: (){
+    components: {
       Users
     },
     data: () => ({
