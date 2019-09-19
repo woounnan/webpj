@@ -34,7 +34,7 @@ export default{
 	    connect: function() {
 		    console.log('socket connected')
 
-		   	this.$socket.on('msg', function(data){
+		   	this.$socket.on('test', function(data){
 		    	console.log('Chat.vue::from server: ' + data)
 	 		})
 	 		console.log(this.$socket)
