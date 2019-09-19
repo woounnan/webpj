@@ -94,10 +94,8 @@ import Users from './Users.vue'
     data: () => ({
       showMenu: false,
       sub: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
+        { title: '대화하기' },
+        { title: '작업 확인' },
       ],
       items: [
         { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
