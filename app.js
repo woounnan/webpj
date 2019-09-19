@@ -40,7 +40,9 @@ const server = app.listen(8081, () => {
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
-
+	socket.on('sendMsg', data => {
+		console.log('from Client:' + data)
+	}
 	socket.interval = setInterval(() => {
 		console.log('send msg to client')
 		socket.emit('test', 'Hi ! Im server')
