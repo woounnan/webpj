@@ -10,6 +10,15 @@
       style="max-width: 600px"
     >
       <template v-slot:activator="{ on }">
+        <v-card
+    max-width="500"
+    class="mx-auto"
+  >
+    <v-toolbar
+      color="deep-purple accent-4"
+      dark
+    >
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
          <v-toolbar-title>New Chat</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
@@ -60,6 +69,7 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
+  </v-card>    
       </template>
 
       <v-list>
