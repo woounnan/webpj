@@ -36,8 +36,7 @@ export default{
 
    	this.$socket.on('msg', function(data){
     console.log('Chat.vue::from server: ' + data)
- }
-  },
+ },
   customEmit: function(val) {
     console.log('this method was fired by the socket server. eg:')
    },
