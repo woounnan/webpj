@@ -49,7 +49,7 @@
       <v-list-item
         v-for="item in items2"
         :key="item.title"
-        @click=""
+        v-on="on"
       >
         <v-list-item-avatar>
           <v-img :src="item.avatar"></v-img>
