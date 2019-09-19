@@ -38,6 +38,7 @@
 
           <v-list-item-icon>
             <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+          </v-list-item-icon>
         </template>
           <v-list>
             <v-list-item
@@ -49,7 +50,6 @@
             </v-list-item>
           </v-list>
         </v-menu>
-        </v-list-item-icon>
       </v-list-item>
     </v-list>
 
