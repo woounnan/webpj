@@ -44,13 +44,13 @@ io.on('connection', function(socket){
 	socket.on('sendMsg', function(data){
 		console.log('from client: ' + data)
 	})
+// catc
 	socket.interval = setInterval(() => {
 		console.log('send msg to client')
 		socket.emit('msg', 'Hi ! im server')
 	}, 10000)
 })
-
-// catch 404 and forward to error handler
+h 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
