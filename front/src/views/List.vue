@@ -1,15 +1,16 @@
 <template>
-  <v-card
-    max-width="500"
-    class="mx-auto"
+  <v-row
+    class="d-flex"
+    justify="center"
   >
-    <v-toolbar
-      color="deep-purple accent-4"
-      dark
+    <v-menu
+      v-model="showMenu"
+      absolute
+      offset-y
+      style="max-width: 600px"
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>New Chat</v-toolbar-title>
+      <template v-slot:activator="{ on }">
+       <v-toolbar-title>New Chat</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
 
@@ -21,38 +22,22 @@
     <v-list subheader>
       <v-subheader>Recent chat</v-subheader>
 
-
-
       <v-list-item
         v-for="item in items"
         :key="item.title"
-        @click="on"
+        @click=""
       >
-            <v-menu offset-y>
-            <template v-slot:activator="{ on }">
-          <v-list-item-avatar         @click="on">
-            <v-img :src="item.avatar"></v-img>
-          </v-list-item-avatar>
+        <v-list-item-avatar>
+          <v-img :src="item.avatar"></v-img>
+        </v-list-item-avatar>
 
-          <v-list-item-content         @click="on">
-            <v-list-item-title v-text="item.title"></v-list-item-title>
-          </v-list-item-content>
+        <v-list-item-content>
+          <v-list-item-title v-text="item.title"></v-list-item-title>
+        </v-list-item-content>
 
-          <v-list-item-icon         @click="on">
-            <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
-          </v-list-item-icon>
-        </template>
-
-          <v-list>
-            <v-list-item
-              v-for="(item, index) in sub"
-              :key="index"
-              @click=""
-            >
-              <v-list-item-title>{{ item }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-           </v-menu>
+        <v-list-item-icon>
+          <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+        </v-list-item-icon>
       </v-list-item>
     </v-list>
 
@@ -63,7 +48,7 @@
 
       <v-list-item
         v-for="item in items2"
-        :key="item"
+        :key="item.title"
         @click=""
       >
         <v-list-item-avatar>
@@ -75,7 +60,19 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-  </v-card>
+      </template>
+
+      <v-list>
+        <v-list-item
+          v-for="(item, index) in sub"
+          :key="index"
+          @click=""
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+  </v-row>
 </template>
 
 <script>
@@ -98,5 +95,3 @@
     }),
   }
 </script>
-
-Inbox
