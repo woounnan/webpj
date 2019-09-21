@@ -136,7 +136,7 @@ import Users from './Users.vue'
       ],
     }),
     methods: {
-      setThis: (idx){
+      setThis: (idx) => {
         this.sub[idx].title="바뀌었을까요"
       }
     }
