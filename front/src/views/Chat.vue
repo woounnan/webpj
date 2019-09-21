@@ -1,25 +1,15 @@
 <template>
-	 <v-container fluid>
-    <v-row>
-       <v-col cols="12">
-        <v-row
-          align="end"
-          class="grey lighten-5"
-          style="height: 800px;"
-        >
-          <v-card
-            v-for="n in 3"
-            :key="n"
-            class="ma-3 pa-6"
-            outlined
-            tile
-          >
-            Column
-          </v-card>
-        </v-row>
-      </v-col>
-  </v-row>
-</v-container>
+	<v-container fluid>
+	    <v-row v-for="i in layout">
+	       	<v-col cols="12" v-for="j in i">
+	       		<v-card v-if="j===1">
+	       			Empty
+	       		</v-card>
+	       		<List v-if="j==='list'" />
+	       		<Bar v-if="j==='bar'" />
+	       	</v-col>
+	  	</v-row>
+	</v-container>
 	<!--
 	<div>
 	<basic-vue-chat />
@@ -46,8 +36,8 @@ export default{
 			message: {},
 			test : '',
 			layout: [
-	          [1, 1, 'list'],
-	          [1, 1],
+	          [1, 1, 1, 'list'],
+	          [0, 0, 0, 0],
 	          ['bar']
         	]
 		}
