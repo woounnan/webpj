@@ -15,6 +15,7 @@
     <v-toolbar
       color="deep-purple accent-4"
       dark
+      shrink-on-scroll
       scroll-target="#scrolling-techniques-2"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
