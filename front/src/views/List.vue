@@ -46,6 +46,7 @@
           <v-icon :color="me.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         </v-list-item-icon>
       </v-list-item>
+      <v-divider></v-divider>
       <v-list-item
         v-for="item, idx in users"
         @click="setThis(idx)">
