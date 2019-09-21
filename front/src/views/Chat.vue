@@ -1,4 +1,38 @@
 <template>
+<v-container>
+	<v-row row wrap>
+		<v-col
+			cols="9">
+			<v-row>
+				<v-card>
+					111
+				</v-card>
+			</v-row>
+			<v-row>
+				<v-col cols="5">
+					<v-card>
+						222
+					</v-card>
+				</v-col>
+				<v-col cols="4">
+					<v-card>
+						333
+					</v-card>
+				</v-col>
+			</v-row>
+		</v-col>	
+		<v-col 
+			cols="3">
+			<v-row row wrap>
+				<v-card>
+					444
+				</v-card>
+			</v-row>
+		</v-col>
+	</v-row>
+</v-container>
+
+	<!--
 	<v-container fluid>
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i" fill-height="true">
@@ -27,6 +61,7 @@
 	  		</v-col>
 	  	</v-row>
 	</v-container>
+-->
 </template>
 <script>
 import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
