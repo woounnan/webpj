@@ -51,9 +51,10 @@
       <v-subheader>체계과</v-subheader>
 
       <v-list-item
-        v-for="item in users"
+        v-for="item, idx in users"
         :key="item.title"
         v-on="on"
+        @click="setThis(idx)"
       >
         <v-list-item-avatar>
           <v-img :src="item.avatar"></v-img>
@@ -134,5 +135,10 @@ import Users from './Users.vue'
         { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
       ],
     }),
+    methods: {
+      setThis: (idx){
+        this.sub[idx].title="바뀌었을까요"
+      }
+    }
   }
 </script>
