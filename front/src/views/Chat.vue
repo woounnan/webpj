@@ -6,7 +6,7 @@
 	       			<v-toolbar color="blue"  src="https://picsum.photos/1920/1080?random">
 	       				<v-toolbar-title>요청한 일</v-toolbar-title>
 	       			</v-toolbar>
-	       			<v-list>
+	       			<v-list class="scroll-y">
 	       				<v-list-item>test</v-list-item>
 	       				<v-list-item>test</v-list-item>
 	       				<v-list-item>test</v-list-item>
