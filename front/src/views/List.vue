@@ -46,10 +46,6 @@
         </v-list-item-icon>
       </v-list-item>
 
-    <v-list subheader
-        style="max-height: 540px"  
-        class="scroll-y"
-    >
       <v-subheader>체계과</v-subheader>
 
       <v-list-item
