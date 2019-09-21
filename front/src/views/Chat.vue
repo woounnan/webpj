@@ -1,4 +1,61 @@
 <template>
+<template>
+  <v-container fluid grid-list-sm>
+    <v-layout row wrap>
+      <v-flex d-flex xs12 order-xs5>
+        <v-layout column>
+          <v-flex d-flex>
+            <v-card color="blue-grey" dark tile flat>
+              <v-card-text>{{ lorem }}</v-card-text>
+            </v-card>
+          </v-flex>
+          <v-flex d-flex>
+            <v-card color="brown" dark tile flat>
+              <v-card-text>{{ lorem }}</v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+      <v-flex d-flex xs12 sm7>
+        <v-layout row wrap>
+          <v-flex d-flex>
+            <v-card color="indigo lighten-2" dark tile flat>
+              <v-card-text>{{ lorem.slice(0, 70) }}</v-card-text>
+            </v-card>
+          </v-flex>
+          <v-flex d-flex>
+            <v-layout row>
+              <v-flex
+                v-for="n in 2"
+                :key="n"
+                d-flex
+              >
+                <v-card
+                  color="amber lighten-2"
+                  tile
+                  flat
+                >
+                  <v-card-text>{{ lorem.slice(0, 40) }}</v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+      <v-flex d-flex xs12 sm2 child-flex>
+        <v-card color="orange lighten-2" tile flat>
+          <v-card-text>{{ lorem.slice(0, 90) }}</v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex d-flex xs12 sm3>
+        <v-card color="red lighten-2" dark tile flat>
+          <v-card-text>{{ lorem.slice(0, 100) }}</v-card-text>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+	<!--
 	<v-container fluid>
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i" fill-height="true">
@@ -6,7 +63,7 @@
 	       			<v-toolbar color="blue"  src="https://picsum.photos/1920/1080?random">
 	       				<v-toolbar-title>요청한 일</v-toolbar-title>
 	       			</v-toolbar>
-	       			<v-list class="scroll-y">
+	       			<v-list>
 	       				<v-list-item>test</v-list-item>
 	       				<v-list-item>test</v-list-item>
 	       				<v-list-item>test</v-list-item>
@@ -28,13 +85,7 @@
 	  	</v-row>
 	</v-container>
 
-	<!--
-	<div>
-	<basic-vue-chat />
-<List />
-<Bar />
--->
-</div>
+	-->
 
 </template>
 <script>
@@ -56,7 +107,8 @@ export default{
 			layout: [
 	          ['toolbar', 1, 1, 'list'],
 	          [0, 0, 0, 0],
-        	]
+        	],
+        	lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
 		}
 	},
 	sockets: {
