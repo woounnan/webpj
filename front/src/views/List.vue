@@ -15,8 +15,6 @@
     <v-toolbar
       color="deep-purple accent-4"
       dark
-      shrink-on-scroll
-      scroll-target="#scrolling-techniques-2"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
          <v-toolbar-title>New Chat</v-toolbar-title>
@@ -55,6 +53,8 @@
         v-for="item in users"
         :key="item.title"
         v-on="on"
+        shrink-on-scroll
+      scroll-target="#scrolling-techniques-2"
       >
         <v-list-item-avatar>
           <v-img :src="item.avatar"></v-img>
