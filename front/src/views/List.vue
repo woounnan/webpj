@@ -15,6 +15,7 @@
     <v-toolbar
       color="deep-purple accent-4"
       dark
+      src="https://picsum.photos/1920/1080?random"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
          <v-toolbar-title>New Chat</v-toolbar-title>
