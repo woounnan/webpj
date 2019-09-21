@@ -10,7 +10,6 @@
     >
       <template v-slot:activator="{ on }">
         <v-card
-    max-width="1000"
     class="mx-auto"
   >
     <v-toolbar
@@ -28,7 +27,7 @@
     </v-toolbar>
 
     <v-list subheader
-    style="max-height: 600px"
+    style="max-height: 500px"
     class="scroll-y">
       <v-subheader>Recent chat</v-subheader>
 
