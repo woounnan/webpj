@@ -1,7 +1,5 @@
 <template>
 	<v-container fluid>
-		<Chat />
-		<!--
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
 	       		<v-card v-if="j==='toolbar'">
@@ -20,7 +18,7 @@
 	  	</v-row>
 	  	<v-row>
 	  		<v-col align="end" cols="3">
-	  			<basic-vue-chat />
+	  			<Chat />
 	  		</v-col>
 	  	</v-row>
 	  	<v-row>
@@ -28,7 +26,6 @@
 	  			<Bar />
 	  		</v-col>
 	  	</v-row>
-	  -->
 	</v-container>
 
 	<!--
