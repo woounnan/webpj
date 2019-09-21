@@ -4,8 +4,6 @@
        <v-col cols="12">
         <v-row
           align="end"
-          class="grey lighten-5"
-          style="height: 300px;"
         >
           <v-card
             v-for="n in 3"
