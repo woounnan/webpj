@@ -1,5 +1,4 @@
 <template>
-  <v-container>
   <v-row
     class="d-flex"
     justify="center"
