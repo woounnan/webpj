@@ -47,8 +47,7 @@
         </v-list-item-icon>
       </v-list-item>
     </v-list>
-      <v-list subheader>
-      <v-subheader>체계과</v-subheader>
+      <v-list>
 
       <v-list-item
         v-for="item, idx in users"
@@ -67,27 +66,6 @@
           <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         </v-list-item-icon>
       </v-list-item>
-    </v-list>
-
-    <v-divider></v-divider>
-
-    <v-list subheader>
-      <v-subheader>Previous chats</v-subheader>
-
-      <v-list-item
-        v-for="item in items2"
-        :key="item.title"
-        v-on="on"
-      >
-        <v-list-item-avatar>
-          <v-img :src="item.avatar"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title v-text="item.title"></v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
   </v-card>    
       </template>
 
@@ -137,7 +115,7 @@ import Users from './Users.vue'
       }
     },
     methods: {
-      setThis:(idx) => {
+      setThis:(idx){
         console.log('bef -- title: ' + this.users[idx].title)
         this.users[idx].title="바뀌었을까요"
 
