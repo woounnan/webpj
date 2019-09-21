@@ -27,10 +27,30 @@
     </v-toolbar>
 
     <v-list subheader
-        style="max-height: 550px"  
+        style="max-height: 540px"  
         class="scroll-y"
     >
-      <v-subheader>Recent chat</v-subheader>
+      <v-subheader>나</v-subheader>
+
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img :src="me.avatar"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title v-text="me.title"></v-list-item-title>
+        </v-list-item-content>
+
+        <v-list-item-icon>
+          <v-icon :color="me.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+
+    <v-list subheader
+        style="max-height: 540px"  
+        class="scroll-y"
+    >
+      <v-subheader>체계과</v-subheader>
 
       <v-list-item
         v-for="item in items"
@@ -99,19 +119,19 @@ import Users from './Users.vue'
         { title: '대화하기' },
         { title: '작업 확인' },
       ],
-      items: [
+      me: {
+        title: '정보보호병', 
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+      },
+      }
+      users: [
         { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
         { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
         { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
         { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
         { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
         { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
-        { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
-        { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
-        { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
-        { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
-        { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
-        { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' }
+        { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' }
       ],
       items2: [
         { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
