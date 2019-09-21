@@ -111,7 +111,7 @@ import Users from './Users.vue'
     components: {
       Users
     },
-    data: () => ({
+    data: () => {
       return {
         showMenu: false,
         sub: [
@@ -135,7 +135,7 @@ import Users from './Users.vue'
           { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
         ],
       }
-    }),
+    },
     methods: {
       setThis: (idx) => {
         console.log('bef -- title: ' + users[idx].title)
