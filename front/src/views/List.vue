@@ -26,9 +26,9 @@
       </v-btn>
     </v-toolbar>
 
+    <v-container     class="scroll-y">
     <v-list subheader
-    style="max-height: 500px"
-    class="scroll-y">
+    style="max-height: 800px">
       <v-subheader>Recent chat</v-subheader>
 
       <v-list-item
@@ -49,6 +49,7 @@
         </v-list-item-icon>
       </v-list-item>
     </v-list>
+  </v-container>
 
     <v-divider></v-divider>
 
