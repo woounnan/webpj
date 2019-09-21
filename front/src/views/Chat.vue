@@ -3,7 +3,7 @@
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
 	       		<v-card v-if="j==='toolbar'">
-	       			<v-toolbar :color="primary">
+	       			<v-toolbar color="primary">
 	       			</v-toolbar>
 	       			<v-list>
 	       				<v-list-item>test</v-list-item>
