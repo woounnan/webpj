@@ -1,9 +1,16 @@
 <template>
-	<v-container fluid style="max-height: 500px">
+	<v-container fluid>
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
-	       		<v-card v-if="j===1">
-	       			Empty
+	       		<v-card v-if="j==='toolbar'">
+	       			<v-toolbar :color="primary" :dark="true">
+	       			</v-toolbar>
+	       			<v-list>
+	       				<v-list-item>test</v-list-item>
+	       				<v-list-item>test</v-list-item>
+	       				<v-list-item>test</v-list-item>
+	       				<v-list-item>test</v-list-item>
+	       			</v-list>
 	       		</v-card>
 	       		<List v-if="j==='list'" />
 	       	</v-col>
@@ -40,9 +47,8 @@ export default{
 			message: {},
 			test : '',
 			layout: [
-	          [1, 1, 1, 'list'],
+	          ['toolbar', 1, 1, 'list'],
 	          [0, 0, 0, 0],
-	          ['bar']
         	]
 		}
 	},
