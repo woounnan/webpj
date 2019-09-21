@@ -1,5 +1,4 @@
 <template>
-<template>
   <v-container fluid grid-list-sm>
     <v-layout row wrap>
       <v-flex d-flex xs12 order-xs5>
@@ -54,7 +53,6 @@
       </v-flex>
     </v-layout>
   </v-container>
-</template>
 	<!--
 	<v-container fluid>
 	    <v-row v-for="i in layout">
