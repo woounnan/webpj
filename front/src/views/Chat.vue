@@ -2,7 +2,7 @@
 	<v-container fluid>
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
-	       		<v-card v-if="j==='toolbar'">
+	       		<v-card v-if="j==='toolbar'" row wrap>
 	       			<v-toolbar color="blue"  src="https://picsum.photos/1920/1080?random">
 	       				<v-toolbar-title>요청한 일</v-toolbar-title>
 	       			</v-toolbar>
