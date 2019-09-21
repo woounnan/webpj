@@ -40,7 +40,7 @@
             </v-row>
           </v-col>
         </v-row>
-      </v-flex>
+      </v-col>
       <v-col d-flex xs12 sm2 child-flex>
         <v-card color="orange lighten-2" tile flat>
           <v-card-text>{{ lorem.slice(0, 90) }}</v-card-text>
