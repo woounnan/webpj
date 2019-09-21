@@ -1,6 +1,6 @@
 <template>
 	<v-container fluid>
-		<basic-vue-chat />
+		<Chat />
 		<!--
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
