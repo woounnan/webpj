@@ -3,7 +3,9 @@
     <v-row>
        <v-col cols="12">
         <v-row
-          align="end"
+          align="start"
+          class="grey lighten-5"
+          style="height: 900px;"
         >
           <v-card
             v-for="n in 3"
