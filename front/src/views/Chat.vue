@@ -3,7 +3,7 @@
     <v-row>
        <v-col cols="12">
         <v-row
-          align="center"
+          align="end"
           class="grey lighten-5"
           style="height: 600px;"
         >
