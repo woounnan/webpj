@@ -19,6 +19,11 @@
 						333
 					</v-card>
 				</v-col>
+				<v-col cols="4">
+					<v-card>
+						555
+					</v-card>
+				</v-col>
 			</v-row>
 		</v-col>	
 		<v-col 
