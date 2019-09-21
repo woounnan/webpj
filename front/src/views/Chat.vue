@@ -3,15 +3,12 @@
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
 	       		<v-card v-if="j==='toolbar'">
-	       			<v-toolbar :color="primary" :dark="true">
+	       			<v-toolbar :color="primary">
 	       			</v-toolbar>
 	       			<v-list>
 	       				<v-list-item>test</v-list-item>
-	       				<v-divider></v-divider>
 	       				<v-list-item>test</v-list-item>
-	       				<v-divider></v-divider>
 	       				<v-list-item>test</v-list-item>
-	       				<v-divider></v-divider>
 	       				<v-list-item>test</v-list-item>
 	       			</v-list>
 	       		</v-card>
