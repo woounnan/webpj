@@ -88,8 +88,9 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-  </v-card>    
+
       </template>
+  </v-card>    
 
       <v-list>
         <v-list-item
