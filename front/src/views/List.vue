@@ -7,7 +7,7 @@
       v-model="showMenu"
       absolute
       offset-y
-      style="max-width: 600px; max-height: 500px"
+      style="max-width: 600px, max-height: 500px"
       class="scroll-y"
     >
       <template v-slot:activator="{ on }">
