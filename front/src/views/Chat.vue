@@ -5,7 +5,7 @@
         <v-row
           align="end"
           class="grey lighten-5"
-          style="height: 900px;"
+          style="height: 800px;"
         >
           <v-card
             v-for="n in 3"
