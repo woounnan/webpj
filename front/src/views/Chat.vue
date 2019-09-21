@@ -35,6 +35,11 @@
 			</v-row>
 		</v-col>
 	</v-row>
+	<v-row>
+		<v-col align="end" cols="12">
+  			<Bar />
+  		</v-col>
+	</v-row>
 </v-container>
 
 	<!--
