@@ -6,8 +6,12 @@
 	       			Empty
 	       		</v-card>
 	       		<List v-if="j==='list'" />
-	       		<Bar v-if="j==='bar'" />
 	       	</v-col>
+	  	</v-row>
+	  	<v-row>
+	  		<v-col cols="12">
+	  			<Bar />
+	  		</v-col>
 	  	</v-row>
 	</v-container>
 	<!--
