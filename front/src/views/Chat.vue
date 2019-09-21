@@ -1,6 +1,7 @@
 <template>
 <v-container>
-	<v-row row wrap style="max-height: 700px">
+	<v-div style="max-height: 700px">
+	<v-row row wrap>
 		<v-col
 			cols="9">
 			<v-row>
@@ -45,6 +46,7 @@
 			</v-row>
 		</v-col>
 	</v-row>
+</v-div>
 	<v-row>
 		<v-col align="end" cols="12">
   			<Bar />
