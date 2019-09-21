@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid>
+	<v-container fluid style="max-height: 900px">
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
 	       		<v-card v-if="j===1">
