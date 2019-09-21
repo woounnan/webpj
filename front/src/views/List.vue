@@ -137,7 +137,7 @@ import Users from './Users.vue'
       }
     },
     methods: {
-      setThis(idx) {
+      setThis:(idx) => {
         console.log('bef -- title: ' + this.users[idx].title)
         this.users[idx].title="바뀌었을까요"
 
