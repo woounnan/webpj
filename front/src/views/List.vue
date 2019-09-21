@@ -45,7 +45,7 @@
           <v-icon :color="me.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         </v-list-item-icon>
       </v-list-item>
-
+    </v-list>
       <v-list subheader>
       <v-subheader>체계과</v-subheader>
 
