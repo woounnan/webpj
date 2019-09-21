@@ -3,7 +3,7 @@
 	    <v-row v-for="i in layout">
 	       	<v-col cols="3" v-for="j in i">
 	       		<v-card v-if="j==='toolbar'">
-	       			<v-toolbar color="blue">
+	       			<v-toolbar color="blue"  src="https://picsum.photos/1920/1080?random">
 	       			</v-toolbar>
 	       			<v-list>
 	       				<v-list-item>test</v-list-item>
