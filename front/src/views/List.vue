@@ -1,4 +1,7 @@
 <template>
+  <v-container
+  class="scroll-y"
+  >
   <v-row
     class="d-flex"
     justify="center"
@@ -84,6 +87,7 @@
       </v-list>
     </v-menu>
   </v-row>
+</v-container>
 </template>
 
 <script>
