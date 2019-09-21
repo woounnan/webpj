@@ -1,7 +1,7 @@
 <template>
 	<v-container fluid>
 	    <v-row v-for="i in layout">
-	       	<v-col cols="12" v-for="j in i">
+	       	<v-col cols="3" v-for="j in i">
 	       		<v-card v-if="j===1">
 	       			Empty
 	       		</v-card>
