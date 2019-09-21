@@ -53,8 +53,6 @@
         v-for="item in users"
         :key="item.title"
         v-on="on"
-        shrink-on-scroll
-      scroll-target="#scrolling-techniques-2"
       >
         <v-list-item-avatar>
           <v-img :src="item.avatar"></v-img>
