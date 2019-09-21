@@ -4,9 +4,21 @@
 		<v-col
 			cols="9">
 			<v-row>
-				<v-card>
-					111
-				</v-card>
+				<v-col cols="3">
+					<v-card>
+						111
+					</v-card>
+				</v-col>
+				<v-col cols="3">
+					<v-card>
+						111
+					</v-card>
+				</v-col>
+				<v-col cols="3">
+					<v-card>
+						111
+					</v-card>
+				</v-col>
 			</v-row>
 			<v-row>
 				<v-col cols="5">
@@ -29,9 +41,7 @@
 		<v-col 
 			cols="3">
 			<v-row row wrap>
-				<v-card>
-					444
-				</v-card>
+				<List />
 			</v-row>
 		</v-col>
 	</v-row>
