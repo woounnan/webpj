@@ -9,7 +9,7 @@
 	       	</v-col>
 	  	</v-row>
 	  	<v-row>
-	  		<v-col cols="12">
+	  		<v-col align="end" cols="12">
 	  			<Bar />
 	  		</v-col>
 	  	</v-row>

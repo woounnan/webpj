@@ -50,7 +50,7 @@
       <v-subheader>체계과</v-subheader>
 
       <v-list-item
-        v-for="item in items"
+        v-for="item in users"
         :key="item.title"
         v-on="on"
       >
