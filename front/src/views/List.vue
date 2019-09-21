@@ -27,6 +27,8 @@
     </v-toolbar>
 
     <v-list subheader
+        style="max-height: 800px"  
+        class="scroll-y"
     >
       <v-subheader>Recent chat</v-subheader>
 
@@ -34,8 +36,6 @@
         v-for="item in items"
         :key="item.title"
         v-on="on"
-        style="max-height: 800px"  
-        class="scroll-y"
       >
         <v-list-item-avatar>
           <v-img :src="item.avatar"></v-img>
