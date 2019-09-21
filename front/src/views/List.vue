@@ -46,6 +46,7 @@
         </v-list-item-icon>
       </v-list-item>
 
+      <v-list subheader>
       <v-subheader>체계과</v-subheader>
 
       <v-list-item
