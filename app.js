@@ -33,8 +33,8 @@ app.use('/users', usersRouter);
 app.use('/apis', apisRouter);
 
 
-const server = app.listen(8081, () => {
-	console.log('server running on port 8081')
+const server = app.listen(8082, () => {
+	console.log('server running on port 8082')
 })
 
 const io = require('socket.io')(server)
