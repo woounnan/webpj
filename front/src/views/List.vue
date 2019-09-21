@@ -2,6 +2,8 @@
   <v-row
     class="d-flex"
     justify="center"
+
+    style="max-width: 600px; max-height: 500px"
   >
     <v-menu
       v-model="showMenu"
@@ -28,8 +30,7 @@
       </v-btn>
     </v-toolbar>
 
-    <v-list subheader
-          style="max-width: 600px; max-height: 500px">
+    <v-list subheader>
       <v-subheader>Recent chat</v-subheader>
 
       <v-list-item
