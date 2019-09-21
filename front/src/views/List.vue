@@ -8,6 +8,7 @@
       absolute
       offset-y
     >
+      <template v-slot:activator="{ on }">
         <v-card
     class="mx-auto"
   >
@@ -70,7 +71,6 @@
 
     <v-divider></v-divider>
 
-      <template v-slot:activator="{ on }">
     <v-list subheader>
       <v-subheader>Previous chats</v-subheader>
 
@@ -88,9 +88,8 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-
-      </template>
   </v-card>    
+      </template>
 
       <v-list>
         <v-list-item
