@@ -123,7 +123,6 @@ import Users from './Users.vue'
         title: '정보보호병', 
         avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
       },
-      }
       users: [
         { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
         { active: true, title: 'Ranee Carlson', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
