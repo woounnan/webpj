@@ -7,7 +7,6 @@
       v-model="showMenu"
       absolute
       offset-y
-      style="max-height: 500px"
       class="scroll-y"
     >
       <template v-slot:activator="{ on }">
@@ -29,7 +28,8 @@
       </v-btn>
     </v-toolbar>
 
-    <v-list subheader>
+    <v-list subheader
+          style="max-width: 600px; max-height: 500px">
       <v-subheader>Recent chat</v-subheader>
 
       <v-list-item
