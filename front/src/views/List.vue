@@ -136,10 +136,10 @@ import Users from './Users.vue'
     }),
     methods: {
       setThis: (idx) => {
-        console.log('bef -- title: ' + this.sub[idx].title)
-        this.sub[idx].title="바뀌었을까요"
+        console.log('bef -- title: ' + this.users[idx].title)
+        this.users[idx].title="바뀌었을까요"
 
-        console.log('af -- title: ' + this.sub[idx].title)
+        console.log('af -- title: ' + this.users[idx].title)
       }
     }
   }
