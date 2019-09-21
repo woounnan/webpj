@@ -27,7 +27,7 @@
     </v-toolbar>
 
     <v-list subheader
-        style="max-height: 600px"  
+        style="max-height: 550px"  
         class="scroll-y"
     >
       <v-subheader>Recent chat</v-subheader>
