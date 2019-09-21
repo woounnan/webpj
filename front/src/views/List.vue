@@ -1,7 +1,5 @@
 <template>
-  <v-container
-  class="scroll-y"
-  >
+  <v-container>
   <v-row
     class="d-flex"
     justify="center"
@@ -13,7 +11,7 @@
     >
       <template v-slot:activator="{ on }">
         <v-card
-    max-width="500"
+    max-width="1000"
     class="mx-auto"
   >
     <v-toolbar
@@ -87,7 +85,7 @@
       </v-list>
     </v-menu>
   </v-row>
-</v-container>
+
 </template>
 
 <script>
