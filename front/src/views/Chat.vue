@@ -1,6 +1,6 @@
 <template>
 <v-container>
-	<v-div style="max-height: 700px">
+	<v-div style="max-height: 900px">
 	<v-row row wrap>
 		<v-col
 			cols="9">
