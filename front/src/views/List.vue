@@ -7,7 +7,6 @@
       v-model="showMenu"
       absolute
       offset-y
-      class="scroll-y"
     >
       <template v-slot:activator="{ on }">
         <v-card
