@@ -78,7 +78,7 @@
               <v-icon>face</v-icon>
             </v-list-item-action>
 
-            <v-list-item-content>
+            <v-list-item-content v-on="on">
               <v-dialog v-model="dialog" scrollable max-width="300px">
                 <template v-slot:activator="{ on }">
               <v-row>
