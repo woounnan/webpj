@@ -78,9 +78,9 @@
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
 
-            <v-list-item-content>
+            <v-list-item-content align="center">
               <v-file-input
-                  v-model="upFile"
+                  v-model="upFiles"
                   color="deep-purple accent-4"
                   counter
                   label="File input"
@@ -91,6 +91,24 @@
                   :show-size="1000"
                   @change="uploadFile"
               >
+               <template v-slot:selection="{ index, text }">
+      <v-chip
+        v-if="index < 2"
+        color="deep-purple accent-4"
+        dark
+        label
+        small
+      >
+        {{ text }}
+      </v-chip>
+
+      <span
+        v-else-if="index === 2"
+        class="overline grey--text text--darken-3 mx-2"
+      >
+        +{{ upFiles.length - 2 }} File(s)
+      </span>
+    </template>
               </v-file-input>
             </v-list-item-content>
           </v-list-item>
@@ -119,7 +137,9 @@ export default {
       pw : '',
       div : '',
       cp : ''
-      }
+      },
+      upFiles: [
+      ]
     }
   },
   mounted: function () {
@@ -132,6 +152,10 @@ export default {
       .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
   },
   methods : {
+    uploadFile(){
+      console.log('call uploadFile')
+      console.log(this.upFiles)
+    },
     sub(){
       var ret = 0
       console.log('call the sub function');
