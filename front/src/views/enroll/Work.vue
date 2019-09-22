@@ -83,7 +83,7 @@
                   <v-list-item-content>
               <v-row >
                 <v-menu
-      v-model="showMenu"
+      v-model="cal1"
       absolute
       offset-y
     >
@@ -92,17 +92,16 @@
                 <v-text-field 
                 placeholder="시작일"
                 v-model="v_work.startDate"
-                :max="v_work.endDate"
                 v-on="on"
               />
             </v-col>
 
                          </template>
-              <v-date-picker v-model="v_work.startDate" />
+              <v-date-picker v-model="v_work.startDate" :max="endDate" />
     </v-menu>
 
    <v-menu
-      v-model="test"
+      v-model="cal2"
       absolute
       offset-y
     >
@@ -114,12 +113,11 @@
               <v-text-field 
                 placeholder="종료일"
                 v-model="v_work.endDate"
-                :min="v_work.startDate"
                 v-on="on"
               />
             </v-col>
                          </template>
-            <v-date-picker v-model="v_work.endDate" />
+            <v-date-picker v-model="v_work.endDate" :min="startDate" />
      </v-menu>
             </v-row>
 
@@ -202,6 +200,8 @@ export default {
       },
       selectDate: '',
       startEnd: '',
+      cal1: undefined,
+      cal2: undefined,
       upFiles: [
       ]
     }
