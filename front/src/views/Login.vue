@@ -59,7 +59,7 @@
 
 <script>
   import Vue from 'vue'
-  import Register from './Register.vue'
+  import Register from './enroll/Register.vue'
   import axios from 'axios'
   export default {
     mounted() {
