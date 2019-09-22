@@ -75,7 +75,7 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>file</v-icon>
+              <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
