@@ -27,7 +27,7 @@
                 v-model="v_user.cp"
                 type="text"
                 @click="searchAll"
-                v-on:keyup="searchCp"
+                v-on:keyup="searchPs"
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -75,6 +75,23 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
+              <v-icon>face</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content>
+                <v-text-field 
+                placeholder="시작일"
+                v-model="v_work.startDate"
+              />
+              <v-text-field 
+                placeholder="종료일"
+                v-model="v_work.endDate"
+              />
+            </v-list-item-content>
+          </v-list-item>
+          <v-divider inset></v-divider>            
+          <v-list-item @click="">
+            <v-list-item-action>
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
 
@@ -93,7 +110,6 @@
     label="File input"
     multiple
     placeholder="Select your files"
-    prepend-icon="mdi-paperclip"
     outlined
     :show-size="1000"
   >
@@ -134,16 +150,19 @@ export default {
   ],*/
   data () {
     return {
-      v_companys : {},
-      v_searchCp : {
-        cps: [],
+      v_ps : {},
+      v_searchPs : {
+        ps: [],
         state: false
       },
-      v_user : { 
-      id : '',
-      pw : '',
-      div : '',
-      cp : ''
+      v_work : { 
+        ps_cur: '',
+        ps: [],
+        title: '',
+        contents: '',
+        files: undefined,
+        startDate: '',
+        endDate: '' 
       },
       upFiles: [
       ]
@@ -153,10 +172,10 @@ export default {
     axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
-          this.v_companys = r.data.name
+          this.v_ps = r.data.name
         }
       })
-      .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
+      .catch(e => console.error(e))
   },
   methods : {
     uploadFile(){
@@ -186,22 +205,17 @@ export default {
       this.$emit('close')
     },
     searchAll(){
-      this.v_searchCp.cps = this.v_companys
+      this.v_searchPs.ps = this.ps
     },
-    searchCp(){
-      this.v_searchCp.cps = []
-      var len = Object.keys(this.v_companys).length
+    searchPs(){
+      this.v_searchPs.ps = []
+      var len = Object.keys(this.v_ps).length
       for(var i=0; i<len; i++){
-        if( (this.v_companys[i].name.includes(this.v_user.cp)) && (this.v_user.cp.length) > 0){
-          this.v_searchCp.cps.push(this.v_companys[i])
-          this.v_searchCp.state = true
+        if( (this.v_ps[i].name.includes(this.v_work.ps_cur)) && (this.v_work.ps_cur.length) > 0){
+          this.v_searchPs.ps.push(this.v_ps[i])
+          this.v_searchPs.state = true
         }
       }
-    },
-    getCp(name){
-      this.v_searchCp.cps = []
-      this.v_user.cp = name
-      console.log('selected name: ' + name)
     },
   },
   created () {
