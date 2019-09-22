@@ -80,7 +80,6 @@
 
             <v-list-item-content align="center">
               <input
-                placeholder="파일 선택"
                 type="file"
                 id="bin"
               />
@@ -153,6 +152,7 @@ export default {
       console.log('call the sub function');
       
       const fd = new FormData()
+      console.log(document.getElementById('bin').files[0])
       fd.append('name', 'xxxx')
       fd.append('bin', document.getElementById('bin').files[0])
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
