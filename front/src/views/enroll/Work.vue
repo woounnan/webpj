@@ -164,7 +164,7 @@ export default {
       fd.append('name', 'xxxx')
       fd.append('myfile', document.getElementById('myFile').files[0])
       console.log(document.getElementById('myFile').files[0])
-      axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, fd)
+      axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
         //ret = r.data.code
         //this.bus.$emit('exit', ret)

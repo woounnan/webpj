@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
 })
 
-router.post('/saveWork', upload.single('myFile'), function (req, res, next) {
+router.post('/save', upload.single('myFile'), function (req, res, next) {
   // req.file is the `avatar` file
   console.log(JSON.stringify(req.file))
   console.log(req.body)
