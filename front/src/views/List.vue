@@ -49,7 +49,8 @@
       <v-divider></v-divider>
       <v-list-item
         v-for="item, idx in users"
-        @click="setThis(idx)">
+        @click="setThis(idx)"
+        v-on="on">
         <v-list-item-avatar>
           <v-img :src="item.avatar"></v-img>
         </v-list-item-avatar>
