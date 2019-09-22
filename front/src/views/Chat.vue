@@ -5,17 +5,17 @@
 		<v-col
 			cols="9">
 			<v-row>
-				<v-col cols="3">
+				<v-col cols="5">
 					<v-card>
 						111
 					</v-card>
 				</v-col>
-				<v-col cols="3">
+				<v-col cols="5">
 					<v-card>
 						111
 					</v-card>
 				</v-col>
-				<v-col cols="3">
+				<v-col cols="5">
 					<v-card>
 						111
 					</v-card>
