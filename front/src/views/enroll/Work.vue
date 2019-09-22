@@ -81,6 +81,7 @@
             <v-list-item-content align="center">
               <v-file-input
                   v-model="upFiles"
+                  name="TestFile"
                   color="deep-purple accent-4"
                   counter
                   label="File input"
