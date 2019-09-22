@@ -5,7 +5,8 @@ const userSchema = new mongoose.Schema({
 	password: { type: String, required: true, trim: true },
 	key: { type: String, required: true, unique: true, default: Date.now},
 	division: { type: String, required: true, trim: true},
-	company: { type: String, required: true, trim: true}
+	company: { type: String, required: true, trim: true},
+	chatRoom: [String] 
 })
 
 
