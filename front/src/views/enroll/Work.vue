@@ -107,14 +107,14 @@
       offset-y
     >
 
-                <template v-slot:activator="{ on }">
+                <template v-slot:activator="{ on1 }">
 
             <v-col cols="6">
 
               <v-text-field 
                 placeholder="종료일"
                 v-model="v_work.endDate"
-                v-on="on"
+                v-on="on1"
               />
             </v-col>
                          </template>
