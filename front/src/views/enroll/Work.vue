@@ -80,13 +80,13 @@
 
             <v-list-item-content>
               <v-row>
-                <v-col cols="4">
+                <v-col cols="6">
                 <v-text-field 
                 placeholder="시작일"
                 v-model="v_work.startDate"
               />
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6">
 
               <v-text-field 
                 placeholder="종료일"
