@@ -8,7 +8,7 @@
 				</v-btn>
 			</template>
 			<v-card>
-				test card
+				<Chat />
 			</v-card>
 		</v-dialog>
 		<div class="flex-grow-1"></div>
