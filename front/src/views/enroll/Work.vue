@@ -3,7 +3,7 @@
     <v-col cols="12" sm="8">
       <v-card>
         <v-card-title class="cyan darken-1">
-          <span class="headline white--text">사용자 정보 등록</span>
+          <span class="headline white--text">작업 등록</span>
 
           <div class="flex-grow-1"></div>
           <v-btn dark icon @click="sub">
@@ -17,19 +17,29 @@
 
         <v-list>
           <v-list-item @click="">
-
             <v-list-item-action>
-              <v-icon>person</v-icon>
+              <v-icon>mdi-map-marker</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-text-field
-                    v-model="v_user.id"
-                    type="text"
-                    placeholder="아이디 입력"
-                  ></v-text-field>
+              <v-text-field 
+                placeholder="대상 선택"
+                v-model="v_user.cp"
+                type="text"
+                @click="searchAll"
+                v-on:keyup="searchCp"
+              ></v-text-field>
             </v-list-item-content>
           </v-list-item>
+             <!--show list result for searching -->
+        <v-list-item @click="" v-if="v_searchCp.state" v-for="(cp) in v_searchCp.cps">
+          <v-list-item-action>
+            <v-icon>search</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="getCp(cp.name)" v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
           <v-divider inset></v-divider>
 
@@ -47,32 +57,6 @@
             </v-list-item-content>
           </v-list-item>
 
-
-          <v-divider inset></v-divider>
-
-          <v-list-item @click="">
-            <v-list-item-action>
-              <v-icon>mdi-map-marker</v-icon>
-            </v-list-item-action>
-
-            <v-list-item-content>
-              <v-text-field 
-                placeholder="소속 검색"
-                v-model="v_user.cp"
-                type="text"
-                v-on:keyup="searchCp"
-              ></v-text-field>
-            </v-list-item-content>
-          </v-list-item>
-             <!--show list result for searching -->
-        <v-list-item @click="" v-if="v_searchCp.state" v-for="(cp) in v_searchCp.cps">
-          <v-list-item-action>
-            <v-icon>search</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="getCp(cp.name)" v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
         <!-- -->
           <v-divider inset></v-divider>            
           <v-list-item @click="">
@@ -137,7 +121,6 @@ export default {
         this.$store.state.bus.$emit('exit', ret)
       })
       .catch(e => console.error(e))
-      console.log('@@@@@@@@@@@@')
       
       this.closeWindow();
     },
@@ -145,9 +128,11 @@ export default {
       console.log('call the closeWindow function');
       this.$emit('close')
     },
+    searchAll(){
+      this.v_searchCp.cps = this.v_companys
+    },
     searchCp(){
       this.v_searchCp.cps = []
-      console.log('call SearchCp')
       var len = Object.keys(this.v_companys).length
       for(var i=0; i<len; i++){
         if( (this.v_companys[i].name.includes(this.v_user.cp)) && (this.v_user.cp.length) > 0){
