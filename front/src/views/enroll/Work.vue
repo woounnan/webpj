@@ -81,8 +81,9 @@
             <v-list-item-content align="center">
               <v-text-field 
                 placeholder="파일 선택"
-                v-model="myFile"
+                v-model="upFiles"
                 type="file"
+                id="myFile"
               ></v-text-field>
                <template v-slot:selection="{ index, text }">
       <v-chip
