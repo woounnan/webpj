@@ -160,8 +160,10 @@ export default {
       var ret = 0
       console.log('call the sub function');
       console.log(this.upFiles)
-      this.upFiles.push({'myFile': document.getElementById('myFile')})
-      axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, this.upFiles)
+      const fd = new FormData()
+      fd.append('name', 'xxxx')
+      fd.append('myfile', document.getElementById('myFile'))
+      axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, fd)
       .then(r => {
         //ret = r.data.code
         //this.bus.$emit('exit', ret)
