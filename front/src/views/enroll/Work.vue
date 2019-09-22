@@ -162,7 +162,7 @@ export default {
       
       const fd = new FormData()
       fd.append('name', 'xxxx')
-      fd.append('myfile', document.getElementById('myFile').file[0])
+      fd.append('myfile', document.getElementById('myFile'))
       console.log(document.getElementById('myFile').files[0])
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
