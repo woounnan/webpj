@@ -145,7 +145,6 @@
     multiple
     placeholder="Select your files"
     outlined
-    :show-size="1000"
   >
     <template v-slot:selection="{ index, text }">
       <v-chip
