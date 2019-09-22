@@ -1,10 +1,6 @@
 <template>
 	<v-system-bar dark color="indigo darken-2">
-		<v-menu
-	      v-model="showMenu"
-	      absolute
-	      offset-y
-	    >
+		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
 				<v-btn v-on="on" height="20px">
 					<v-icon>mdi-message</v-icon>
@@ -12,7 +8,7 @@
 				</v-btn>
 			</template>
 			<Chat />
-		</v-menu>
+		</v-dialog>
 		<div class="flex-grow-1"></div>
 		<v-icon>mdi-wifi-strength-4</v-icon>
 		<v-icon>mdi-signal-cellular-outline</v-icon>
