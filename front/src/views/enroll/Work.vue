@@ -98,22 +98,18 @@
 
                          </template>
               <v-date-picker v-model="v_work.startDate" />
-    </v-menu>
 
-   <v-menu
-      v-model="showMenu"
-      absolute
-      offset-y
-    >
 
-                <template v-slot:activator="{ scopeDataFromVMenu }">
+   
+
+                <template v-slot:activator="{ on }">
 
             <v-col cols="6">
 
               <v-text-field 
                 placeholder="종료일"
                 v-model="v_work.endDate"
-                v-on="scopeDataFromVMenu"
+                v-on="on"
               />
             </v-col>
                          </template>
