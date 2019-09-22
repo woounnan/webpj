@@ -95,7 +95,6 @@
                          </template>
               <v-date-picker v-model="v_work.startDate" />
     </v-dialog>
--
     <v-dialog v-model="dialog" scrollable max-width="300px">
 
                 <template v-slot:activator="{ on }">
