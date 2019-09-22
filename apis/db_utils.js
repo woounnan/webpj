@@ -4,13 +4,21 @@ var router = express.Router()
 var createError = require('http-errors')
 var Company = require('./models/model_company')
 var User = require('./models/model_user')
-
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
+ 
 
 
 router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
 })
 
+app.post('/saveWork', upload.single('upFiles'), function (req, res, next) {
+  // req.file is the `avatar` file
+  console.log(req.file)
+  console.log(req.body)
+  // req.body will hold the text fields, if there were any
+})
 
 router.post('/addUser', (req, res, next) => {
 	var user = {

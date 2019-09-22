@@ -159,16 +159,16 @@ export default {
     sub(){
       var ret = 0
       console.log('call the sub function');
-      axios.post(`http://webhacker.xyz:8000/apis/db/addUser`, this.v_user)
+      axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, this.upFiles)
       .then(r => {
-        ret = r.data.code
+        //ret = r.data.code
         //this.bus.$emit('exit', ret)
-        console.log(this.$store.state.bus)
-        this.$store.state.bus.$emit('exit', ret)
+        //this.$store.state.bus.$emit('exit', ret)
+        console.log('Upload file succeeded')
       })
       .catch(e => console.error(e))
       
-      this.closeWindow();
+      //this.closeWindow();
     },
     closeWindow(){
       console.log('call the closeWindow function');
