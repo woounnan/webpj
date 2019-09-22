@@ -92,6 +92,7 @@
                   :show-size="1000"
                   @change="uploadFile"
               >
+              </v-file-input>
             </v-list-item-content>
           </v-list-item>
         </v-list>
