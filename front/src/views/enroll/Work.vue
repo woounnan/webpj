@@ -113,6 +113,7 @@
               <v-text-field 
                 placeholder="종료일"
                 v-model="v_work.endDate"
+                :min="v_work.startDate"
                 v-on="on"
               />
             </v-col>
