@@ -3,7 +3,7 @@
     <v-col cols="12" sm="8">
       <v-card>
         <v-card-title class="cyan darken-1">
-          <span class="headline white--text">특수 메시지</span>
+          <span class="headline white--text">사용자 정보 등록</span>
 
           <div class="flex-grow-1"></div>
           <v-btn dark icon @click="sub">
@@ -93,3 +93,76 @@
     </v-col>
   </v-row>
 </template>
+
+<script>
+import Vue from 'vue'
+import axios from 'axios'
+export default {
+  /*props: [
+    'bus'
+  ],*/
+  data () {
+    return {
+      v_companys : {},
+      v_searchCp : {
+        cps: [],
+        state: false
+      },
+      v_user : { 
+      id : '',
+      pw : '',
+      div : '',
+      cp : ''
+      }
+    }
+  },
+  mounted: function () {
+    axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
+      .then(r => {
+        if(Object.keys(r.data).length > 0){
+          this.v_companys = r.data.name
+        }
+      })
+      .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
+  },
+  methods : {
+    sub(){
+      var ret = 0
+      console.log('call the sub function');
+      axios.post(`http://webhacker.xyz:8000/apis/db/addUser`, this.v_user)
+      .then(r => {
+        ret = r.data.code
+        //this.bus.$emit('exit', ret)
+        console.log(this.$store.state.bus)
+        this.$store.state.bus.$emit('exit', ret)
+      })
+      .catch(e => console.error(e))
+      console.log('@@@@@@@@@@@@')
+      
+      this.closeWindow();
+    },
+    closeWindow(){
+      console.log('call the closeWindow function');
+      this.$emit('close')
+    },
+    searchCp(){
+      this.v_searchCp.cps = []
+      console.log('call SearchCp')
+      var len = Object.keys(this.v_companys).length
+      for(var i=0; i<len; i++){
+        if( (this.v_companys[i].name.includes(this.v_user.cp)) && (this.v_user.cp.length) > 0){
+          this.v_searchCp.cps.push(this.v_companys[i])
+          this.v_searchCp.state = true
+        }
+      }
+    },
+    getCp(name){
+      this.v_searchCp.cps = []
+      this.v_user.cp = name
+      console.log('selected name: ' + name)
+    },
+  },
+  created () {
+  }
+}
+</script>
