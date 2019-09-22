@@ -82,7 +82,7 @@
               
                   <v-list-item-content>
               <v-row >
-                <v-dialog v-model="dialog" scrollable max-width="300px">
+                <v-dialog @close="closeDial" v-model="dialog" scrollable max-width="300px">
                 <template v-slot:activator="{ on }">
                 <v-col cols="6">
                 <v-text-field 
@@ -242,6 +242,9 @@ export default {
         }
       }
     },
+    closeDial(){
+      console.log('close dialog')
+    }
   },
   created () {
   }
