@@ -18,7 +18,7 @@
         <v-list>
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>mdi-map-marker</v-icon>
+              <v-icon>people</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -75,7 +75,7 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>face</v-icon>
+              <v-icon>date_range</v-icon>
             </v-list-item-action>
 
             
