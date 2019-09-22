@@ -50,9 +50,9 @@
 
             <v-list-item-content>
               <v-text-field 
-                placeholder="패스워드 입력"
+                placeholder="제목 입력"
                 v-model="v_user.pw"
-                type="password"
+                type="text"
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -66,8 +66,8 @@
 
             <v-list-item-content>
                 <v-text-field 
-                placeholder="직책 입력"
-                v-model="v_user.div"
+                placeholder="내용 입력"
+                v-model="v_user.pw"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
