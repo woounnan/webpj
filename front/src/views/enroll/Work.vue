@@ -79,6 +79,8 @@
             </v-list-item-action>
 
             <v-list-item-content>
+              <v-dialog v-model="dialog" scrollable max-width="300px">
+                <template v-slot:activator="{ on }">
               <v-row>
                 <v-col cols="6">
                 <v-text-field 
@@ -94,6 +96,10 @@
               />
             </v-col>
             </v-row>
+             </template>
+
+       <v-date-picker v-model="selectDate" readonly></v-date-picker>
+    </v-dialog>
             </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
@@ -171,6 +177,7 @@ export default {
         startDate: '',
         endDate: '' 
       },
+      selectDate: '',
       upFiles: [
       ]
     }
