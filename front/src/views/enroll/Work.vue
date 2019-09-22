@@ -67,7 +67,7 @@
             <v-list-item-content>
                 <v-text-field 
                 placeholder="내용 입력"
-                v-model="v_user.pw"
+                v-model="v_work.contents"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
