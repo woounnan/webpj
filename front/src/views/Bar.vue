@@ -7,7 +7,9 @@
 					양세형
 				</v-btn>
 			</template>
-			<Chat />
+			<v-card>
+				test card
+			</v-card>
 		</v-dialog>
 		<div class="flex-grow-1"></div>
 		<v-icon>mdi-wifi-strength-4</v-icon>
