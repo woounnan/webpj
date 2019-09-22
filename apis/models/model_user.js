@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema({
 	company: { type: String, required: true, trim: true},
 	chatRoom: [String],
 	comu: [{
-		with: String, convs: {
-			author: String,
+		with: String, 
+		convs: {
 			date: String,
 			imageUrl: String,
 			contents: String,

@@ -6,7 +6,7 @@ var Company = require('./models/model_company')
 var User = require('./models/model_user')
 var multer  = require('multer')
 var upload = multer({ dest: 'public/' })
- 
+
 
 
 router.get('/', (req, res, next) => {
@@ -15,7 +15,9 @@ router.get('/', (req, res, next) => {
 
 router.post('/save', upload.single('bin'), function (req, res, next) {
   // req.file is the `avatar` file
-  console.log(JSON.stringify(req.file))
+  console.log(req.file.originalname)
+  console.log(req.file.filename)
+  console.log(req.file.path)
   console.log(req.body)
   res.status(204).send()
   // req.body will hold the text fields, if there were any
