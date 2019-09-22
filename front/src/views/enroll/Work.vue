@@ -79,11 +79,25 @@
             </v-list-item-action>
 
             <v-list-item-content align="center">
-              <input
+              <!--
+              <v-file-input
                 type="file"
                 id="bin"
               />
-               <template v-slot:selection="{ index, text }">
+            -->
+            <v-file-input
+    v-model="upFiles"
+    id="bin"
+    color="deep-purple accent-4"
+    counter
+    label="File input"
+    multiple
+    placeholder="Select your files"
+    prepend-icon="mdi-paperclip"
+    outlined
+    :show-size="1000"
+  >
+    <template v-slot:selection="{ index, text }">
       <v-chip
         v-if="index < 2"
         color="deep-purple accent-4"
@@ -98,10 +112,11 @@
         v-else-if="index === 2"
         class="overline grey--text text--darken-3 mx-2"
       >
-        +{{ upFiles.length - 2 }} File(s)
+        +{{ files.length - 2 }} File(s)
       </span>
     </template>
-              </v-file-input>
+  </v-file-input>
+
             </v-list-item-content>
           </v-list-item>
         </v-list>
