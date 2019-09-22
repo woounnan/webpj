@@ -82,7 +82,11 @@
               
                   <v-list-item-content>
               <v-row >
-                <v-dialog v-model="dialog" scrollable max-width="300px">
+                <v-menu
+      v-model="showMenu"
+      absolute
+      offset-y
+    >
                 <template v-slot:activator="{ on }">
                 <v-col cols="6">
                 <v-text-field 
@@ -95,7 +99,7 @@
                          </template>
               <v-date-picker @open="openDial" v-model="v_work.startDate" >
               </v-date-picker>
-    </v-dialog>
+    </v-menu>>
 
     <v-dialog v-model="dialog" scrollable max-width="300px">
 
