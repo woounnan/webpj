@@ -24,7 +24,7 @@
             <v-list-item-content>
               <v-text-field 
                 placeholder="대상 선택"
-                v-model="v_user.cp"
+                v-model="v_work.ps"
                 type="text"
                 @click="searchAll"
                 v-on:keyup="searchPs"
@@ -32,12 +32,12 @@
             </v-list-item-content>
           </v-list-item>
              <!--show list result for searching -->
-        <v-list-item @click="" v-if="v_searchCp.state" v-for="(cp) in v_searchCp.cps">
+        <v-list-item @click="" v-if="v_searchPs.state" v-for="(ps) in v_searchPs.ps">
           <v-list-item-action>
             <v-icon>search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title @click="getCp(cp.name)" v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
+            <v-list-item-title @click="getCp(ps)" v-bind:style="{color: 'gray'}">{{ps}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -51,7 +51,7 @@
             <v-list-item-content>
               <v-text-field 
                 placeholder="제목 입력"
-                v-model="v_user.pw"
+                v-model="v_work.title"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
@@ -150,7 +150,7 @@ export default {
   ],*/
   data () {
     return {
-      v_ps : {},
+      v_ps : [],
       v_searchPs : {
         ps: [],
         state: false
