@@ -95,7 +95,8 @@
                          </template>
               <v-date-picker v-model="v_work.startDate" />
     </v-dialog>
-    <v-dialog v-on="close" v-model="dialog" scrollable max-width="300px">
+    <div></div>
+    <v-dialog v-model="dialog" scrollable max-width="300px">
 
                 <template v-slot:activator="{ on }">
 
@@ -108,7 +109,7 @@
               />
             </v-col>
                          </template>
-            <v-date-picker v-on="close"  v-model="v_work.endDate" />
+            <v-date-picker v-model="v_work.endDate" />
     </v-dialog>
             </v-row>
 
