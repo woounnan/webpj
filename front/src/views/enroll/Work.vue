@@ -68,6 +68,10 @@
                 <v-text-field 
                 placeholder="내용 입력"
                 v-model="v_work.contents"
+                counter
+                maxlength="120"
+                full-width
+                single-line
                 type="text"
               ></v-text-field>
             </v-list-item-content>
@@ -83,10 +87,10 @@
                   <v-list-item-content>
               <v-row >
                 <v-menu
-      v-model="cal1"
-      absolute
-      offset-y
-    >
+                  v-model="cal1"
+                  absolute
+                  offset-y
+                >
                 <template v-slot:activator="{ on }">
                 <v-col cols="6">
                 <v-text-field 
@@ -130,12 +134,7 @@
             </v-list-item-action>
 
             <v-list-item-content align="center">
-              <!--
-              <v-file-input
-                type="file"
-                id="bin"
-              />
-            -->
+
             <v-file-input
     v-model="upFiles"
     id="bin"
