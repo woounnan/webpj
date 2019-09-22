@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/saveWork', upload.single('myFile'), function (req, res, next) {
   // req.file is the `avatar` file
-  console.log(req.file)
+  console.log(JSON.stringify(req.file))
   console.log(req.body)
   // req.body will hold the text fields, if there were any
 })
