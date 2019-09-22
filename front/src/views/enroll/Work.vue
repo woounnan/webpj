@@ -80,7 +80,6 @@
 
             <v-list-item-content>
               <v-file-input
-                  v-if="false"
                   v-model="upFile"
                   color="deep-purple accent-4"
                   counter
