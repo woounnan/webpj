@@ -72,6 +72,28 @@
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
+          <v-divider inset></v-divider>            
+          <v-list-item @click="">
+            <v-list-item-action>
+              <v-icon>file</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content>
+              <v-file-input
+                  v-if="false"
+                  v-model="upFile"
+                  color="deep-purple accent-4"
+                  counter
+                  label="File input"
+                  multiple
+                  placeholder="Select your files"
+                  prepend-icon="mdi-paperclip"
+                  outlined
+                  :show-size="1000"
+                  @change="uploadFile"
+              >
+            </v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-card>
     </v-col>

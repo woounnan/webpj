@@ -7,7 +7,11 @@ export default new Vuex.Store({
   state: {
   	bus: new Vue(),
   	tk: localStorage.getItem('tk'),
-    test: 'test!!'
+    chatRoom: [
+      {
+        with: ''
+      }
+    ]
   },
   mutations: {
     delToken (state) {
