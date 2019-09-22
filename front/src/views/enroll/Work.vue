@@ -78,10 +78,11 @@
               <v-icon>face</v-icon>
             </v-list-item-action>
 
-            <v-list-item-content v-on="on">
+            
               <v-dialog v-model="dialog" scrollable max-width="300px">
                 <template v-slot:activator="{ on }">
-              <v-row>
+                  <v-list-item-content v-on="on">
+              <v-row >
                 <v-col cols="6">
                 <v-text-field 
                 placeholder="시작일"
@@ -96,11 +97,12 @@
               />
             </v-col>
             </v-row>
+
+            </v-list-item-content>
              </template>
 
        <v-date-picker v-model="selectDate" readonly></v-date-picker>
     </v-dialog>
-            </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
           <v-list-item @click="">
