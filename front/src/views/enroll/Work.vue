@@ -81,11 +81,8 @@
             <v-list-item-content align="center">
               <v-text-field 
                 placeholder="파일 선택"
-                v-model="upFiles"
                 type="file"
-                id="myFile"
-                name="myFile"
-                enctype="multipart/form-data"
+                id="bin"
               ></v-text-field>
                <template v-slot:selection="{ index, text }">
       <v-chip
@@ -157,8 +154,7 @@ export default {
       
       const fd = new FormData()
       fd.append('name', 'xxxx')
-      fd.append('myfile', document.getElementById('myFile').files[0])
-      console.log(document.getElementById('myFile').files[0])
+      fd.append('bin', document.getElementById('bin').files[0])
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
         //ret = r.data.code

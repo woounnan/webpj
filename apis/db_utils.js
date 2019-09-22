@@ -5,7 +5,7 @@ var createError = require('http-errors')
 var Company = require('./models/model_company')
 var User = require('./models/model_user')
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
+var upload = multer({ dest: 'public/' })
  
 
 
@@ -13,10 +13,11 @@ router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
 })
 
-router.post('/save', upload.single('myFile'), function (req, res, next) {
+router.post('/save', upload.single('bin'), function (req, res, next) {
   // req.file is the `avatar` file
   console.log(JSON.stringify(req.file))
   console.log(req.body)
+  res.status(204).send()
   // req.body will hold the text fields, if there were any
 })
 
