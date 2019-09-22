@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
   	bus: new Vue(),
-  	tk: localStorage.getItem('tk')
+  	tk: localStorage.getItem('tk'),
+    test: 'test!!'
   },
   mutations: {
     delToken (state) {
