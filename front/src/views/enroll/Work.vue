@@ -79,16 +79,21 @@
             </v-list-item-action>
 
             
-              <v-dialog v-model="dialog" scrollable max-width="300px">
-                <template v-slot:activator="{ on }">
+              
                   <v-list-item-content v-on="on">
               <v-row >
+                <v-dialog v-model="dialog" scrollable max-width="300px">
+                <template v-slot:activator="{ on }">
                 <v-col cols="6">
                 <v-text-field 
                 placeholder="시작일"
                 v-model="v_work.startDate"
               />
             </v-col>
+              <v-date-picker v-model="v_work.startDate" />
+    </v-dialog>
+    <v-dialog v-model="dialog" scrollable max-width="300px">
+                <template v-slot:activator="{ on }">
             <v-col cols="6">
 
               <v-text-field 
@@ -96,13 +101,12 @@
                 v-model="v_work.endDate"
               />
             </v-col>
+            <v-date-picker v-model="v_work.endDate" />
+    </v-dialog>
             </v-row>
 
             </v-list-item-content>
              </template>
-
-       <v-date-picker v-model="selectDate" readonly></v-date-picker>
-    </v-dialog>
           </v-list-item>
           <v-divider inset></v-divider>            
           <v-list-item @click="">
@@ -180,6 +184,7 @@ export default {
         endDate: '' 
       },
       selectDate: '',
+      startEnd: '',
       upFiles: [
       ]
     }
