@@ -12,6 +12,7 @@
 				</v-btn>
 			</template>
 			<Chat />
+		</v-menu>
 		<div class="flex-grow-1"></div>
 		<v-icon>mdi-wifi-strength-4</v-icon>
 		<v-icon>mdi-signal-cellular-outline</v-icon>
@@ -28,7 +29,7 @@
 	    },
 	    data: () => {
 	    	return {
-
+	    		showMes
 	    	}
 	  	}
 	}
