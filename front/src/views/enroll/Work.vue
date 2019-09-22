@@ -79,11 +79,11 @@
             </v-list-item-action>
 
             <v-list-item-content align="center">
-              <v-text-field 
+              <input
                 placeholder="파일 선택"
                 type="file"
                 id="bin"
-              ></v-text-field>
+              />
                <template v-slot:selection="{ index, text }">
       <v-chip
         v-if="index < 2"
