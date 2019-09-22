@@ -93,7 +93,7 @@
             </v-col>
 
                          </template>
-              <v-date-picker v-model="v_work.startDate" >
+              <v-date-picker @open="openDial" v-model="v_work.startDate" >
               </v-date-picker>
     </v-dialog>
 
@@ -247,7 +247,7 @@ export default {
         }
       }
     },
-    closeDial(){
+    openDial(){
       console.log('close dialog')
     }
   },
