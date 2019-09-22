@@ -21,7 +21,7 @@
 					</v-card>
 				</v-col>
 			</v-row>
-			<v-row>
+			<v-row row wrap>
 				<v-col cols="5">
 					<v-card>
 						222
