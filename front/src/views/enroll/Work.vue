@@ -92,6 +92,7 @@
                 <v-text-field 
                 placeholder="시작일"
                 v-model="v_work.startDate"
+                :max="v_work.endDate"
                 v-on="on"
               />
             </v-col>
