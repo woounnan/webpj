@@ -157,7 +157,6 @@
       >
         {{ text }}
       </v-chip>
-
     </template>
   </v-file-input>
 
