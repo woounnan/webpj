@@ -84,6 +84,8 @@
                 v-model="upFiles"
                 type="file"
                 id="myFile"
+                name="myFile"
+                enctype="multipart/form-data"
               ></v-text-field>
                <template v-slot:selection="{ index, text }">
       <v-chip
