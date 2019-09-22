@@ -68,7 +68,7 @@
                 <v-text-field 
                 placeholder="내용 입력"
                 v-model="v_user.pw"
-                type="file"
+                type="text"
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -83,6 +83,7 @@
                   v-model="upFiles"
                   color="deep-purple accent-4"
                   counter
+                  id="myFile"
                   label="File input"
                   multiple
                   placeholder="Select your files"
@@ -159,7 +160,7 @@ export default {
       var ret = 0
       console.log('call the sub function');
       console.log(this.upFiles)
-      this.upFiles.push({'name': 'TestFile'})
+      this.upFiles.push({'myFile': document.getElementById('myFile')})
       axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, this.upFiles)
       .then(r => {
         //ret = r.data.code
