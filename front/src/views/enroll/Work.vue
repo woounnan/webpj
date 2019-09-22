@@ -97,7 +97,7 @@
             </v-col>
 
                          </template>
-              <v-date-picker v-model="v_work.startDate" :max="endDate" />
+              <v-date-picker v-model="v_work.startDate" :max="v_work.endDate" />
     </v-menu>
 
    <v-menu
@@ -117,7 +117,7 @@
               />
             </v-col>
                          </template>
-            <v-date-picker v-model="v_work.endDate" :min="startDate" />
+            <v-date-picker v-model="v_work.endDate" :min="v_work.startDate" />
      </v-menu>
             </v-row>
 
