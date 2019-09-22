@@ -159,6 +159,7 @@ export default {
     sub(){
       var ret = 0
       console.log('call the sub function');
+      console.log('send to file : ' + this.upFiles)
       axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, this.upFiles)
       .then(r => {
         //ret = r.data.code
