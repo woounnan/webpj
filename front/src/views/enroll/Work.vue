@@ -161,7 +161,7 @@ export default {
       var ret = 0
       console.log('call the sub function');
       console.log(this.upFiles)
-      this.upFiles.append('name', 'TestFile')
+      this.upFiles.push({'name': 'TestFile'})
       axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, this.upFiles)
       .then(r => {
         //ret = r.data.code
