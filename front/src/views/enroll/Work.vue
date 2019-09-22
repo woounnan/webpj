@@ -97,8 +97,9 @@
     </v-dialog>
 -
     <v-dialog v-model="dialog" scrollable max-width="300px">
-    -->
+
                 <template v-slot:activator="{ on }">
+                   -->
             <v-col cols="6">
 
               <v-text-field 
