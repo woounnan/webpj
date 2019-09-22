@@ -79,14 +79,21 @@
             </v-list-item-action>
 
             <v-list-item-content>
+              <v-row>
+                <v-col cols="4">
                 <v-text-field 
                 placeholder="시작일"
                 v-model="v_work.startDate"
               />
+            </v-col>
+            <v-col cols="4">
+
               <v-text-field 
                 placeholder="종료일"
                 v-model="v_work.endDate"
               />
+            </v-col>
+            </v-row>
             </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
