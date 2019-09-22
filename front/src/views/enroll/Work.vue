@@ -159,10 +159,11 @@ export default {
     sub(){
       var ret = 0
       console.log('call the sub function');
-      console.log(this.upFiles)
+      
       const fd = new FormData()
       fd.append('name', 'xxxx')
       fd.append('myfile', document.getElementById('myFile').files[0])
+      console.log(document.getElementById('myFile').files[0])
       axios.post(`http://webhacker.xyz:8000/apis/db/saveWork`, fd)
       .then(r => {
         //ret = r.data.code
