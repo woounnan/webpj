@@ -80,7 +80,7 @@
 
             
               
-                  <v-list-item-content v-on="on">
+                  <v-list-item-content>
               <v-row >
                 <v-dialog v-model="dialog" scrollable max-width="300px">
                 <template v-slot:activator="{ on }">
@@ -88,6 +88,7 @@
                 <v-text-field 
                 placeholder="시작일"
                 v-model="v_work.startDate"
+                v-on="on"
               />
             </v-col>
                          </template>
@@ -101,6 +102,7 @@
               <v-text-field 
                 placeholder="종료일"
                 v-model="v_work.endDate"
+                v-on="on"
               />
             </v-col>
                          </template>
