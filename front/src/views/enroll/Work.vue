@@ -79,19 +79,11 @@
             </v-list-item-action>
 
             <v-list-item-content align="center">
-              <v-file-input
-                  v-model="upFiles"
-                  color="deep-purple accent-4"
-                  counter
-                  id="myFile"
-                  label="File input"
-                  multiple
-                  placeholder="Select your files"
-                  prepend-icon="mdi-paperclip"
-                  outlined
-                  :show-size="1000"
-                  @change="uploadFile"
-              >
+              <v-text-field 
+                placeholder="파일 선택"
+                v-model="myFile"
+                type="file"
+              ></v-text-field>
                <template v-slot:selection="{ index, text }">
       <v-chip
         v-if="index < 2"
@@ -162,7 +154,7 @@ export default {
       
       const fd = new FormData()
       fd.append('name', 'xxxx')
-      fd.append('myfile', document.getElementById('myFile'))
+      fd.append('myfile', document.getElementById('myFile').files[0])
       console.log(document.getElementById('myFile').files[0])
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
