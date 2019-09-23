@@ -155,7 +155,6 @@ export default {
         if(Object.keys(r.data).length > 0){
           this.v_companys = r.data
           console.log('rdata: ', r.data)
-          console.log(this.v_companys)
         }
       })
       .catch(e => console.error(e))
@@ -194,6 +193,7 @@ export default {
     getCp(name){
       this.v_searchCp.cps = []
       this.v_user.cp = name
+      this.v_divs = this.v_user.div
       console.log('selected name: ' + name)
     },
     getDiv(name){
