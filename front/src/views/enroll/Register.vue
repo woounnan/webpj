@@ -19,7 +19,7 @@
           <v-list-item @click="">
 
             <v-list-item-action>
-              <v-icon>person</v-icon>
+              <v-icon>face</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -77,7 +77,7 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>face</v-icon>
+              <v-icon>person</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -89,7 +89,7 @@
             </v-list-item-content>
             </v-list-item>
 
-            
+
             <v-list-item @click="">
               <v-list-item-action>
                 <v-icon>people</v-icon>
@@ -153,6 +153,7 @@ export default {
       .then(r => {
         if(Object.keys(r.data).length > 0){
           this.v_companys = r.data.name
+          console.log(this.v_companys)
         }
       })
       .catch(e => console.error(e))
