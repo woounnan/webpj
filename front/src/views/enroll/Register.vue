@@ -154,6 +154,7 @@ export default {
       .then(r => {
         if(Object.keys(r.data).length > 0){
           this.v_companys = r.data.name
+          console.log('rdata: ', r.data)
           console.log(this.v_companys)
         }
       })
