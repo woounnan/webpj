@@ -194,6 +194,7 @@ export default {
       this.v_searchCp.cps = []
       this.v_user.cp = name
       this.v_divs = this.v_user.div
+      console.log('divs:', this.v_divs)
       console.log('selected name: ' + name)
     },
     getDiv(name){
