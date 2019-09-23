@@ -17,17 +17,15 @@ const userSchema = new mongoose.Schema({
 			date: String,
 			imageUrl: String,
 			contents: String,
-			[{
-				works: {
-					title: String,
-					contents: String,
-					startDate: String,
-					endDate: String,
-					file_save: String,
-					file_real: String,
-					notice: Number, //1: notice 0: work(required to ack)
-					to: Number //1: send 2:recv
-				}
+			works: [{
+				title: String,
+				contents: String,
+				startDate: String,
+				endDate: String,
+				file_save: String,
+				file_real: String,
+				notice: Number, //1: notice 0: work(required to ack)
+				to: Number //1: send 2:recv
 			}]
 		}
 	}]
