@@ -91,25 +91,31 @@
             <v-list-item-action>
               <v-icon>people</v-icon>
             </v-list-item-action>
-
+   <v-menu
+      v-model="showMenu"
+      absolute
+      offset-y
+    >
+      <template v-slot:activator="{ on }">
             <v-list-item-content>
               <v-text-field 
                 placeholder="부서 검색"
-                v-model="v_user.cp"
+                v-model="v_user.div"
                 type="text"
-                v-on:keyup="searchCp"
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
+        </template>
              <!--show list result for searching -->
-        <v-list-item @click="" v-if="v_searchDiv.state" v-for="(cp) in v_searchCp.cps">
+        <v-list-item v-for="(div) in v_divs">
           <v-list-item-action>
             <v-icon>search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title @click="getCp(cp.name)" v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
+            <v-list-item-title @click="getCp(div)" v-bind:style="{color: 'gray'}">{{div}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+      </v-menu>
           </v-list-item>
         </v-list>
       </v-card>
@@ -132,10 +138,6 @@ export default {
         state: false
       },
       v_divs : {},
-      v_searchDiv : {
-        divs: [],
-        state: false
-      },
       v_user : { 
       id : '',
       pw : '',
@@ -187,6 +189,10 @@ export default {
     getCp(name){
       this.v_searchCp.cps = []
       this.v_user.cp = name
+      console.log('selected name: ' + name)
+    },
+    getDiv(name){
+      this.v_user.div = name
       console.log('selected name: ' + name)
     },
   },
