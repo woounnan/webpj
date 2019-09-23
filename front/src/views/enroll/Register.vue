@@ -91,7 +91,7 @@
             <v-list-item-action>
               <v-icon>people</v-icon>
             </v-list-item-action>
-   <v-menu
+               <v-menu
       v-model="showMenu"
       absolute
       offset-y
@@ -104,10 +104,8 @@
                 type="text"
               ></v-text-field>
             </v-list-item-content>
-          </v-list-item>
-        </template>
-             <!--show list result for searching -->
-        <v-list-item v-for="(div) in v_divs">
+                    </template>
+                            <v-list-item v-for="(div) in v_divs">
           <v-list-item-action>
             <v-icon>search</v-icon>
           </v-list-item-action>
