@@ -184,7 +184,6 @@ export default {
       var len = Object.keys(this.v_companys).length
       for(var i=0; i<len; i++){
         if( (this.v_companys[i].name.includes(this.v_user.cp))/* && (this.v_user.cp.length) > 0*/){
-          console.log('@@@@@@@@@')
           this.v_searchCp.cps.push(this.v_companys[i])
           this.v_searchCp.state = true
         }
@@ -193,7 +192,7 @@ export default {
     getCp(name){
       this.v_searchCp.cps = []
       this.v_user.cp = name
-      this.v_divs = this.v_user.div
+      for(x in )
       console.log('divs:', this.v_divs)
       console.log('selected name: ' + name)
     },
