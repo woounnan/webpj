@@ -95,7 +95,7 @@
                 <v-icon>people</v-icon>
               </v-list-item-action>
                  <v-menu
-        v-model="showMenu"
+        v-model="divMenu"
         absolute
         offset-y
       >
@@ -145,7 +145,8 @@ export default {
       pos : '',
       cp : '',
       div: '',
-      }
+      },
+      divMenu: undefined
     }
   },
   mounted: function () {
