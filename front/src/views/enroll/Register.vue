@@ -83,10 +83,33 @@
             <v-list-item-content>
                 <v-text-field 
                 placeholder="직책 입력"
-                v-model="v_user.div"
+                v-model="v_user.pos"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
+            <v-list-item @click="">
+            <v-list-item-action>
+              <v-icon>people</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content>
+              <v-text-field 
+                placeholder="부서 검색"
+                v-model="v_user.cp"
+                type="text"
+                v-on:keyup="searchCp"
+              ></v-text-field>
+            </v-list-item-content>
+          </v-list-item>
+             <!--show list result for searching -->
+        <v-list-item @click="" v-if="v_searchDiv.state" v-for="(cp) in v_searchCp.cps">
+          <v-list-item-action>
+            <v-icon>search</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="getCp(cp.name)" v-bind:style="{color: 'gray'}">{{cp.name}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
           </v-list-item>
         </v-list>
       </v-card>
@@ -108,11 +131,17 @@ export default {
         cps: [],
         state: false
       },
+      v_divs : {},
+      v_searchDiv : {
+        divs: [],
+        state: false
+      },
       v_user : { 
       id : '',
       pw : '',
-      div : '',
-      cp : ''
+      pos : '',
+      cp : '',
+      div: '',
       }
     }
   },
@@ -123,7 +152,7 @@ export default {
           this.v_companys = r.data.name
         }
       })
-      .catch(e => console.error('@@@@@@@@@@@@@@@\n'+e))
+      .catch(e => console.error(e))
   },
   methods : {
     sub(){
@@ -137,7 +166,6 @@ export default {
         this.$store.state.bus.$emit('exit', ret)
       })
       .catch(e => console.error(e))
-      console.log('@@@@@@@@@@@@')
       
       this.closeWindow();
     },
