@@ -22,11 +22,11 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
 router.post('/addUser', (req, res, next) => {
 	console.log(req.body)
 	var user = {
-		id = req.body.id,
-		password = req.body.pw,
-		position = req.body.pos,
-		company = req.body.cp,
-		division = req.body.div
+		id : req.body.id,
+		password : req.body.pw,
+		position : req.body.pos,
+		company : req.body.cp,
+		division : req.body.div
 	}
 	var code = -1
 	var ret = 0
