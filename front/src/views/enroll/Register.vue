@@ -105,6 +105,7 @@
                   placeholder="부서 검색"
                   v-model="v_user.div"
                   type="text"
+                  v-on="on"
                 ></v-text-field>
               </v-list-item-content>
                       </template>
