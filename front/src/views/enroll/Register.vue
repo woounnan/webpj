@@ -109,12 +109,13 @@
                 ></v-text-field>
               </v-list-item-content>
                       </template>
-                              <v-list-item v-for="(div) in v_divs">
             <v-list-item-action>
               <v-icon>search</v-icon>
             </v-list-item-action>
+                              <v-list-item v-for="(div) in v_divs">
+
             <v-list-item-content>
-              <v-list-item-title @click="getCp(div)" v-bind:style="{color: 'gray'}">{{div}}</v-list-item-title>
+              <v-list-item-title @click="getDiv(div)" v-bind:style="{color: 'gray'}">{{div}}</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
       </v-menu>
