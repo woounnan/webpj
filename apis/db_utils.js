@@ -20,6 +20,7 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
 })
 
 router.post('/addUser', (req, res, next) => {
+	console.log(req.body)
 	var user = {
 		id = req.body.id,
 		password = req.body.pw,
