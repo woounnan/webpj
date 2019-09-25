@@ -154,7 +154,7 @@ export default {
       .then(r => {
         if(Object.keys(r.data).length > 0){
           this.v_companys = r.data
-          console.log('rdata: ', r.data)
+          console.log('rdata: ', this.v_companys)
         }
       })
       .catch(e => console.error(e))
