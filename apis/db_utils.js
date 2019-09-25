@@ -40,7 +40,7 @@ router.post('/addUser', (req, res, next) => {
 			console.error(e)
 		}
 	})
-	if(ret == 1){
+	if(ret == -1){
 		Company.findOne({name: user.company}, (e, r) =>{
 			if(r){
 				console.log('Can create!')
