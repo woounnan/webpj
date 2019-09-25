@@ -156,7 +156,7 @@ export default {
           this.v_companys = r.data
 
           console.log('rdata: ', this.v_companys)
-          console.log('rdata: ', this.v_companys.division)
+          console.log('rdata: ', this.v_companys[0].division)
         }
       })
       .catch(e => console.error(e))
@@ -194,9 +194,11 @@ export default {
     getCp(name){
       this.v_searchCp.cps = []
       this.v_user.cp = name
-      for(var x in this.v_companys)
+      for(var x in this.v_companys){
+        console.log('for::: x:', x)
         if(x.name == name)
           this.v_divs = x.division
+      }
       console.log('divs:', this.v_divs)
       console.log('selected name: ' + name)
     },
