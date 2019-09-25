@@ -24,12 +24,9 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
 })
 
 router.post('/addUser', (req, res, next) => {
-	var user = {
-		id: req.body.id,
-		password: req.body.pw,
-		division: req.body.div,
-		company: req.body.cp
-	}
+	var user = req.body
+	console.log('@@@@@@@@@@@@@@')
+	console.log(JSON.stringify(user))
 	var code = -1
 	var ret = 0
 	//find a user
