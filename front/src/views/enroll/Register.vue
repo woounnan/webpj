@@ -192,7 +192,9 @@ export default {
     getCp(name){
       this.v_searchCp.cps = []
       this.v_user.cp = name
-      for(x in )
+      for(x in v_companys)
+        if(x.name == name)
+          this.v_divs = x.division
       console.log('divs:', this.v_divs)
       console.log('selected name: ' + name)
     },
