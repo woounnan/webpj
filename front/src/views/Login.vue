@@ -138,7 +138,7 @@
                 img: r.image,
                 div: r.division,
                 cp: r.company
-              }
+                })
               location.href='/'
             }
           })

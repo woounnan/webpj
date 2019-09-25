@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
   	bus: new Vue(),
   	tk: localStorage.getItem('tk'),
-    user{
+    user: {
       id: '',
       pos: '',
       img: '',
