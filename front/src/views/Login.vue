@@ -129,6 +129,8 @@
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
+              console.log('@@@@@@@@@@2')
+              console.log(this.$store)
             }
             else{
               localStorage.setItem('tk', r.data.tk)
@@ -150,8 +152,8 @@
             //getting other user info
             
           })
-          .catch(e => console.error('List.vue::getUsers error occured!!\n', e))
-        location.href='/'
+          .catch(e => console.error('List.vue::getUsers error occured!!\n', e))        
+          //location.href='/'
      }
 
   }
