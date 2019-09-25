@@ -48,7 +48,8 @@ export default new Router({
 		{
 			path: '/chat',
 			name: 'chat',
-			component: Chat
+			component: Chat,
+      beforeEnter: requireAuth
 		},
     {
       path: '/reg',
