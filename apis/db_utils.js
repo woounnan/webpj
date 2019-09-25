@@ -54,7 +54,7 @@ router.post('/addUser', (req, res, next) => {
 			})
 		}
 	})
-}
+})
 
 
 
