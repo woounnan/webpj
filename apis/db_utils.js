@@ -41,6 +41,7 @@ router.post('/addUser', (req, res, next) => {
 		console.log('bbbb')
 		}
 	})
+	console.log('ret:' + ret)
 	if(ret == -1){
 		console.log('@@@@@@@@')
 		Company.findOne({name: user.company}, (e, r) =>{
