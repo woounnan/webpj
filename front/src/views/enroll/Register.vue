@@ -195,7 +195,7 @@ export default {
       this.v_searchCp.cps = []
       this.v_user.cp = name
       for(var i=0; i<Object.keys(this.v_companys).length; i++){
-        console.log('for::: x:', x)
+        var x = this.v_companys[i]
         if(x.name == name)
           this.v_divs = x.division
       }
