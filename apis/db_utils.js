@@ -34,9 +34,11 @@ router.post('/addUser', (req, res, next) => {
 	User.findOne({id: user.id}, (e, r) =>{
 		if(r!=null){
 			ret = 1
+		console.log('aaaa')
 		}
 		else{
 			ret = -1
+		console.log('bbbb')
 		}
 	})
 	if(ret == -1){
