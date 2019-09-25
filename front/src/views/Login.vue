@@ -140,6 +140,7 @@
                 cp: r.company
                 })
               location.href='/'
+                        console.log(this.$store)
             }
           })
           .catch(e => console.error(e.message))
