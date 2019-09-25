@@ -46,7 +46,7 @@ export default new Router({
       component: File
     },
 		{
-			path: '/chat',
+			path: '/',
 			name: 'chat',
 			component: Chat,
       beforeEnter: requireAuth
@@ -55,12 +55,6 @@ export default new Router({
       path: '/reg',
       name: 'register',
       component: Register
-    },
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-      beforeEnter: requireAuth
     },
     {
       path: '/about',
