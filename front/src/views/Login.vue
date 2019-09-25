@@ -132,7 +132,7 @@
             }
             else{
               localStorage.setItem('tk', r.data.tk)
-              store.commit('initUser', {
+              this.$store.commit('initUser', {
                 id : r.id,
                 pos: r.position,
                 img: r.image,
