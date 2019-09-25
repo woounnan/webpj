@@ -52,9 +52,12 @@ router.post('/addUser', (req, res, next) => {
 					}
 					else{
 						ret = -1
+						console.error(e)
 					}
 				})
 			}
+			else
+				console.error(e)
 		})
 	}
 	console.log('error')
