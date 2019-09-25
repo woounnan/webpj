@@ -7,15 +7,26 @@ export default new Vuex.Store({
   state: {
   	bus: new Vue(),
   	tk: localStorage.getItem('tk'),
-    chatRoom: [
-      {
-        with: ''
-      }
-    ]
+    user{
+      id: '',
+      pos: '',
+      img: '',
+      div: '',
+      cp: '',
+      st: ''
+    }
   },
   mutations: {
     delToken (state) {
     	state.tk = null
+    }
+    initUser (info){
+      state.user.id = info.id
+      state.user.pos = info.pos
+      state.user.div = info.div
+      state.user.cp = info.cp
+      state.user.img = info.img
+      state.user.st: '출근'
     }
   },
   actions: {

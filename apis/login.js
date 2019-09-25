@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 		var key = user.key
 		jwt.sign({id, pw}, key, (e, token) =>{
 			if(e) return res.send({code: 0, msg: 'error on token'})
-			res.send({code: 1, tk: token})
+			res.send({code: 1, tk: token, user: user})
 		})
 	})
 })

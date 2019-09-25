@@ -7,16 +7,17 @@ const userSchema = new mongoose.Schema({
 	position: { type: String, required: true, trim: true},
 	division: { type: String, required: true, trim: true},
 	company: { type: String, required: true, trim: true},
+	image : {type: String, required: true, trim: true},
 	chatRoom: [{
 		with: String,
 		num: Number
 	}],
 	comu: [{
-		with: String, 
+		with: String,
 		convs: {
 			date: String,
 			imageUrl: String,
-			contents: String,
+			contents: String, //If works exists, then content must be empty.
 			works: [{
 				title: String,
 				contents: String,

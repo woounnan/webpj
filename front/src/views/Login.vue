@@ -132,10 +132,25 @@
             }
             else{
               localStorage.setItem('tk', r.data.tk)
+              store.commit('initUser', {
+                id : r.id,
+                pos: r.position,
+                img: r.image,
+                div: r.division,
+                cp: r.company
+              }
               location.href='/'
             }
           })
           .catch(e => console.error(e.message))
+        axios.post('http://webhacker.xyz:8000/db/getUsers', {id: this.$store.state.user.id})
+          .then(r => {
+            console.log(r.data)
+            //getting other user info
+            
+          })
+          .catch(e => console.error('List.vue::getUsers error occured!!\n', e))
+        }
       }
     }
 }

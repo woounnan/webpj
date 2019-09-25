@@ -19,6 +19,21 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
   // req.body will hold the text fields, if there were any
 })
 
+router.post('/getUsers', (req, res, next) => {
+	//get other users except for own
+	var id = req.body.id
+	var qr = '{id: {$ne:"'+ id + '"}}'
+	User.find(qr, (e, r) => {
+		if(!r){
+			console.log('getUsers::successed')
+			res.send({code: 1, user: r})
+		}
+		else{
+			console.log('getUsers::failed\n', e)
+			res.send({code: -1})
+		}
+	})
+})
 router.post('/addUser', (req, res, next) => {
 	console.log(req.body)
 	var user = {
@@ -27,6 +42,7 @@ router.post('/addUser', (req, res, next) => {
 		position : req.body.pos,
 		company : req.body.cp,
 		division : req.body.div
+		img : 'https://cdn.vuetifyjs.com/images/lists/'+String(Math.random(1,100))+'.jpg'
 	}
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
