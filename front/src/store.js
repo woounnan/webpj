@@ -19,7 +19,7 @@ export default new Vuex.Store({
   mutations: {
     delToken (state) {
     	state.tk = null
-    }
+    },
     initUser (info){
       state.user.id = info.id
       state.user.pos = info.pos
