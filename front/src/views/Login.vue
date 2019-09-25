@@ -139,8 +139,8 @@
                 div: r.division,
                 cp: r.company
                 })
-              location.href='/'
-                        console.log(this.$store)
+              console.log('@@@@@@@@@@2')
+              console.log(this.$store)
             }
           })
           .catch(e => console.error(e.message))
@@ -151,8 +151,10 @@
             
           })
           .catch(e => console.error('List.vue::getUsers error occured!!\n', e))
-        }
-      }
-    }
+        location.href='/'
+     }
+
+  }
+}
 
 </script>
