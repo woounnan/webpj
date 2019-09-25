@@ -42,7 +42,7 @@ router.post('/addUser', (req, res, next) => {
 		position : req.body.pos,
 		company : req.body.cp,
 		division : req.body.div
-		img : 'https://cdn.vuetifyjs.com/images/lists/'+String(Math.random(1,100))+'.jpg'
+		image : 'https://cdn.vuetifyjs.com/images/lists/'+String(Math.random(1,100))+'.jpg'
 	}
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
