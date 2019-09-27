@@ -119,7 +119,7 @@ import Users from './Users.vue'
     },
     mounted(){
       var im = this.$store.getters.getUser
-      console.log('Listvue:: ',im)
+      console.log('Listvue:: ',im.pos)
       this.me.pos = im.pos
       this.me.st = im.st
       this.me.img = im.img
