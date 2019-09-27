@@ -139,6 +139,7 @@
                 img: r.image,
                 div: r.division,
                 cp: r.company
+                console.log(JSON.stringify(this.$store.getters.getUser))
                 })
             }
           })
@@ -152,7 +153,6 @@
           })
           .catch(e => console.error('List.vue::getUsers error occured!!\n', e))        
           //location.href='/'
-          console.log(JSON.stringify(this.$store.getters.getUser))
      }
 
   }
