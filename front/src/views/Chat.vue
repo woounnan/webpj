@@ -87,6 +87,7 @@ export default{
 	created(){
 	},
    	mounted(){
+   		console.log(this.$io)
 		this.flowSC = this.$io.of('/SC')
 		this.flowCS = this.$io.of('/CS')
 		console.log('flowSc:', this.flowSC)
