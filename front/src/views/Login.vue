@@ -146,8 +146,8 @@
             }
           })
           .then(r => {
-            //location.href = '/'
-                console.log(JSON.stringify(this.$store.getters.getUser))
+            this.$router.push('/')
+            console.log(JSON.stringify(this.$store.getters.getUser))
             
           })
           .catch(e => console.error(e.message))
