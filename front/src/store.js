@@ -29,7 +29,7 @@ export default new Vuex.Store({
       state.user.cp = info.cp,
       state.user.img = info.img,
       state.user.st = '출근'
-    }
+    },
     initOthers(state, info){
       state.others = info
     },
