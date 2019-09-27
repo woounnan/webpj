@@ -142,17 +142,16 @@
                 cp: u.company
                 })
                 console.log(this.$store.getters.getUser)
+                axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
+
             }
           })
-          .catch(e => console.error(e.message))
-        axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
           .then(r => {
-            console.log('@@@@: ',r.data)
-            //getting other user info
+            location.href = '/'
             
           })
-          .catch(e => console.error('List.vue::getUsers error occured!!\n', e))        
-          location.href='/'
+          .catch(e => console.error(e.message))
+
      }
 
   }
