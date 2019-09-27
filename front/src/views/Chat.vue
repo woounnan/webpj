@@ -92,10 +92,10 @@ export default{
 	created(){
 	},
    	mounted(){
-		this.$io.flowSC = this.$io.of('/SC')
-		this.$io.flowCS = this.$io.of('/CS')
-		console.log('flowSc:', this.$io.flowSC)
-		this.$io.flowSC.on('msg', (data) =>{
+		this.flowSC = this.$io.of('/SC')
+		this.flowCS = this.$io.of('/CS')
+		console.log('flowSc:', this.flowSC)
+		this.flowSC.on('msg', (data) =>{
 			console.log('from server: ', data)
 		})
    	},
