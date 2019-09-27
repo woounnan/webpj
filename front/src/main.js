@@ -34,5 +34,5 @@ new Vue({
 }).$mount('#app')
 
 
-const flowCS = io.of('/CS')
-const flowSC = io.of('/SC')
+this.flowCS = io.of('/CS')
+this.flowSC = io.of('/SC')
