@@ -20,9 +20,9 @@ io.on('connection', function(socket){
 	flowSC = io.of('/SC')
 
 	setInterval(() =>{
-	console.log('send msg to client!')
-	flowSC.emit('msg', 'Hi!! Im a server')
-}, 3000)
+		console.log('send msg to client!')
+		flowSC.emit('msg', 'Hi!! Im a server')
+	}, 3000)
 })
 
 

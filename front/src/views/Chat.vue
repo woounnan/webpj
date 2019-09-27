@@ -76,10 +76,18 @@ export default{
         	]
 		}
 	},
+	sockets: {
+		connect: function(){
+			console.log('flowSc:', this.flowSC)
+			this.flowSC.on('msg', (data) =>{
+				console.log('from server: ', data)
+			})
+		},
+		customEmit: function (data) {
+            console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
+        }
+	}
 	created(){
-		this.flowSC.on('msg', (data) =>{
-			console.log('from server: ', data)
-		})
 	},
    	mounted(){
    	},
