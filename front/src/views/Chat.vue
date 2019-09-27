@@ -44,7 +44,7 @@
 		<v-col 
 			cols="3">
 			<v-row row wrap>
-				<List />
+				<List @click="testServ" />
 			</v-row>
 		</v-col>
 	</v-row>
@@ -79,6 +79,7 @@ export default{
 	sockets: {
 		connect: function(){
 			console.log('connect!!!!!!!!!!!!!!!!!!!')
+   			console.log(this.$io)
 		},
 		customEmit: function (data) {
             console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
