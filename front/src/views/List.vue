@@ -123,6 +123,7 @@ import Users from './Users.vue'
       this.me.pos = im.pos
       this.me.st = im.st
       this.me.img = im.img
+      console.log('Listvue:: ', this.me)
     }
   }
 </script>
