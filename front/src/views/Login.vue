@@ -147,7 +147,7 @@
           .catch(e => console.error(e.message))
         axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
           .then(r => {
-            console.log('@@@@: ' + r.data)
+            console.log('@@@@: ' + JSON.stringify(r.data.users))
             //getting other user info
             
           })
