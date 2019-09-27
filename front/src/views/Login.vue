@@ -88,6 +88,7 @@
         console.log('call reg function');
         //location.href = '/reg' //normal move
         //this.ps.bus.$on('exit', (code) => {
+          /*
           this.$store.state.bus.$on('exit', (code) => {
           console.log('code:' + code)
           if(code == 1){
@@ -99,7 +100,7 @@
           this.wd.state = true
           this.wd.msg = '등록 실패'
         }
-        })
+        })*/
         this.$modal.show(Register,
           {
             //bus : this.ps.bus,
@@ -123,15 +124,12 @@
         this.login(id.split(' ').join(''), pw.split(' ').join(''))
       },
       login(id, pw){
-        console.log(this.$store)
         axios.post(`http://webhacker.xyz:8000/apis/login`, {id: id, pw: pw})
           .then(r => {
             if(r.data.code != '1'){
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
-              console.log('@@@@@@@@@@@@@@@')
-              console.log(store.getters.getUser)
             }
             else{
               localStorage.setItem('tk', r.data.tk)
