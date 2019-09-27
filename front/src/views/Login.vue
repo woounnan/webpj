@@ -127,7 +127,7 @@
         axios.post(`http://webhacker.xyz:8000/apis/login`, {id: id, pw: pw})
           .then(r => {
             if(r.data.code != '1'){
-              //this.wd.state = true
+              this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
             }
