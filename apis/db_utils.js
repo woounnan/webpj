@@ -23,8 +23,8 @@ router.post('/getUsers', (req, res, next) => {
 	//get other users except for own
 	var id = req.body.id
 	var qr = '{id: {$ne:"'+ id + '"}}'
-	User.find(qr, (e, r) => {
-		if(!r){
+	User.find((e, r) => {
+		if(r.length > 0 ){
 			console.log('getUsers::successed')
 			console.log(r)
 			res.send({code: 1, users: r, test:'tests'})
