@@ -117,7 +117,7 @@ import Users from './Users.vue'
         console.log('af -- title: ' + this.users[idx].title)
       }
     },
-    mounted: {
+    mounted(){
       im = this.$store.getters.getUser
       this.me.pos = im.pos
       this.me.st = im.st
