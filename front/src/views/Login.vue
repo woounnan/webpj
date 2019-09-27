@@ -133,13 +133,13 @@
             }
             else{
               localStorage.setItem('tk', r.data.tk)
-              console.log("rrrr:", r.data)
+              var u = r.data.user
               this.$store.commit('initUser', {
-                id : r.id,
-                pos: r.position,
-                img: r.image,
-                div: r.division,
-                cp: r.company
+                id : u.id,
+                pos: u.position,
+                img: u.image,
+                div: u.division,
+                cp: u.company
                 })
                 console.log(this.$store.getters.getUser)
             }
