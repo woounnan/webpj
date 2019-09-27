@@ -118,7 +118,7 @@ import Users from './Users.vue'
       }
     },
     mounted(){
-      im = this.$store.getters.getUser
+      var im = this.$store.getters.getUser
       this.me.pos = im.pos
       this.me.st = im.st
       this.me.img = im.img
