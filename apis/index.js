@@ -21,10 +21,10 @@ const flowCS = io.of('/CS')
 const flowSC = io.of('/SC')
 
 
-setInterval(3000, () =>{
+setInterval(() =>{
 	console.log('send msg to client!')
 	flowSC.emit('msg', 'Hi!! Im a server')
-})
+}, 3000)
 
 router.get('/', (req, res, next) => {
 	res.send('Here is at index.js in apis')
