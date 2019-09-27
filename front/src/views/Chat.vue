@@ -80,12 +80,7 @@ export default{
 	created(){
 	},
    	mounted(){
-   		this.$socket = io('webhacker.xyz:8082')
-		this.flowSC = io.of('/SC')
-		this.flowCS = io.of('/CS')
-		this.flowSC.on('msg', (data) =>{
-			console.log('from server: ', data)
-		})
+   		this.$store.commit('initSocks')
    	},
 	methods: {
 		testServ: function(){
