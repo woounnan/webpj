@@ -78,6 +78,8 @@ export default{
 	},
 	sockets: {
 		connect: function(){
+			this.flowSC = io.of('/SC')
+			this.flowCS = io.of('/CS')
 			console.log('flowSc:', this.flowSC)
 			this.flowSC.on('msg', (data) =>{
 				console.log('from server: ', data)
