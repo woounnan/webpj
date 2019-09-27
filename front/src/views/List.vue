@@ -115,6 +115,9 @@ import Users from './Users.vue'
 
         console.log('af -- title: ' + this.users[idx].title)
       }
+    },
+    mounted: {
+      
     }
   }
 </script>
