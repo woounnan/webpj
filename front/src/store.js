@@ -44,9 +44,12 @@ export default new Vuex.Store({
     initSocks(state){
       state.socks.flowSC = io('webhacker.xyz:8082/SC')
       state.socks.flowCS = io('webhacker.xyz:8082/CS')
+
+      /*
       state.socks.flowSC.on('msg', (data) =>{
         console.log('from server: ', data)
       })
+      */
     }
   },
   getters: {

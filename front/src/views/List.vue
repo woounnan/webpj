@@ -34,12 +34,12 @@
       <v-subheader>나</v-subheader>
 
       <v-list-item>
-        <v-list-item-avatar>
-          <v-img :src="me.avatar"></v-img>
-        </v-list-item-avatar>
+        <v-list-item-img>
+          <v-img :src="me.img"></v-img>
+        </v-list-item-img>
 
         <v-list-item-content>
-          <v-list-item-title v-text="me.title"></v-list-item-title>
+          <v-list-item-title v-text="me.pos"></v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-icon>
@@ -51,9 +51,9 @@
         v-for="item, idx in users"
         @click="setThis(idx)"
         v-on="on">
-        <v-list-item-avatar>
-          <v-img :src="item.avatar"></v-img>
-        </v-list-item-avatar>
+        <v-list-item-img>
+          <v-img :src="item.img"></v-img>
+        </v-list-item-img>
 
         <v-list-item-content>
           <v-list-item-title v-text="item.title"></v-list-item-title>
@@ -95,16 +95,17 @@ import Users from './Users.vue'
           { title: '작업 확인' },
         ],
         me: {
-          title: '정보보호병', 
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+          pos: '', 
+          img: '',
+          st: '',
         },
         users: [
         /*
-          { active: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+          { active: true, title: 'Jason Oner', img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
         */
         ],
         items2: [
-          { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
+          { title: 'Travis Howard', img: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
         ],
       }
     },
@@ -117,7 +118,10 @@ import Users from './Users.vue'
       }
     },
     mounted: {
-      
+      im = this.$store.getters.getUser
+      this.me.pos = im.pos
+      this.me.st = im.st
+      this.me.img = im.img
     }
   }
 </script>
