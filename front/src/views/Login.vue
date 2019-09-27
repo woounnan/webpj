@@ -130,6 +130,7 @@
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
+              console.log('@@@@@@@@@@@@@@@')
               console.log(store.getters.getUser)
             }
             else{
