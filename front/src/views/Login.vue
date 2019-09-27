@@ -130,8 +130,7 @@
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
-              console.log('@@@@@@@@@@2')
-              console.log(this.$store)
+              console.log(this.$store.state)
             }
             else{
               localStorage.setItem('tk', r.data.tk)
@@ -142,8 +141,8 @@
                 div: r.division,
                 cp: r.company
                 })
-              console.log('@@@@@@@@@@2')
-              console.log(this.$store)
+              console.log('#############')
+              console.log(this.$store.state.user)
             }
           })
           .catch(e => console.error(e.message))
