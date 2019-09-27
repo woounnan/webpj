@@ -6,7 +6,7 @@ import vuetify from './plugins/vuetify'
 import VModal from 'vue-js-modal'
 import VueSocketIO from 'vue-socket.io'
 import io from 'socket.io-client'
- 
+ /*
 Vue.use(new VueSocketIO({
     debug: true,
     connection: 'http://webhacker.xyz:8082',
@@ -17,7 +17,7 @@ Vue.use(new VueSocketIO({
     }
 }))
 
-
+*/
 
 Vue.use(VModal, { dynamic: true })
 

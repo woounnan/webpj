@@ -77,22 +77,12 @@ export default{
         	]
 		}
 	},
-	sockets: {
-		connect: function(){
-			console.log('connect!!!!!!!!!!!!!!!!!!!')
-   			console.log(this.$io)
-		},
-		customEmit: function (data) {
-            console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
-        }
-	},
 	created(){
 	},
    	mounted(){
-   		console.log(io)
+   		this.$socket = io('webhacker.xyz:8082')
 		this.flowSC = io.of('/SC')
 		this.flowCS = io.of('/CS')
-		console.log('flowSc:', this.flowSC)
 		this.flowSC.on('msg', (data) =>{
 			console.log('from server: ', data)
 		})
