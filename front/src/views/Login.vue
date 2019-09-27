@@ -152,7 +152,7 @@
             
           })
           .catch(e => console.error('List.vue::getUsers error occured!!\n', e))        
-          //location.href='/'
+          location.href='/'
      }
 
   }
