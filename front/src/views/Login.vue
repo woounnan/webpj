@@ -141,10 +141,11 @@
                 div: r.division,
                 cp: r.company
                 })
-              console.log('#############')
-              console.log(this.$store.computed.getUser())
             }
           })
+          
+              console.log('#############')
+              console.log(this.$store.computed.getUser())
           .catch(e => console.error(e.message))
         axios.post('http://webhacker.xyz:8000/db/getUsers', {id: this.$store.state.user.id})
           .then(r => {
