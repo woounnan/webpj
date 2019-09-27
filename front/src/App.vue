@@ -33,6 +33,7 @@
       >
         <span>ArmyTalk</span><v-icon>warning</v-icon>
       </v-btn>
+      <v-btn @click="showSt($store.state.tk)"> test </v-btn>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <div v-if="!$store.state.tk">
@@ -97,6 +98,9 @@ export default {
       this.$store.commit('delToken')
       localStorage.removeItem('tk')
       location.href='/'
+    },
+    showSt(st){
+      console.log(st)
     }
   }
 };
