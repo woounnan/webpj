@@ -147,7 +147,7 @@
           })
           .then(r => {
             //location.href = '/'
-                console.log(this.$store.getters.getUser)
+                console.log(stringify(this.$store.getters.getUser))
             
           })
           .catch(e => console.error(e.message))
