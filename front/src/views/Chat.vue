@@ -86,7 +86,7 @@ export default{
 		customEmit: function (data) {
             console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
         }
-	}
+	},
 	created(){
 	},
    	mounted(){
