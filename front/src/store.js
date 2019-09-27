@@ -23,7 +23,7 @@ export default new Vuex.Store({
     initUser (info){
       this.state.user.id = info.id,
       this.state.user.pos = info.pos,
-      this.this.state.user.div = info.div,
+      this.state.user.div = info.div,
       this.state.user.cp = info.cp,
       this.state.user.img = info.img,
       this.state.user.st = '출근'
