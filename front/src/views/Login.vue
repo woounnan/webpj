@@ -130,7 +130,7 @@
               this.wd.state = true
               this.wd.msg = '잘못된 입력'
               this.wd.type = 'error'
-              console.log(this.$store.state)
+              console.log(store.getters.getUser)
             }
             else{
               localStorage.setItem('tk', r.data.tk)
