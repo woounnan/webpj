@@ -26,6 +26,13 @@ router.post('/getUsers', (req, res, next) => {
 	User.find((e, r) => {
 		if(r.length > 0 ){
 			console.log('getUsers::successed')
+			var i = 0
+			r.forEach(x){
+				if(x.id == id){
+					r.splice(i, 1)
+				}
+				i++
+			}
 			console.log(r)
 			res.send({code: 1, users: r, test:'tests'})
 		}
