@@ -141,13 +141,13 @@
                 div: u.division,
                 cp: u.company
                 })
-                console.log(this.$store.getters.getUser)
                 axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
 
             }
           })
           .then(r => {
-            location.href = '/'
+            //location.href = '/'
+                console.log(this.$store.getters.getUser)
             
           })
           .catch(e => console.error(e.message))
