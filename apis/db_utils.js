@@ -26,6 +26,7 @@ router.post('/getUsers', (req, res, next) => {
 	User.find(qr, (e, r) => {
 		if(!r){
 			console.log('getUsers::successed')
+			console.log(r)
 			res.send({code: 1, users: r, test:'tests'})
 		}
 		else{
