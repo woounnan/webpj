@@ -145,7 +145,7 @@
           })
 
               console.log('#############')
-              console.log(this.$store.state.getUser())
+              console.log(this.$store.state.getUser
           .catch(e => console.error(e.message))
         axios.post('http://webhacker.xyz:8000/db/getUsers', {id: this.$store.state.user.id})
           .then(r => {
