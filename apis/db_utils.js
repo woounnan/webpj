@@ -49,7 +49,7 @@ router.post('/addUser', (req, res, next) => {
 		company : req.body.cp,
 		division : req.body.div,
 		leave: 0,
-		image : 'https://cdn.vuetifyjs.com/images/lists/'+String(Math.random(1,100))+'.jpg'
+		image : 'https://cdn.vuetifyjs.com/images/lists/'+String(parseInt((Math.random()*1000)%100))+'.jpg'
 	}
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
