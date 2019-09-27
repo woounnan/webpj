@@ -30,7 +30,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getUser(){
+    getUser(state){
       return state.user
     }
   },
