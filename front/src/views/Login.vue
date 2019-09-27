@@ -123,6 +123,7 @@
         this.login(id.split(' ').join(''), pw.split(' ').join(''))
       },
       login(id, pw){
+        console.log(this.$store)
         axios.post(`http://webhacker.xyz:8000/apis/login`, {id: id, pw: pw})
           .then(r => {
             if(r.data.code != '1'){
