@@ -142,7 +142,7 @@
                 cp: r.company
                 })
               console.log('#############')
-              console.log(this.$store.state.user)
+              console.log(this.$store.computed.getUser())
             }
           })
           .catch(e => console.error(e.message))
