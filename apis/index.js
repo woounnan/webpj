@@ -10,21 +10,22 @@ var app = express();
 const server = app.listen(8082, () => {
 	console.log('server running on port 8082')
 })
-
+const flowCS = undefined
+const flowSC = undefined
 
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
-})
+	flowCS = io.of('/CS')
+	flowSC = io.of('/SC')
 
-const flowCS = io.of('/CS')
-const flowSC = io.of('/SC')
-
-
-setInterval(() =>{
+	setInterval(() =>{
 	console.log('send msg to client!')
 	flowSC.emit('msg', 'Hi!! Im a server')
 }, 3000)
+})
+
+
 
 router.get('/', (req, res, next) => {
 	res.send('Here is at index.js in apis')
