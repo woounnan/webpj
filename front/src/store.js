@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import axios from 'axios'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -14,7 +14,9 @@ export default new Vuex.Store({
       div: '',
       cp: '',
       st: ''
-    }
+    },
+    others: [
+    ]
   },
   mutations: {
     delToken (state) {
@@ -27,6 +29,12 @@ export default new Vuex.Store({
       state.user.cp = info.cp,
       state.user.img = info.img,
       state.user.st = '출근'
+    }
+    initOthers(state, info){
+      state.others = info
+    },
+    setState(state, st){
+      state.user.state = st
     }
   },
   getters: {

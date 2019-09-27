@@ -32,3 +32,7 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+
+const flowCS = io.of('/CS')
+const flowSC = io.of('/SC')

@@ -32,7 +32,6 @@ router.post('/getUsers', (req, res, next) => {
 					break;
 				}
 			}
-			console.log(r)
 			res.send({code: 1, users: r, test:'tests'})
 		}
 		else{
@@ -49,6 +48,7 @@ router.post('/addUser', (req, res, next) => {
 		position : req.body.pos,
 		company : req.body.cp,
 		division : req.body.div,
+		leave: 0,
 		image : 'https://cdn.vuetifyjs.com/images/lists/'+String(Math.random(1,100))+'.jpg'
 	}
 	//find a user
