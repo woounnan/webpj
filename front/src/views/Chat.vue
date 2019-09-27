@@ -78,12 +78,7 @@ export default{
 	},
 	sockets: {
 		connect: function(){
-			this.$io.flowSC = io.of('/SC')
-			this.$io.flowCS = io.of('/CS')
-			console.log('flowSc:', this.$io.flowSC)
-			this.$io.flowSC.on('msg', (data) =>{
-				console.log('from server: ', data)
-			})
+			console.log('connect!!!!!!!!!!!!!!!!!!!')
 		},
 		customEmit: function (data) {
             console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
