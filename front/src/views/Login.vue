@@ -133,6 +133,7 @@
             }
             else{
               localStorage.setItem('tk', r.data.tk)
+              console.log("rrrr:", r.data)
               this.$store.commit('initUser', {
                 id : r.id,
                 pos: r.position,
