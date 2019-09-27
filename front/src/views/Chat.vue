@@ -59,6 +59,7 @@
 import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
 import Bar from './Bar.vue'
 import List from './List.vue'
+import List from './List.vue'
 export default{
 	name: 'App',
 	components: {
@@ -78,10 +79,10 @@ export default{
 	},
 	sockets: {
 		connect: function(){
-			this.flowSC = io.of('/SC')
-			this.flowCS = io.of('/CS')
-			console.log('flowSc:', this.flowSC)
-			this.flowSC.on('msg', (data) =>{
+			this.$io.flowSC = io.of('/SC')
+			this.$io.flowCS = io.of('/CS')
+			console.log('flowSc:', this.$io.flowSC)
+			this.$io.flowSC.on('msg', (data) =>{
 				console.log('from server: ', data)
 			})
 		},

@@ -30,9 +30,7 @@ new Vue({
   router,
   store,
   vuetify,
+  io,
   render: h => h(App)
 }).$mount('#app')
 
-
-this.flowCS = io.of('/CS')
-this.flowSC = io.of('/SC')
