@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
   	bus: new Vue(),
-  	tk: localStorage.getItem('tk'),
+  	tk: undefined,
     user: {
       id: '',
       pos: '',
@@ -26,6 +26,9 @@ export default new Vuex.Store({
   mutations: {
     delToken (state) {
     	state.tk = null
+    },
+    setTk(state){
+      state.tk = localStorage.getItem('tk')
     },
     initUser (state, info){
       state.user.id = info.id,
