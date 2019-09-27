@@ -10,8 +10,8 @@ var app = express();
 const server = app.listen(8082, () => {
 	console.log('server running on port 8082')
 })
-const flowCS = undefined
-const flowSC = undefined
+var flowCS = undefined
+var flowSC = undefined
 
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
