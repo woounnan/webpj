@@ -29,9 +29,9 @@ export default new Vuex.Store({
       state.user.st = '출근'
     }
   },
-  computed: {
+  getters: {
     getUser(){
-      return this.$store.state.user
+      return state.user
     }
   },
   actions: {
