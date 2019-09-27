@@ -140,7 +140,7 @@
                 div: r.division,
                 cp: r.company
                 })
-                console.log(this.$store.getters.getUser.id)
+                console.log(this.$store.getters.getUser)
             }
           })
 

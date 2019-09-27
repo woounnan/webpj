@@ -20,13 +20,13 @@ export default new Vuex.Store({
     delToken (state) {
     	state.tk = null
     },
-    initUser (info){
-      this.state.user.id = info.id,
-      this.state.user.pos = info.pos,
-      this.state.user.div = info.div,
-      this.state.user.cp = info.cp,
-      this.state.user.img = info.img,
-      this.state.user.st = '출근'
+    initUser (state, info){
+      state.user.id = info.id,
+      state.user.pos = info.pos,
+      state.user.div = info.div,
+      state.user.cp = info.cp,
+      state.user.img = info.img,
+      state.user.st = '출근'
     }
   },
   getters: {
