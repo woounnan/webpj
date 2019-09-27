@@ -139,8 +139,8 @@
                 img: r.image,
                 div: r.division,
                 cp: r.company
-                console.log(JSON.stringify(this.$store.getters.getUser))
                 })
+            console.log(JSON.stringify(this.$store.getters.getUser))
             }
           })
 
