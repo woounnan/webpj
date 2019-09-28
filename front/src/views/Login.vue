@@ -10,8 +10,8 @@
             sm="8"
             md="4"
           >
-            <modals-container align="center" justify="center"/>
-            <v-card class="elevation-12">
+            <modals-container/>
+            <v-card class="elevation-12" align="center">
               <v-toolbar
                 color="primary"
                 dark
