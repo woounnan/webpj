@@ -146,8 +146,9 @@
             }
           })
           .then(r => {
-                  this.$store.commit('setTk')
-                  this.$router.push('/')
+            this.$store.commit('initOthers', r.users)
+            this.$store.commit('setTk')
+            this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
 
