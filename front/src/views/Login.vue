@@ -3,9 +3,9 @@
     <v-content
             align="center"
         justify="center"     
+        class="fill-height"
         >
       <v-container
-        class="fill-height"
         fluid    
       >
         <v-row
