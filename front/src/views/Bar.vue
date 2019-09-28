@@ -2,14 +2,19 @@
 	<v-system-bar dark color="indigo darken-2">
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
-				<v-btn 
-					v-for="(x, idx) in $store.state.user.room"
-					v-on="on" 
-					height="20px"
-				>
-					<v-icon>mdi-message</v-icon>
-					{{x}}
-				</v-btn>
+		    	<v-row>
+			    	<v-cols
+						v-for="(x, idx) in $store.state.user.room"
+			    	>
+						<v-btn 
+							v-on="on" 
+							height="20px"
+						>
+							<v-icon>mdi-message</v-icon>
+							{{x}}
+						</v-btn>
+					</v-cols>
+				</v-row>
 			</template>
 			<v-card>
 				<Chat />
