@@ -114,13 +114,13 @@
       subCall(idx){
         switch(idx){
           case 0:
-            test1()
+            this.test1()
             break
           case 1:
-            test2()
+            this.test2()
             break
           case 2:
-            test3()
+            this.test3()
             break
         }
       },
