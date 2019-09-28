@@ -5,6 +5,7 @@
 		    <template v-slot:activator="{ on }">
 		    	<v-row>
 		    		<v-col
+		    		cols="2"
 		    		v-for="(x, idx) in $store.state.user.room"
 		    		>
 						<v-btn 
