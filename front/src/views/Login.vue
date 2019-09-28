@@ -2,6 +2,7 @@
   <v-app id="inspire">
     <v-content>
       <v-container
+      class="fill-height"
       fluid>
         <v-row
           align="center" justify="center"
@@ -45,7 +46,7 @@
           </v-col>
 
         </v-row>
-        <v-row row wrap align="center" justify="center"> 
+        <v-row> 
           <v-col
           cols="12">
           <v-alert v-model="wd.state" :type="wd.type" dismissible >
