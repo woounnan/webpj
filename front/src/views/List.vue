@@ -69,9 +69,9 @@
 
       <v-list>
         <v-list-item
-          v-for="(item, index) in sub"
-          :key="index"
-          @click="index === 0 ? 'test1' : 'test2'"
+          v-for="(item, idx) in sub"
+          :key="idx"
+          @click="subCall(idx)"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -110,6 +110,19 @@
     methods: {
       setThis:function(idx){
         
+      },
+      subCall(idx){
+        switch(idx){
+          case 0:
+            test1()
+            break
+          case 1:
+            test2()
+            break
+          case 2:
+            test3()
+            break
+        }
       },
       test1(){
         console.log('test1')
