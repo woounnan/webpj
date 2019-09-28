@@ -8,7 +8,7 @@
 				    	v-for="(x, idx) in $store.state.user.room"
 		    		>
 						<v-btn 
-							class="pa-5"
+							class="md-5"
 							v-on="on" 
 							height="20px"	
 						>
