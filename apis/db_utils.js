@@ -32,6 +32,7 @@ router.post('/getUsers', (req, res, next) => {
 					break;
 				}
 			}
+			console.log(JSON.stringify(r))
 			res.send({code: 1, users: r, test:'tests'})
 		}
 		else{
@@ -60,7 +61,7 @@ router.post('/addUser', (req, res, next) => {
 			Company.findOne({name: user.company}, (e, r) =>{
 				if(r){
 					console.log('Can create!')
-					var users = new User(user)
+					var usuers = new User(user)
 					users.save( (e, users) =>{
 						if(user){
 							console.log('User created')
