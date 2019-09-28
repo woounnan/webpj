@@ -4,8 +4,7 @@
         justify="start" 
         >
       <v-container
-        fluid
-        class="fill-height"  
+        fluid        
         height="300px" 
       >
         <v-row
