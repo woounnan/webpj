@@ -146,7 +146,7 @@
             }
           })
           .then(r => {
-            console.log(r.users)
+            console.log(r)
             this.$store.commit('initOthers', r.users)
             console.log(this.$store.getters.getOthers)
             this.$store.commit('setTk')
