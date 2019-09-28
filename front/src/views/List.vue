@@ -122,8 +122,8 @@ import Users from './Users.vue'
       this.me.position = im.position
       this.me.state = im.state
       this.me.image = im.image
-      this.users = this.$store.getters.getOthers
-      console.log(this.$store.getters.getOthers)
+      this.others = this.$store.getters.getOthers
+      console.log(this.others)
     }
   }
 </script>
