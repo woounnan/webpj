@@ -4,7 +4,7 @@
       <v-container
       class="fill-height"
       fluid
-      max-height="700px">
+      style="height:700px">
         <v-row
           align="center" justify="center"
         >
