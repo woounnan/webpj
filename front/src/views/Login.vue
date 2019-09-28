@@ -6,12 +6,11 @@
         <v-row
         >
           <v-col
-              align="center"
             cols="12"
             sm="8"
             md="4"
           >
-            <modals-container align="center"/>
+            <modals-container align="center" justify="center"/>
             <v-card class="elevation-12">
               <v-toolbar
                 color="primary"
