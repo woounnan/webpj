@@ -1,15 +1,12 @@
 <template>
-  <v-app id="inspire" height="600px">
+  <v-app id="inspire">
     <v-content
-        justify="start" 
         >
       <v-container
         fluid
         class="fill-height"
       >
         <v-row
-        align="start"
-        justify="center"  
         >
           <v-col
             cols="12"
@@ -51,9 +48,7 @@
 
         </v-row>
       </v-container>
-      <v-container
-      align="center"
-        justify="center"  >
+      <v-container>
             <v-alert v-model="wd.state" :type="wd.type" dismissible >
               {{wd.msg}}
     </v-alert>
