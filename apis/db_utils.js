@@ -57,6 +57,7 @@ router.post('/addUser', (req, res, next) => {
 		if(r!=null){
 			ret = 1
 			res.send({code: -1})
+			return
 		}
 		else{
 			Company.findOne({name: user.company}, (e, r) =>{
