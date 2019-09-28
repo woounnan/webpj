@@ -25,7 +25,9 @@ io.on('connection', function(socket){
 	
 	})
 	*/
-	setInterval(()=>{socket.emit('msg', 'Hi! im a server!')}, 3000)
+	socket.on('msg', (data) =>{
+		socket.broadcast.emit('msg', data)
+	})
 })
 
 
