@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" height="800px">
     <v-content
         justify="start" 
         >
