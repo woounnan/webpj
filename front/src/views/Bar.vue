@@ -1,10 +1,12 @@
 <template>
+	<v-container>
 	<v-system-bar dark color="indigo darken-2">
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
-			    	<v-row
-						v-for="(x, idx) in $store.state.user.room"
-			    	>
+		    	<v-row>
+		    		<v-col
+		    		v-for="(x, idx) in $store.state.user.room"
+		    		>
 						<v-btn 
 							v-on="on" 
 							height="20px"
@@ -12,6 +14,7 @@
 							<v-icon>mdi-message</v-icon>
 							{{x}}
 						</v-btn>
+					</v-col>
 					</v-row>
 			</template>
 			<v-card>
@@ -24,6 +27,7 @@
 		<v-icon>mdi-battery</v-icon>
 		<span>12:30</span>
 	</v-system-bar>
+</v-container>
 </template>
 
 <script>
