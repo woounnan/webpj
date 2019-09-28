@@ -12,7 +12,7 @@
             sm="8"
             md="4"
           >
-            <modals-container />
+            <modals-container align="center"/>
             <v-card class="elevation-12">
               <v-toolbar
                 color="primary"
