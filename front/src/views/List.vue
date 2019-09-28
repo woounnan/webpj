@@ -34,9 +34,9 @@
       <v-subheader>나</v-subheader>
 
       <v-list-item>
-        <v-list-item-img>
-          <v-img :src="me.avatar"></v-img>
-        </v-list-item-img>
+        <v-list-item-avatar>
+          <v-img :src="me.image"></v-img>
+        </v-list-item-avatar>
 
         <v-list-item-content>
           <v-list-item-title v-text="me.position"></v-list-item-title>
@@ -51,9 +51,9 @@
         v-for="item, idx in others"
         @click="setThis(idx)"
         v-on="on">
-        <v-list-item-img>
+        <v-list-item-avatar>
           <v-img :src="item.image"></v-img>
-        </v-list-item-img>
+        </v-list-item-avatar>
 
         <v-list-item-content>
           <v-list-item-title v-text="item.position"></v-list-item-title>
@@ -96,7 +96,7 @@ import Users from './Users.vue'
         ],
         me: {
           position: '', 
-          avatar: '',
+          image: '',
           state: '',
         },
         others: [
@@ -118,7 +118,7 @@ import Users from './Users.vue'
       var im = this.$store.getters.getUser
       this.me.position = im.position
       this.me.state = im.state
-      this.me.avatar = im.image
+      this.me.image = im.image
       this.others = this.$store.getters.getOthers
       console.log(this.others)
     }
