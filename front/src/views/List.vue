@@ -71,7 +71,7 @@
         <v-list-item
           v-for="(item, index) in sub"
           :key="index"
-          @click="index === 0 ? 'test1' : 'test2'"
+          @click="test1"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
