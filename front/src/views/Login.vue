@@ -6,6 +6,7 @@
         <v-row
         >
           <v-col
+              align="center"
             cols="12"
             sm="8"
             md="4"
