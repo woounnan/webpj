@@ -3,7 +3,8 @@
     <v-content>
       <v-container
       class="fill-height"
-      fluid>
+      fluid
+      max-height="700px">
         <v-row
           align="center" justify="center"
         >
