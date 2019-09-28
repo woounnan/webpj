@@ -61,7 +61,7 @@ router.post('/addUser', (req, res, next) => {
 			Company.findOne({name: user.company}, (e, r) =>{
 				if(r){
 					console.log('Can create!')
-					var usuers = new User(user)
+					var users = new User(user)
 					users.save( (e, users) =>{
 						if(user){
 							console.log('User created')

@@ -8,7 +8,6 @@
         <v-row
           align="center"
           justify="center"
-          height="600px"
         >
           <v-col
             cols="12"
