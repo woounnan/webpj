@@ -8,7 +8,7 @@
         <v-row
           align="center"
           justify="center"
-          height="750px"
+          height="700px"
         >
           <v-col
             cols="12"
@@ -49,9 +49,11 @@
           </v-col>
         </v-row>
         <v-row>
+          <v-col cols="12">
           <v-alert v-model="wd.state" :type="wd.type" dismissible >
             {{wd.msg}}
           </v-alert>
+        </v-col>
         </v-row>
       </v-container>
     </v-content>
@@ -99,6 +101,7 @@
             this.wd.type = 'success'
             this.wd.state = true
             this.wd.msg = '등록 성공'
+          console.log('@@@@@@@2:', this.wd)
         }else{
           this.wd.type = 'error'
           this.wd.state = true
