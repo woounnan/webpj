@@ -56,9 +56,11 @@
       </v-container>
     </v-content>
   </v-app>
-  <v-alert v-model="wd.state" :type="wd.type" dismissible >
-            {{wd.msg}}
-          </v-alert>
+  <div>
+    <v-alert v-model="wd.state" :type="wd.type" dismissible >
+              {{wd.msg}}
+    </v-alert>
+  </div>
 </template>
 
 <script>
