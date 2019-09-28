@@ -4,7 +4,7 @@
 	<v-system-bar dark color="indigo darken-2">
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
-		    	<v-row align="start" justify="start">
+		    	<v-row>
 		    		<v-col
 		    			cols="2"
 				    	v-for="(x, idx) in $store.state.user.room"
@@ -12,7 +12,7 @@
 						<v-btn 
 							v-on="on" 
 							height="20px"
-		    				style="width:10px"	
+		    				style="width:20px"	
 						>
 							<v-icon>mdi-message</v-icon>
 							{{x}}
