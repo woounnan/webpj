@@ -1,8 +1,6 @@
 <template>
   <v-app id="inspire">
     <v-content
-            align="center"
-        justify="center"     
         class="fill-height"
         >
       <v-container
