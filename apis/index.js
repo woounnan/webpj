@@ -27,7 +27,7 @@ io.on('connection', function(socket){
 	*/
 	socket.on('msg', (data) =>{
 		console.log('recv msg, so send msg')
-		socket.broadcast.emit('msg', data)
+		socket.emit('msg', data)
 	})
 })
 
