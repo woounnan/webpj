@@ -18,7 +18,7 @@
             cols="12"
             sm="8"
             md="4"
-            height="600px"
+            height="800px"
           >
             <modals-container />
             <v-card class="elevation-12">
