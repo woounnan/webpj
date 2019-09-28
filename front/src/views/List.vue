@@ -28,8 +28,8 @@
     </v-toolbar>
 
     <v-list subheader
-        style="max-height: 540px"  
-        class="scroll-y"
+        style="max-height: 540px" 
+        class="overflow-y-auto" 
     >
       <v-subheader>나</v-subheader>
 
