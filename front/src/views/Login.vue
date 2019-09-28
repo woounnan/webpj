@@ -1,8 +1,8 @@
 <template>
   <v-app id="inspire">
-    <v-content
-    class="fill-height">
+    <v-content>
       <v-container
+      class="fill-height"
       fluid>
         <v-row
           align="center" justify="center"
@@ -12,6 +12,7 @@
             sm="8"
             md="4"
           >
+          <v-row>
             <modals-container/>
             <v-card class="elevation-12">
               <v-toolbar
@@ -43,17 +44,15 @@
                 <v-btn color="primary" @click="check">로그인</v-btn>
               </v-card-actions>
             </v-card>
-          </v-col>
-
-        </v-row>
-        <v-row> 
-          <v-col
-          cols="12">
-          <v-alert v-model="wd.state" :type="wd.type" dismissible >
+          </v-row>
+          <v-row>
+            <v-alert v-model="wd.state" :type="wd.type" dismissible >
               {{wd.msg}}
 
     </v-alert>
-  </v-col>
+          </v-row>
+          </v-col>
+
         </v-row>
       </v-container>
     </v-content>
