@@ -45,7 +45,7 @@
           </v-col>
 
         </v-row>
-        <v-row row wrap> 
+        <v-row row wrap align="center" justify="center"> 
           <v-col
           cols="12">
           <v-alert v-model="wd.state" :type="wd.type" dismissible >
