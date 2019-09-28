@@ -6,8 +6,7 @@
 		    <template v-slot:activator="{ on }">
 		    	<v-row align="start" justify="start">
 		    		<v-col
-		    		cols="3"
-		    		v-for="(x, idx) in $store.state.user.room"
+		    		style="width:10px"		    		v-for="(x, idx) in $store.state.user.room"
 		    		>
 						<v-btn 
 							v-on="on" 
