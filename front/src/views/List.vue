@@ -112,7 +112,8 @@
     },
     methods: {
       setThis:function(idx){
-        this.cur = others[idx]
+        this.cur = this.others[idx]
+        console.log('sethThis::', this.cur)
       },
       subCall(idx){
         switch(idx){
