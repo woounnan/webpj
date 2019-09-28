@@ -1,24 +1,20 @@
 <template>
   <v-app id="inspire">
     <v-content>
-      <!--
       <v-container
         class="fill-height"
-        fluid         
-      >-->
-      <v-container
-        class="fill-height"
-        fluid         
+        fluid    
+        align="center"
+        justify="center"     
       >
         <v-row
-          align="center"
-          justify="center"
+
         >
           <v-col
             cols="12"
             sm="8"
             md="4"
-            height="800px"
+            height="600px"
           >
             <modals-container />
             <v-card class="elevation-12">
