@@ -141,8 +141,8 @@
                 div: u.division,
                 cp: u.company
                 })
-              axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
-               
+              return axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
+              
             }
           })
           .then(r => {
