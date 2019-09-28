@@ -33,7 +33,7 @@
       >
         <span>ArmyTalk</span><v-icon>warning</v-icon>
       </v-btn>
-      <v-btn @click="showSt($store.state.tk)"> test </v-btn>
+      <v-btn @click="showSt($store.state)"> test </v-btn>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <div v-if="!$store.state.tk">
@@ -99,8 +99,9 @@ export default {
       localStorage.removeItem('tk')
       location.href='/'
     },
-    showSt(st){
-      console.log(st)
+    showSt(state){
+      console.log(state)
+      console.log(state.users)
     }
   }
 };

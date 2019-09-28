@@ -56,7 +56,7 @@
         </v-list-item-img>
 
         <v-list-item-content>
-          <v-list-item-title v-text="item.title"></v-list-item-title>
+          <v-list-item-title v-text="item.pos"></v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-icon>
