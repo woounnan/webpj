@@ -8,6 +8,7 @@
         <v-row
           align="center"
           justify="center"
+          height="750px"
         >
           <v-col
             cols="12"
@@ -47,12 +48,15 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row>
+          <v-alert v-model="wd.state" :type="wd.type" dismissible >
+            {{wd.msg}}
+          </v-alert>
+        </v-row>
       </v-container>
     </v-content>
   <div>
-    <v-alert v-model="wd.state" :type="wd.type" dismissible >
-      {{wd.msg}}
-    </v-alert>
+
   </div>
   </v-app>
 </template>
@@ -99,6 +103,7 @@
           this.wd.type = 'error'
           this.wd.state = true
           this.wd.msg = '등록 실패'
+          console.log('@@@@@@@2:', this.wd)
         }
         })
         this.$modal.show(Register,
@@ -111,10 +116,7 @@
             width: '100%',
             height: '100%',
             draggable: true
-          }, {
-          'closed' : (event) => {
-            console.log('event occured of close');
-          }}
+          }
         )
       },
       check(){

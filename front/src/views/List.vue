@@ -111,10 +111,7 @@ import Users from './Users.vue'
     },
     methods: {
       setThis:function(idx){
-        console.log('bef -- title: ' + this.users[idx].title)
-        this.users[idx].title="바뀌었을까요"
-
-        console.log('af -- title: ' + this.users[idx].title)
+        
       }
     },
     mounted(){
