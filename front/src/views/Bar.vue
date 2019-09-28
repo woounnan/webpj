@@ -1,6 +1,5 @@
 <template>
-	<v-container
-	fluid>
+	<v-container>
 	<v-system-bar dark color="indigo darken-2">
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
@@ -12,7 +11,7 @@
 						<v-btn 
 							v-on="on" 
 							height="20px"
-		    				style="width:20px"	
+		    				style="width:30px"	
 						>
 							<v-icon>mdi-message</v-icon>
 							{{x}}
