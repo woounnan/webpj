@@ -58,6 +58,9 @@ export default new Vuex.Store({
   getters: {
     getUser(state){
       return state.user
+    },
+    getOthers(state){
+      return state.others
     }
   },
   actions: {
