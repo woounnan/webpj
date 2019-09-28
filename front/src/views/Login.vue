@@ -2,10 +2,10 @@
   <v-app id="inspire">
     <v-content>
       <v-container
-      fluid
-      class="fill-height">
+      fluid>
         <v-row
           align="center" justify="center"
+          class="fill-height"
         >
           <v-col
             cols="12"
