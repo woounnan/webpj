@@ -15,7 +15,7 @@ export default new Vuex.Store({
       division: '',
       company: '',
       state: '',
-      room: [],
+      room: ['default'],
       room_num: 5
     },
     others: [
