@@ -43,11 +43,6 @@
               </v-card-actions>
             </v-card>
           </v-row>
-          <v-row>
-              <v-alert v-model="wd.state" :type="wd.type" dismissible >
-              {{wd.msg}}
-            </v-alert>
-          </v-row>
           </v-col>
         </v-row>
       </v-container>
