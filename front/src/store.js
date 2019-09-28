@@ -19,8 +19,11 @@ export default new Vuex.Store({
     others: [
     ],
     socks:{
+      sock: undefined
+      /*
       flowSC: undefined,
       flowCS: undefined
+      */
     }
   },
   mutations: {
@@ -45,10 +48,12 @@ export default new Vuex.Store({
       state.user.state = st
     },
     initSocks(state){
+      state.socks.sock = io('webhacker.xyz:8082')
+      /*
+
       state.socks.flowSC = io('webhacker.xyz:8082/SC')
       state.socks.flowCS = io('webhacker.xyz:8082/CS')
 
-      /*
       state.socks.flowSC.on('msg', (data) =>{
         console.log('from server: ', data)
       })

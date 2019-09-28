@@ -4,25 +4,28 @@ const createError = require('http-errors')
 
 console.log('Here is at index.js in apis')
 
+const sendMsg = function(data){
+
+}
 
 var app = express();
 
 const server = app.listen(8082, () => {
 	console.log('server running on port 8082')
 })
-var flowCS = undefined
-var flowSC = undefined
 
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
+	/*
 	flowCS = io.of('/CS')
 	flowSC = io.of('/SC')
-
-	setInterval(() =>{
-		console.log('send msg to client!')
-		flowSC.emit('msg', 'Hi!! Im a server')
-	}, 3000)
+	
+	flowCS.on('msg', (data) => {
+	
+	})
+	*/
+	setInterval(()=>{socket.emit('msg', 'Hi! im a server!')}, 3000)
 })
 
 
