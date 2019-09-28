@@ -146,9 +146,8 @@
             }
           })
           .then(r => {
-                  console.log(r)
                   this.$store.commit('setTk')
-                  //this.$router.push('/')
+                  this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
 
