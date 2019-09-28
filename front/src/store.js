@@ -15,7 +15,8 @@ export default new Vuex.Store({
       division: '',
       company: '',
       state: '',
-      room: []
+      room: [],
+      room_num: 5
     },
     others: [
     ],
@@ -59,6 +60,17 @@ export default new Vuex.Store({
         console.log('from server: ', data)
       })
       */
+    },
+    addRoom(state, to){
+      if(state.room.length < state.room_num){
+        //add new room
+        state.room.push(to)
+      }
+      else{
+        state.room.pop()
+        state.room.push(to)
+      }
+      console.log('add rooms : ', state.room)
     }
   },
   getters: {

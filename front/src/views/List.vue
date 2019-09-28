@@ -114,24 +114,19 @@
       subCall(idx){
         switch(idx){
           case 0:
-            this.test1()
+            this.conversation()
             break
           case 1:
-            this.test2()
-            break
-          case 2:
-            this.test3()
+            this.showState()
             break
         }
       },
-      test1(){
-        console.log('test1')
+      conversation(){
+        console.log('call conversation')
+        this.$store.commit('addRoom')
       },
-      test2(){
-        console.log('test2')
-      },
-      test3(){
-        console.log('test3')
+      showState(){
+        console.log('call showState')
       },
     },
     mounted(){
