@@ -16,7 +16,7 @@ export default new Vuex.Store({
       company: '',
       state: '',
       room: [],
-      room_num: 5
+      room_num: 4
     },
     others: [
     ],
