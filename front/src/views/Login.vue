@@ -4,14 +4,12 @@
       <v-container
       fluid>
         <v-row
+          align="center" justify="center"
         >
           <v-col
             cols="12"
             sm="8"
             md="4"
-          >
-          <v-row
-          align="center" justify="center"
           >
             <modals-container/>
             <v-card class="elevation-12">
@@ -44,7 +42,6 @@
                 <v-btn color="primary" @click="check">로그인</v-btn>
               </v-card-actions>
             </v-card>
-          </v-row>
           </v-col>
 
         </v-row>
