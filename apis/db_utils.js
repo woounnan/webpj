@@ -52,12 +52,11 @@ router.post('/addUser', (req, res, next) => {
 		leave: 0,
 		image : 'https://cdn.vuetifyjs.com/images/lists/'+String(parseInt((Math.random()*1000)%6)+1)+'.jpg'
 	}
+	var code = 0
 	//find a user
 	User.findOne({id: user.id}, (e, r) =>{
 		if(r!=null){
-			ret = 1
-			res.send({code: -1})
-			return
+			code = -1
 		}
 		else{
 			Company.findOne({name: user.company}, (e, r) =>{
@@ -67,21 +66,21 @@ router.post('/addUser', (req, res, next) => {
 					users.save( (e, users) =>{
 						if(user){
 							console.log('User created')
-							res.send({code: 1})
+							code = 1
 						}
 						else{
 							console.error(e)
-							res.send({code: -1})
+							code = -1
 						}
 					})
 				}
 				else
 					console.error(e)
-					res.send({code: -1})
-					return
 			})
 		}
 	})
+
+	res.send({code: code})
 })
 
 
