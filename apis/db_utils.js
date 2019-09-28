@@ -79,7 +79,7 @@ router.post('/addUser', (req, res, next) => {
 			})
 		}
 	})
-
+	console.log('code: ',code)
 	res.send({code: code})
 })
 
