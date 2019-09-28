@@ -2,7 +2,8 @@
   <v-app id="inspire">
     <v-content>
       <v-container
-      fluid>
+      fluid
+      class="fill-height">
         <v-row
           align="center" justify="center"
         >
