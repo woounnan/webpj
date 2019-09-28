@@ -5,7 +5,7 @@
         >
       <v-container
         fluid        
-        height="300px" 
+        height="700px" 
       >
         <v-row
         align="center"
