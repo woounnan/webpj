@@ -47,12 +47,12 @@
           </v-row>
           </v-col>
         </v-row>
-        <div>
+      </v-container>
+              <div>
                       <v-alert v-model="wd.state" :type="wd.type" dismissible >
               {{wd.msg}}
             </v-alert>
         </div>
-      </v-container>
     </v-content>
 
 
