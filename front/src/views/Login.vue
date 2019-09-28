@@ -1,14 +1,18 @@
 <template>
   <v-app id="inspire">
     <v-content>
+      <!--
       <v-container
         class="fill-height"
-        fluid
+        fluid         
+      >-->
+      <v-container
+        height="500px"
+        fluid         
       >
         <v-row
           align="center"
           justify="center"
-          height="500px"
         >
           <v-col
             cols="12"
