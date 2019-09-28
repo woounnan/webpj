@@ -10,8 +10,11 @@
             sm="8"
             md="4"
           >
+          <v-row
+          align="center" justify="center"
+          >
             <modals-container/>
-            <v-card class="elevation-12" align="center" justify="center">
+            <v-card class="elevation-12">
               <v-toolbar
                 color="primary"
                 dark
@@ -41,6 +44,7 @@
                 <v-btn color="primary" @click="check">로그인</v-btn>
               </v-card-actions>
             </v-card>
+          </v-row>
           </v-col>
 
         </v-row>
