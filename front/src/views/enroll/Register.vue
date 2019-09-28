@@ -154,8 +154,6 @@ export default {
         if(Object.keys(r.data).length > 0){
           this.v_companys = r.data
 
-          console.log('rdata: ', this.v_companys)
-          console.log('rdata: ', this.v_companys[0].division)
         }
       })
       .catch(e => console.error(e))
@@ -198,12 +196,9 @@ export default {
         if(x.name == name)
           this.v_divs = x.division
       }
-      console.log('divs:', this.v_divs)
-      console.log('selected name: ' + name)
     },
     getDiv(name){
       this.v_user.div = name
-      console.log('selected name: ' + name)
     },
   },
   created () {
