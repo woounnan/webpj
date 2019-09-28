@@ -1,9 +1,10 @@
 <template>
   <v-app id="inspire">
-    <v-content style="height:400px">
+    <v-content>
       <v-container
       class="fill-height"
-      fluid>
+      fluid
+      >
         <v-row
           align="center" justify="center"
         >
