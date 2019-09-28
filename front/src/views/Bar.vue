@@ -5,8 +5,6 @@
 		    <template v-slot:activator="{ on }">
 		    	<v-row>
 		    		<v-col
-		    			align="start"
-		    			justfiy="space-around"
 				    	v-for="(x, idx) in $store.state.user.room"
 		    		>
 						<v-btn 
