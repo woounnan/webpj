@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-content style="height:700px">
+    <v-content style="height:400px">
       <v-container
       class="fill-height"
       fluid>
