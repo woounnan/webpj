@@ -3,7 +3,7 @@
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
 				<v-btn 
-					v-for="(x, idx) in state.user.room"
+					v-for="(x, idx) in $store.state.user.room"
 					v-on="on" 
 					height="20px"
 				>
