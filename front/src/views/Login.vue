@@ -7,7 +7,7 @@
         fluid         
       >-->
       <v-container
-        height="500px"
+        class="fill-height"
         fluid         
       >
         <v-row
@@ -55,12 +55,10 @@
 
       </v-container>
     </v-content>
-  <div>
-          <v-alert v-model="wd.state" :type="wd.type" dismissible >
+  </v-app>
+  <v-alert v-model="wd.state" :type="wd.type" dismissible >
             {{wd.msg}}
           </v-alert>
-  </div>
-  </v-app>
 </template>
 
 <script>
