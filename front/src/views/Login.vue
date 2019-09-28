@@ -1,7 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-content>
-      <v-container>
+      <v-container
+      fluid>
         <v-row
         >
           <v-col
