@@ -10,11 +10,11 @@ export default new Vuex.Store({
   	tk: undefined,
     user: {
       id: '',
-      pos: '',
-      img: '',
-      div: '',
-      cp: '',
-      st: ''
+      position: '',
+      image: '',
+      division: '',
+      company: '',
+      state: ''
     },
     others: [
     ],
@@ -32,11 +32,11 @@ export default new Vuex.Store({
     },
     initUser (state, info){
       state.user.id = info.id,
-      state.user.pos = info.pos,
-      state.user.div = info.div,
-      state.user.cp = info.cp,
-      state.user.img = info.img,
-      state.user.st = '출근'
+      state.user.position = info.pos,
+      state.user.division = info.div,
+      state.user.company = info.cp,
+      state.user.image = info.img,
+      state.user.state = '출근'
     },
     initOthers(state, info){
       state.others = info

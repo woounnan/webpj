@@ -35,11 +35,11 @@
 
       <v-list-item>
         <v-list-item-img>
-          <v-img :src="me.img"></v-img>
+          <v-img :src="me.image"></v-img>
         </v-list-item-img>
 
         <v-list-item-content>
-          <v-list-item-title v-text="me.pos"></v-list-item-title>
+          <v-list-item-title v-text="me.position"></v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-icon>
@@ -48,15 +48,15 @@
       </v-list-item>
       <v-divider></v-divider>
       <v-list-item
-        v-for="item, idx in users"
+        v-for="item, idx in others"
         @click="setThis(idx)"
         v-on="on">
         <v-list-item-img>
-          <v-img :src="item.img"></v-img>
+          <v-img :src="item.image"></v-img>
         </v-list-item-img>
 
         <v-list-item-content>
-          <v-list-item-title v-text="item.pos"></v-list-item-title>
+          <v-list-item-title v-text="item.position"></v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-icon>
@@ -95,11 +95,11 @@ import Users from './Users.vue'
           { title: '작업 확인' },
         ],
         me: {
-          pos: '', 
-          img: '',
-          st: '',
+          position: '', 
+          image: '',
+          state: '',
         },
-        users: [
+        others: [
         /*
           { active: true, title: 'Jason Oner', img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
         */
@@ -119,9 +119,9 @@ import Users from './Users.vue'
     },
     mounted(){
       var im = this.$store.getters.getUser
-      this.me.pos = im.pos
-      this.me.st = im.st
-      this.me.img = im.img
+      this.me.position = im.pos
+      this.me.state = im.st
+      this.me.image = im.img
       this.users = this.$store.getters.getOthers
       console.log(this.$store.getters.getOthers)
     }
