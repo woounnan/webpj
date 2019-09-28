@@ -119,9 +119,9 @@ import Users from './Users.vue'
     },
     mounted(){
       var im = this.$store.getters.getUser
-      this.me.position = im.pos
-      this.me.state = im.st
-      this.me.image = im.img
+      this.me.position = im.position
+      this.me.state = im.state
+      this.me.image = im.image
       this.users = this.$store.getters.getOthers
       console.log(this.$store.getters.getOthers)
     }
