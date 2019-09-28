@@ -148,6 +148,7 @@
           .then(r => {
             this.$store.commit('initOthers', r.data.users)
             this.$store.commit('setTk')
+            this.$store.commit('initSocks')
             this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
