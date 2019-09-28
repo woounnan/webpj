@@ -4,7 +4,6 @@
         >
       <v-container
         fluid
-        class="fill-height"
       >
         <v-row
         >
