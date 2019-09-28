@@ -6,12 +6,11 @@
         class="fill-height"
         >
       <v-container
-        fluid  
-        align="center"
-        justify="center"    
+        fluid   
       >
         <v-row
-
+        align="center"
+        justify="center"  
         >
           <v-col
             cols="12"
