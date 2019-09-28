@@ -105,11 +105,14 @@
         items2: [
           { title: 'Travis Howard', img: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
         ],
+        cur: {
+
+        }
       }
     },
     methods: {
       setThis:function(idx){
-        
+        this.cur = others[idx]
       },
       subCall(idx){
         switch(idx){
@@ -123,7 +126,8 @@
       },
       conversation(){
         console.log('call conversation')
-        this.$store.commit('addRoom')
+        this.$store.commit('addRoom', this.cur.position)
+        this.cur = undefined
       },
       showState(){
         console.log('call showState')
