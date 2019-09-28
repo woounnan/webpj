@@ -1,5 +1,6 @@
 <template>
-	<v-container>
+	<v-container
+	fluid>
 	<v-system-bar dark color="indigo darken-2">
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
