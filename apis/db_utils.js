@@ -75,6 +75,7 @@ router.post('/addUser', (req, res, next) => {
 				}
 				else
 					console.error(e)
+					res.send({code: -1})
 			})
 		}
 	})

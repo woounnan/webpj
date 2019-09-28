@@ -8,6 +8,7 @@
         <v-row
           align="center"
           justify="center"
+          height="750px"
         >
           <v-col
             cols="12"
@@ -47,17 +48,13 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="12">
-          <v-alert v-model="wd.state" :type="wd.type" dismissible >
-            {{wd.msg}}
-          </v-alert>
-        </v-col>
-        </v-row>
+
       </v-container>
     </v-content>
   <div>
-
+          <v-alert v-model="wd.state" :type="wd.type" dismissible >
+            {{wd.msg}}
+          </v-alert>
   </div>
   </v-app>
 </template>
