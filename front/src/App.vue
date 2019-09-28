@@ -101,7 +101,7 @@ export default {
     },
     showSt(state){
       console.log(state)
-      console.log(state.users)
+      console.log(state.others)
     }
   }
 };
