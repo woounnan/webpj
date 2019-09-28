@@ -6,7 +6,9 @@
         class="fill-height"
         >
       <v-container
-        fluid    
+        fluid  
+        align="center"
+        justify="center"    
       >
         <v-row
 
@@ -52,7 +54,9 @@
 
         </v-row>
       </v-container>
-      <v-container>
+      <v-container
+      align="center"
+        justify="center"  >
             <v-alert v-model="wd.state" :type="wd.type" dismissible >
               {{wd.msg}}
     </v-alert>
