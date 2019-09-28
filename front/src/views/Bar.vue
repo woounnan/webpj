@@ -6,11 +6,13 @@
 		    <template v-slot:activator="{ on }">
 		    	<v-row align="start" justify="start">
 		    		<v-col
-		    		style="width:10px"		    		v-for="(x, idx) in $store.state.user.room"
+		    			cols="2"
+				    	v-for="(x, idx) in $store.state.user.room"
 		    		>
 						<v-btn 
 							v-on="on" 
 							height="20px"
+		    				style="width:10px"	
 						>
 							<v-icon>mdi-message</v-icon>
 							{{x}}
