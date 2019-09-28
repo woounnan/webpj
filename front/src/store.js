@@ -62,6 +62,7 @@ export default new Vuex.Store({
       */
     },
     addRoom(state, to){
+      if(state.user.room.indexOf(to) != -1) return 
       if(state.user.room.length < state.user.room_num){
         //add new room
         state.user.room.push(to)
