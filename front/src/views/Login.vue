@@ -45,16 +45,20 @@
               </v-card-actions>
             </v-card>
           </v-row>
-          <v-row>
-            <v-col cols="12">
-            <v-alert v-model="wd.state" :type="wd.type" dismissible >
-              {{wd.msg}}
-            </v-alert>
-              </v-col>
-          </v-row>
+
           </v-col>
 
         </v-row>
+        <v-row
+          align="center" justify="center"
+        >
+            <v-col cols="12">
+              <v-row>
+            <v-alert v-model="wd.state" :type="wd.type" dismissible >
+              {{wd.msg}}
+            </v-alert>
+          </v-row>
+              </v-col>
       </v-container>
     </v-content>
 
