@@ -59,6 +59,7 @@
             </v-alert>
           </v-row>
               </v-col>
+            </v-row>
       </v-container>
     </v-content>
 
