@@ -57,7 +57,6 @@ router.post('/addUser', (req, res, next) => {
 		if(r!=null){
 			ret = 1
 			res.send({code: -1})
-			return 
 		}
 		else{
 			Company.findOne({name: user.company}, (e, r) =>{
@@ -67,20 +66,17 @@ router.post('/addUser', (req, res, next) => {
 					users.save( (e, users) =>{
 						if(user){
 							console.log('User created')
-							res.send({code: 1})
-							return
+							res.end({code: 1})
 						}
 						else{
 							console.error(e)
-							res.send({code: -1})
-							return
+							res.end({code: -1})
 						}
 					})
 				}
 				else
 					console.error(e)
-					res.send({code: -1})
-					return
+					res.end({code: -1})
 			})
 		}
 	})
