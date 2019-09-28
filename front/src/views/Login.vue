@@ -146,8 +146,7 @@
             }
           })
           .then(r => {
-            console.log(r)
-            this.$store.commit('initOthers', r.users)
+            this.$store.commit('initOthers', r.data.users)
             console.log(this.$store.getters.getOthers)
             this.$store.commit('setTk')
             //this.$router.push('/')
