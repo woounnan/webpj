@@ -166,6 +166,7 @@ export default {
       .then(r => {
         ret = r.data.code
         //this.bus.$emit('exit', ret)
+        console.log('###########3',this.$store.state.bus)
         console.log(this.$store.state.bus)
         this.$store.state.bus.$emit('exit', ret)
       })
