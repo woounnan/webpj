@@ -146,8 +146,7 @@
                   console.log(r)
                   this.$store.commit('setTk')
                   this.$router.push('/')
-            
-          })
+                })
 
             }
           })
