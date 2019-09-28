@@ -7,7 +7,6 @@
 		    		<v-col
 		    			align="start"
 		    			justfiy="start"
-		    			md="3"
 				    	v-for="(x, idx) in $store.state.user.room"
 		    		>
 						<v-btn 
