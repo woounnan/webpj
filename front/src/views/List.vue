@@ -35,7 +35,7 @@
 
       <v-list-item>
         <v-list-item-img>
-          <v-img :src="me.image"></v-img>
+          <v-img :src="me.avatar"></v-img>
         </v-list-item-img>
 
         <v-list-item-content>
@@ -96,7 +96,7 @@ import Users from './Users.vue'
         ],
         me: {
           position: '', 
-          image: '',
+          avatar: '',
           state: '',
         },
         others: [
@@ -118,7 +118,7 @@ import Users from './Users.vue'
       var im = this.$store.getters.getUser
       this.me.position = im.position
       this.me.state = im.state
-      this.me.image = im.image
+      this.me.avatar = im.image
       this.others = this.$store.getters.getOthers
       console.log(this.others)
     }
