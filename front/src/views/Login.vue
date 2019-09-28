@@ -18,6 +18,7 @@
             cols="12"
             sm="8"
             md="4"
+            height="600px"
           >
             <modals-container />
             <v-card class="elevation-12">
@@ -51,14 +52,13 @@
               </v-card-actions>
             </v-card>
           </v-col>
+
         </v-row>
-<v-row>
-          <div>
-    <v-alert v-model="wd.state" :type="wd.type" dismissible >
+        <v-row>
+              <v-alert v-model="wd.state" :type="wd.type" dismissible >
               {{wd.msg}}
     </v-alert>
-  </div>
-</v-row>
+        </v-row>
       </v-container>
     </v-content>
   </v-app>
