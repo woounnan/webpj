@@ -142,14 +142,14 @@
                 cp: u.company
                 })
                 axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
+                .then(r => {
+                  console.log(JSON.stringify(r.data.users))
+                  this.$store.commit('setTk')
+                  this.$router.push('/')
+            
+          })
 
             }
-          })
-          .then(r => {
-            console.log(JSON.stringify(r.data.users))
-            this.$store.commit('setTk')
-            this.$router.push('/')
-            
           })
           .catch(e => console.error(e.message))
 
