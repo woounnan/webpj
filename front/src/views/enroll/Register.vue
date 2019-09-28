@@ -169,7 +169,7 @@ export default {
         console.log(this.$store.state.bus)
         this.$store.state.bus.$emit('exit', ret)
       })
-      .catch(e => console.error(e))
+      .catch(e => console.error('Register.vue::::',e))
       
       this.closeWindow();
     },
