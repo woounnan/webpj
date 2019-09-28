@@ -5,7 +5,7 @@
       fluid>
         <v-row
           align="center" justify="center"
-          class="fill-height"
+          height="700px"
         >
           <v-col
             cols="12"
