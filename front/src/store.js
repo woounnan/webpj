@@ -14,7 +14,8 @@ export default new Vuex.Store({
       image: '',
       division: '',
       company: '',
-      state: ''
+      state: '',
+      room: []
     },
     others: [
     ],
