@@ -5,7 +5,6 @@
       fluid>
         <v-row
           align="center" justify="center"
-          height="700px"
         >
           <v-col
             cols="12"
@@ -46,7 +45,7 @@
           </v-col>
 
         </v-row>
-        <v-row> 
+        <v-row row wrap> 
           <v-col
           cols="12">
           <v-alert v-model="wd.state" :type="wd.type" dismissible >
