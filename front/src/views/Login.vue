@@ -55,12 +55,15 @@
 
         </v-row>
       </v-container>
-    </v-content>
-    <v-content>
-    <v-alert v-model="wd.state" :type="wd.type" dismissible >
+      <v-container>
+            <v-alert v-model="wd.state" :type="wd.type" dismissible >
               {{wd.msg}}
     </v-alert>
-  </v-content>
+      </v-container>
+    </v-content>
+
+
+
   </v-app>
 </template>
 
