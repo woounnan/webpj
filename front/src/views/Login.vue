@@ -54,13 +54,13 @@
           </v-col>
 
         </v-row>
-        <v-row>
-              <v-alert v-model="wd.state" :type="wd.type" dismissible >
-              {{wd.msg}}
-    </v-alert>
-        </v-row>
       </v-container>
     </v-content>
+    <v-content>
+    <v-alert v-model="wd.state" :type="wd.type" dismissible >
+              {{wd.msg}}
+    </v-alert>
+  </v-content>
   </v-app>
 </template>
 
