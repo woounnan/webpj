@@ -11,7 +11,7 @@
 						<v-btn 
 							v-on="on" 
 							height="20px"
-		    				style="width:50px"	
+		    				width="30px"	
 						>
 							<v-icon>mdi-message</v-icon>
 							{{x}}
