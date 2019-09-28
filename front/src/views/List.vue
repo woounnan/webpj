@@ -71,7 +71,7 @@
         <v-list-item
           v-for="(item, index) in sub"
           :key="index"
-          @click=""
+          @click="index === 0 ? 'test1' : 'test2'"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -110,7 +110,16 @@
     methods: {
       setThis:function(idx){
         
-      }
+      },
+      test1(){
+        console.log('test1')
+      },
+      test2()){
+        console.log('test2')
+      },
+      test3(){
+        console.log('test3')
+      },
     },
     mounted(){
       var im = this.$store.getters.getUser
