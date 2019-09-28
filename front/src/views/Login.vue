@@ -141,15 +141,15 @@
                 div: u.division,
                 cp: u.company
                 })
-            }
               axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
-              .then(r => {
+               
+            }
+          })
+          .then(r => {
                   console.log(r)
                   this.$store.commit('setTk')
                   //this.$router.push('/')
-                })  
-          })
-          
+          }) 
           .catch(e => console.error(e.message))
 
 
