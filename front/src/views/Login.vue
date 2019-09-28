@@ -9,6 +9,8 @@
         >
           <v-col
             cols="12"
+            sm="8"
+            md="4"
           >
           <v-row>
             <modals-container/>
@@ -45,6 +47,11 @@
           </v-row>
           </v-col>
         </v-row>
+        <div>
+                      <v-alert v-model="wd.state" :type="wd.type" dismissible >
+              {{wd.msg}}
+            </v-alert>
+        </div>
       </v-container>
     </v-content>
 
