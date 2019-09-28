@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-content
-        >
+        height="800px">
       <v-container
         fluid
       >
