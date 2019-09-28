@@ -2,7 +2,7 @@
 	<v-system-bar dark color="indigo darken-2">
 		<v-dialog v-model="dialog" scrollable max-width="300px">
 		    <template v-slot:activator="{ on }">
-		    	<v-row>
+		    	<v-row align="start" justify="space-around">
 			    	<v-col
 						v-for="(x, idx) in $store.state.user.room"
 			    	>
