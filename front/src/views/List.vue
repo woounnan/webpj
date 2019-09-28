@@ -82,10 +82,8 @@
 </template>
 
 <script>
-import Users from './Users.vue'
   export default {
     components: {
-      Users
     },
     data: () => {
       return {
