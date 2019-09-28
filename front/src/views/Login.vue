@@ -1,10 +1,7 @@
 <template>
   <v-app id="inspire">
-    <v-content
-        height="800px">
-      <v-container
-        fluid
-      >
+    <v-content>
+      <v-container>
         <v-row
         >
           <v-col
@@ -46,11 +43,8 @@
           </v-col>
 
         </v-row>
-      </v-container>
-      <v-container>
-            <v-alert v-model="wd.state" :type="wd.type" dismissible >
-              {{wd.msg}}
-    </v-alert>
+        <v-row>
+        </v-row>
       </v-container>
     </v-content>
 
