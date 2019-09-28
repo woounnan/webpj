@@ -146,7 +146,7 @@
             }
           })
           .then(r => {
-            console.log(JSON.stringify(r.data))
+            console.log(JSON.stringify(r))
             this.$store.commit('setTk')
             this.$router.push('/')
             
