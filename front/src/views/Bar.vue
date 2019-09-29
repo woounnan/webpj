@@ -53,7 +53,7 @@
 	  	methods:{
 	  		setSig(){
 	  			console.log('Bar.vue:::', this.$store.state.bus)
-	  			this.$store.state.bus.emit("openDial")
+	  			this.$store.state.bus.$emit("openDial")
 	  		},
 	  		closeRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
