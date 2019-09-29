@@ -27,7 +27,7 @@
 					</v-row>
 			</template>
 			<v-card>
-				<Chat :openDial="openDial"/>
+				<Chat @click="setSig" />
 			</v-card>
 		</v-dialog>
 		<div class="flex-grow-1"></div>
@@ -52,7 +52,7 @@
 	  	},
 	  	methods:{
 	  		setSig(){
-	  			this.openDial = 1
+	  			this.$store.state.bus.emit("openDial")
 	  		},
 	  		closeRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
