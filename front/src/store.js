@@ -56,6 +56,7 @@ export default new Vuex.Store({
       axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
+          console.log('r.data:::',r.data)
           state.companys = r.data
           state.companys.forEach((x)=>{
             if(x.name === state.user.company){
