@@ -94,28 +94,22 @@
               <v-list-item-action>
                 <v-icon>people</v-icon>
               </v-list-item-action>
-                 <v-menu
-        v-model="divMenu"
-        absolute
-        offset-y
-      >
-        <template v-slot:activator="{ on }">
+
               <v-list-item-content>
                 <v-text-field 
                   placeholder="부서 검색"
                   v-model="v_user.div"
                   type="text"
                   v-on="on"
+                  @click="setClickDiv"
                 ></v-text-field>
               </v-list-item-content>
-                      </template>
-                              <v-list-item v-for="(div) in v_divs">
+              <v-list-item v-if="clickDiv" v-for="(div) in v_divs">
 
             <v-list-item-content>
               <v-list-item-title @click="getDiv(div)">{{div}}</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
-      </v-menu>
           </v-list-item>
         </v-list>
       </v-card>
@@ -145,13 +139,17 @@ export default {
       cp : '',
       div: '',
       },
-      divMenu: undefined
+      divMenu: undefined,
+      clickDiv: false,
     }
   },
   mounted: function () {
     this.v_companys = this.$store.getters.getCompanys
   },
   methods : {
+    setClickDiv(){
+      this.clickDiv = true
+    },
     sub(){
       var ret = 0
       console.log('call the sub function');
@@ -192,6 +190,7 @@ export default {
     },
     getDiv(name){
       this.v_user.div = name
+      this.clickDiv = false
     },
   },
   created () {
