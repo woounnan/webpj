@@ -18,7 +18,7 @@
       src="https://picsum.photos/1920/1080?random"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-         <v-toolbar-title>New Chat</v-toolbar-title>
+         <v-toolbar-title>인원 보고</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
 
@@ -100,7 +100,7 @@
         showMenu: false,
         sub: [
           { title: '대화하기' },
-          { title: '작업 확인' },
+          { title: '상태 확인' },
         ],
         cur: {
 
@@ -129,8 +129,6 @@
       },
       showState(){
         console.log('call showState')
-        console.log('List.vue:::', this.$store.getters.getCompanys)
-        console.log('List.vue:::', this.$store.getters.getUser.company_info)
       },
     },
     mounted(){

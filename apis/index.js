@@ -9,6 +9,13 @@ const sendMsg = function(data){
 }
 
 var app = express();
+var v = 1
+var list_user = [{
+	id='',
+	sock=undefined
+}]
+
+
 
 const server = app.listen(8082, () => {
 	console.log('server running on port 8082')
@@ -17,15 +24,9 @@ const server = app.listen(8082, () => {
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
-	/*
-	flowCS = io.of('/CS')
-	flowSC = io.of('/SC')
-	
-	flowCS.on('msg', (data) => {
-	
-	})
-	*/
+
 	socket.on('msg', (data) =>{
+		console.log('v:', v++)
 		console.log('recv msg, so send msg')
 		socket.broadcast.emit('msg', data)
 	})
