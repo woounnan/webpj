@@ -15,7 +15,7 @@
 						>
 							<v-icon>mdi-message</v-icon>
 							{{x}}&nbsp;
-							<v-icon @click="closeRoom(idx)">close</v-icon>
+							<v-icon v-on="" @click="closeRoom(idx)">close</v-icon>
 						</v-btn>
 						&nbsp;
 					</div>
@@ -45,7 +45,7 @@
 	    	}
 	  	},
 	  	method:{
-	  		closeRoom(idx){
+	  		deleteRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
 	  		}
 	  	}
