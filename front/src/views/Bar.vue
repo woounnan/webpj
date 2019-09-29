@@ -12,7 +12,7 @@
 							height="20px"
 						>
 							<v-icon>mdi-message</v-icon>
-							{{x}}&nbsp
+							{{x}}&nbsp;&nbsp;
 						</v-btn>
 					</v-row>
 			</template>
