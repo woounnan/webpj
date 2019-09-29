@@ -149,7 +149,7 @@ export default {
     }
   },
   mounted: function () {
-    v_companys = this.$store.getters.getCompanys
+    this.v_companys = this.$store.getters.getCompanys
   },
   methods : {
     sub(){
