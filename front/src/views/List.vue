@@ -83,7 +83,7 @@
           :key="idx"
           @click="subCall(idx)"
         >
-            <v-list-item-title @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-dialog>
         </v-list-item>
       </v-list>
