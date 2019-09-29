@@ -48,7 +48,7 @@
       </v-list-item>
       <v-divider></v-divider>
 
-        <div v-for="(div, idx) in $store.state.user.company_info">
+        <div v-for="(div, idx) in $store.state.user.company_division">
 
           <v-subheader>{{div}}</v-subheader>
           <!--
