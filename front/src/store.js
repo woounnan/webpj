@@ -59,7 +59,7 @@ export default new Vuex.Store({
           state.companys = r.data
           state.companys.forEach((x)=>{
             if(x.name === state.user.company){
-              state.user.company_division = x.duvusuib
+              state.user.company_division = x.division
             }
           })
         }
