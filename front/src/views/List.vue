@@ -110,7 +110,7 @@
           { title: '대화하기' },
           { title: '상태 확인' },
         ],
-        cur: undefined,
+        cur: {position: ''},
         dial: false
       }
     },
@@ -120,7 +120,7 @@
           this.dial = true
       },
       setThis:function(idx){
-        this.cur = this.$store.getters.getOthers[idx]
+        this.cur = this.$store.getters.getOthers[idx].position
         console.log('sethThis::', this.cur)
       },
       subCall(idx){
