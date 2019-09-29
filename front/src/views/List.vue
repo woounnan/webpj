@@ -49,7 +49,7 @@
       <v-divider></v-divider>
 
       <v-list subheader
-        v-for="(other,idx) in $store.state.others"
+        v-for="(other,idx) in $store.getters.getOthers"
         style="max-height: 600px" 
         class="overflow-y-auto" 
     >
