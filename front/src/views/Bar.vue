@@ -10,10 +10,9 @@
 							class="md-5"
 							v-on="on" 
 							height="20px"
-							border="1"	
 						>
 							<v-icon>mdi-message</v-icon>
-							{{x}}
+							{{x}}&nbsp
 						</v-btn>
 					</v-row>
 			</template>
