@@ -112,7 +112,7 @@
                               <v-list-item v-for="(div) in v_divs">
 
             <v-list-item-content>
-              <v-list-item-title @click="getDiv(div)" >{{div}}</v-list-item-title>
+              <v-list-item-title @click="getDiv(div)">{{div}}</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
       </v-menu>
