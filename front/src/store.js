@@ -30,7 +30,7 @@ export default new Vuex.Store({
       */
     }
   },
-  mounted:{
+  mounted(){
     console.log('store.js mounted :::')
   },
   mutations: {
