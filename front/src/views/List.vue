@@ -35,21 +35,21 @@
 
       <v-list-item>
         <v-list-item-avatar>
-          <v-img :src="$store.getters.getUser.image"></v-img>
+          <v-img :src="$store.state.user.image"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title v-text="$store.getters.getUser.position"></v-list-item-title>
+          <v-list-item-title v-text="$store.state.user.position"></v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-icon>
-          <v-icon :color="store.getters.getUser.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+          <v-icon :color="store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         </v-list-item-icon>
       </v-list-item>
       <v-divider></v-divider>
 
       <v-list-item
-        v-for="other, idx in $store.getters.getOthers"
+        v-for="other, idx in $store.state.others"
         @click="setThis(idx)"
         v-on="on">
         <v-list-item-avatar>
@@ -139,6 +139,7 @@
       },
     },
     mounted(){
+
     }
   }
 </script>
