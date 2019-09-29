@@ -56,21 +56,15 @@ export default new Vuex.Store({
       axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
-          console.log('r.data:::',r.data)
           state.companys = r.data
           state.companys.forEach((x)=>{
-            console.log('for-----:::',x)
             if(x.name === state.user.company){
-              console.log('tru::::', x.name)
               state.user.company_info = x
             }
           })
         }
       })
       .catch(e => console.error(e))
-      console.log('store.js -----------')
-      console.log(state.companys)
-      console.log(state.user.company_info)
     },
     initSocks(state){
       state.socks.sock = io('webhacker.xyz:8082')

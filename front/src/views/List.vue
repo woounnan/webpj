@@ -127,6 +127,8 @@
       },
       showState(){
         console.log('call showState')
+        console.log('List.vue:::', $store.getters.getCompanys)
+        console.log('List.vue:::', $store.getters.getUser.company_info)
       },
     },
     mounted(){
