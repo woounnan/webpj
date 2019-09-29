@@ -14,6 +14,7 @@ export default new Vuex.Store({
       image: '',
       division: '',
       company: '',
+      company_info: {},
       state: '',
       room: [],
       room_num: 4
@@ -39,10 +40,10 @@ export default new Vuex.Store({
     },
     initUser (state, info){
       state.user.id = info.id,
-      state.user.position = info.pos,
-      state.user.division = info.div,
-      state.user.company = info.cp,
-      state.user.image = info.img,
+      state.user.position = info.position,
+      state.user.division = info.division,
+      state.user.company = info.company,
+      state.user.image = info.image,
       state.user.state = '출근'
     },
     initOthers(state, info){
@@ -56,6 +57,11 @@ export default new Vuex.Store({
       .then(r => {
         if(Object.keys(r.data).length > 0){
           state.companys = r.data
+          state.companys.forEach((x)=>{
+            if(x.name === state.user.company){
+              state.company_info = x
+            }
+          })
         }
       })
       .catch(e => console.error(e))

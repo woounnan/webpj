@@ -149,14 +149,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
-      .then(r => {
-        if(Object.keys(r.data).length > 0){
-          this.v_companys = r.data
-          this.$store.commit('initCompanys', r.data)
-        }
-      })
-      .catch(e => console.error(e))
+    v_companys = $store.getters.getCompanys
   },
   methods : {
     sub(){
@@ -166,7 +159,6 @@ export default {
       .then(r => {
         ret = r.data.code
         //this.bus.$emit('exit', ret)
-        console.log('###########3',this.$store.state.bus)
         console.log(this.$store.state.bus)
         this.$store.state.bus.$emit('exit', ret)
       })

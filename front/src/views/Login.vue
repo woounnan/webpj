@@ -134,10 +134,10 @@
               var u = r.data.user
               this.$store.commit('initUser', {
                 id : u.id,
-                pos: u.position,
-                img: u.image,
-                div: u.division,
-                cp: u.company
+                position: u.position,
+                image: u.image,
+                division: u.division,
+                company: u.company
                 })
               return axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
               

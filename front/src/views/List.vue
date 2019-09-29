@@ -48,26 +48,28 @@
       </v-list-item>
       <v-divider></v-divider>
 
-      <div v-for="(cp, idx) in $store.state.companys">
-        <v-subheader>{{cp.name}}</v-subheader>
-        <v-list-item
-          v-for="other, idx in $store.state.others"
-          @click="setThis(idx)"
-          v-on="on">
-          <div v-if="other.division === cp.name">
-            <v-list-item-avatar>
-              <v-img :src="other.image"></v-img>
-            </v-list-item-avatar>
+        <div v-for="(div, idx) in $store.state.user.company_info">
+          <v-list-item
+            v-for="other, idx in $store.state.others"
+            @click="setThis(idx)"
+            v-on="on"
+          >
+            <v-subheader>{{div}}</v-subheader>
+            <div v-if="other.division === div">
+              <v-list-item-avatar>
+                <v-img :src="other.image"></v-img>
+              </v-list-item-avatar>
 
-            <v-list-item-content>
-              <v-list-item-title v-text="other.position"></v-list-item-title>
-            </v-list-item-content>
+              <v-list-item-content>
+                <v-list-item-title v-text="other.position"></v-list-item-title>
+              </v-list-item-content>
 
-            <v-list-item-icon>
-              <v-icon :color="other.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
-            </v-list-item-icon>
-          </div>
+              <v-list-item-icon>
+                <v-icon :color="other.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+              </v-list-item-icon>
+            </div>
         </v-list-item>
+        <v-divider></v-divider>
       </div>
     </v-list>
   </v-card>    
