@@ -3,7 +3,6 @@
     class="d-flex"
     justify="center"
   >
-  <!--
     <v-menu
       v-model="showMenu"
       absolute
@@ -89,55 +88,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
-  -->
-  <v-menu
-        bottom
-        left
-      >
-        <template #activator="{ on: menu }">
-          <v-btn
-            v-on="menu"
-          >
-            open menu
-          </v-btn>
-        </template>
 
-        <v-list>
-          <v-list-item>
-            <v-dialog width="600">
-              <template #activator="{ on: dialog }">
-                <v-btn
-                  text
-                  v-on="dialog"
-                >
-                  <span>menu item 1</span>
-                </v-btn>
-              </template>
-              <v-card>
-                <v-card-text>Hello there</v-card-text>
-              </v-card>
-            </v-dialog>
-          </v-list-item>
-
-          <v-list-item>
-            <v-dialog width="600">
-              <template #activator="{ attrs, on: dialog }">
-                <v-btn
-                  text
-                  v-bind="attrs"
-                  v-on="dialog"
-                >
-                  <span>menu item 2</span>
-                </v-btn>
-              </template>
-
-              <v-card>
-                <v-card-text>Hello there</v-card-text>
-              </v-card>
-            </v-dialog>
-          </v-list-item>
-        </v-list>
-      </v-menu>
   </v-row>
 
 </template>

@@ -24,6 +24,18 @@ Vue.use(VModal, { dynamic: true })
 Vue.config.productionTip = false
 
 
+const VMenu = Vue.options.components.VMenu
+
+Vue.component('v-menu', {
+  extends: VMenu,
+  
+  methods: {
+    getOpenDependents () {
+      return []
+    }
+  }
+})
+
 
 
 new Vue({
@@ -31,6 +43,11 @@ new Vue({
   store,
   vuetify,
   io,
+  data: () => ({
+      drawer: null,
+      tempDrawer: false,
+      isMini: false,
+  }),
   render: h => h(App)
 }).$mount('#app')
 
