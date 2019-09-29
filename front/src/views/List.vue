@@ -49,10 +49,10 @@
       <v-divider></v-divider>
 
         <div v-for="(div, idx) in $store.state.user.company_division">
+          <v-subheader>{{div}}</v-subheader>
           <div
             v-for="(other, idx) in $store.state.others"
           >
-            <v-subheader>{{div}}</v-subheader>
               <v-list-item
                 v-if="other.division === div"
                 @click="setThis(idx)"
