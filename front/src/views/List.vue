@@ -83,7 +83,12 @@
           :key="idx"
           @click="subCall(idx)"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        <v-dialog v-if="item.title === '대화하기'" v-model="dialog" scrollable max-width="300px">
+          <template v-slot:activator="{ on }">
+            <v-list-item-title v-on="on">{{ item.title }}</v-list-item-title>
+          </template>
+          <Chat :title="cur.position" />
+        </v-dialog>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -93,7 +98,9 @@
 
 <script>
   export default {
+    import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
     components: {
+      Chat
     },
     data: () => {
       return {
@@ -104,7 +111,7 @@
         ],
         cur: {
 
-        }
+        },
       }
     },
     methods: {
