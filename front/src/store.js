@@ -18,6 +18,8 @@ export default new Vuex.Store({
       room: [],
       room_num: 4
     },
+    companys: [
+    ],
     others: [
     ],
     socks:{
@@ -27,6 +29,9 @@ export default new Vuex.Store({
       flowCS: undefined
       */
     }
+  },
+  mounted:{
+    console.log('store.js mounted :::')
   },
   mutations: {
     delToken (state) {
@@ -48,6 +53,16 @@ export default new Vuex.Store({
     },
     setState(state, st){
       state.user.state = st
+    },
+    initCompanys(state){
+      axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
+      .then(r => {
+        if(Object.keys(r.data).length > 0){
+          this.v_companys = r.data
+          this.$store.commit('initCompanys', r.data)
+        }
+      })
+      .catch(e => console.error(e))
     },
     initSocks(state){
       state.socks.sock = io('webhacker.xyz:8082')

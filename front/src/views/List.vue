@@ -95,19 +95,6 @@
           { title: '대화하기' },
           { title: '작업 확인' },
         ],
-        me: {
-          position: '', 
-          image: '',
-          state: '',
-        },
-        company:[
-
-        ],
-        others: [
-        /*
-          { active: true, title: 'Jason Oner', img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
-        */
-        ],
         cur: {
 
         }
