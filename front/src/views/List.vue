@@ -8,7 +8,7 @@
       absolute
       offset-y
     >
-      <template v-slot:activator="{ on }">
+      <template v-slot:activator="{ on : menu }">
         <v-card
     class="mx-auto"
   >
@@ -56,7 +56,7 @@
               <v-list-item
                 v-if="other.division === div"
                 @click="setThis(idx)"
-                v-on="on"
+                v-on="menu"
               >
                   <v-list-item-avatar>
                     <v-img :src="other.image"></v-img>
@@ -84,8 +84,8 @@
           @click="subCall(idx)"
         >
         <v-dialog v-model="dial" scrollable max-width="300px">
-          <template v-slot:activator="{ on }">
-            <v-list-item-title v-on="on" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
+          <template v-slot:activator="{ on:dial }">
+            <v-list-item-title v-on="dial" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
           </template>
           <Chat :title="cur" />
         </v-dialog>
