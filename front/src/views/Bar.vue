@@ -47,7 +47,7 @@
 	    },
 	    data: () => {
 	    	return {
-	    		openDial = 0
+	    		openDial : 0
 	    	}
 	  	},
 	  	methods:{
