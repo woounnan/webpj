@@ -78,14 +78,20 @@
       </template>
 
       <v-list>
-        <v-list-item
-          v-for="(item, idx) in sub"
-          :key="idx"
-          @click="subCall(idx)"
-        >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-dialog>
-        </v-list-item>
+        <v-dialog v-model="dialog" scrollable max-width="300px">
+        <template #activator="{ on: dialog }">
+          <v-list-item
+            v-for="(item, idx) in sub"
+            :key="idx"
+            @click="subCall(idx)"
+          >
+              <v-list-item-title v-on="dialog">{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </template>
+      <v-card>
+        <Chat :title="cur"/>
+      </v-card>
+      </v-dialog>
       </v-list>
     </v-menu>
 
