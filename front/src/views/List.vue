@@ -132,8 +132,6 @@
       },
     },
     mounted(){
-      console.log('List.vue::::', this.$store.getters.getOthers)
-      console.log('List.vue::::', this.$store.getters.getUser.company_division)
     }
   }
 </script>
