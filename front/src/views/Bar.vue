@@ -9,16 +9,19 @@
 		    			v-for="(x, idx) in $store.state.user.room"
 		    			>
 
-		   				<div v-on="on">
 							<v-btn 
 								class="md-4"
 								height="20px"
 							>
-								<v-icon>mdi-message</v-icon>
-								{{x}}&nbsp;						
+		   						<div v-on="on">
+									<v-icon>mdi-message</v-icon>
+									{{x}}&nbsp;	
+								</div>
+								<v-icon @click="closeRoom(idx)">close</v-icon>					
 							</v-btn>
-						</div>
-							<v-icon @click="closeRoom(idx)">close</v-icon>
+
+						
+
 						&nbsp;
 					</div>
 					</v-row>
