@@ -51,7 +51,6 @@
         <div v-for="(div, idx) in $store.state.user.company_division">
 
           <v-subheader>{{div}}</v-subheader>
-          <!--
           <v-list-item
             v-for="(other, idx) in $store.state.others"
             @click="setThis(idx)"
@@ -71,7 +70,6 @@
               </v-list-item-icon>
             </div>
         </v-list-item>
-      -->
         <v-divider></v-divider>
       </div>
     </v-list>
