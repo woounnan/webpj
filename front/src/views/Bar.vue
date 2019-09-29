@@ -27,7 +27,7 @@
 					</v-row>
 			</template>
 			<v-card>
-				<Chat />
+				<Chat :title="to"/>
 			</v-card>
 		</v-dialog>
 		<div class="flex-grow-1"></div>
@@ -44,16 +44,25 @@
   	export default {
 	    components: {
 	      Chat
-	    },
+	    },/*
+	    props: {
+	    	openDial: {
+	    		type: Number,
+	    		default: 0,
+	    		required: false
+	    	}
+	    },*/
 	    data: () => {
 	    	return {
-	    		openDial : 0
+	    		to : ''
 	    	}
 	  	},
 	  	methods:{
 	  		setSig(idx){
 	  			console.log('setSig in Bar.vue::::', idx)
-	  			this.$store.state.bus.$emit("openDial", {position: this.$store.getters.getUser.room[idx]})
+	  			this.to = this.$store.getters.getUser.room[idx]
+	  			this.$store.state.bus.$emit("openDial", this.to)
+
 	  		},
 	  		closeRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
