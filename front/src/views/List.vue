@@ -97,8 +97,9 @@
 </template>
 
 <script>
+  import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
   export default {
-    import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
+    
     components: {
       Chat
     },
