@@ -54,7 +54,9 @@ export default new Vuex.Store({
         if(Object.keys(r.data).length > 0){
           state.companys = r.data
           state.companys.forEach((x)=>{
+          console.log('initCompany-for::::', x)
             if(x.name === state.user.company){
+            console.log('initCompany-true::::', x)
               state.user.company_division = x.division
             }
           })
