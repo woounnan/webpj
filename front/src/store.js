@@ -78,7 +78,7 @@ export default new Vuex.Store({
       console.log('add rooms : ', state.user.room)
     },
     closeRoom(state, idx){
-      state.room.splice(idx, 1)
+      state.user.room.splice(idx, 1)
     }
   },
   getters: {
