@@ -90,6 +90,9 @@ export default new Vuex.Store({
     },
     getCompanys(state){
       return state.companys
+    },
+    getRoom(state){
+      return state.user.room
     }
   },
   actions: {
