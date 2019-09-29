@@ -14,9 +14,9 @@
 							height="20px"
 						>
 							<v-icon>mdi-message</v-icon>
-							{{x}}
+							{{x}}&nbsp;
+							<v-icon @click="closeRoom(idx)">close</v-icon>
 						</v-btn>
-
 						&nbsp;
 					</div>
 					</v-row>
@@ -43,6 +43,11 @@
 	    data: () => {
 	    	return {
 	    	}
+	  	}
+	  	method(){
+	  		closeRoom(idx){
+	  			this.$store.commit('closeRoom', idx)
+	  		}
 	  	}
 	}
 </script>

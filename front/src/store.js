@@ -17,7 +17,7 @@ export default new Vuex.Store({
       company_division: {},
       state: '',
       room: [],
-      room_num: 4
+      room_num: 5
     },
     companys: [
     ],
@@ -25,10 +25,6 @@ export default new Vuex.Store({
     ],
     socks:{
       sock: undefined
-      /*
-      flowSC: undefined,
-      flowCS: undefined
-      */
     }
   },
   mutations: {
@@ -68,15 +64,6 @@ export default new Vuex.Store({
     },
     initSocks(state){
       state.socks.sock = io('webhacker.xyz:8082')
-      /*
-
-      state.socks.flowSC = io('webhacker.xyz:8082/SC')
-      state.socks.flowCS = io('webhacker.xyz:8082/CS')
-
-      state.socks.flowSC.on('msg', (data) =>{
-        console.log('from server: ', data)
-      })
-      */
     },
     addRoom(state, to){
       if(state.user.room.indexOf(to) != -1) return 
@@ -89,6 +76,9 @@ export default new Vuex.Store({
         state.user.room.push(to)
       }
       console.log('add rooms : ', state.user.room)
+    },
+    closeRoom(state, idx){
+      state.room.splice(idx, 1)
     }
   },
   getters: {
