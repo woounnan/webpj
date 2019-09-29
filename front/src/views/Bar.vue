@@ -52,6 +52,7 @@
 	  	},
 	  	methods:{
 	  		setSig(idx){
+	  			console.log('setSig in Bar.vue::::', idx)
 	  			this.$store.state.bus.$emit("openDial", {position: this.$store.getters.getUser.room[idx]})
 	  		},
 	  		closeRoom(idx){
