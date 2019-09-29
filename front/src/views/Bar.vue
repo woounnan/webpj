@@ -13,7 +13,7 @@
 								class="md-4"
 								height="20px"
 							>
-		   						<div v-on="on" @click="setSig">
+		   						<div v-on="on" @click="setSig(idx)">
 									<v-icon>mdi-message</v-icon>
 									{{x}}&nbsp;	
 								</div>
@@ -27,7 +27,7 @@
 					</v-row>
 			</template>
 			<v-card>
-				<Chat @click="setSig" />
+				<Chat />
 			</v-card>
 		</v-dialog>
 		<div class="flex-grow-1"></div>
@@ -52,7 +52,7 @@
 	  	},
 	  	methods:{
 	  		setSig(){
-	  			this.$store.state.bus.$emit("openDial")
+	  			this.$store.state.bus.$emit("openDial", {position: this.$store.getters.getUser.room[idx]})
 	  		},
 	  		closeRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
