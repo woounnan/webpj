@@ -9,7 +9,8 @@
 						v-for="(x, idx) in $store.state.user.room"
 							class="md-5"
 							v-on="on" 
-							height="20px"	
+							height="20px"
+							border="1"	
 						>
 							<v-icon>mdi-message</v-icon>
 							{{x}}
