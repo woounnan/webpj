@@ -53,16 +53,16 @@ export default new Vuex.Store({
       .then(r => {
         if(Object.keys(r.data).length > 0){
           state.companys = r.data
-          state.companys.forEach((x)=>{
-          console.log('initCompany-for::::', x)
-            if(x.name === state.user.company){
-            console.log('initCompany-true::::', x)
-              state.user.company_division = x.division
-            }
-          })
         }
       })
       .catch(e => console.error(e))
+    },
+    initDivisions(state){
+      state.companys.forEach((x)=>{
+        if(x.name === state.user.company){
+          state.user.company_division = x.division
+        }
+      })
     },
     initSocks(state){
       state.socks.sock = io('webhacker.xyz:8082')

@@ -66,6 +66,7 @@
     mounted() {
       console.log('mounted!')
       console.log('state : '+ this.wd.state)
+      this.$store.commit('initCompanys')
     },
     data () {
       return {
@@ -147,7 +148,7 @@
             this.$store.commit('initOthers', r.data.users)
             this.$store.commit('setTk')
             this.$store.commit('initSocks')
-            this.$store.commit('initCompanys')
+            this.$store.commit('initDivisions')
             this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
