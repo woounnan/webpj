@@ -50,7 +50,7 @@
 
         <div v-for="(div, idx) in $store.state.user.company_info">
           <v-list-item
-            v-for="other, idx in $store.state.others"
+            v-for="(other, idx) in $store.state.others"
             @click="setThis(idx)"
             v-on="on"
           >
