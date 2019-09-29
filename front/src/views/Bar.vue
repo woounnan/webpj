@@ -52,6 +52,7 @@
 	  	},
 	  	methods:{
 	  		setSig(){
+	  			console.log('Bar.vue:::', this.$store.state.bus)
 	  			this.$store.state.bus.emit("openDial")
 	  		},
 	  		closeRoom(idx){
