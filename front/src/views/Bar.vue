@@ -51,7 +51,7 @@
 	    	}
 	  	},
 	  	methods:{
-	  		setSig(){
+	  		setSig(idx){
 	  			this.$store.state.bus.$emit("openDial", {position: this.$store.getters.getUser.room[idx]})
 	  		},
 	  		closeRoom(idx){
