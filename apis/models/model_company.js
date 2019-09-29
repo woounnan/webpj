@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const con = require('../../conMongo')
 
 const companySchema = new mongoose.Schema({
 	name: { type: String, required: true, unique: true, trim: true, index: true},
