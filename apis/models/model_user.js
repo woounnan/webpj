@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
 	leave : {type: Number, required: true}, //if value is 1, user leave work, else do not
 	comu: [{
 		with: String,
-		convs: {
+		convs: [{
 			date: String,
 			imageUrl: String,
 			contents: String, //If works exists, then content must be empty.
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
 				notice: Number, //1: notice 0: work(required to ack)
 				to: Number //1: send 2:recv
 			}]
-		}
+		}]
 	}]
 })
 
