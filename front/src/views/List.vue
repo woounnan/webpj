@@ -48,6 +48,8 @@
       </v-list-item>
       <v-divider></v-divider>
 
+
+      <v-subheader>체계과</v-subheader>
       <v-list-item
         v-for="other, idx in $store.state.others"
         @click="setThis(idx)"
@@ -105,9 +107,6 @@
         /*
           { active: true, title: 'Jason Oner', img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
         */
-        ],
-        items2: [
-          { title: 'Travis Howard', img: 'https://cdn.vuetifyjs.com/images/lists/5.jpg' },
         ],
         cur: {
 
