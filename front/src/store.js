@@ -59,12 +59,15 @@ export default new Vuex.Store({
           state.companys = r.data
           state.companys.forEach((x)=>{
             if(x.name === state.user.company){
-              state.company_info = x
+              state.user.company_info = x
             }
           })
         }
       })
       .catch(e => console.error(e))
+      console.log('store.js -----------')
+      console.log(state.companys)
+      console.log(state.user.company_info)
     },
     initSocks(state){
       state.socks.sock = io('webhacker.xyz:8082')

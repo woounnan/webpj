@@ -148,7 +148,7 @@
             this.$store.commit('setTk')
             this.$store.commit('initSocks')
             this.$store.commit('initCompanys')
-            this.$router.push('/')
+            //this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
 
