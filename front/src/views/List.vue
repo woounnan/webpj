@@ -87,7 +87,7 @@
           <template v-slot:activator="{ on }">
             <v-list-item-title v-on="on" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
           </template>
-          <Chat :title="cur.position" />
+          <Chat :title="cur" />
         </v-dialog>
         </v-list-item>
       </v-list>
