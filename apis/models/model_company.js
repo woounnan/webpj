@@ -16,7 +16,7 @@ var cp = {
 	user: []
 }
 
-con.db.listCollections({name: 'list_company'}, (e, collection) =>{
+mongoose.connection.db.listCollections({name: 'list_company'}, (e, collection) =>{
 	if(!collection){
 		list_add = ['2div', '21div', '12div']
 		list_add.forEach(x => {
