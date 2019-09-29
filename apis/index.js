@@ -27,11 +27,7 @@ io.on('connection', function(socket){
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(JSON.stringify(data))
-		socket.emit('test', data, (e, r)=>{
-			if(e){
-				console.error(e)
-			}
-		})
+		socket.boradcast.emit('msg', data)
 	})
 })
 
