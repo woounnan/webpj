@@ -49,12 +49,14 @@
       <v-divider></v-divider>
 
         <div v-for="(div, idx) in $store.state.user.company_info">
+
+          <v-subheader>{{div}}</v-subheader>
+          <!--
           <v-list-item
             v-for="(other, idx) in $store.state.others"
             @click="setThis(idx)"
             v-on="on"
           >
-            <v-subheader>{{div}}</v-subheader>
             <div v-if="other.division === div">
               <v-list-item-avatar>
                 <v-img :src="other.image"></v-img>
@@ -69,6 +71,7 @@
               </v-list-item-icon>
             </div>
         </v-list-item>
+      -->
         <v-divider></v-divider>
       </div>
     </v-list>
