@@ -25,7 +25,8 @@ io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
 
 	socket.on('msg', (data) =>{
-		console.log('recv msg, so send msg')
+		console.log('recv msg')
+		console.log(JSON.stringify(data))
 		socket.broadcast.emit('msg', data)
 	})
 })
