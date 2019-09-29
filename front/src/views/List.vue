@@ -83,7 +83,7 @@
           :key="idx"
           @click="subCall(idx)"
         >
-        <v-dialog v-model="dialog" scrollable max-width="300px">
+        <v-dialog v-model="dial" scrollable max-width="300px">
           <template v-slot:activator="{ on }">
             <v-list-item-title v-on="on" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
           </template>
@@ -111,13 +111,13 @@
           { title: '상태 확인' },
         ],
         cur: undefined,
-        dialog: false
+        dial: false
       }
     },
     methods: {
       checkComu: function(title){
         if(title === '대화하기')
-          this.dialog = true
+          this.dial = true
       },
       setThis:function(idx){
         this.cur = this.$store.getters.getOthers[idx]
