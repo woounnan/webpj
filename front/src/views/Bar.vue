@@ -44,7 +44,7 @@
 	    	return {
 	    	}
 	  	},
-	  	method(){
+	  	method:{
 	  		closeRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
 	  		}
