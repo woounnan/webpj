@@ -47,6 +47,29 @@
         </v-list-item-icon>
       </v-list-item>
       <v-divider></v-divider>
+
+      <v-list subheader
+        v-for="(other,idx) in $store.state.others"
+        style="max-height: 600px" 
+        class="overflow-y-auto" 
+    >
+      <v-subheader></v-subheader>
+
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img :src="me.image"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title v-text="me.position"></v-list-item-title>
+        </v-list-item-content>
+
+        <v-list-item-icon>
+          <v-icon :color="me.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-divider></v-divider>
+
       <v-list-item
         v-for="item, idx in others"
         @click="setThis(idx)"
@@ -97,6 +120,9 @@
           image: '',
           state: '',
         },
+        company:[
+
+        ],
         others: [
         /*
           { active: true, title: 'Jason Oner', img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
@@ -139,7 +165,7 @@
       this.me.position = im.position
       this.me.state = im.state
       this.me.image = im.image
-      this.others = this.$store.getters.getOthers
+      //this.others = this.$store.getters.getOthers
       console.log(this.others)
     }
   }

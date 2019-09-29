@@ -153,7 +153,7 @@ export default {
       .then(r => {
         if(Object.keys(r.data).length > 0){
           this.v_companys = r.data
-
+          this.$store.
         }
       })
       .catch(e => console.error(e))
