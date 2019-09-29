@@ -11,8 +11,8 @@ const sendMsg = function(data){
 var app = express();
 var v = 1
 var list_user = [{
-	id='',
-	sock=undefined
+	id:'',
+	sock:undefined
 }]
 
 
