@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const con = require('../../conMongo')
 
 const companySchema = new mongoose.Schema({
 	name: { type: String, required: true, unique: true, trim: true, index: true},
@@ -16,7 +16,7 @@ var cp = {
 	user: []
 }
 
-mongoose.connection.db.collection('list_company', (e, collection) =>{
+con.db.list_company((e, collection) =>{
 	if(!collection){
 		list_add = ['2div', '21div', '12div']
 		list_add.forEach(x => {
