@@ -48,42 +48,20 @@
       </v-list-item>
       <v-divider></v-divider>
 
-      <v-list subheader
-        v-for="(other,idx) in $store.getters.getOthers"
-        style="max-height: 600px" 
-        class="overflow-y-auto" 
-    >
-      <v-subheader></v-subheader>
-
-      <v-list-item>
-        <v-list-item-avatar>
-          <v-img :src="me.image"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title v-text="me.position"></v-list-item-title>
-        </v-list-item-content>
-
-        <v-list-item-icon>
-          <v-icon :color="me.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
-        </v-list-item-icon>
-      </v-list-item>
-      <v-divider></v-divider>
-
       <v-list-item
-        v-for="item, idx in others"
+        v-for="other, idx in $store.state.others"
         @click="setThis(idx)"
         v-on="on">
         <v-list-item-avatar>
-          <v-img :src="item.image"></v-img>
+          <v-img :src="other.image"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title v-text="item.position"></v-list-item-title>
+          <v-list-item-title v-text="other.position"></v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-icon>
-          <v-icon :color="item.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+          <v-icon :color="other.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         </v-list-item-icon>
       </v-list-item>
     </v-list>
