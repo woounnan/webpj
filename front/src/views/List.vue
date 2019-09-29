@@ -84,8 +84,8 @@
           @click="subCall(idx)"
         >
         <v-dialog v-model="dial" scrollable max-width="300px">
-          <template v-slot:activator="{ on:dial }">
-            <v-list-item-title v-on="dial" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
+          <template v-slot:activator="{ on:dialog }">
+            <v-list-item-title v-on="dialog" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
           </template>
           <Chat :title="cur" />
         </v-dialog>
