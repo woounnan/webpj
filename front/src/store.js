@@ -59,7 +59,9 @@ export default new Vuex.Store({
           console.log('r.data:::',r.data)
           state.companys = r.data
           state.companys.forEach((x)=>{
+            console.log('for-----:::',x)
             if(x.name === state.user.company){
+              console.log('tru::::', x.name)
               state.user.company_info = x
             }
           })
