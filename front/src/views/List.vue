@@ -116,7 +116,7 @@
     },
     methods: {
       setThis:function(idx){
-        this.cur = this.others[idx]
+        this.cur = this.$store.getters.getOthers[idx]
         console.log('sethThis::', this.cur)
       },
       subCall(idx){
