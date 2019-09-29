@@ -110,7 +110,7 @@
           { title: '대화하기' },
           { title: '상태 확인' },
         ],
-        cur: {position: ''},
+        cur: '',
         dial: false
       }
     },
