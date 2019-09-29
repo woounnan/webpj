@@ -83,9 +83,9 @@
           :key="idx"
           @click="subCall(idx)"
         >
-        <v-dialog v-if="item.title === '대화하기'" v-model="dialog" scrollable max-width="300px">
+        <v-dialog v-model="dialog" scrollable max-width="300px">
           <template v-slot:activator="{ on }">
-            <v-list-item-title v-on="on">{{ item.title }}</v-list-item-title>
+            <v-list-item-title v-on="on" @click="checkComu(item.title)">{{ item.title }}</v-list-item-title>
           </template>
           <Chat :title="cur.position" />
         </v-dialog>
@@ -110,12 +110,15 @@
           { title: '대화하기' },
           { title: '상태 확인' },
         ],
-        cur: {
-
-        },
+        cur: undefined,
+        dialog: false
       }
     },
     methods: {
+      checkComu: function(title){
+        if(title === '대화하기')
+          this.dialog = true
+      },
       setThis:function(idx){
         this.cur = this.$store.getters.getOthers[idx]
         console.log('sethThis::', this.cur)
