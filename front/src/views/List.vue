@@ -51,12 +51,14 @@
         <div v-for="(div, idx) in $store.state.user.company_division">
 
           <v-subheader>{{div}}</v-subheader>
-          <v-list-item
+          <div
             v-for="(other, idx) in $store.state.others"
+          >
+          <v-list-item
+            v-if="other.division === div"
             @click="setThis(idx)"
             v-on="on"
           >
-            <div v-if="other.division === div">
               <v-list-item-avatar>
                 <v-img :src="other.image"></v-img>
               </v-list-item-avatar>
@@ -68,8 +70,8 @@
               <v-list-item-icon>
                 <v-icon :color="other.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
               </v-list-item-icon>
-            </div>
         </v-list-item>
+      </div>
         <v-divider></v-divider>
       </div>
     </v-list>
