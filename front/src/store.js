@@ -30,9 +30,6 @@ export default new Vuex.Store({
       */
     }
   },
-  mounted(){
-    console.log('store.js mounted :::')
-  },
   mutations: {
     delToken (state) {
     	state.tk = null
@@ -58,8 +55,7 @@ export default new Vuex.Store({
       axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
-          this.v_companys = r.data
-          this.$store.commit('initCompanys', r.data)
+          state.companys = r.data
         }
       })
       .catch(e => console.error(e))
@@ -95,6 +91,9 @@ export default new Vuex.Store({
     },
     getOthers(state){
       return state.others
+    },
+    getCompanys(state){
+      return state.companys
     }
   },
   actions: {

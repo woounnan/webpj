@@ -147,6 +147,8 @@
             this.$store.commit('initOthers', r.data.users)
             this.$store.commit('setTk')
             this.$store.commit('initSocks')
+            this.$store.commit('initCompanys')
+            console.log('Login.vue::',this.$store.getters.getCompanys)
             this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
