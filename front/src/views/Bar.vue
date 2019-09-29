@@ -5,15 +5,20 @@
 		    <template v-slot:activator="{ on }">
 		    	<v-row align="start" justify="start">
 
+		    			<div
+		    			v-for="(x, idx) in $store.state.user.room"
+		    			>
 						<v-btn 
-						v-for="(x, idx) in $store.state.user.room"
 							class="md-5"
 							v-on="on" 
 							height="20px"
 						>
 							<v-icon>mdi-message</v-icon>
-							{{x}}&nbsp;&nbsp;
+							{{x}}
 						</v-btn>
+
+						&nbsp;
+					</div>
 					</v-row>
 			</template>
 			<v-card>
