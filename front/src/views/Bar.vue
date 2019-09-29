@@ -13,7 +13,7 @@
 								class="md-4"
 								height="20px"
 							>
-		   						<div v-on="on">
+		   						<div v-on="on" @click="setSig">
 									<v-icon>mdi-message</v-icon>
 									{{x}}&nbsp;	
 								</div>
@@ -27,7 +27,7 @@
 					</v-row>
 			</template>
 			<v-card>
-				<Chat />
+				<Chat :openDial="openDial"/>
 			</v-card>
 		</v-dialog>
 		<div class="flex-grow-1"></div>
@@ -47,9 +47,13 @@
 	    },
 	    data: () => {
 	    	return {
+	    		openDial = 0
 	    	}
 	  	},
 	  	methods:{
+	  		setSig(){
+	  			this.openDial = 1
+	  		},
 	  		closeRoom(idx){
 	  			this.$store.commit('closeRoom', idx)
 	  		}
