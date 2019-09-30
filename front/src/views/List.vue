@@ -85,7 +85,7 @@
             :key="idx"
             @click="subCall(idx)"
           >
-              <v-list-item-title v-on="dialog">{{ item.title }}</v-list-item-title>
+              <v-list-item-title v-on="dialog" @click="openDial">{{ item.title }}</v-list-item-title>
           </v-list-item>
         </template>
       <v-card>
@@ -120,8 +120,9 @@
     methods: {
       setThis:function(idx){
         this.cur = this.$store.getters.getOthers[idx].position
-        this.$store.state.bus.$emit('openDial', this.cur)
-        console.log('sethThis::', this.cur)
+      },
+      openDial(){
+        this.$store.state.bus.$emit('openDial', this.cur) console.log('sethThis::', this.cur)
       },
       subCall(idx){
         switch(idx){
