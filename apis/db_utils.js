@@ -21,8 +21,6 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
 
 router.post('/getUsers', (req, res, next) => {
 	//get other users except for own
-	var id = req.body.id
-	var qr = '{id: {$ne:"'+ id + '"}}'
 	User.find((e, r) => {
 		if(r.length > 0 ){
 			console.log('getUsers::successed')
@@ -37,6 +35,31 @@ router.post('/getUsers', (req, res, next) => {
 		}
 		else{
 			console.log('getUsers::failed\n', e)
+			res.send({code: -1})
+		}
+	})
+})
+router.post('/getChat', (req, res, next) => {
+	var srcId = req.srcId
+	var to = req.to
+	User.findOne({id: srcId}, (e, r) => {
+		if(r.length > 0 ){
+			console.log('getChat::successed')
+			r.comu.forEach(x =>{
+				if(x.with === to){
+					console.log('found data!!!')
+					console.log(JSON.stringify(x.convs))
+					res.send({code: 1, conv: r, test:'tests'})
+				}
+				else{
+					console.log('failed search')
+					res.send({code: -1})
+				}
+			})
+		}
+		else{
+			console.log('getChat::failed')
+			console.error(e)
 			res.send({code: -1})
 		}
 	})
