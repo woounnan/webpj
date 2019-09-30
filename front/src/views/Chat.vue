@@ -6,45 +6,12 @@
 	>
 		<v-col
 			cols="9">
-			<v-row>
-				<v-col cols="5">
-					<v-card>
-						111
-					</v-card>
-				</v-col>
-				<v-col cols="5">
-					<v-card>
-						111
-					</v-card>
-				</v-col>
-				<v-col cols="5">
-					<v-card>
-						111
-					</v-card>
-				</v-col>
-			</v-row>
-			<v-row row wrap>
-				<v-col cols="5">
-					<v-card>
-						222
-					</v-card>
-				</v-col>
-				<v-col cols="4">
-					<v-card>
-						333
-					</v-card>
-				</v-col>
-				<v-col cols="4">
-					<v-card>
-						555
-					</v-card>
-				</v-col>
-			</v-row>
+			<Preview />
 		</v-col>	
 		<v-col 
 			cols="3">
 			<v-row row wrap>
-				<List @click="testServ" />
+				<List />
 			</v-row>
 		</v-col>
 	</v-row>
@@ -59,13 +26,15 @@
 import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
 import Bar from './Bar.vue'
 import List from './List.vue'
+import Preview from '.Preview.vue'
 import io from 'socket.io-client'
 export default{
 	name: 'App',
 	components: {
 		Chat,
 		List,
-		Bar
+		Bar,
+		Preview
 	},
 	data: function (){
 		return {
