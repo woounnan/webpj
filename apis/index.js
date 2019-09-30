@@ -31,16 +31,19 @@ io.on('connection', function(socket){
 		//save data in db
 		var users = new User()
 		users.update({
-			_id : ObjectId("5d907cbc1aa4a48f1caa04a4")
+			position : data.header.to
 			},{ 
 				$push: {
 					comu: [{ 
-						with: "인사과장", 
+						with: data.header.from, 
 						convs: [{ 
-							date: "22:10:23", 
-							imageUrl: "", 
-							contents: "testMessage22"
+							id: data.msg.id,
+							position: data.msg.position,
+							date: data.msg.date, 
+							imageUrl: data.msg.imageUrl, 
+							contents: data.msg.contents
 						}] 
+						works: data.msg.works
 					}]
 				}
 			}
