@@ -41,9 +41,9 @@ io.on('connection', function(socket){
 							position: data.msg.position,
 							date: data.msg.date, 
 							imageUrl: data.msg.imageUrl, 
-							contents: data.msg.contents
-						}] 
-						works: data.msg.works
+							contents: data.msg.contents,
+							works: data.msg.works
+						}]
 					}]
 				}
 			}
