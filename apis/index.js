@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const createError = require('http-errors')
+const User = require('./models/model_user')
 
 console.log('Here is at index.js in apis')
 
@@ -27,6 +28,24 @@ io.on('connection', function(socket){
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(JSON.stringify(data))
+		//save data in db
+		var users = new User()
+		users.update({
+			_id : ObjectId("5d907cbc1aa4a48f1caa04a4")
+			},{ 
+				$push: {
+					comu: [{ 
+						with: "인사과장", 
+						convs: [{ 
+							date: "22:10:23", 
+							imageUrl: "", 
+							contents: "testMessage22"
+						}] 
+					}]
+				}
+			}
+		)
+		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
 	})
 })
