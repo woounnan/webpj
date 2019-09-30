@@ -118,12 +118,9 @@
       }
     },
     methods: {
-      checkComu: function(title){
-        if(title === '대화하기')
-          this.dial = true
-      },
       setThis:function(idx){
         this.cur = this.$store.getters.getOthers[idx].position
+        this.$store.state.bus.$emit('openDial', this.cur)
         console.log('sethThis::', this.cur)
       },
       subCall(idx){
