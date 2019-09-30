@@ -122,9 +122,7 @@
         this.cur = this.$store.getters.getOthers[idx].position
       },
       openDial(){
-        this.$store.state.bus.$emit('openDial', this.cur)
-        console.log('openDial::', this.cur)
-        console.log('openDial::', this.$store.state.bus)
+        //this.$store.state.bus.$emit('openDial', this.cur)
       },
       subCall(idx){
         switch(idx){
