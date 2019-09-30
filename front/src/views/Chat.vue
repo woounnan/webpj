@@ -11,7 +11,7 @@
 		<v-col 
 			cols="3">
 			<v-row row wrap>
-				<List @click="testServ" />
+				<List />
 			</v-row>
 		</v-col>
 	</v-row>
