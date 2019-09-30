@@ -69,9 +69,9 @@
                   </v-list-item-content>
 
                   <v-list-item-icon>
-                  <v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
                     <v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
                   <v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">notification_important</v-icon>
+                  <v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
                 </v-list-item-icon>
             </v-list-item>
         </div>
