@@ -56,6 +56,7 @@
           <div
             v-for="(other, idx) in $store.state.others"
           >
+            <div v-if="other.position != $store.state.user.position">
               <v-list-item
                 v-if="other.division === div"
                 @click="setThis(idx)"
@@ -75,6 +76,7 @@
                   <v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
                 </v-list-item-icon>
             </v-list-item>
+          </div>
         </div>
         <v-divider></v-divider>
       </div>
