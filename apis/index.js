@@ -32,7 +32,8 @@ io.on('connection', function(socket){
 		var users = new User()
 		users.update({
 			position : data.header.to
-			},{ 
+			},
+			{ 
 				$push: {
 					comu: [{ 
 						with: data.header.from, 
@@ -46,7 +47,15 @@ io.on('connection', function(socket){
 						}]
 					}]
 				}
+			},
+			(e, r) => {
+				if(!r){
+					console.error(e)
+				}
+				else
+					console.log('update succeeded!')
 			}
+
 		)
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)

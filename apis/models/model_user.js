@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
 			date: String,
 			imageUrl: String,
 			contents: String, //If works exists, then content must be empty.
-			works: [{
+			works: {
 				title: String,
 				contents: String,
 				startDate: String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 				file_real: String,
 				notice: Number, //1: notice 0: work(required to ack)
 				to: Number //1: send 2:recv
-			}]
+			}
 		}]
 	}]
 })
@@ -33,3 +33,15 @@ const userSchema = new mongoose.Schema({
 var User = mongoose.model('User', userSchema, 'list_user')
 
 module.exports = User
+
+db.list_user.insert({ 
+	"_id" : ObjectId("5d907cbc1aa4a48f1caa04a4"), 
+	"comu": [{ 
+		"with": "인사과장", 
+		"convs": [{ 
+			"date": "22:10:23", 
+			"imageUrl": "", 
+			"contents": "testMessage"
+		}] 
+	}]
+})
