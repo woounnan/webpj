@@ -33,15 +33,3 @@ const userSchema = new mongoose.Schema({
 var User = mongoose.model('User', userSchema, 'list_user')
 
 module.exports = User
-
-db.list_user.insert({ 
-	"_id" : ObjectId("5d907cbc1aa4a48f1caa04a4"), 
-	"comu": [{ 
-		"with": "인사과장", 
-		"convs": [{ 
-			"date": "22:10:23", 
-			"imageUrl": "", 
-			"contents": "testMessage"
-		}] 
-	}]
-})
