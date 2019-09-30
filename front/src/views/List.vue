@@ -137,7 +137,6 @@
       conversation(){
         console.log('call conversation')
         this.$store.commit('addRoom', this.cur)
-        this.cur = undefined
       },
       showState(){
         console.log('call showState')
