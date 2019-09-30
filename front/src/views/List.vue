@@ -123,7 +123,8 @@
       },
       openDial(){
         this.$store.state.bus.$emit('openDial', this.cur)
-        console.log('sethThis::', this.cur)
+        console.log('openDial::', this.cur)
+        console.log('openDial::', this.$store.state.bus)
       },
       subCall(idx){
         switch(idx){
