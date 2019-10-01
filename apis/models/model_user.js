@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
 	id: { type: String, required: true, unique: true, trim: true, index: true},
 	password: { type: String, required: true, trim: true },
 	key: { type: String, required: true, unique: true, default: Date.now},
-	position: { type: String, required: true, trim: true},
+	position: { type: String, unique: true, required: true, trim: true},
 	division: { type: String, required: true, trim: true},
 	company: { type: String, required: true, trim: true},
 	image : {type: String, required: true, trim: true},
