@@ -47,15 +47,7 @@ io.on('connection', function(socket){
 						}
 					}
 				}
-			},
-			(e, r) => {
-				if(e){
-					console.error(e)
-				}
-				else
-					console.log('update succeeded!')
 			}
-
 		)
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
