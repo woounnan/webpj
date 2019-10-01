@@ -219,6 +219,7 @@ export default {
       }
     }
     this.v_ps = this.$store.getters.getOthers
+    this.v_ps = this.v_ps.concat(this.v_divisions)
   },
   methods : {
     popPs(idx){
