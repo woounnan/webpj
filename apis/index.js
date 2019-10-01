@@ -25,8 +25,7 @@ var getUser = function (to, from, newConvs){
 		var i = 0
 		console.log('r: ', JSON.stringify(r))
 		for(x in r.comu){
-			console.log('x:',x)
-			if(r.comu === to){
+			if(r.comu[x].with === to){
 				console.log('find idx ::', x.with)
 				idx = i
 			}
