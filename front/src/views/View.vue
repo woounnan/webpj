@@ -35,7 +35,6 @@
 	import ViewParts from './ViewParts.vue'
 	export default{
     components:{
-      this.$store.getters.components['Work']
     },
 		data(){
 			return {
