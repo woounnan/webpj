@@ -42,18 +42,18 @@ var getUser = function (to, from, newConvs){
 		newComu.convs.push(newConvs)
 		console.log('getUser:::: ', newComu)
 		User.update({
-				position : "군수과장"
+				position : from
 			}, {
 			$set : {
 				comu: {
-					with: "정보보호병", 
+					with: to, 
 					convs: {
-						id: "test", 
-						position: "정보보호병", 
-						date: "11:00:11", 
-						imageUrl: "", 
-						contents: "제발!!!!!!!!!!!!!", 
-						works: undefined
+						id: , 
+						position: to, 
+						date: newConvs.date, 
+						imageUrl: newConvs.imageUrl, 
+						contents: newConvs.contents, 
+						works: newConvs.works
 					} 
 				} 
 			} 
