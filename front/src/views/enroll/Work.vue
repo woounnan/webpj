@@ -204,6 +204,7 @@ export default {
         if(Object.keys(r.data).length > 0){
           this.v_ps = r.data.name
           console.log('mounted::::', this.v_ps)
+          console.log('mounted::::', r.data)
         }
       })
       .catch(e => console.error(e))
