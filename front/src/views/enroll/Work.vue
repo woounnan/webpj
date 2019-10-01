@@ -176,7 +176,7 @@ export default {
   ],*/
   data () {
     return {
-      v_ps : [],
+      v_divisions : [],
       v_searchPs : {
         ps: [],
         state: false
@@ -199,15 +199,14 @@ export default {
     }
   },
   mounted: function () {
-    axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
-      .then(r => {
-        if(Object.keys(r.data).length > 0){
-          this.v_ps = r.data.name
-          console.log('mounted::::', this.v_ps)
-          console.log('mounted::::', r.data)
-        }
-      })
-      .catch(e => console.error(e))
+    var cps = this.$store.gettters.getCompanys
+    for(var i=0; i< cps.length; i++){
+      if(cps[i].name === this.$store.getters.getUser.company){
+        this.v_divisions = cps[i].division
+        break
+      }
+    }
+    console.log(this.v_divisions)
   },
   methods : {
     uploadFile(){
