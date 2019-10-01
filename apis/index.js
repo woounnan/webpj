@@ -24,11 +24,10 @@ var getUser = function (to, from, newConvs){
 		var idx = -1
 		var i = 0
 		console.log('r: ', JSON.stringify(r))
-		Object.keys(r.comu).forEach(function(key) {
-		    console.log('key: ',key, 'value: ', r.comu[key]);
-		});
 		for(x in r.comu){
-			console.log('x.with: ', x.with)
+			Object.keys(x).forEach(function(key) {
+		    	console.log('key: ',key, 'value: ', x[key]);
+			});
 			if(x.with === to){
 				console.log('find idx ::', x.with)
 				idx = i
