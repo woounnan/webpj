@@ -21,7 +21,7 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
 
 router.post('/getUsers', (req, res, next) => {
 	//get other users except for own
-	var id = req.id
+	var id = req.body.id
 	User.find((e, r) => {
 		if(r.length > 0 ){
 			console.log('getUsers::successed')
@@ -42,8 +42,8 @@ router.post('/getUsers', (req, res, next) => {
 })
 
 router.post('/getChat', (req, res, next) => {
-	var srcId = req.srcId
-	var to = req.to
+	var srcId = req.body.srcId
+	var to = req.body.to
 	console.log('getChat::::srcId :', srcId)
 	console.log('getChat::::to :', to)
 	User.findOne({id: srcId}, (e, r) => {
