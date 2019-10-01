@@ -11,22 +11,19 @@
 				<v-card
 			    class="mx-auto"
 			  	>
-			  	<!--
-				    <v-card-title color="skyblue">
+			  	<v-toolbar
+			      color="indigo"
+			      dark
+			    >
+				     <v-toolbar-title>
 				    	처리할일
 				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
-				    </v-card-title>
-				-->
-				<v-toolbar
-			    color="deep-purple accent-4"
-			    dark
-			    src="https://picsum.photos/1920/1080?random"
-				>
+				    </v-toolbar-title>
+				</v-toolbar>
 				    <v-card-text>I'm card text</v-card-text>
 				    <v-card-actions>
 				      <v-btn text>더보기</v-btn>
 				    </v-card-actions>
-			  	</v-toolbar>
 			  	</v-card>
 			</v-col>
 			<v-col cols="6">
