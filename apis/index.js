@@ -49,7 +49,7 @@ io.on('connection', function(socket){
 				}
 			},
 			(e, r) => {
-				if(!r){
+				if(e){
 					console.error(e)
 				}
 				else
