@@ -44,14 +44,7 @@ var getUser = function (to, from, newConvs){
 			$set : {
 				comu: {
 					with: to, 
-					convs: {
-						id: newConvs.id, 
-						position: newConvs.position, 
-						date: newConvs.date, 
-						imageUrl: newConvs.imageUrl, 
-						contents: newConvs.contents, 
-						works: newConvs.works
-					} 
+					convs: newComu
 				} 
 			} 
 		},
