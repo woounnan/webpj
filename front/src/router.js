@@ -47,6 +47,11 @@ export default new Router({
       beforeEnter: requireAuth
 		},
     {
+      path: '/view',
+      name: 'view',
+      component: () => import('./views/View.vue')
+    },
+    {
       path: '/reg',
       name: 'register',
       component: Register
