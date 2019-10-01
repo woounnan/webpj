@@ -56,7 +56,7 @@
 
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>lock</v-icon>
+              <v-icon>title</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -72,7 +72,7 @@
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
-              <v-icon>face</v-icon>
+              <v-icon>text_fields</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
@@ -196,12 +196,13 @@ export default {
         state: false
       },
       v_work : { 
-        selects: [],
+        selects: [], //to
         title: '',
         contents: '',
         files: undefined,
         startDate: '',
-        endDate: '' 
+        endDate: '',
+        notice: '', 
       },
       selectDate: '',
       startEnd: '',
