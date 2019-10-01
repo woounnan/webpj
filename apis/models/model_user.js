@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 	image : {type: String, required: true, trim: true},
 	leave : {type: Number, required: true}, //if value is 1, user leave work, else do not
 	comu: [{
-		to: String,
+		with: String,
 		convs: [{
 			date: String,
 			imageUrl: String,

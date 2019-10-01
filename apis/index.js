@@ -24,19 +24,20 @@ var getUser = function (to, from, newConvs){
 		var idx = -1
 		var i = 0
 		console.log('r: ', JSON.stringify(r))
-		console.log('r.comu: ', JSON.stringify(r.comu))
-		console.log('r.comu.to:', r.comu.to)
+		Object.keys(r.comu).forEach(function(key) {
+		    console.log('key: ',key, 'value: ', r.comu[key]);
+		});
 		for(x in r.comu){
-			console.log('x.to: ', x.with)
-			if(x.to === to){
-				console.log('find idx ::', x.to)
+			console.log('x.with: ', x.with)
+			if(x.with === to){
+				console.log('find idx ::', x.with)
 				idx = i
 			}
 			i++
 		}
 		if(idx === -1){
 			console.log('have not been chatting with ', to)
-			var newComu = { to: to, convs: []
+			var newComu = { with: to, convs: []
 			}	
 		}
 		else{
@@ -50,7 +51,7 @@ var getUser = function (to, from, newConvs){
 			}, {
 			$set : {
 				comu: {
-					to: to, 
+					with: to, 
 					convs: {
 						id: newConvs.id, 
 						position: newConvs.position, 
