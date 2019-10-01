@@ -7,6 +7,11 @@
           	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">notification_important</v-icon> 
           	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         -->
+        	<v-toolbar
+			    color="deep-purple accent-4"
+			    dark
+			    src="https://picsum.photos/1920/1080?random"
+			>
 				<v-card
 			    class="mx-auto"
 			  	>
