@@ -44,7 +44,7 @@ var getUser = function (to, from, newConvs){
 			$set : {
 				comu: {
 					with: to, 
-					convs: newConvs
+					convs: newComu
 				} 
 			} 
 		},
