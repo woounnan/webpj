@@ -35,17 +35,17 @@ io.on('connection', function(socket){
 			},
 			{ 
 				$push: {
-					comu: [{ 
+					comu: { 
 						with: data.header.from, 
-						convs: [{ 
+						convs: { 
 							id: data.msg.id,
 							position: data.msg.position,
 							date: data.msg.date, 
 							imageUrl: data.msg.imageUrl, 
 							contents: data.msg.contents,
 							works: data.msg.works
-						}]
-					}]
+						}
+					}
 				}
 			},
 			(e, r) => {
