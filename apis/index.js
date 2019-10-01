@@ -16,6 +16,48 @@ var list_user = [{
 }]
 
 
+var getUser = function (to, from, newConvs){
+	User.findOne({position: from}, (e, r) => {
+		if(e){
+			console.error('getUser Error in index.js:::: ', e)
+		}
+		var idx = -1
+		var i = 0
+		for(x in r.comu){
+			if(x.with === to){
+				console.log('find idx ::', x.with)
+				idx = i
+			}
+			i++
+		}
+		if(idx === -1){
+			console.log('have not been chatting with ', to)
+			var newComu = { with: to, convs: []
+			}	
+		}
+		else{
+			var newComu = r.comu[idx]
+		}
+		console.log('getUser:::: ', newComu)
+		newComu.convs.push(newConvs)
+		User.update({
+			position : data.header.to
+			},
+			{ 
+				comu: newComu
+			},
+			(e, r) => {
+				if(!e){
+					console.log('getUser in index.js::::: succeeded')
+				}
+				else{
+					console.log('getUser in index.js::::: failed update')
+				}
+			}
+		)
+	})
+}
+
 
 const server = app.listen(8082, () => {
 	console.log('server running on port 8082')
@@ -28,27 +70,10 @@ io.on('connection', function(socket){
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(JSON.stringify(data))
-		//save data in db
-		var users = new User()
-		users.update({
-			position : data.header.to
-			},
-			{ 
-				$push: {
-					comu: { 
-						with: data.header.from, 
-						convs: { 
-							id: data.msg.id,
-							position: data.msg.position,
-							date: data.msg.date, 
-							imageUrl: data.msg.imageUrl, 
-							contents: data.msg.contents,
-							works: data.msg.works
-						}
-					}
-				}
-			}
-		)
+		console.log('recv::save msg')
+		console.log(JSON.stringify(data))
+		getUser(data.header.to, data.header.from, data.msg)
+		getUser(data.header.from, data.header.to, data.msg)
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
 	})

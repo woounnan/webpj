@@ -115,6 +115,8 @@
     },
     data: () => {
       return {
+        menu: null,
+        dialog: null,
         showMenu: false,
         sub: [
           { title: '대화하기' },
