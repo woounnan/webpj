@@ -65,7 +65,7 @@
             </v-list-item-action>
 
             <v-list-item-content>
-                <v-text-field 
+                <v-text-area 
                 placeholder="내용 입력"
                 v-model="v_work.contents"
                 counter
@@ -73,7 +73,7 @@
                 full-width
                 single-line
                 type="text"
-              ></v-text-field>
+              ></v-text-area>
             </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
