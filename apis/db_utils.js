@@ -44,20 +44,19 @@ router.post('/getUsers', (req, res, next) => {
 router.post('/getChat', (req, res, next) => {
 	var srcId = req.body.srcId
 	var to = req.body.to
-	console.log('getChat::::srcId :', srcId)
-	console.log('getChat::::to :', to)
 	User.findOne({id: srcId}, (e, r) => {
 		if(!e){
-			console.log('getChat::successed : ', r.comu)
 			r.comu.forEach(x =>{
 				if(x.with === to){
 					console.log('found data!!!')
 					console.log(JSON.stringify(x.convs))
 					res.send({code: 1, conv: r, test:'tests'})
+					return
 				}
 				else{
 					console.log('failed search')
 					res.send({code: -1})
+					return
 				}
 			})
 		}
