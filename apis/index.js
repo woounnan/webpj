@@ -40,21 +40,23 @@ var getUser = function (to, from, newConvs){
 		}
 		newComu.convs.push(newConvs)
 		console.log('getUser:::: ', newComu)
-		User.update({
-			position : to
-			},
-			{ 
-				comu: newComu
-			},
-			(e, r) => {
-				if(!e){
-					console.log('getUser in index.js::::: succeeded')
-				}
-				else{
-					console.log('getUser in index.js::::: failed update')
-				}
-			}
-		)
+		db.list_user.update({
+				position : "군수과장"
+			}, {
+			$set : {
+				comu: {
+					with: "정보보호병", 
+					convs: {
+						id: "test", 
+						position: "정보보호병", 
+						date: "11:00:11", 
+						imageUrl: "", 
+						contents: "제발!!!!!!!!!!!!!", 
+						works: undefined
+					} 
+				} 
+			} 
+		})
 	})
 }
 
