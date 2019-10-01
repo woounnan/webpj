@@ -24,9 +24,9 @@
             <v-list-item-content>
               <v-text-field 
                 placeholder="대상 선택"
-                v-model="v_work.ps"
+                v-model="v_work.cur"
                 type="text"
-                @click="searchAll"
+                @click=""
                 v-on:keyup="searchPs"
               ></v-text-field>
             </v-list-item-content>
@@ -177,13 +177,13 @@ export default {
   data () {
     return {
       v_divisions : [],
+      v_ps: [],
       v_searchPs : {
         ps: [],
         state: false
       },
       v_work : { 
-        ps_cur: '',
-        ps: [],
+        cur: '',
         title: '',
         contents: '',
         files: undefined,
@@ -199,16 +199,14 @@ export default {
     }
   },
   mounted: function () {
-    console.log(this.$store)
     var cps = this.$store.getters.getCompanys
     for(var i=0; i< cps.length; i++){
-      console.log(cps[i])
       if(cps[i].name === this.$store.getters.getUser.company){
         this.v_divisions = cps[i].division
         break
       }
     }
-    console.log(this.v_divisions)
+    this.v_ps = this.$store.getters.getOthers
   },
   methods : {
     uploadFile(){
@@ -237,22 +235,16 @@ export default {
       console.log('call the closeWindow function');
       this.$emit('close')
     },
-    searchAll(){
-      this.v_searchPs.ps = this.ps
-    },
     searchPs(){
       this.v_searchPs.ps = []
       var len = Object.keys(this.v_ps).length
       for(var i=0; i<len; i++){
-        if( (this.v_ps[i].name.includes(this.v_work.ps_cur)) && (this.v_work.ps_cur.length) > 0){
+        if( (this.v_ps[i].position.includes(this.v_work.cur)) && (this.v_work.cur.length) > 0){
           this.v_searchPs.ps.push(this.v_ps[i])
           this.v_searchPs.state = true
         }
       }
     },
-    openDial(){
-      console.log('close dialog')
-    }
   },
   created () {
   }
