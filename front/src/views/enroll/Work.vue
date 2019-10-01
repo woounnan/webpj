@@ -199,6 +199,7 @@ export default {
     }
   },
   mounted: function () {
+    console.log(this.$store)
     var cps = this.$store.gettters.getCompanys
     for(var i=0; i< cps.length; i++){
       if(cps[i].name === this.$store.getters.getUser.company){
