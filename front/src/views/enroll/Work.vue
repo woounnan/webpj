@@ -243,7 +243,7 @@ export default {
       fd.append('myData', 'Hi!!!!!!')
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
-
+        this.$store.state.bus.$emit('sendFileName', r.data)
         console.log(r.data)
       })
       .catch(e => console.error(e))
