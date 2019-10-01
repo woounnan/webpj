@@ -274,7 +274,9 @@ export default {
       len = this.v_divisions.length
         for(var i=0; i<len; i++){//search divisions
           if( (this.v_divisions.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){
+            console.log('@@@true:::')
             if(this.v_work.selects.indexOf(this.v_divisions)== -1){
+            console.log('@@@true222222:::')
               this.v_searchPs.ps.push(this.v_divisions[i])
               this.v_searchPs.state = true
             }
