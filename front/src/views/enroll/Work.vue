@@ -203,6 +203,7 @@ export default {
       .then(r => {
         if(Object.keys(r.data).length > 0){
           this.v_ps = r.data.name
+          console.log('mounted::::', this.v_ps)
         }
       })
       .catch(e => console.error(e))
