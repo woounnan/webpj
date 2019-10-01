@@ -269,6 +269,7 @@ export default {
         }
       }
       if(this.v_searchPs.state = false){
+        console.log('if false::::')
       len = this.v_divisions.length
         for(var i=0; i<len; i++){//search divisions
           if( (this.v_divisions.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){
