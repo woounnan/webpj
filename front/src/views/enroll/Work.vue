@@ -30,7 +30,7 @@
                 v-on:keyup="searchPs"
               >
                 <v-chip
-      v-if="chip2"
+      v-if="v_chip"
       class="ma-2"
       close
       color="red"
@@ -187,6 +187,7 @@ export default {
   ],*/
   data () {
     return {
+      v_chip: true,
       v_divisions : [],
       v_ps: [],
       v_searchPs : {
