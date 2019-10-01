@@ -11,7 +11,7 @@
           	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">notification_important</v-icon> 
           	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         -->
-				    <v-card-title>
+				    <v-card-title color="skyblue">
 				    	처리할일
 				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
 				    </v-card-title>
