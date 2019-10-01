@@ -1,6 +1,6 @@
 <template>
 	<v-container>
-		<v-row>
+		<v-row row wrap>
 			<v-col cols="6">
 		<!--
 			<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
@@ -49,23 +49,7 @@
 			  	</v-card>
 			</v-col>
 		</v-row>
-		<v-row row wrap>
-			<v-col cols="5">
-				<v-card>
-					222
-				</v-card>
-			</v-col>
-			<v-col cols="4">
-				<v-card>
-					333
-				</v-card>
-			</v-col>
-			<v-col cols="4">
-				<v-card>
-					555
-				</v-card>
-			</v-col>
-		</v-row>
+
 	</v-container>
 </template>
 
