@@ -241,8 +241,9 @@ export default {
       console.log(document.getElementById('bin').files[0])
       fd.append('name', 'xxxx')
       fd.append('bin', document.getElementById('bin').files[0])
-      axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
+      axios.post(`http://webhacker.xyz:8000/apis/db/save`, {fd, test: 'test'})
       .then(r => {
+        console.log('r:', r)
         //ret = r.data.code
         //this.bus.$emit('exit', ret)
         //this.$store.state.bus.$emit('exit', ret)
