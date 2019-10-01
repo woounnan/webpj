@@ -51,12 +51,12 @@ router.post('/getChat', (req, res, next) => {
 					console.log('found data!!!')
 					console.log(JSON.stringify(x.convs))
 					res.send({code: 1, conv: r, test:'tests'})
-					return
+					return true
 				}
 				else{
 					console.log('failed search')
 					res.send({code: -1})
-					return
+					return false
 				}
 			})
 		}
@@ -64,6 +64,7 @@ router.post('/getChat', (req, res, next) => {
 			console.log('getChat::failed')
 			console.error(e)
 			res.send({code: -1})
+			return false
 		}
 	})
 })
