@@ -46,19 +46,17 @@ router.post('/getChat', (req, res, next) => {
 	var to = req.body.to
 	User.findOne({id: srcId}, (e, r) => {
 		if(!e){
-			r.comu.forEach(x =>{
+			for(var x in r.comu){
 				if(x.with === to){
 					console.log('found data!!!')
 					console.log(JSON.stringify(x.convs))
 					res.send({code: 1, conv: r, test:'tests'})
-					return true
 				}
 				else{
 					console.log('failed search')
 					res.send({code: -1})
-					return false
 				}
-			})
+			}
 		}
 		else{
 			console.log('getChat::failed')
