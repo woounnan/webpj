@@ -211,6 +211,7 @@ export default {
   methods : {
     selPs(position){
       this.v_work.cur = position
+      this.v_searchPs.state = false
     },
     uploadFile(){
       console.log('call uploadFile')
