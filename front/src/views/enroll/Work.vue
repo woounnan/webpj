@@ -42,6 +42,7 @@
           </v-list-item-content>
         </v-list-item>
           <v-chip
+                align="end"
                 v-for="(item, idx) in v_work.selects"
                 class="ma-2"
                 close
@@ -270,7 +271,7 @@ export default {
       console.log(this.v_searchPs.state)
       if(this.v_searchPs.state === false){
       len = this.v_divisions.length
-        for(var i=0; i<len; i++){//search divisions
+        for(i=0; i<len; i++){//search divisions
           if( (this.v_divisions[i].includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){
             if(this.v_work.selects.indexOf(this.v_divisions[i])== -1){
               this.v_searchPs.ps.push(this.v_divisions[i])
