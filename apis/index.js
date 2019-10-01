@@ -23,6 +23,7 @@ var getUser = function (to, from, newConvs){
 		}
 		var idx = -1
 		var i = 0
+		console.log('r.comu: ', r.comu)
 		for(x in r.comu){
 			console.log('x.with: ', x.with)
 			if(x.with === to){
