@@ -20,7 +20,6 @@ router.post('/save', upload.single('bin'), function (req, res, next) {
   var saveName = req.file.filename
   res.send({file_save: saveName})
   res.send({file_real: realName})
-  res.status(204).send()
   // req.body will hold the text fields, if there were any
 })
 
