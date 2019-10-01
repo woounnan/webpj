@@ -33,7 +33,7 @@
       >
         <span>ArmyTalk</span><v-icon>warning</v-icon>
       </v-btn>
-      <v-btn @click="showSt($store.state)"> test </v-btn>
+      <v-btn @click="$router.push('/work')"> work </v-btn>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <div v-if="!$store.state.tk">
