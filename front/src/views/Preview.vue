@@ -6,10 +6,18 @@
 			    max-width="500"
 			    class="mx-auto"
 			  	>
-				    <v-card-title>I'm a title</v-card-title>
+		<!--
+			<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
+          	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">notification_important</v-icon> 
+          	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+        -->
+				    <v-card-title>
+				    	처리할일
+				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
+				    </v-card-title>
 				    <v-card-text>I'm card text</v-card-text>
 				    <v-card-actions>
-				      <v-btn text>Click</v-btn>
+				      <v-btn text>더보기</v-btn>
 				    </v-card-actions>
 			  	</v-card>
 			</v-col>
