@@ -77,7 +77,7 @@ io.on('connection', function(socket){
 		console.log('recv msg')
 		console.log(JSON.stringify(data))
 		getUser(data.header.to, data.header.from, data.msg)
-		getUser(data.header.from, data.header.to, data.msg)
+		//getUser(data.header.from, data.header.to, data.msg)
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
 	})
