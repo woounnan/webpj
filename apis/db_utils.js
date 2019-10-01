@@ -49,6 +49,8 @@ router.post('/getChat', (req, res, next) => {
 	User.findOne({id: srcId}, (e, r) => {
 		if(!e){
 			for(var x in r.comu){
+			console.log('r:',r)
+			console.log('r.comu:',r.comu)
 				if(x.with === to){
 					console.log('found data!!!')
 					console.log(JSON.stringify(x.convs))
