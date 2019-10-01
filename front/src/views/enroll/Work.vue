@@ -47,7 +47,7 @@
                 close
                 color="deep-purple"
                 text-color="white"
-                @click:close="v_chip = false"
+                @click:close="popPs(idx)"
               >
                 {{item}}
               </v-chip>
@@ -221,6 +221,9 @@ export default {
     this.v_ps = this.$store.getters.getOthers
   },
   methods : {
+    popPs(idx){
+      this.v_work.selects.splice(idx, 1)
+    },
     selPs(position){
       this.v_work.selects.push(position)
       this.v_searchPs.state = false
