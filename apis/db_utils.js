@@ -31,7 +31,6 @@ router.post('/getUsers', (req, res, next) => {
 					break;
 				}
 			}
-			console.log(JSON.stringify(r))
 			res.send({code: 1, users: r, test:'tests'})
 		}
 		else{
@@ -72,7 +71,6 @@ router.post('/getChat', (req, res, next) => {
 })
 
 router.post('/addUser', (req, res, next) => {
-	console.log(req.body)
 	var user = {
 		id : req.body.id,
 		password : req.body.pw,
