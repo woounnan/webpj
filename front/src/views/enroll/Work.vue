@@ -241,6 +241,7 @@ export default {
       console.log(document.getElementById('bin').files[0])
       fd.append('name', 'xxxx')
       fd.append('bin', document.getElementById('bin').files[0])
+      fd.append('myData', 'Hi!!!!!!')
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
         console.log('r:', r)
