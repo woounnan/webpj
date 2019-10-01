@@ -41,7 +41,7 @@ var getUser = function (to, from, newConvs){
 		console.log('getUser:::: ', newComu)
 		newComu.convs.push(newConvs)
 		User.update({
-			position : data.header.to
+			position : to
 			},
 			{ 
 				comu: newComu
