@@ -48,8 +48,8 @@ var getUser = function (to, from, newConvs){
 				comu: {
 					with: to, 
 					convs: {
-						id: , 
-						position: to, 
+						id: newConvs.id, 
+						position: newConvs.position, 
 						date: newConvs.date, 
 						imageUrl: newConvs.imageUrl, 
 						contents: newConvs.contents, 
