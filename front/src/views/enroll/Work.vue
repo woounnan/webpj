@@ -261,23 +261,18 @@ export default {
       console.log('searchPs::::v_ps = ', this.v_ps)
       for(var i=0; i<len; i++){
         if( (this.v_ps[i].position.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){//search ps
-          console.log('true::::', this.v_ps[i].position)
           if(this.v_work.selects.indexOf(this.v_ps[i].position)== -1){
           this.v_searchPs.ps.push(this.v_ps[i].position)
           this.v_searchPs.state = true
-          console.log('true222::::', this.v_searchPs.ps)
           }
         }
       }
       console.log(this.v_searchPs.state)
       if(this.v_searchPs.state === false){
-        console.log('if false::::')
       len = this.v_divisions.length
         for(var i=0; i<len; i++){//search divisions
           if( (this.v_divisions[i].includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){
-            console.log('@@@true:::')
             if(this.v_work.selects.indexOf(this.v_divisions[i])== -1){
-            console.log('@@@true222222:::')
               this.v_searchPs.ps.push(this.v_divisions[i])
               this.v_searchPs.state = true
             }
