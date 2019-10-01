@@ -14,7 +14,9 @@ const userSchema = new mongoose.Schema({
 		convs: [{
 			date: String,
 			imageUrl: String,
-			contents: String, //If works exists, then content must be empty.
+			contents: String,
+			position: String,
+			image: String, //If works exists, then content must be empty.
 			works: {
 				title: String,
 				contents: String,
