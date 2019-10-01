@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
 	comu: [{
 		with: String,
 		convs: [{
+			id: String,
 			date: String,
 			imageUrl: String,
 			contents: String,
