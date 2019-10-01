@@ -29,10 +29,14 @@
       </v-tab-item>
     </v-tabs-items>
   </v-card>
+  <Work />
 </template>
 <script>
 	import ViewParts from './ViewParts.vue'
 	export default{
+    components:{
+      this.$store.getters.components['Work']
+    },
 		data(){
 			return {
 				tab: null,
