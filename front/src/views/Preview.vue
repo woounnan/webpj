@@ -8,7 +8,6 @@
           	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
         -->
 				<v-card
-			    max-width="500"
 			    class="mx-auto"
 			  	>
 				    <v-card-title color="skyblue">
@@ -23,7 +22,6 @@
 			</v-col>
 			<v-col cols="6">
 				<v-card
-			    max-width="500"
 			    class="mx-auto"
 			  	>
 				    <v-card-title color="skyblue">
@@ -38,7 +36,6 @@
 			</v-col>
 			<v-col cols="12">
 				<v-card
-			    max-width="500"
 			    class="mx-auto"
 			  	>
 				    <v-card-title color="skyblue">
