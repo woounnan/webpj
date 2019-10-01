@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/enroll/Register.vue'
 import File from './views/File.vue'
-import Chat from './views/Chat.vue'
+import Home from './views/Chat.vue'
 import store from './store'
 
 
@@ -42,14 +42,15 @@ export default new Router({
     },
 		{
 			path: '/',
-			name: 'chat',
-			component: Chat,
+			name: 'home',
+			component: Home,
       beforeEnter: requireAuth
 		},
     {
       path: '/view',
       name: 'view',
-      component: () => import('./views/View.vue')
+      component: () => import('./views/View.vue'),
+      beforeEnter: requireAuth
     },
     {
       path: '/reg',
