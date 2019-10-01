@@ -24,6 +24,7 @@
 				      <v-btn text>더보기</v-btn>
 				    </v-card-actions>
 			  	</v-card>
+			  	</v-toolbar>
 			</v-col>
 			<v-col cols="6">
 				<v-card
