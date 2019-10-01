@@ -2,9 +2,16 @@
 	<v-container>
 		<v-row>
 			<v-col cols="5">
-				<v-card>
-					{{test}}
-				</v-card>
+				<v-card
+			    max-width="500"
+			    class="mx-auto"
+			  	>
+				    <v-card-title>I'm a title</v-card-title>
+				    <v-card-text>I'm card text</v-card-text>
+				    <v-card-actions>
+				      <v-btn text>Click</v-btn>
+				    </v-card-actions>
+			  	</v-card>
 			</v-col>
 			<v-col cols="5">
 				<v-card>
