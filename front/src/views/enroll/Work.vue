@@ -202,6 +202,7 @@ export default {
     console.log(this.$store)
     var cps = this.$store.gettters.getCompanys
     for(var i=0; i< cps.length; i++){
+      console.log(cps[i])
       if(cps[i].name === this.$store.getters.getUser.company){
         this.v_divisions = cps[i].division
         break
