@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import io from 'socket.io-client'
+import Work from './views/enroll/Work.vue'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -25,7 +26,8 @@ export default new Vuex.Store({
     ],
     socks:{
       sock: undefined
-    }
+    },
+    components: {Work: Work}
   },
   mutations: {
     delToken (state) {
@@ -48,6 +50,10 @@ export default new Vuex.Store({
     setState(state, st){
       state.user.state = st
     },
+    addComponents(state, k, v){
+      state.components[k] = v
+      console.log('verify: ', state.components[k])
+    }
     initCompanys(state){
       axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
@@ -95,6 +101,9 @@ export default new Vuex.Store({
     },
     getRoom(state){
       return state.user.room
+    },
+    getComponents(state){
+      return state.components
     }
   },
   actions: {
