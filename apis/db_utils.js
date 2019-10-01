@@ -44,6 +44,8 @@ router.post('/getUsers', (req, res, next) => {
 router.post('/getChat', (req, res, next) => {
 	var srcId = req.body.srcId
 	var to = req.body.to
+	console.log(srcId)
+	console.log(to)
 	User.findOne({id: srcId}, (e, r) => {
 		if(!e){
 			for(var x in r.comu){
