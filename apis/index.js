@@ -23,21 +23,21 @@ var getUser = function (to, from, newConvs){
 		}
 		var idx = -1
 		var i = 0
-		console.log('r: ', JSON.stringify(r))
 		for(x in r.comu){
 			if(r.comu[x].with === to){
-				console.log('find idx ::', x.with)
+				console.log('find idx ::')
 				idx = i
 			}
 			i++
 		}
 		if(idx === -1){
-			console.log('have not been chatting with ', to)
+			console.log('have not been chat with ', to)
 			var newComu = { with: to, convs: []
 			}	
 		}
 		else{
 			var newComu = r.comu[idx]
+			console.log('have been chat ,', newComu)
 		}
 		console.log('getUser - before:::: ', newComu)
 		newComu.convs.push(newConvs)
