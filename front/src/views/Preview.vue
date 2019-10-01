@@ -12,7 +12,7 @@
 			    class="mx-auto"
 			  	>
 				  	<v-toolbar
-				      color="purple accent-2"
+				      color="purple lighten-4"
 				      dark
 				    >
 				     <v-toolbar-title>
@@ -31,7 +31,7 @@
 			    class="mx-auto"
 			  	>
 			  	<v-toolbar
-				      color="deep-purple darken-1"
+				      color="purple lighten-4"
 				      dark
 				    >
 				     <v-toolbar-title>
