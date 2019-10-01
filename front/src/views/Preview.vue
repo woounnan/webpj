@@ -40,7 +40,7 @@
 			  	>
 				    <v-card-title color="skyblue">
 				    	알림
-				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
+				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">notification_important</v-icon> 
 				    </v-card-title>
 				    <v-card-text>I'm card text</v-card-text>
 				    <v-card-actions>
