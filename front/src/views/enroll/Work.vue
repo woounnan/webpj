@@ -260,7 +260,9 @@ export default {
       console.log('searchPs::::v_ps = ', this.v_ps)
       for(var i=0; i<len; i++){
         if( (this.v_ps[i].position.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){//search ps
+          console.log('true::::', this.v_ps[i].position)
           if(this.v_work.selects.indexOf(this.v_ps[i].position)== -1){
+
           this.v_searchPs.ps.push(this.v_ps[i].position)
           this.v_searchPs.state = true
           }
