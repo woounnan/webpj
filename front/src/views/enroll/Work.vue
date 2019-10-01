@@ -243,8 +243,8 @@ export default {
       fd.append('myData', 'Hi!!!!!!')
       axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
       .then(r => {
-        
-        console.log('Upload file succeeded')
+
+        console.log(r.data)
       })
       .catch(e => console.error(e))
       
