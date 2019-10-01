@@ -32,28 +32,43 @@ var getUser = function (to, from, newConvs){
 		}
 		if(flag === 0){
 			console.log('have not been chat with ', to)
-			var newComu = { with: to, convs: []
-			}	
+			User.update({
+					position : from
+				}, {
+				$push : {
+					comu: {
+						with: to,
+						convs: newConvs
+					}
+				} 
+			},
+			(e, r) => {
+				if(e)
+					console.error('getUser--non exist Error:::::', e)
+				else
+					console.log('getUser--non exist succeeded::::', r)
+			})
+		}
+		else{
+			newComu.convs.push(newConvs)
+			User.update({
+					position : from
+				}, {
+				$set : {
+					comu: newComu
+				} 
+			},
+			(e, r) => {
+				if(e)
+					console.error('getUser--exist  Error:::::', e)
+				else
+					console.log('getUser--exist  succeeded::::', r)
+			})
 		}
 		console.log('getUser - before:::: ', newComu)
 		newComu.convs.push(newConvs)
 		console.log('getUser:::: ', newComu)
-		User.update({
-				position : from
-			}, {
-			$set : {
-				comu: {
-					with: to, 
-					convs: newComu
-				} 
-			} 
-		},
-		(e, r) => {
-			if(e)
-				console.error('getUser Error:::::', e)
-			else
-				console.log('getUser succeeded::::', r)
-		})
+		
 	})
 }
 
