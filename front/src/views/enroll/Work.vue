@@ -3,7 +3,7 @@
     <v-col cols="12" sm="8">
       <v-card>
         <v-card-title class="cyan darken-1">
-          <span class="headline white--text">작업 등록</span>
+          <span class="headline white--text">작업 요청</span>
 
           <div class="flex-grow-1"></div>
           <v-btn dark icon @click="sub">
@@ -28,7 +28,18 @@
                 type="text"
                 @click=""
                 v-on:keyup="searchPs"
-              ></v-text-field>
+              >
+                <v-chip
+      v-if="chip2"
+      class="ma-2"
+      close
+      color="red"
+      text-color="white"
+      @click:close="chip2 = false"
+    >
+      Remove
+    </v-chip>
+              </v-text-field>
             </v-list-item-content>
           </v-list-item>
              <!--show list result for searching -->
