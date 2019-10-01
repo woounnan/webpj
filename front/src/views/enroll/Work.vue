@@ -238,6 +238,7 @@ export default {
     searchPs(){
       this.v_searchPs.ps = []
       var len = Object.keys(this.v_ps).length
+      console.log('searchPs::::v_ps = ', this.v_ps)
       for(var i=0; i<len; i++){
         if( (this.v_ps[i].position.includes(this.v_work.cur)) && (this.v_work.cur.length) > 0){
           this.v_searchPs.ps.push(this.v_ps[i])
