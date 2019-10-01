@@ -40,7 +40,7 @@ var getUser = function (to, from, newConvs){
 		}
 		newComu.convs.push(newConvs)
 		console.log('getUser:::: ', newComu)
-		db.list_user.update({
+		User.update({
 				position : "군수과장"
 			}, {
 			$set : {
