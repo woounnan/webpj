@@ -11,7 +11,7 @@
       grow
     >
       <v-tab
-        v-for="item in items"
+        v-for="item in tabs"
         :key="item"
       >
         {{ item }}
@@ -36,8 +36,8 @@
 		data(){
 			return {
 				tab: null,
-		        items: [
-		          'Appetizers', 'Entrees', 'Deserts', 'Cocktails',
+		        tabs: [
+		          '처리할일', '요청한일', '보낸알림', '받은알림',
 		        ],
 		        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 			}
