@@ -53,7 +53,7 @@ export default new Vuex.Store({
     addComponents(state, k, v){
       state.components[k] = v
       console.log('verify: ', state.components[k])
-    }
+    },
     initCompanys(state){
       axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
