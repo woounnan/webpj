@@ -55,7 +55,7 @@ router.post('/getChat', (req, res, next) => {
 				if(x.with === to){
 					console.log('found data!!!')
 					console.log(JSON.stringify(x.convs))
-					res.send({code: 1, conv: r, test:'tests'})
+					res.send({code: 1, convs: r, test:'tests'})
 					return true
 				}
 				else{
