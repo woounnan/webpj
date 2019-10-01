@@ -26,6 +26,7 @@ var getUser = function (to, from, newConvs){
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
 				var newComu = r.comu[x]
+				flag = 1
 				break
 			}
 		}
