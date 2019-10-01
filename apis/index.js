@@ -65,9 +65,6 @@ var getUser = function (to, from, newConvs){
 					console.log('getUser--exist  succeeded::::', r)
 			})
 		}
-		console.log('getUser - before:::: ', newComu)
-		newComu.convs.push(newConvs)
-		console.log('getUser:::: ', newComu)
 		
 	})
 }
