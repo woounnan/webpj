@@ -17,8 +17,6 @@ var list_user = [{
 
 
 var getUser = function (to, from, newConvs){
-	console.log('position???!::::', JSON.stringify(newConvs))
-	console.log('position???!::::', newConvs.position)
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('getUser Error in index.js:::: ', e)
