@@ -219,7 +219,6 @@ export default {
       }
     }
     this.v_ps = this.$store.getters.getOthers
-    this.v_ps = this.v_ps.concat(this.v_divisions)
   },
   methods : {
     popPs(idx){
@@ -260,10 +259,22 @@ export default {
       var len = Object.keys(this.v_ps).length
       console.log('searchPs::::v_ps = ', this.v_ps)
       for(var i=0; i<len; i++){
-        if( (this.v_ps[i].position.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){
-          if(this.v_work.selects.indexOf(this.v_ps[i].position)== -1)
+        if( (this.v_ps[i].position.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){//search ps
+          if(this.v_work.selects.indexOf(this.v_ps[i].position)== -1){
           this.v_searchPs.ps.push(this.v_ps[i].position)
           this.v_searchPs.state = true
+          }
+        }
+      }
+      if(this.v_searchPs.state = false){
+      len = this.v_divisions.length
+        for(var i=0; i<len; i++){//search divisions
+          if( (this.v_divisions.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){
+            if(this.v_work.selects.indexOf(this.v_divisions)== -1){
+              this.v_searchPs.ps.push(this.v_divisions[i])
+              this.v_searchPs.state = true
+            }
+          }
         }
       }
     },
