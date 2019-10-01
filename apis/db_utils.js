@@ -51,6 +51,7 @@ router.post('/getChat', (req, res, next) => {
 			for(var x in r.comu){
 			console.log('r:',r)
 			console.log('r.comu:',r.comu)
+			console.log('x.with:',x.with)
 				if(x.with === to){
 					console.log('found data!!!')
 					console.log(JSON.stringify(x.convs))
