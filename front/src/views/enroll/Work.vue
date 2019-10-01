@@ -35,7 +35,7 @@
       close
       color="red"
       text-color="white"
-      @click:close="chip2 = false"
+      @click:close="v_chip = false"
     >
       Remove
     </v-chip>
