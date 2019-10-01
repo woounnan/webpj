@@ -21,23 +21,18 @@ var getUser = function (to, from, newConvs){
 		if(e){
 			console.error('getUser Error in index.js:::: ', e)
 		}
-		var idx = -1
-		var i = 0
+		flag = 0
 		for(x in r.comu){
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
-				idx = i
+				var newComu = r.comu[x]
+				break
 			}
-			i++
 		}
-		if(idx === -1){
+		if(flag === 0){
 			console.log('have not been chat with ', to)
 			var newComu = { with: to, convs: []
 			}	
-		}
-		else{
-			var newComu = r.comu[idx]
-			console.log('have been chat ,', newComu)
 		}
 		console.log('getUser - before:::: ', newComu)
 		newComu.convs.push(newConvs)
