@@ -38,6 +38,7 @@ var getUser = function (to, from, newConvs){
 		else{
 			var newComu = r.comu[idx]
 		}
+		console.log('getUser - before:::: ', newComu)
 		newComu.convs.push(newConvs)
 		console.log('getUser:::: ', newComu)
 		User.update({
@@ -56,6 +57,12 @@ var getUser = function (to, from, newConvs){
 					} 
 				} 
 			} 
+		},
+		(e, r) => {
+			if(e)
+				console.error('getUser Error:::::', e)
+			else
+				console.log('getUser succeeded::::', r)
 		})
 	})
 }
