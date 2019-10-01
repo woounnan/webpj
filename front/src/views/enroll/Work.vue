@@ -256,6 +256,7 @@ export default {
     },
     searchPs(){
       this.v_searchPs.ps = []
+      this.v_searchPs.state = false
       var len = Object.keys(this.v_ps).length
       console.log('searchPs::::v_ps = ', this.v_ps)
       for(var i=0; i<len; i++){
