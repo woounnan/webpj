@@ -38,8 +38,8 @@ var getUser = function (to, from, newConvs){
 		else{
 			var newComu = r.comu[idx]
 		}
-		console.log('getUser:::: ', newComu)
 		newComu.convs.push(newConvs)
+		console.log('getUser:::: ', newComu)
 		User.update({
 			position : to
 			},
@@ -69,8 +69,6 @@ io.on('connection', function(socket){
 
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
-		console.log(JSON.stringify(data))
-		console.log('recv::save msg')
 		console.log(JSON.stringify(data))
 		getUser(data.header.to, data.header.from, data.msg)
 		getUser(data.header.from, data.header.to, data.msg)

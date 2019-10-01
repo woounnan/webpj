@@ -60,7 +60,7 @@ router.post('/getChat', (req, res, next) => {
 				}
 				else{
 					console.log('failed search')
-					res.send({code: -1})
+					res.send({code: -1, convs: []})
 					return false
 				}
 			}
