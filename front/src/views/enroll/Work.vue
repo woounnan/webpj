@@ -29,16 +29,6 @@
                 @click=""
                 v-on:keyup="searchPs"
               >
-                <v-chip
-      v-if="v_chip"
-      class="ma-2"
-      close
-      color="red"
-      text-color="white"
-      @click:close="v_chip = false"
-    >
-      Remove
-    </v-chip>
               </v-text-field>
             </v-list-item-content>
           </v-list-item>
@@ -51,7 +41,16 @@
             <v-list-item-title @click="selPs(ps)" v-bind:style="{color: 'gray'}">{{ps}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
+          <v-chip
+                v-if="v_chip"
+                class="ma-2"
+                close
+                color="red"
+                text-color="white"
+                @click:close="v_chip = false"
+              >
+                Remove
+              </v-chip>
           <v-divider inset></v-divider>
 
           <v-list-item @click="">
