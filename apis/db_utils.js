@@ -44,6 +44,8 @@ router.post('/getUsers', (req, res, next) => {
 router.post('/getChat', (req, res, next) => {
 	var srcId = req.srcId
 	var to = req.to
+	console.log('getChat::::srcId :', srcId)
+	console.log('getChat::::to :', to)
 	User.findOne({id: srcId}, (e, r) => {
 		if(r.length > 0 ){
 			console.log('getChat::successed')
