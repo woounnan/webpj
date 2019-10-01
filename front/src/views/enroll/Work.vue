@@ -37,7 +37,7 @@
             <v-icon>search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title @click="getCp(ps)" v-bind:style="{color: 'gray'}">{{ps}}</v-list-item-title>
+            <v-list-item-title @click="selPs(ps)" v-bind:style="{color: 'gray'}">{{ps}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -209,6 +209,9 @@ export default {
     this.v_ps = this.$store.getters.getOthers
   },
   methods : {
+    selPs(position){
+      this.v_work.cur = position
+    },
     uploadFile(){
       console.log('call uploadFile')
     },
