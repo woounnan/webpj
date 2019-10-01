@@ -262,7 +262,7 @@ export default {
         if( (this.v_ps[i].position.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length > 0)){//search ps
           console.log('true::::', this.v_ps[i].position)
           if(this.v_work.selects.indexOf(this.v_ps[i].position)== -1){
-
+            console.log('true222::::', this.v_work.selects)
           this.v_searchPs.ps.push(this.v_ps[i].position)
           this.v_searchPs.state = true
           }
