@@ -22,9 +22,6 @@
 
       <div class="flex-grow-1"></div>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
     </v-toolbar>
 
     <v-list subheader
