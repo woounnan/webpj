@@ -1,8 +1,7 @@
 <template>
 	<v-card color="basil">
-    <v-card-title class="text-center justify-center py-6"
-    src="https://picsum.photos/1920/1080?random">
-      <h1 class="font-weight-bold display-3 basil--text">BASiL</h1>
+    <v-card-title class="text-center justify-center py-6">
+      <h3 class="font-weight-bold display-3 basil--text">목록</h3>
     </v-card-title>
 
     <v-tabs
