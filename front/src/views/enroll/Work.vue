@@ -24,7 +24,7 @@
             <v-list-item-content>
               <v-text-field 
                 placeholder="대상 선택"
-                v-model="v_work.cur"
+                v-model="v_searchPs.cur"
                 type="text"
                 @click=""
                 v-on:keyup="searchPs"
@@ -42,14 +42,14 @@
           </v-list-item-content>
         </v-list-item>
           <v-chip
-                v-if="v_chip"
+                v-for="(item, idx) in v_work.selects"
                 class="ma-2"
                 close
-                color="red"
+                color="deep-purple"
                 text-color="white"
                 @click:close="v_chip = false"
               >
-                Remove
+                {{item}}
               </v-chip>
           <v-divider inset></v-divider>
 
@@ -190,11 +190,12 @@ export default {
       v_divisions : [],
       v_ps: [],
       v_searchPs : {
+        cur: '',
         ps: [],
         state: false
       },
       v_work : { 
-        cur: '',
+        selects: [],
         title: '',
         contents: '',
         files: undefined,
@@ -221,7 +222,7 @@ export default {
   },
   methods : {
     selPs(position){
-      this.v_work.cur = position
+      this.v_work.selects.push(position)
       this.v_searchPs.state = false
     },
     uploadFile(){
@@ -255,7 +256,7 @@ export default {
       var len = Object.keys(this.v_ps).length
       console.log('searchPs::::v_ps = ', this.v_ps)
       for(var i=0; i<len; i++){
-        if( (this.v_ps[i].position.includes(this.v_work.cur)) && (this.v_work.cur.length) > 0){
+        if( (this.v_ps[i].position.includes(this.v_searchPs.cur)) && (this.v_searchPs.cur.length) > 0){
           this.v_searchPs.ps.push(this.v_ps[i].position)
           this.v_searchPs.state = true
         }
