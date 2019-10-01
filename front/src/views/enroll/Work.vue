@@ -200,7 +200,7 @@ export default {
   },
   mounted: function () {
     console.log(this.$store)
-    var cps = this.$store.gettters.getCompanys
+    var cps = this.$store.getters.getCompanys
     for(var i=0; i< cps.length; i++){
       console.log(cps[i])
       if(cps[i].name === this.$store.getters.getUser.company){
