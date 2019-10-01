@@ -11,10 +11,10 @@
 				<v-card
 			    class="mx-auto"
 			  	>
-			  	<v-toolbar
-			      color="indigo"
-			      dark
-			    >
+				  	<v-toolbar
+				      color="purple accent-2"
+				      dark
+				    >
 				     <v-toolbar-title>
 				    	처리할일
 				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
@@ -30,10 +30,15 @@
 				<v-card
 			    class="mx-auto"
 			  	>
-				    <v-card-title color="skyblue">
+			  	<v-toolbar
+				      color="deep-purple darken-1"
+				      dark
+				    >
+				     <v-toolbar-title>
 				    	요청한일
 				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
-				    </v-card-title>
+				    </v-toolbar-title>
+				</v-toolbar>
 				    <v-card-text>I'm card text</v-card-text>
 				    <v-card-actions>
 				      <v-btn text>더보기</v-btn>
@@ -44,10 +49,15 @@
 				<v-card
 			    class="mx-auto"
 			  	>
-				    <v-card-title color="skyblue">
-				    	알림
+			  		<v-toolbar
+				      color="deep-purple accent-2"
+				      dark
+				    >
+					     <v-toolbar-title>
+					    	알림
 				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">notification_important</v-icon> 
-				    </v-card-title>
+					    </v-toolbar-title>
+					</v-toolbar>
 				    <v-card-text>I'm card text</v-card-text>
 				    <v-card-actions>
 				      <v-btn text>더보기</v-btn>
