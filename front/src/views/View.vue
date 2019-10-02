@@ -29,7 +29,6 @@
       </v-tab-item>
     </v-tabs-items>
   </v-card>
-  <Work />
 </template>
 <script>
 	import ViewParts from './ViewParts.vue'
