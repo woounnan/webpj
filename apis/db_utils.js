@@ -20,6 +20,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
   var saveName = req.file.filename
   var works = req.body.works
   console.log('work::::',JSON.stringify(works))
+  console.log('test::::',req.body.test)
   works['file_save'] = saveName
   works['file_real'] = realName
   res.send({works: works})
