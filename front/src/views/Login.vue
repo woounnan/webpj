@@ -13,7 +13,7 @@
             sm="8"
             md="4"
           >
-            <modals-container/>
+            <modals-container hide-backdrop />
             <v-card class="elevation-12">
               <v-toolbar
                 color="primary"
