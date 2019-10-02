@@ -18,7 +18,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
   //console.log(req)
   var realName = req.file.originalname
   var saveName = req.file.filename
-  console.log('r: ', JSON.stringify(req.body))
+  console.log('r: ', JSON.stringify(req))
   works['file_save'] = saveName
   works['file_real'] = realName
   res.status(200).send({works: works})
