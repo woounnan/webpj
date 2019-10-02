@@ -32,7 +32,7 @@ export default new Router({
     {
       path: '/work',
       name: 'work',
-      component: () => import('./views/enroll/Work.vue'),
+      component: () => import('./views/enroll/Work_ori.vue'),
     },
     {
       path: '/file',
