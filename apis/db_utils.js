@@ -13,12 +13,15 @@ router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
 })
 
-router.post('/save', upload.single('bin'), function (req, res, next) {
+router.post('/work', upload.single('bin'), function (req, res, next) {
   // req.file is the `avatar` file
   //console.log(req)
   var realName = req.file.originalname
   var saveName = req.file.filename
-  res.send({file_save: saveName, file_real: realName})
+  var works = req.body.works
+  works['file_save'] = saveName
+  works['file_real'] = realName
+  res.send({works: works})
   // req.body will hold the text fields, if there were any
 })
 

@@ -16,7 +16,7 @@ var list_user = [{
 }]
 
 
-var getUser = function (to, from, newConvs){
+var saveMsg = function (to, from, newConvs){
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('getUser Error in index.js:::: ', e)
@@ -77,6 +77,8 @@ io.on('connection', function(socket){
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(JSON.stringify(data))
+		saveMsg(data.header.to, data.header.from, data.msg)
+		saveMsg(data.header.from, data.header.to, data.msg)
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
 	})

@@ -199,17 +199,15 @@ export default {
         selects: [], //to
         title: '',
         contents: '',
-        files: undefined,
         startDate: '',
         endDate: '',
-        notice: '', 
+        notice: false, //true : notice false: work
       },
       selectDate: '',
       startEnd: '',
       cal1: undefined,
       cal2: undefined,
-      upFiles: [
-      ]
+      upFiles: []
     }
   },
   mounted: function () {
@@ -240,14 +238,13 @@ export default {
       const fd = new FormData()
       console.log(document.getElementById('bin').files[0])
       fd.append('bin', document.getElementById('bin').files[0])
-      fd.append('myData', 'Hi!!!!!!')
-      axios.post(`http://webhacker.xyz:8000/apis/db/save`, fd)
+      fd.append('works', this.v_work)
+      axios.post(`http://webhacker.xyz:8000/apis/db/work`, fd)
       .then(r => {
-        this.$store.state.bus.$emit('sendFileName', r.data)
+        this.$store.state.bus.$emit('work', r.data)
         console.log(r.data)
       })
       .catch(e => console.error(e))
-      
       //this.closeWindow();
     },
     closeWindow(){
