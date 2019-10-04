@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 app.get('/public', (req, res, next) =>{
-	console.log('public!!!!!!!!!!!!!')
+	console.log('public!!!!!!!!!!!!!', path.join(__dirname)
 })
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
