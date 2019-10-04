@@ -33,7 +33,7 @@
       >
         <span>ArmyTalk</span><v-icon>warning</v-icon>
       </v-btn>
-      <a href="/public/0716e5852c941f70c2d869db9d85b3f8" download="test"><v-btn @click=""> test </v-btn></a>
+      <a href="../../public/0716e5852c941f70c2d869db9d85b3f8" download="test"><v-btn @click=""> test </v-btn></a>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <div v-if="!$store.state.tk">
