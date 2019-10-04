@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './views/Login.vue'
 import Register from './views/enroll/Register.vue'
-import File from './views/File.vue'
 import Home from './views/Chat.vue'
 import store from './store'
 
@@ -33,11 +32,6 @@ export default new Router({
       path: '/work',
       name: 'work',
       component: () => import('./views/enroll/Work_ori.vue'),
-    },
-    {
-      path: '/file',
-      name: 'file',
-      component: File
     },
 		{
 			path: '/',
