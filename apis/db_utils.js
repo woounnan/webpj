@@ -17,14 +17,13 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
   // req.file is the `avatar` file
   	var works = {
 		title : req.body.title,
-		selects : req.body.selects,
+		selects : req.body.selects.split(','),
 		contents : req.body.contents,
 		startDate : req.body.startDate,
 		endDate : req.body.endDate,
 		notice : req.body.notice,
 	}
-	console.log(req.body.selects)
-	res.status(200).send({works: works})
+	console.log(req.body.selects)	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })
 
