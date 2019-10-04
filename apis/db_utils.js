@@ -23,7 +23,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		endDate : req.body.endDate,
 		notice : req.body.notice,
 	}
-	console.log(JSON.stringify(req.file))
+	console.log(req.body.selects)
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })
