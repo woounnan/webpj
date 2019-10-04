@@ -128,7 +128,7 @@
         this.cur = this.$store.getters.getOthers[idx].position
       },
       openDial(){
-        this.$store.state.bus.$emit('openDial', this.cur)
+        this.$store.state.bus.$emit('openDial')
       },
       subCall(idx){
         switch(idx){
