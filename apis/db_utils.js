@@ -63,12 +63,11 @@ router.post('/getChat', (req, res, next) => {
 					res.send({code: 1, convs: r.comu[x].convs, test:'tests'})
 					return true
 				}
-				else{
-					console.log('failed search')
-					res.send({code: -1, convs: []})
-					return false
-				}
 			}
+			console.log('failed search')
+			res.send({code: -1, convs: []})
+			return false
+
 		}
 		else{
 			console.log('getChat::failed')
