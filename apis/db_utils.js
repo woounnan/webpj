@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
 router.post('/work', upload.single('bin'), function (req, res, next) {
   // req.file is the `avatar` file
   //console.log(req)
-
+  console.log(req)
   res.status(200).send({})
   // req.body will hold the text fields, if there were any
 })
