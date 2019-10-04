@@ -61,7 +61,7 @@
 	  		setSig(idx){
 	  			console.log('setSig in Bar.vue::::', idx)
 	  			this.to = this.$store.getters.getUser.room[idx]
-	  			this.$store.state.bus.$emit("openDial", this.to)
+	  			this.$store.state.bus.$emit("openDial")
 
 	  		},
 	  		closeRoom(idx){
