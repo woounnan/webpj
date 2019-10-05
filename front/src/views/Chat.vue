@@ -50,7 +50,6 @@ export default{
 	},
    	mounted(){
    		this.$store.commit('initSocks')
-   		console.log('initDivisions::::', this.$store.getters.getDivisions)
    	},
 	methods: {
 		testServ: function(){
