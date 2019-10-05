@@ -25,6 +25,7 @@ var saveMsg = function (to, from, newConvs){
 			console.error('getUser Error in index.js:::: ', e)
 		}
 		flag = 0
+		console.log(JSON.stringify(r.comu))
 		for(x in r.comu){
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
