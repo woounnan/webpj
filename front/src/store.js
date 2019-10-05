@@ -63,9 +63,9 @@ export default new Vuex.Store({
     },
     initDivisions(state){
       state.companys.forEach((x)=>{
-        console.log('initDivisions in ::::', x.name, state.user.company)
         if(x.name === state.user.company){
           state.user.company_division = x.division
+          console.log('set divisions::::', state.user.company_division)
         }
       })
     },
