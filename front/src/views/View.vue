@@ -32,6 +32,7 @@
 </template>
 <script>
 	import ViewParts from './ViewParts.vue'
+  import axios from 'axios'
 	export default{
     components:{
     },
