@@ -14,7 +14,18 @@ router.post('/getWorks', (req, res, next) =>{
 	User.findOne({id: myId}, (e, r) =>{
 		if(!e){
 			console.log('/getWorks successed::::', JSON.stringify(r))
-			res.status(200).send()
+
+			for( var i=0; i<r.comu.length; i++){
+				var temp_comu = r.comu[i]
+				for(var j=0, var convs; j<temp_comu.convs.length; j++){
+					var temp_convs = temp_comu.convs[j]
+					if(temp_convs.works == undefined){
+						temp_convs.splice(j, 1)		
+					}
+				}
+			}
+			console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
+			res.status(200).send({})
 		}else{
 			console.error('/getWorks error occurred::::', e)
 			res.status(500).send()
