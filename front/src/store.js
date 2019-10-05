@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import io from 'socket.io-client'
-import Work from './views/enroll/Work.vue'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -27,7 +26,6 @@ export default new Vuex.Store({
     socks:{
       sock: undefined
     },
-    components: {Work: Work}
   },
   mutations: {
     delToken (state) {
