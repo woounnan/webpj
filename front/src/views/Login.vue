@@ -149,6 +149,7 @@
             this.$store.commit('setTk')
             this.$store.commit('initSocks')
             this.$store.commit('initDivisions')
+            console.log(this.$store.getters.getDivisions)
             //this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
