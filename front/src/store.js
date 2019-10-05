@@ -104,7 +104,7 @@ export default new Vuex.Store({
       return state.components
     },
     getDivisions(state){
-      return state.company_division
+      return state.user.company_division
     },
   },
   actions: {
