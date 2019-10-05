@@ -15,6 +15,7 @@ router.post('/getWorks', (req, res, next) =>{
 		if(!e){
 			console.log('/getWorks successed::::', JSON.stringify(r))
 
+			//works를 제외한 나머지 일반 메시지 제거
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
 				for(var j=0, var convs; j<temp_comu.convs.length; j++){
@@ -25,7 +26,7 @@ router.post('/getWorks', (req, res, next) =>{
 				}
 			}
 			console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
-			res.status(200).send({})
+			res.status(200).send({list_works: r.comu})
 		}else{
 			console.error('/getWorks error occurred::::', e)
 			res.status(500).send()
