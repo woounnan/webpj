@@ -45,7 +45,7 @@
 			}
 		},
     mounted(){
-      getWorks()
+      this.getWorks()
     },
     methods: {
       getWorks(){
