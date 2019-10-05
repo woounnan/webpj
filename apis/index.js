@@ -19,7 +19,7 @@ var list_user = [{
 var saveMsg = function (to, from, newConvs){
 	console.log('to::::', to)
 	console.log('from::::', from)
-	console.log('newConvs::::', JSON.stringify(to))
+	console.log('newConvs::::', JSON.stringify(newConvs))
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('getUser Error in index.js:::: ', e)
