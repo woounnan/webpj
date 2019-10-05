@@ -171,7 +171,7 @@ export default {
     },
     searchCp(){
       this.v_searchCp.cps = []
-      console.log('call SearchCp,' this.v_companys)
+      console.log('call SearchCp,')
       var len = Object.keys(this.v_companys).length
       for(var i=0; i<len; i++){
         if( (this.v_companys[i].name.includes(this.v_user.cp))/* && (this.v_user.cp.length) > 0*/){
