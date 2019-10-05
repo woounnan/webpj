@@ -20,11 +20,11 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item
-        v-for="item in items"
+        v-for="item in tabs"
         :key="item"
       >
         <v-card flat color="basil">
-          <v-card-text>{{ item.text }}</v-card-text>
+          <v-card-text>{{ text }}</v-card-text>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -38,7 +38,7 @@
 		data(){
 			return {
 				tab: null,
-		        tabs: [
+		    tabs: [
 		          '처리할일', '요청한일', '받은알림', '보낸알림'
 		        ],
             items:{
