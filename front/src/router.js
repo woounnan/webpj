@@ -28,11 +28,6 @@ export default new Router({
       name: 'login',
       component: Login
     },
-    {
-      path: '/work',
-      name: 'work',
-      component: () => import('./views/enroll/Work_ori.vue'),
-    },
 		{
 			path: '/',
 			name: 'home',
