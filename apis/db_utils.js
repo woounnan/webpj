@@ -25,7 +25,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
 	}
-	console.log(works.selects)	
+	console.log('tttt::::', works.selects)	
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })
