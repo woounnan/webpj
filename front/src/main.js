@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import VModal from 'vue-js-modal'
 import VueSocketIO from 'vue-socket.io'
 import io from 'socket.io-client'
+import axios from 'axios'
  /*
 Vue.use(new VueSocketIO({
     debug: true,

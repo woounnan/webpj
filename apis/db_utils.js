@@ -8,6 +8,19 @@ var multer  = require('multer')
 var upload = multer({ dest: 'public/' })
 
 
+router.post('/getWorks', (req, res, next) =>{
+	var myId = req.body.id
+	console.log('myId ::::', myId)
+	User.findOne({id: myId}, (e, r) =>{
+		if(!e){
+			console.log('/getWorks successed::::', JSON.stringify(r))
+			res.status(200).send()
+		}else{
+			console.error('/getWorks error occurred::::', e)
+			res.status(500).send()
+		}
+	})
+})
 
 router.get('/', (req, res, next) => {
 	res.send('Here is at db_utils.js')
@@ -25,7 +38,6 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
 	}
-	console.log('tttt::::', works.selects)	
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })

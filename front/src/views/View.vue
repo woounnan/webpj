@@ -21,10 +21,10 @@
     <v-tabs-items v-model="tab">
       <v-tab-item
         v-for="(item, idx) in tabs"
-        :key="idx"
+        :key="item"
       >
         <v-card flat color="basil">
-          <v-card-text>{{ text[idx] }}</v-card-text>
+          <v-card-text>{{ works[idx] }}</v-card-text>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -39,12 +39,24 @@
 			return {
 				tab: null,
 		    tabs: [
-		          '처리할일', '요청한일', '받은알림', '보낸알림'
-		        ],
-		        text: [
-              '1111', '2222', '3333', '4444'
-            ],
+		      '처리할일', '요청한일', '받은알림', '보낸알림'
+		    ],
+		    works: [],
 			}
-		}
+		},
+    mounted(){
+      getWorks()
+    },
+    methods: {
+      getWorks(){
+        axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
+          .then(r =>{
+            console.log('getWorks in View.vue ::::', r.data)
+          }) 
+          .catch(e=>{
+            console.error('getWorks in View.vue::::', e)
+          })
+      }
+    },
 	}
 </script>
