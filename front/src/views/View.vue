@@ -24,7 +24,7 @@
         :key="item"
       >
         <v-card flat color="basil">
-          <v-card-text>{{ text }}</v-card-text>
+          <v-card-text>{{ item.text }}</v-card-text>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -41,7 +41,9 @@
 		        tabs: [
 		          '처리할일', '요청한일', '받은알림', '보낸알림'
 		        ],
+            items:{
 		        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            }
 			}
 		}
 	}
