@@ -18,7 +18,7 @@ router.post('/getWorks', (req, res, next) =>{
 			//works를 제외한 나머지 일반 메시지 제거
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
-				for(var j=0, var convs; j<temp_comu.convs.length; j++){
+				for(var j=0; j<temp_comu.convs.length; j++){
 					var temp_convs = temp_comu.convs[j]
 					if(temp_convs.works == undefined){
 						temp_convs.splice(j, 1)		
