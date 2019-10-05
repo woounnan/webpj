@@ -24,7 +24,7 @@ var saveMsg = function (to, from, newConvs){
 		if(e){
 			console.error('getUser Error in index.js:::: ', e)
 		}
-		flag = 0
+		var flag = 0
 		for(x in r.comu){
 		console.log('with::::', r.comu[x].with)
 			if(r.comu[x].with === to){
