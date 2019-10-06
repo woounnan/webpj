@@ -9,7 +9,7 @@
 	     	dark
 	    >
 
-	      <v-toolbar-title>{{title}}</v-toolbar-title>
+	      <v-toolbar-title @click="showTitle">{{title}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
@@ -106,5 +106,10 @@
         },
       ],
     }),
+    methods: {
+    	showTitle(){
+    		console.log('title::::', this.title)
+    	},
+    },
   }
 </script>
