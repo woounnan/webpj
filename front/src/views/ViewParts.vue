@@ -79,7 +79,7 @@
     data: () => ({
     sep: undefined,
       selected: [2],
-      title = [],
+      title : [],
       titles: {
       	work: ['진행중인 일', '지나간 일'],
       	notice: ['진행중인 알림', '지나간 알림'],
