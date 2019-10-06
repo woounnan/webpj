@@ -26,7 +26,6 @@ var saveMsg = function (to, from, newConvs){
 		}
 		var flag = 0
 		for(x in r.comu){
-		console.log('with::::', r.comu[x].with)
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
 				var newComu = r.comu[x]
@@ -53,6 +52,7 @@ var saveMsg = function (to, from, newConvs){
 		}
 		else{
 			newComu.convs.push(newConvs)
+			console.log('convs::::', JSON.stringify(newComu))
 			User.update({
 					position : from
 				}, {
