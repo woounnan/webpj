@@ -41,17 +41,13 @@
 		data(){
 			return {
         cur: {
-          type: String,
-          default: ''
+          type: Number,
+          default: undefined
         },
-        subNum: 1,
-        subNum2: 2,
 				tab: null,
 		    tabs: [
 		      '받은작업', '요청작업', '받은알림', '보낸알림'
 		    ],
-        title1: '',
-        title2: '',
 		    works: [],
 			}
 		},
@@ -60,10 +56,7 @@
     },
     methods: {
       setCur(idx){
-        if(idx > 1)
-          this.cur = 'work'
-        else
-          this.cur = 'notice'
+        this.cur = parseInt(idx/2)
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
