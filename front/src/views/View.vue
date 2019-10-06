@@ -23,6 +23,8 @@
       <v-tab-item
         v-for="(item, idx) in tabs"
         :key="item"
+        align="start"
+        justify="space-between"
       >
           <ViewParts :sep="cur" />
       </v-tab-item>
