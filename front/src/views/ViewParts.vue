@@ -5,11 +5,12 @@
         flat color="basil"
     >
 	 	<v-toolbar
+	 	@click="showTitle"
 	      	:color="setThis === 0 ? 'purple lighten-3' : 'blue lighten-2'"
 	     	dark
 	    >
 
-	      <v-toolbar-title @click="showTitle">{{titles[setThis]}}</v-toolbar-title>
+	      <v-toolbar-title >{{titles[setThis]}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
