@@ -25,6 +25,8 @@
         align="start"
         justify="space-between"
       >
+      <v-row>
+        <v-col>
         <v-card
           max-width="500"
           class="mx-auto"
@@ -32,6 +34,8 @@
         >
           <ViewParts />
         </v-card>
+      </v-col>
+      <v-col>
          <v-card
           max-width="500"
           class="mx-auto"
@@ -39,6 +43,8 @@
         >
           <ViewParts />
         </v-card>
+      </v-col>
+      </v-row>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
