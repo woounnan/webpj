@@ -23,8 +23,12 @@
         v-for="(item, idx) in tabs"
         :key="item"
       >
-        <v-card flat color="basil">
-          <v-card-text>{{ works[idx] }}</v-card-text>
+        <v-card
+          max-width="500"
+          class="mx-auto"
+          flat color="basil"
+        >
+          <ViewParts />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -35,6 +39,7 @@
   import axios from 'axios'
 	export default{
     components:{
+      ViewParts,
     },
 		data(){
 			return {
