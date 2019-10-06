@@ -5,7 +5,7 @@
         flat color="basil"
     >
 	 	<v-toolbar
-	      	:color="purple lighten-3"
+	      	color="purple lighten-3"
 	     	dark
 	    >
 
