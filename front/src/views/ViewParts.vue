@@ -3,7 +3,7 @@
 	<v-row>
 		<v-btn @click="showTitle">test</v-btn>
 		<div v-for="(title, idx) in titles">
-<div v-if="idx===setThis">
+<div v-if="idx===sep">
 				<v-col v-for="(t, x) in title">
 	  <v-card
 	    max-width="500"
@@ -79,9 +79,9 @@
 <script>
   export default {
   	props:{
-  		setThis: undefined,
   	},
     data: () => ({
+    sep: undefined,
       selected: [2],
       titles: {
       	work: ['진행중인 일', '지나간 일'],
@@ -122,6 +122,10 @@
     }),
     mounted(){
     	console.log('setThis::::', this.setThis)
+    	this.$store.bus.$on('setTitle', data => {
+    		console.log('setTitle::::', data.sep)
+    		this.sep = data.sep
+    	})
     },
     methods: {
     	showTitle(){

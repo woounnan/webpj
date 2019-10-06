@@ -26,7 +26,7 @@
         align="start"
         justify="space-between"
       >
-          <ViewParts :setThis="cur"/>
+          <ViewParts />
       </v-tab-item>
     </v-tabs-items>
   </v-card>
@@ -53,11 +53,12 @@
 		},
     mounted(){
       this.getWorks()
+      this.$store.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice'})
     },
     methods: {
       setCur(idx){
-        this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
-        console.log('cur::::',this.cur)
+        //this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
+         this.$store.bus.$emit('setTitle', {idx : parseInt(idx/2) === 0 ? 'work' : 'notice'})
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
