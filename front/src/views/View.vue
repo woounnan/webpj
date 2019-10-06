@@ -29,11 +29,11 @@
       <v-row>
         <v-col>
           <!--<ViewParts :title="titles[cur/2][1]"/>-->
-          <ViewParts :title="titles[cur/2][1]"/>
+          <ViewParts :title="진행중인 일"/>
       </v-col>
       <v-col>
           <!--<ViewParts :title="titles[cur/2][2]"/>-->
-          <ViewParts :title="titles[cur/2][2]"/>
+          <ViewParts :title="지나간 일"/>
       </v-col>
       </v-row>
       </v-tab-item>
