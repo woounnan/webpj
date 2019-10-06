@@ -57,6 +57,7 @@
     methods: {
       setCur(idx){
         this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
+        console.log('cur::::',this.cur)
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
