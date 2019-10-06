@@ -1,4 +1,4 @@
-<template>
+<template @click="showTitle">
 	<v-row>
 		<div v-for="(items, idx) in titles">
 			<div v-if="setThis === idx">
