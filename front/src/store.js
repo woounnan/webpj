@@ -24,21 +24,21 @@ export default new Vuex.Store({
           convs: undefined,
           date: String,
         }], //요청작업
-        fromWork: [          
+        fromWork:  [{
           to: [],
           convs: undefined,
           date: String,
-        ], //받은작업
-        toNotice: [          
+        }], //받은작업
+        toNotice:  [{
           to: [],
           convs: undefined,
           date: String,
-        ], //보낸알림
-        fromNotice: [          
+        }], //보낸알림
+        fromNotice: [{
           to: [],
           convs: undefined,
           date: String,
-        ], //받은알림
+        }], //받은알림
       }, //array of convs
     },
     companys: [
