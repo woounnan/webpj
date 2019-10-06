@@ -5,13 +5,7 @@
         flat color="basil"
     >
 	 	<v-toolbar
-	 		v-if="sep==='doThis'"
-	      	color="purple lighten-2"
-	     	dark
-	    >
-	    <v-toolbar
-	 		v-if="sep==='doneThis'"
-	      	color="purple lighten-4"
+	      	:color="cr"
 	     	dark
 	    >
 	      <v-app-bar-nav-icon></v-app-bar-nav-icon>
@@ -75,7 +69,7 @@
 <script>
   export default {
   	props:{
-  		sep: '',
+  		cr: '',
   	},
     data: () => ({
       selected: [2],
