@@ -26,15 +26,7 @@
         align="start"
         justify="space-between"
       >
-      <v-row>
-        <v-col>
-          <ViewParts :setThis="cur" :subNum="subNum"/>
-      </v-col>
-      <v-col>
-          <ViewParts :setThis="cur" :subNum="subNum2"/>
-      </v-col>
-      </v-row>
-      </v-tab-item>
+        <ViewParts :setThis="cur"/>
     </v-tabs-items>
   </v-card>
 </template>
