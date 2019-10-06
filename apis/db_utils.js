@@ -21,7 +21,7 @@ router.post('/getWorks', (req, res, next) =>{
 					console.log('-------------------------')
 					if(temp_convs.works.notice == undefined){
 						console.log('getWorks works undefined::::', JSON.stringify(temp_convs))
-						temp_convs.splice(j, 1)		
+						temp_comu.convs.splice(j, 1)		
 					}
 				}
 			}
