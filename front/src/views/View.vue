@@ -26,7 +26,7 @@
         align="start"
         justify="space-between"
       >
-          <ViewParts />
+          <ViewParts :sep="this.cur" />
       </v-tab-item>
     </v-tabs-items>
   </v-card>
@@ -57,7 +57,7 @@
     },
     methods: {
       setCur(idx){
-        //this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
+        this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
          this.$store.state.bus.$emit('setTitle', {idx : parseInt(idx/2) === 0 ? 'work' : 'notice'})
       },
       getWorks(){
