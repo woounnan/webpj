@@ -13,8 +13,6 @@ router.post('/getWorks', (req, res, next) =>{
 	console.log('myId ::::', myId)
 	User.findOne({id: myId}, (e, r) =>{
 		if(!e){
-			console.log('/getWorks successed::::', JSON.stringify(r))
-
 			//works를 제외한 나머지 일반 메시지 제거
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
