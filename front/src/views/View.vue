@@ -62,7 +62,6 @@
     methods: {
       setCur(idx){
         this.cur = idx/2
-        }
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
