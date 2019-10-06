@@ -9,9 +9,8 @@
       color="deep-purple lighten-2"
       dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Inbox</v-toolbar-title>
+      <v-toolbar-title>{{titles[setThis][0]}}</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
 
@@ -76,9 +75,8 @@
       color="deep-purple lighten-4"
       dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Inbox</v-toolbar-title>
+      <v-toolbar-title>{{titles[setThis][1]}}</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
 
