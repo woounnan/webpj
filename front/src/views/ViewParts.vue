@@ -6,7 +6,7 @@
     class="mx-auto"
   >
     <v-toolbar
-      color="pink"
+      color="deep-purple lighten-2"
       dark
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
@@ -73,7 +73,7 @@
     class="mx-auto"
   >
     <v-toolbar
-      color="pink"
+      color="deep-purple lighten-4"
       dark
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
