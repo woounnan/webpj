@@ -72,10 +72,10 @@
   		cr: '',
   	},
     data: () => ({
-    	colors: [
+    	colors: {
     		1: 'purple lighten-3',
     		2: 'purple lighten-4'
-    	],
+    	},
       selected: [2],
       items: [
         {
