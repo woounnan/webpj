@@ -18,13 +18,14 @@ router.post('/getWorks', (req, res, next) =>{
 				var temp_comu = r.comu[i]
 				for(var j=0; j<temp_comu.convs.length; j++){
 					var temp_convs = temp_comu.convs[j]
+					console.log('getWorks works::::', JSON.stringify(temp_convs))
 					if(temp_convs.works == undefined){
 						console.log('getWorks works undefined::::', JSON.stringify(temp_convs))
 						temp_convs.splice(j, 1)		
 					}
 				}
 			}
-			console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
+			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
 			res.status(200).send({list_works: r.comu})
 		}else{
 			console.error('/getWorks error occurred::::', e)
