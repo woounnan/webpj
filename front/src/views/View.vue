@@ -26,7 +26,7 @@
         align="start"
         justify="space-between"
       >
-          <ViewParts :sep="this.cur" />
+          <ViewParts :sep="cur" />
       </v-tab-item>
     </v-tabs-items>
   </v-card>
