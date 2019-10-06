@@ -24,7 +24,7 @@
         :key="item"
       >
         <v-card
-          max-width="500"
+          max-width="1000"
           class="mx-auto"
           flat color="basil"
         >
