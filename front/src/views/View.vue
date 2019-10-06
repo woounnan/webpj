@@ -11,8 +11,9 @@
       grow
     >
       <v-tab
-        v-for="item in tabs"
+        v-for="(item,idx) in tabs"
         :key="item"
+        @click="setCur(idx)"
       >
         {{ item }}
       </v-tab>
@@ -21,7 +22,6 @@
     <v-tabs-items v-model="tab">
       <v-tab-item
         v-for="(item, idx) in tabs"
-        @click="setCur(idx)"
         :key="item"
         align="start"
         justify="space-between"
