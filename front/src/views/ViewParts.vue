@@ -5,6 +5,8 @@
 	</v-row>
 	<v-row>
 		<div v-for="(items, idx) in titles">
+
+		<v-btn @click="showTitle">{{idx}}</v-btn>
 			<div v-if="setThis === idx">
 				<v-col v-for="(item, x) in items">
 	  <v-card
