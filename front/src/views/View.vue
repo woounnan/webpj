@@ -21,16 +21,17 @@
     <v-tabs-items v-model="tab">
       <v-tab-item
         v-for="(item, idx) in tabs"
+        @click="setCur(idx)"
         :key="item"
         align="start"
         justify="space-between"
       >
       <v-row>
         <v-col>
-          <ViewParts :cr="1"/>
+          <ViewParts :cr="1" :title="titles[cur/2][1]"/>
       </v-col>
       <v-col>
-          <ViewParts :cr="2"/>
+          <ViewParts :cr="2" :title="titles[cur/2][2]"/>
       </v-col>
       </v-row>
       </v-tab-item>
@@ -46,10 +47,15 @@
     },
 		data(){
 			return {
+        cur: Number,
 				tab: null,
 		    tabs: [
-		      '처리할일', '요청한일', '받은알림', '보낸알림'
+		      '받은작업', '요청작업', '받은알림', '보낸알림'
 		    ],
+        titles: [
+          ['진행중인 일', '지나간 일'],
+          ['진행중인 알림', '지나간 알림'],
+        ],
 		    works: [],
 			}
 		},
@@ -57,6 +63,9 @@
       this.getWorks()
     },
     methods: {
+      setCur(idx){
+        this.cur = idx
+      },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
           .then(r =>{

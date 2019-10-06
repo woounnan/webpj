@@ -8,9 +8,8 @@
 	      	:color="colors[cr]"
 	     	dark
 	    >
-	      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-	      <v-toolbar-title>Inbox</v-toolbar-title>
+	      <v-toolbar-title>{{title}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
@@ -70,6 +69,7 @@
   export default {
   	props:{
   		cr: '',
+  		title: '',
   	},
     data: () => ({
     	colors: {
