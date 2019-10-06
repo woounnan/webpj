@@ -41,8 +41,8 @@
 		data(){
 			return {
         cur: {
-          type: Number,
-          default: 0
+          type: String,
+          default: ''
         },
         subNum: 1,
         subNum2: 2,
@@ -60,7 +60,10 @@
     },
     methods: {
       setCur(idx){
-        this.cur = parseInt(idx/2)
+        if(idx > 1)
+          this.cur = 'work'
+        else
+          this.cur = 'notice'
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
