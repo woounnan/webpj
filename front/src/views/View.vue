@@ -41,7 +41,7 @@
 		data(){
 			return {
         cur: {
-          type: Number,
+          type: String,
           default: undefined
         },
 				tab: null,
