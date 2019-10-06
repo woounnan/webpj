@@ -14,19 +14,19 @@ router.post('/getWorks', (req, res, next) =>{
 	User.findOne({id: myId}, (e, r) =>{
 		if(!e){
 			//works를 제외한 나머지 일반 메시지 제거
+			console.log('before::::', JSON.stringify(r.comu))
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
 				for(var j=0; j<r.comu[i].convs.length; j++){
 					var temp_convs = r.comu[i].convs[j]
 					console.log('-------------------------')
 					if(r.comu[i].convs[j].works.notice == undefined){
-						console.log('getWorks works undefined::::', JSON.stringify(r.comu[i].convs))
 						r.comu[i].convs.splice(j, 1)		
-						console.log('getWorks works undefined::::', JSON.stringify(r.comu[i].convs))
 					}
 				}
 			}
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
+			console.log('after::::', JSON.stringify(r.comu))
 			res.status(200).send({list_works: r.comu})
 		}else{
 			console.error('/getWorks error occurred::::', e)
