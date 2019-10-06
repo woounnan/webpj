@@ -80,8 +80,8 @@ export default new Vuex.Store({
     initWorks(state){
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
-          console.log('getWorks in View.vue ::::', r.data)
-          for(x in r.data){
+          console.log('getWorks in View.vue ::::', r.data.list_works)
+          for(x in r.data.list_works){
             console.log(JSON.stringify(r.data[x]) + '\n')
           }
         }) 
