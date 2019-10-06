@@ -122,8 +122,7 @@
       ],
     }),
     mounted(){
-    	console.log('setThis::::bus:', this.$store.state.bus)
-    	console.log('setThis::::', this.setThis)
+    	console.log('mounted::::', this.sep)
     	this.$store.state.bus.$on('setTitle', data => {
     		console.log('setTitle::::', data.sep)
     		this.sep = data.sep
