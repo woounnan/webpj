@@ -27,10 +27,10 @@
       >
       <v-row>
         <v-col>
-          <ViewParts />
+          <ViewParts :sep="doThis"/>
       </v-col>
       <v-col>
-          <ViewParts />
+          <ViewParts :sep="doneThis/>
       </v-col>
       </v-row>
       </v-tab-item>

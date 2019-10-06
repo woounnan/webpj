@@ -5,8 +5,14 @@
         flat color="basil"
     >
 	 	<v-toolbar
-	      color="pink"
-	      dark
+	 		v-if="sep==='doThis'"
+	      	color="purple lighten-2"
+	     	dark
+	    >
+	    <v-toolbar
+	 		v-if="sep==='doneThis'"
+	      	color="purple lighten-4"
+	     	dark
 	    >
 	      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -68,6 +74,9 @@
 </template>
 <script>
   export default {
+  	props:{
+  		sep: '',
+  	},
     data: () => ({
       selected: [2],
       items: [
