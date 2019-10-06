@@ -28,10 +28,10 @@
       >
       <v-row>
         <v-col>
-          <ViewParts :setThis="cur"/>
+          <ViewParts :setThis="cur" :subNum="subNum"/>
       </v-col>
       <v-col>
-          <ViewParts :setThis="cur"/>
+          <ViewParts :setThis="cur" :subNum="subNum2"/>
       </v-col>
       </v-row>
       </v-tab-item>
@@ -51,6 +51,8 @@
           type: Number,
           default: 0
         },
+        subNum: 1,
+        subNum2: 2,
 				tab: null,
 		    tabs: [
 		      '받은작업', '요청작업', '받은알림', '보낸알림'
@@ -65,7 +67,7 @@
     },
     methods: {
       setCur(idx){
-        this.cur = idx/2
+        this.cur = parseInt(idx/2)
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})

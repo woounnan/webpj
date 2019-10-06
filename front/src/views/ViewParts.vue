@@ -10,7 +10,7 @@
 	     	dark
 	    >
 
-	      <v-toolbar-title >{{titles[setThis]}}</v-toolbar-title>
+	      <v-toolbar-title >{{titles[setThis][subNum]}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
@@ -69,7 +69,8 @@
 <script>
   export default {
   	props:{
-  		setThis: undefined
+  		setThis: undefined,
+  		subNum : undefined,
   	},
     data: () => ({
       selected: [2],
