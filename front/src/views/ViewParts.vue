@@ -129,7 +129,7 @@
     },
     methods: {
     	showTitle(){
-    		console.log('setThis::::', this.setThis)
+    		console.log('setThis::::', this.sep)
     	},
     },
   }
