@@ -22,7 +22,10 @@
 	      </v-btn>
 	    </v-toolbar>
 
-	    <v-list two-line>
+	    <v-list 
+          two-line 
+          class="overflow-y-auto"  
+          style="max-height: 600px" >
 	      <v-list-item-group
 	        v-model="selected"
 	        multiple
