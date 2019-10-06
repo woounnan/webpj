@@ -121,7 +121,7 @@
         },
       ],
     }),
-    mounted(){
+    created(){
     	console.log('mounted::::', this.sep)
     	this.$store.state.bus.$on('setTitle', data => {
     		console.log('setTitle::::', data.sep)
