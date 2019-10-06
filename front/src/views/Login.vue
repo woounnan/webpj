@@ -149,10 +149,10 @@
             this.$store.commit('setTk')
             this.$store.commit('initSocks')
             this.$store.commit('initDivisions')
-            this.$store.commit('initWorks')
+            //this.$store.commit('initWorks')
             this.$router.push('/')
           }) 
-          .catch(e => console.error(this.$store.getters.getUser.id, e.message))
+          .catch(e => console.error(e.message))
 
 
      }
