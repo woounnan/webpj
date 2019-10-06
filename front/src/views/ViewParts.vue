@@ -121,15 +121,14 @@
       ],
     }),
     created(){
+      this.
     	this.title = this.titles[this.sep]
-    	console.log('created::::', this.sep)
-    	console.log('created::::', this.title)
-    	this.$store.state.bus.$on('setTitle', data => {
-    		console.log('setTitle::::', data.sep)   		
+    	this.$store.state.bus.$on('setTitle', data => {		
     		this.title = this.titles[data.sep]
     	})
     },
     methods: {
+
     },
   }
 </script>

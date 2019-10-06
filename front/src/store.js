@@ -17,7 +17,13 @@ export default new Vuex.Store({
       company_division: {},
       state: '',
       room: [],
-      room_num: 5
+      room_num: 5,
+      works: {
+        toWork: [], //요청작업
+        fromWork: [], //받은작업
+        toNotice: [], //보낸알림
+        fromNotice: [], //받은알림
+      }, //array of convs
     },
     companys: [
     ],
@@ -71,6 +77,18 @@ export default new Vuex.Store({
     initSocks(state){
       state.socks.sock = io('webhacker.xyz:8082')
     },
+    initWorks(state){
+      axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
+        .then(r =>{
+          console.log('getWorks in View.vue ::::', r.data)
+          for(x in r.data){
+            console.log(JSON.stringify(r.data[x]) + '\n')
+          }
+        }) 
+        .catch(e=>{
+          console.error('getWorks in View.vue::::', e)
+        })
+    },
     addRoom(state, to){
       if(state.user.room.indexOf(to) != -1) return 
       if(state.user.room.length < state.user.room_num){
@@ -105,6 +123,9 @@ export default new Vuex.Store({
     },
     getDivisions(state){
       return state.user.company_division
+    },
+    getWorks(state){
+      return state.user.works
     },
   },
   actions: {
