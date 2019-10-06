@@ -152,7 +152,7 @@
             this.$store.commit('initWorks')
             this.$router.push('/')
           }) 
-          .catch(e => console.error(e.message))
+          .catch(e => console.error(this.$store.getters.getUser.id, e.message))
 
 
      }

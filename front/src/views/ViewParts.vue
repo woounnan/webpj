@@ -121,9 +121,9 @@
       ],
     }),
     created(){
-      this.
-    	this.title = this.titles[this.sep]
-    	this.$store.state.bus.$on('setTitle', data => {		
+
+    	 this.title = this.titles[this.sep]
+    	 this.$store.state.bus.$on('setTitle', data => {		
     		this.title = this.titles[data.sep]
     	})
     },
