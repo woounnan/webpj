@@ -26,7 +26,8 @@
         align="start"
         justify="space-between"
       >
-        <ViewParts :setThis="cur"/>
+          <ViewParts :setThis="cur"/>
+      </v-tab-item>
     </v-tabs-items>
   </v-card>
 </template>
