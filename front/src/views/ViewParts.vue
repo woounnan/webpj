@@ -1,13 +1,11 @@
 <template>
 	<v-container>
 	<v-row>
-		<div v-for="(title, idx) in titles">
-			<v-btn>111</v-btn>
-				<v-col v-for="(t, x) in title">
-	  <v-card
-	    max-width="500"
-	    class="mx-auto"
-	  >
+		<v-col v-for="(t, x) in title">
+		  <v-card
+		    max-width="500"
+		    class="mx-auto"
+		  >
 	    <v-toolbar
 	      color="deep-purple lighten-2"
 	      dark
@@ -69,7 +67,6 @@
 	    </v-list>
 	  </v-card>
 	</v-col>
-	</div>
 
 </v-row>
 </v-container>
@@ -82,6 +79,7 @@
     data: () => ({
     sep: undefined,
       selected: [2],
+      title = [],
       titles: {
       	work: ['진행중인 일', '지나간 일'],
       	notice: ['진행중인 알림', '지나간 알림'],
@@ -120,16 +118,14 @@
       ],
     }),
     created(){
-    	console.log('mounted::::', this.sep)
+    	console.log('created::::', this.sep)
+    	this.title = this.titles[this.sep]
     	this.$store.state.bus.$on('setTitle', data => {
-    		console.log('setTitle::::', data.sep)
-    		this.sep = data.sep
+    		console.log('setTitle::::', data.sep)   		
+    		this.title = this.titles[data.sep]
     	})
     },
     methods: {
-    	showTitle(){
-    		console.log('setThis::::', this.sep)
-    	},
     },
   }
 </script>
