@@ -53,7 +53,12 @@ var saveMsg = function (to, from, newConvs){
 		}
 		else{
 			newComu.convs.push(newConvs)
-			console.log('convs::::', JSON.stringify(newComu))
+			
+				console.log('###############')
+			for(x in newComu.convs){
+				console.log('convs::::', JSON.stringify(newComu.convs[x]))
+			}
+				console.log('###############')
 			User.update({
 					position : from
 				}, {
