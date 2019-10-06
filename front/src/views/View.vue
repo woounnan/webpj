@@ -29,11 +29,11 @@
       <v-row>
         <v-col>
           <!--<ViewParts :title="titles[cur/2][1]"/>-->
-          <ViewParts />
+          <ViewParts :title="titles[cur/2][1]"/>
       </v-col>
       <v-col>
           <!--<ViewParts :title="titles[cur/2][2]"/>-->
-          <ViewParts />
+          <ViewParts :title="titles[cur/2][2]"/>
       </v-col>
       </v-row>
       </v-tab-item>
