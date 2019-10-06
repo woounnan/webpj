@@ -99,6 +99,7 @@ export default new Vuex.Store({
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
               console.log('cv::::', cv, '\n')
+              /*
               if(cv.works.notice === true){
                 //알림 목록 등록
                 console.log('notiece::::', cv, '\n')
@@ -107,6 +108,7 @@ export default new Vuex.Store({
                 //작업 목록 등록
                 console.log('works::::', cv, '\n')
               }
+              */
             })
           })
         }) 
