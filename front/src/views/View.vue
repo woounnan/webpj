@@ -64,8 +64,7 @@
     methods: {
       setCur(idx){
         this.cur = idx
-        console.log('this.cur::::', this.cur)
-        if(this.cur/2 == 0){
+        if((this.cur/2) == 0){
           this.title1 = '진행중인 일'
           this.title2 = '지나간 일'
         }else{
