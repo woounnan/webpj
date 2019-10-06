@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 	<v-row>
-		<v-btn @click="showTitle">test</v-btn>
+
 	</v-row>
 	<v-row>
 		<div v-for="(title, idx) in titles">
