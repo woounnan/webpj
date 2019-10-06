@@ -31,7 +31,6 @@
       </v-col>
       <v-col>
           <ViewParts />
-        </v-card>
       </v-col>
       </v-row>
       </v-tab-item>
