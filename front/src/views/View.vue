@@ -27,20 +27,9 @@
       >
       <v-row>
         <v-col>
-        <v-card
-          max-width="500"
-          class="mx-auto"
-          flat color="basil"
-        >
           <ViewParts />
-        </v-card>
       </v-col>
       <v-col>
-         <v-card
-          max-width="500"
-          class="mx-auto"
-          flat color="basil"
-        >
           <ViewParts />
         </v-card>
       </v-col>
