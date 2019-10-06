@@ -19,10 +19,26 @@ export default new Vuex.Store({
       room: [],
       room_num: 5,
       works: {
-        toWork: [], //요청작업
-        fromWork: [], //받은작업
-        toNotice: [], //보낸알림
-        fromNotice: [], //받은알림
+        toWork: [{
+          to: [],
+          convs: undefined,
+          date: String,
+        }], //요청작업
+        fromWork: [          
+          to: [],
+          convs: undefined,
+          date: String,
+        ], //받은작업
+        toNotice: [          
+          to: [],
+          convs: undefined,
+          date: String,
+        ], //보낸알림
+        fromNotice: [          
+          to: [],
+          convs: undefined,
+          date: String,
+        ], //받은알림
       }, //array of convs
     },
     companys: [
@@ -81,7 +97,16 @@ export default new Vuex.Store({
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
-            console.log(JSON.stringify(x) + '\n')
+            x.convs.forEach(cv=>{
+              if(cv.works.notice === true){
+                //알림 목록 등록
+                console.log('notiece::::', cv, '\n')
+              }
+              else{
+                //작업 목록 등록
+                console.log('works::::', cv, '\n')
+              }
+            })
           })
         }) 
         .catch(e=>{

@@ -40,7 +40,7 @@ var saveMsg = function (to, from, newConvs){
 						with: to,
 						convs: newConvs
 					}
-				} 
+				}
 			},
 			(e, r) => {
 				if(e)

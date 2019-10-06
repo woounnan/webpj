@@ -47,7 +47,6 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		notice : req.body.notice,
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
-		flag_expired: false,
 	}
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
