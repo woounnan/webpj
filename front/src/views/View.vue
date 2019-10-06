@@ -28,10 +28,10 @@
       >
       <v-row>
         <v-col>
-          <ViewParts :cr=1 :title="titles[cur/2][1]"/>
+          <ViewParts :cr="cur" :title="titles[cur/2][1]"/>
       </v-col>
       <v-col>
-          <ViewParts :cr=2 :title="titles[cur/2][2]"/>
+          <ViewParts :cr="cur" :title="titles[cur/2][2]"/>
       </v-col>
       </v-row>
       </v-tab-item>
