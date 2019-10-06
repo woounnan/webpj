@@ -98,6 +98,7 @@ export default new Vuex.Store({
         .then(r =>{
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
+              console.log('cv::::', cv, '\n')
               if(cv.works.notice === true){
                 //알림 목록 등록
                 console.log('notiece::::', cv, '\n')
