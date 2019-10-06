@@ -73,8 +73,8 @@
   	},
     data: () => ({
     	colors: [
-    		'purple lighten-3',
-    		'purple lighten-4'
+    		1: 'purple lighten-3',
+    		2: 'purple lighten-4'
     	],
       selected: [2],
       items: [
