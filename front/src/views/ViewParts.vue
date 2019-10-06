@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 	<v-row>
-		<v-col v-for="(t, x) in title">
+		<v-col cols="6" v-for="(t, x) in title">
 		  <v-card
 		    max-width="500"
 		    class="mx-auto"
@@ -30,7 +30,7 @@
 	      >
 	        <template v-for="(item, index) in items">
 	          <v-list-item :key="item.title">
-	            <template v-slot:default="{ active}">
+	            <template v-slot:default="{ active, toggle }">
 	              <v-list-item-content>
 	                <v-list-item-title v-text="item.title"></v-list-item-title>
 	                <v-list-item-subtitle class="text--primary" v-text="item.headline"></v-list-item-subtitle>
