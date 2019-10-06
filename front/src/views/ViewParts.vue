@@ -6,11 +6,6 @@
 	<v-row>
 		<div v-for="(items, idx) in titles">
 
-		<v-btn @click="showTitle">{{idx}}</v-btn>
-				<v-col v-for="(item, x) in items">
-	     <v-toolbar-title>{{item}}</v-toolbar-title>
-	 </v-col>
-			<div v-if="setThis === idx">
 				<v-col v-for="(item, x) in items">
 	  <v-card
 	    max-width="500"
@@ -77,7 +72,6 @@
 	    </v-list>
 	  </v-card>
 	</v-col>
-	</div>
 	</div>
 
 </v-row>
