@@ -53,7 +53,7 @@
 		},
     mounted(){
       this.getWorks()
-      this.$store.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice'})
+      this.$store.state.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice'})
     },
     methods: {
       setCur(idx){
