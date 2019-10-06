@@ -6,13 +6,12 @@
 		    max-width="500"
 		    class="mx-auto"
 		  >
-	    <v-toolbar
-	      color="deep-purple lighten-2"
-	      dark
-	    >
-
-	      <v-toolbar-title>{{t}}</v-toolbar-title>
-
+	      <v-app-bar
+      color="deep-purple accent-4"
+      dense
+      dark
+    >{{t}}
+</v-app-bar>
 	      <div class="flex-grow-1"></div>
 
 	      <v-btn icon>
