@@ -5,11 +5,11 @@
         flat color="basil"
     >
 	 	<v-toolbar
-	      	color="purple lighten-3"
+	      	:color="setThis === 0 ? 'purple lighten-3' : 'blue lighten-2'"
 	     	dark
 	    >
 
-	      <v-toolbar-title @click="showTitle">{{title}}</v-toolbar-title>
+	      <v-toolbar-title @click="showTitle">{{title[setThis]}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
@@ -68,11 +68,14 @@
 <script>
   export default {
   	props:{
-  		cr: '',
-  		title: '',
+  		setThis: undefined
   	},
     data: () => ({
       selected: [2],
+      titles: [
+      	['진행중인 일', '지나간 일'],
+      	['진행중인 알림', '지나간 알림'],
+      ],
       items: [
         {
           action: '15 min',
@@ -106,9 +109,13 @@
         },
       ],
     }),
+    mounted(){
+    	this.$store.bus.$on('initView', )
+    	this.$store.bus.$on('initView2', )
+    },
     methods: {
     	showTitle(){
-    		console.log('title::::', this.title)
+    		console.log('setThis::::', this.setThis)
     	},
     },
   }

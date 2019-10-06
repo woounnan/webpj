@@ -28,12 +28,10 @@
       >
       <v-row>
         <v-col>
-          <!--<ViewParts :title="titles[cur/2][1]"/>-->
-          <ViewParts :title="title1" />
+          <ViewParts :setThis="cur"/>
       </v-col>
       <v-col>
-          <!--<ViewParts :title="titles[cur/2][2]"/>-->
-          <ViewParts :title="title2" />
+          <ViewParts :setThis="cur"/>
       </v-col>
       </v-row>
       </v-tab-item>
@@ -63,13 +61,7 @@
     },
     methods: {
       setCur(idx){
-        this.cur = idx
-        if((this.cur/2) == 0){
-          this.title1 = '진행중인 일'
-          this.title2 = '지나간 일'
-        }else{
-          this.title1 = '진행중인 알림'
-          this.title2 = '지나간 알림'
+        this.cur = idx/2
         }
       },
       getWorks(){
