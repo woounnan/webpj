@@ -11,7 +11,8 @@ Vue.use(Router)
 
 
 const requireAuth = (to, from, next) =>{
-  if(!store.state.tk)
+  //if(!store.state.tk)
+  if(localStorage.getItem('tk'))
           next('/login')
   console.log('move to next')
   console.log('token: '+store.state.tk)
