@@ -9,7 +9,7 @@
 	     	dark
 	    >
 
-	      <v-toolbar-title @click="showTitle">{{title[setThis]}}</v-toolbar-title>
+	      <v-toolbar-title @click="showTitle">{{titles[setThis]}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
