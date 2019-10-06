@@ -74,9 +74,9 @@
 	import Vue from 'vue'
   export default {
   	props:{
+    sep: undefined,
   	},
     data: () => ({
-    sep: undefined,
       selected: [2],
       title : [],
       titles: {
@@ -117,8 +117,9 @@
       ],
     }),
     created(){
-    	console.log('created::::', this.sep)
     	this.title = this.titles[this.sep]
+    	console.log('created::::', this.sep)
+    	console.log('created::::', this.title
     	this.$store.state.bus.$on('setTitle', data => {
     		console.log('setTitle::::', data.sep)   		
     		this.title = this.titles[data.sep]
