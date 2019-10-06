@@ -28,10 +28,12 @@
       >
       <v-row>
         <v-col>
-          <ViewParts :title="titles[cur/2][1]"/>
+          <!--<ViewParts :title="titles[cur/2][1]"/>-->
+          <ViewParts />
       </v-col>
       <v-col>
-          <ViewParts :title="titles[cur/2][2]"/>
+          <!--<ViewParts :title="titles[cur/2][2]"/>-->
+          <ViewParts />
       </v-col>
       </v-row>
       </v-tab-item>
@@ -47,8 +49,6 @@
     },
 		data(){
 			return {
-        num: ['1','2'],
-        cur: Number,
 				tab: null,
 		    tabs: [
 		      '받은작업', '요청작업', '받은알림', '보낸알림'
