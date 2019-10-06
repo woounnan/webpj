@@ -27,10 +27,10 @@
       >
       <v-row>
         <v-col>
-          <ViewParts :cr="purple lighten-3"/>
+          <ViewParts :cr="1"/>
       </v-col>
       <v-col>
-          <ViewParts :cr="purple lighten-4"/>
+          <ViewParts :cr="2"/>
       </v-col>
       </v-row>
       </v-tab-item>

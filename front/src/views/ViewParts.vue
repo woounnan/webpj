@@ -5,7 +5,7 @@
         flat color="basil"
     >
 	 	<v-toolbar
-	      	:color="cr"
+	      	:color="colors[cr]"
 	     	dark
 	    >
 	      <v-app-bar-nav-icon></v-app-bar-nav-icon>
@@ -72,6 +72,10 @@
   		cr: '',
   	},
     data: () => ({
+    	colors: [
+    		'purple lighten-3',
+    		'purple lighten-4'
+    	],
       selected: [2],
       items: [
         {
