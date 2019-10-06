@@ -81,7 +81,7 @@ export default new Vuex.Store({
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
-            console.log(JSON.stringify(r.data[x]) + '\n')
+            console.log(JSON.stringify(x) + '\n')
           })
         }) 
         .catch(e=>{
