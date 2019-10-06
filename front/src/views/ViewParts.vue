@@ -1,6 +1,7 @@
 <template>
 	<v-container>
-	<v-row>
+	<v-row align="start"
+        justify="space-between">
 		<v-col cols="6" v-for="(t, x) in title">
 		  <v-card
 		    max-width="500"
