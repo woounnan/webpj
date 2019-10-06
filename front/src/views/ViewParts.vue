@@ -1,4 +1,8 @@
-<template @click="showTitle">
+<template>
+	<v-container>
+	<v-row>
+		<v-btn @click="showTitle">test</v-btn>
+	</v-row>
 	<v-row>
 		<div v-for="(items, idx) in titles">
 			<div v-if="setThis === idx">
@@ -72,6 +76,7 @@
 	</div>
 
 </v-row>
+</v-container>
 </template>
 <script>
   export default {
