@@ -1,11 +1,8 @@
 <template>
 	<v-container>
 	<v-row>
-
-	</v-row>
-	<v-row>
 		<div v-for="(title, idx) in titles">
-
+		<v-btn @click="showTitle">test</v-btn>
 <div v-if="idx===setThis">
 				<v-col v-for="(t, x) in title">
 	  <v-card
