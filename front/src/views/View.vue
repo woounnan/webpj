@@ -47,6 +47,10 @@
     },
 		data(){
 			return {
+        cur: {
+          type: Number,
+          default: 0
+        },
 				tab: null,
 		    tabs: [
 		      '받은작업', '요청작업', '받은알림', '보낸알림'

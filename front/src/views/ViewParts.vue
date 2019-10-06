@@ -110,8 +110,6 @@
       ],
     }),
     mounted(){
-    	this.$store.bus.$on('initView', )
-    	this.$store.bus.$on('initView2', )
     },
     methods: {
     	showTitle(){
