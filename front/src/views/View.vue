@@ -58,7 +58,7 @@
     methods: {
       setCur(idx){
         this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
-         this.$store.state.bus.$emit('setTitle', {idx : parseInt(idx/2) === 0 ? 'work' : 'notice'})
+         this.$store.state.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice'})
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
