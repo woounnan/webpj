@@ -22,9 +22,18 @@
       <v-tab-item
         v-for="(item, idx) in tabs"
         :key="item"
+        align="start"
+        justify="space-between"
       >
         <v-card
-          max-width="1000"
+          max-width="500"
+          class="mx-auto"
+          flat color="basil"
+        >
+          <ViewParts />
+        </v-card>
+         <v-card
+          max-width="500"
           class="mx-auto"
           flat color="basil"
         >
