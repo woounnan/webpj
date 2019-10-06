@@ -3,13 +3,11 @@
 	<v-row>
 		<div v-for="(title, idx) in titles">
 			<v-btn>111</v-btn>
-
+				<v-col v-for="(t, x) in title">
 	  <v-card
 	    max-width="500"
 	    class="mx-auto"
 	  >
-	  <div v-if="idx===sep">
-				<v-col v-for="(t, x) in title">
 	    <v-toolbar
 	      color="deep-purple lighten-2"
 	      dark
@@ -69,11 +67,9 @@
 	        </template>
 	      </v-list-item-group>
 	    </v-list>
-	    	</v-col>
-	</div>
 	  </v-card>
-
-</div>
+	</v-col>
+	</div>
 
 </v-row>
 </v-container>
