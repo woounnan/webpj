@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
 				endDate: String,
 				file_save: String,
 				file_real: String,
-				flag_expired: {type: Boolean, default: false},
+				flag_expired: Boolean,
 				state_notice: String, //"미확인", "확인"
 				state_work: String, //"미제출", "승인대기", "승인거절", "승인완료"
 				notice: Boolean, //true: notice false: work(required to ack)
