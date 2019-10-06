@@ -30,7 +30,7 @@
           <ViewParts :sep="doThis"/>
       </v-col>
       <v-col>
-          <ViewParts :sep="doneThis/>
+          <ViewParts :sep="doneThis"/>
       </v-col>
       </v-row>
       </v-tab-item>
