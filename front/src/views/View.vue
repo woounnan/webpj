@@ -29,11 +29,11 @@
       <v-row>
         <v-col>
           <!--<ViewParts :title="titles[cur/2][1]"/>-->
-          <ViewParts :title="진행중인 일"/>
+          <ViewParts :title="title1" />
       </v-col>
       <v-col>
           <!--<ViewParts :title="titles[cur/2][2]"/>-->
-          <ViewParts :title="지나간 일"/>
+          <ViewParts :title="title2" />
       </v-col>
       </v-row>
       </v-tab-item>
@@ -53,10 +53,8 @@
 		    tabs: [
 		      '받은작업', '요청작업', '받은알림', '보낸알림'
 		    ],
-        titles: [
-          ['진행중인 일', '지나간 일'],
-          ['진행중인 알림', '지나간 알림'],
-        ],
+        title1: '',
+        title2: '',
 		    works: [],
 			}
 		},
@@ -66,6 +64,13 @@
     methods: {
       setCur(idx){
         this.cur = idx
+        if(this.cur/2 == 0){
+          this.title1 = '진행중인 일'
+          this.title2 = '지나간 일'
+        }else{
+          this.title1 = '진행중인 알림'
+          this.title2 = '지나간 알림'
+        }
       },
       getWorks(){
         axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
