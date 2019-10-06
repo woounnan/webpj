@@ -78,7 +78,7 @@ export default new Vuex.Store({
       state.socks.sock = io('webhacker.xyz:8082')
     },
     initWorks(state){
-      axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: this.$store.getters.getUser.id})
+      axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           console.log('getWorks in View.vue ::::', r.data)
           for(x in r.data){
