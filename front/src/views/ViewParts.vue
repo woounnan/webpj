@@ -4,9 +4,10 @@
 		<v-btn @click="showTitle">test</v-btn>
 	</v-row>
 	<v-row>
-		<div v-for="(items, idx) in titles">
+		<div v-for="(title, idx) in titles">
 
-				<v-col v-for="(item, x) in items">
+<div v-if="idx===setThis">
+				<v-col v-for="(t, x) in title">
 	  <v-card
 	    max-width="500"
 	    class="mx-auto"
@@ -16,7 +17,7 @@
 	      dark
 	    >
 
-	      <v-toolbar-title>{{item}}</v-toolbar-title>
+	      <v-toolbar-title>{{t}}</v-toolbar-title>
 
 	      <div class="flex-grow-1"></div>
 
@@ -73,6 +74,7 @@
 	  </v-card>
 	</v-col>
 	</div>
+</div>
 
 </v-row>
 </v-container>
