@@ -29,7 +29,7 @@ var saveMsg = function (to, from, newConvs){
 		for(x in r.comu){
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
-				var newComu = r.comu[x]
+				var idx = x
 				flag = 1
 				break
 			}
@@ -52,18 +52,13 @@ var saveMsg = function (to, from, newConvs){
 			})
 		}
 		else{
-			newComu.convs.push(newConvs)
-			
-				console.log('###############')
-			for(x in newComu.convs){
-				console.log('convs::::', JSON.stringify(newComu.convs[x]))
-			}
-				console.log('###############')
+			r.comu[idx].convs.push(newConvs)
+			console.log('after comu::::', r.comu)
 			User.update({
 					position : from
 				}, {
 				$set : {
-					comu: newComu
+					comu: r.comu
 				} 
 			},
 			(e, r) => {
