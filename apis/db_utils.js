@@ -19,7 +19,7 @@ router.post('/getWorks', (req, res, next) =>{
 				for(var j=0; j<temp_comu.convs.length; j++){
 					var temp_convs = temp_comu.convs[j]
 					console.log('getWorks ::::', JSON.stringify(temp_convs), '\n')
-					console.log('getWorks works::::', temp_convs.works, '\n')
+					console.log('getWorks works::::', temp_convs.works.notice, '\n')
 					console.log('-------------------------')
 					if(temp_convs.works == undefined){
 						console.log('getWorks works undefined::::', JSON.stringify(temp_convs))
