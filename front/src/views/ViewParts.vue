@@ -1,7 +1,6 @@
 <template>
 	<v-container>
 	<v-row>
-		<v-btn @click="showTitle">test</v-btn>
 		<div v-for="(title, idx) in titles">
 <div v-if="idx===sep">
 				<v-col v-for="(t, x) in title">
