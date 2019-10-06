@@ -28,10 +28,10 @@
       >
       <v-row>
         <v-col>
-          <ViewParts :cr="cur/2" :title="titles[cur/2][1]"/>
+          <ViewParts :cr="num[0]" :title="titles[cur/2][1]"/>
       </v-col>
       <v-col>
-          <ViewParts :cr="cur/2" :title="titles[cur/2][2]"/>
+          <ViewParts :cr="num[1]" :title="titles[cur/2][2]"/>
       </v-col>
       </v-row>
       </v-tab-item>
@@ -47,6 +47,7 @@
     },
 		data(){
 			return {
+        num: ['1','2'],
         cur: Number,
 				tab: null,
 		    tabs: [
