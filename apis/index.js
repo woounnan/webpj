@@ -17,6 +17,7 @@ var list_user = [{
 
 
 var saveMsg = function (to, from, newConvs){
+	console.log('-------------------------------------')
 	console.log('to::::', to)
 	console.log('from::::', from)
 	console.log('newConvs::::', JSON.stringify(newConvs))
@@ -67,6 +68,8 @@ var saveMsg = function (to, from, newConvs){
 		}
 		
 	})
+
+	console.log('-------------------------------------')
 }
 
 
@@ -81,7 +84,9 @@ io.on('connection', function(socket){
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(JSON.stringify(data))
+		console.log('111111111111111111111111111111111')
 		saveMsg(data.header.to, data.header.from, data.msg)
+		console.log('222222222222222222222222222222222')
 		saveMsg(data.header.from, data.header.to, data.msg)
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
