@@ -16,12 +16,12 @@ router.post('/getWorks', (req, res, next) =>{
 			//works를 제외한 나머지 일반 메시지 제거
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
-				for(var j=0; j<temp_comu.convs.length; j++){
-					var temp_convs = temp_comu.convs[j]
+				for(var j=0; j<r.comu[i].convs.length; j++){
+					var temp_convs = r.comu[i].convs[j]
 					console.log('-------------------------')
-					if(temp_convs.works.notice == undefined){
-						console.log('getWorks works undefined::::', JSON.stringify(temp_convs))
-						temp_comu.convs.splice(j, 1)		
+					if(r.comu[i].convs[j].works.notice == undefined){
+						console.log('getWorks works undefined::::', JSON.stringify(r.comu[i].convs[j]))
+						r.comu[i].convs[j].convs.splice(j, 1)		
 					}
 				}
 			}
