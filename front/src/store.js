@@ -4,6 +4,10 @@ import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
 
+var regWork = (state, cv) => {
+  console.log('in regWork::::' , state.user)
+}
+
 export default new Vuex.Store({
   state: {
   	bus: new Vue(),
@@ -47,11 +51,6 @@ export default new Vuex.Store({
     ],
     socks:{
       sock: undefined
-    },
-  },
-  methods: {
-    regWork(){
-      console.log('call regWork in store.js::::')
     },
   },
   mutations: {
