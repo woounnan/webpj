@@ -114,7 +114,7 @@ export default new Vuex.Store({
 
               }
               else{
-                regWork()
+                regWork(state, cv)
                 //작업 목록 등록
                 //console.log('works::::', cv, '\n')
               }
