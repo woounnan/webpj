@@ -49,6 +49,11 @@ export default new Vuex.Store({
       sock: undefined
     },
   },
+  methods: {
+    regWork(){
+      console.log('call regWork in store.js::::')
+    },
+  },
   mutations: {
     delToken (state) {
     	state.tk = null
@@ -99,10 +104,15 @@ export default new Vuex.Store({
           r.data.list_works.forEach(x=>{
             console.log('with::::', x.with)
             x.convs.forEach(cv=>{
-              //console.log('cv::::', cv, '\n')
               if(cv.works.notice === true){
                 //알림 목록 등록
-                console.log('notice::::', cv, '\n')
+                if(cv.works.to === true){
+                  //보낸알림 등록
+                  this.regWork()
+                }else{//받은알림 등록
+
+                }
+
               }
               else{
                 //작업 목록 등록
