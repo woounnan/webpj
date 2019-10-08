@@ -19,10 +19,11 @@ router.post('/getWorks', (req, res, next) =>{
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
 				console.log('<', r.comu[i].with, '>')
+				console.log('-------------------------')
 				for(var j=0; j<r.comu[i].convs.length; j++){
 					var temp_convs = r.comu[i].convs[j]
-					console.log('-------------------------')
-					//console.log('###', r.comu[i].convs[j])
+
+					console.log('###', r.comu[i].convs[j])
 					if(r.comu[i].convs[j].works.notice == undefined){
 						console.log('before::::')
 						list_check.push(r.comu[i].convs[j])
