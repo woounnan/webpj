@@ -97,18 +97,17 @@ export default new Vuex.Store({
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
+            console.log('with::::', x.with)
             x.convs.forEach(cv=>{
-              console.log('cv::::', cv, '\n')
-              /*
+              //console.log('cv::::', cv, '\n')
               if(cv.works.notice === true){
                 //알림 목록 등록
-                console.log('notiece::::', cv, '\n')
+                console.log('notice::::', cv, '\n')
               }
               else{
                 //작업 목록 등록
                 console.log('works::::', cv, '\n')
               }
-              */
             })
           })
         }) 
