@@ -18,8 +18,10 @@ router.post('/getWorks', (req, res, next) =>{
 			//console.log('before::::', JSON.stringify(r.comu))
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
-				console.log('<', r.comu[i].with, '>')
 				console.log('-------------------------')
+				console.log('<', r.comu[i].with, '>')
+				console.log('<', r.comu[i].with, '>')
+				console.log('<', r.comu[i].with, '>')
 				for(var j=0; j<r.comu[i].convs.length; j++){
 					var temp_convs = r.comu[i].convs[j]
 
@@ -28,7 +30,7 @@ router.post('/getWorks', (req, res, next) =>{
 						console.log('before::::')
 						list_check.push(r.comu[i].convs[j])
 						if(r.comu[i].convs.indexOf(r.comu[i].convs[j]) != -1)
-							console.log('###same to ', r.comu[i].convs[j])
+							console.log('@@@@@@@@@@@@@@@@@@same to ')
 						r.comu[i].convs.splice(j, 1)		
 					}
 				}
