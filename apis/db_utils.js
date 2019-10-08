@@ -19,8 +19,7 @@ router.post('/getWorks', (req, res, next) =>{
 			for(var i = 0; i< r.comu.length; i++){
 				for(var j = 0; j < r.comu[i].convs.length; j++){
 					if(r.comu[i].convs[j].works.notice == undefined){
-						//console.log('####not works ::::', x.convs.indexOf(y))
-						x.convs.splice(r.comu[i].convs.indexOf(y), 1)
+						r.comu[i].convs.splice(r.comu[i].convs.indexOf(r.comu[i].convs[j]), 1)
 						j--
 					}
 				}
