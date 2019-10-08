@@ -24,7 +24,7 @@ router.post('/getWorks', (req, res, next) =>{
 					console.log(y)
 					if(y.works.notice == undefined){
 						console.log('####same to ::::', x.convs.indexOf(y))
-						x.convs.splice(x.convs.indexOf(y), 1)
+						//x.convs.splice(x.convs.indexOf(y), 1)
 					}
 				})
 				console.log('----------------------')
