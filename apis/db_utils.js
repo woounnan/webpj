@@ -23,7 +23,7 @@ router.post('/getWorks', (req, res, next) =>{
 				x.convs.forEach(y=>{
 					console.log(y)
 					if(y.works.notice == undefined){
-						console.log('####same to ::::' ,x.convs.splice(x.convs.indexOf(y))
+						console.log('####same to ::::' ,x.convs.splice(x.convs.indexOf(y)))
 					}
 				})
 				console.log('----------------------')
