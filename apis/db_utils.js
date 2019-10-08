@@ -18,6 +18,7 @@ router.post('/getWorks', (req, res, next) =>{
 			//console.log('before::::', JSON.stringify(r.comu))
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
+				console.log('<', r.comu[i].with, '>')
 				for(var j=0; j<r.comu[i].convs.length; j++){
 					var temp_convs = r.comu[i].convs[j]
 					console.log('-------------------------')
