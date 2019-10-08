@@ -17,6 +17,7 @@ var regWork = (works, cv, to) => {
   }else{
     //이미 등록이 되어있다
     //대상만 추가해준다.
+    /*
     console.log('이미 등록된:::', works)
     for(x in works){
       if(works[x].date === cv.date){
@@ -25,6 +26,7 @@ var regWork = (works, cv, to) => {
         return
       }
     }
+    */
   }
 }
 
@@ -123,6 +125,7 @@ export default new Vuex.Store({
         .then(r =>{
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
+              console.log(cv)
               if(cv.works.notice === true){
                 if(cv.id === state.user.id){
                   console.log('1111111111111')
@@ -148,7 +151,7 @@ export default new Vuex.Store({
 
               }
 
-              console.log('잘 등록되었나?::::', state.user.works)
+              //console.log('잘 등록되었나?::::', state.user.works)
             })
           })
         }) 
