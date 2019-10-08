@@ -44,7 +44,7 @@ router.post('/getWorks', (req, res, next) =>{
 			console.log('after:::::')
 			r.comu.forEach(x=>{
 				list_check.forEach(y=>{
-					console.log(y)
+					//console.log(y)
 					//if(x.convs.indexOf(y) != -1)
 						//console.log('###same to', y)
 				})
