@@ -91,6 +91,7 @@ export default {
   }),
   methods: {
     myNext(path){
+      console.log(path)
       if(path === '/view')
         this.$store.commit('initWorks')
       this.$router.push(path)
