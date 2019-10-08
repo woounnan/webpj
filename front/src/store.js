@@ -135,10 +135,12 @@ export default new Vuex.Store({
               }
               else{
                 if(cv.id === state.user.id){
+                  console.log('!!!!!!!!!!!!!!!!!')
                   regWork(state.user.works.toWork, cv, x.with)
                   //요청작업 등록
                 }else{
                   //받은작업 등록
+                  console.log('222222222222222')
                   regWork(state.user.works.fromWork, cv, x.with)
 
                 }
