@@ -6,9 +6,12 @@ Vue.use(Vuex)
 var list_keys = []
 var regWork = (works, cv, to) => {
   list_keys.push(cv.date)
+  console.log('works::::', works)
+  console.log('cv::::', cv)
   if(list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
+    console.log('######처음등록')
     works.push({
       convs : cv,
       to : [to], //대상,, 보낸: 받은사람 / 받은: 보낸사람
@@ -17,8 +20,9 @@ var regWork = (works, cv, to) => {
   }else{
     //이미 등록이 되어있다
     //대상만 추가해준다.
+
+    console.log('######3이미 등록된:::')
     /*
-    console.log('이미 등록된:::', works)
     for(x in works){
       if(works[x].date === cv.date){
         works[x].to.push(to)
@@ -121,9 +125,6 @@ export default new Vuex.Store({
       state.socks.sock = io('webhacker.xyz:8082')
     },
     initWorks(state){
-      console.log('###############3')
-      console.log(state.user.works)
-      console.log('###############3')
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
