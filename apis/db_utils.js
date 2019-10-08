@@ -31,7 +31,7 @@ router.post('/getWorks', (req, res, next) =>{
 			console.log('after:::::')
 			r.comu.forEach(x=>{
 				x.convs.forEach(y=>{
-					console.log('###',JSON.stringify(y))
+					console.log('###',y)
 				})
 				
 			})
