@@ -129,7 +129,6 @@ export default new Vuex.Store({
         .then(r =>{
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
-              console.log(cv)
               if(cv.works.notice === true){
                 if(cv.id === state.user.id){
                   console.log('1111111111111')
