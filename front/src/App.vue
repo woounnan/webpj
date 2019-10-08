@@ -8,7 +8,7 @@
         <v-list-item 
           v-for="(item, i) in items"
           :key="i"
-          @click="myNext('/view')"
+          @click="myNext(item.to.path)"
           >
           <v-list-item-action>
             <v-icon v-html="item.icon"></v-icon>
@@ -91,7 +91,8 @@ export default {
   }),
   methods: {
     myNext(path){
-      this.$store.commit('initWorks')
+      if(path === '/view')
+        this.$store.commit('initWorks')
       this.$router.push(path)
     },
     logOut(){
