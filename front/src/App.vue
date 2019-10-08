@@ -8,7 +8,7 @@
         <v-list-item 
           v-for="(item, i) in items"
           :key="i"
-          :to="item.to"
+          @click="myNext"
           >
           <v-list-item-action>
             <v-icon v-html="item.icon"></v-icon>
@@ -91,7 +91,8 @@ export default {
   }),
   methods: {
     myNext(path){
-      location.href=path
+      this.$store.commit('initWorks')
+      this.$router.push(path)
     },
     logOut(){
       console.log('call logOut function')
