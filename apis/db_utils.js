@@ -13,25 +13,29 @@ router.post('/getWorks', (req, res, next) =>{
 	console.log('myId ::::', myId)
 	User.findOne({id: myId}, (e, r) =>{
 		if(!e){
+			list_check = []
 			//works를 제외한 나머지 일반 메시지 제거
-			console.log('before::::', JSON.stringify(r.comu))
+			//console.log('before::::', JSON.stringify(r.comu))
 			for( var i=0; i<r.comu.length; i++){
 				var temp_comu = r.comu[i]
 				for(var j=0; j<r.comu[i].convs.length; j++){
 					var temp_convs = r.comu[i].convs[j]
 					console.log('-------------------------')
-					console.log('###', r.comu[i].convs[j])
+					//console.log('###', r.comu[i].convs[j])
 					if(r.comu[i].convs[j].works.notice == undefined){
-						console.log('true!')
+					//	console.log('true!')
+						list_check.push(r.comu[i].convs[j])
 						r.comu[i].convs.splice(j, 1)		
 					}
 				}
 			}
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
+			
 			console.log('after:::::')
 			r.comu.forEach(x=>{
-				x.convs.forEach(y=>{
-					console.log('###',y)
+				list_check.forEach(y=>{
+					if(x.convs.indexOf(y) != -1)
+						console.log('###same to', y)
 				})
 				
 			})
