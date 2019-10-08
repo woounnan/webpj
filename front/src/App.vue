@@ -8,7 +8,7 @@
         <v-list-item 
           v-for="(item, i) in items"
           :key="i"
-          @click="myNext"
+          @click="myNext('/view')"
           >
           <v-list-item-action>
             <v-icon v-html="item.icon"></v-icon>
