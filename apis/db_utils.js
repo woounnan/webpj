@@ -27,7 +27,13 @@ router.post('/getWorks', (req, res, next) =>{
 				}
 			}
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
-			console.log('after::::', JSON.stringify(r.comu))
+			console.log('after:::::')
+			r.comu.forEach(x=>{
+				x.forEach(y=>{
+					console.log('###',JSON.stringify(y))
+				})
+				
+			})
 			res.status(200).send({list_works: r.comu})
 		}else{
 			console.error('/getWorks error occurred::::', e)
