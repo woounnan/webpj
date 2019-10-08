@@ -20,8 +20,9 @@ router.post('/getWorks', (req, res, next) =>{
 				for(var j=0; j<r.comu[i].convs.length; j++){
 					var temp_convs = r.comu[i].convs[j]
 					console.log('-------------------------')
+					console.log('###', r.comu[i].convs[j])
 					if(r.comu[i].convs[j].works.notice == undefined){
-						console.log('###::', r.comu[i].convs[j])
+						console.log('true!')
 						r.comu[i].convs.splice(j, 1)		
 					}
 				}
