@@ -21,6 +21,7 @@ router.post('/getWorks', (req, res, next) =>{
 					var temp_convs = r.comu[i].convs[j]
 					console.log('-------------------------')
 					if(r.comu[i].convs[j].works.notice == undefined){
+						console.log('###::', r.comu[i].convs[j])
 						r.comu[i].convs.splice(j, 1)		
 					}
 				}
