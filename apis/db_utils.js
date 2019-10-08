@@ -26,13 +26,15 @@ router.post('/getWorks', (req, res, next) =>{
 					var temp_convs = r.comu[i].convs[j]
 
 					console.log('###', r.comu[i].convs[j])
+					/*
 					if(r.comu[i].convs[j].works.notice == undefined){
-						//console.log('before::::')
+						console.log('before::::')
 						list_check.push(r.comu[i].convs[j])
 						if(r.comu[i].convs.indexOf(r.comu[i].convs[j]) != -1)
-							//console.log('@@@@@@@@@@@@@@@@@@same to ')
-						//r.comu[i].convs.splice(j, 1)		
+							console.log('@@@@@@@@@@@@@@@@@@same to ')
+						r.comu[i].convs.splice(j, 1)		
 					}
+					*/
 				}
 			}
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
