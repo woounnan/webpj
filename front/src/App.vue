@@ -92,8 +92,10 @@ export default {
   methods: {
     myNext(path){
       console.log(path)
-      if(path == '/view')
+      if(path == '/view'){
         this.$store.commit('initWorks')
+        console.log('true!!!')
+      }
       this.$router.push(path)
     },
     logOut(){
