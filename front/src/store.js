@@ -122,6 +122,7 @@ export default new Vuex.Store({
     initWorks(state){
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
+          console.log('!@#!@#!@#!@#!@#')
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
               if(cv.works.notice === true){
