@@ -23,16 +23,7 @@ router.post('/getWorks', (req, res, next) =>{
 					}
 				}
 			}
-			console.log('after:::::')
-			console.log('after:::::')
-			console.log('after:::::')
-			console.log('after:::::')
-			r.comu.forEach(x=>{
-				x.convs.forEach(y=>{
-					console.log(y)
-				})
-				
-			})
+
 			
 			res.status(200).send({list_works: r.comu})
 		}else{
