@@ -21,18 +21,16 @@ router.post('/getWorks', (req, res, next) =>{
 				console.log('with::::', x.with)
 				console.log('with::::', x.with)
 				x.convs.forEach(y=>{
-					console.log(y)
+					//console.log(y)
 					if(y.works.notice == undefined){
-						console.log('####same to ::::')
+						//console.log('####same to ::::')
 						x.convs.splice(x.convs.indexOf(y))
 					}
 				})
 				console.log('----------------------')
 			})
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
-			/*
-			console.log('after:::::')
-			console.log('after:::::')
+
 			console.log('after:::::')
 			console.log('after:::::')
 			console.log('after:::::')
@@ -45,7 +43,7 @@ router.post('/getWorks', (req, res, next) =>{
 				})
 				
 			})
-			*/
+			
 			res.status(200).send({list_works: r.comu})
 		}else{
 			console.error('/getWorks error occurred::::', e)
