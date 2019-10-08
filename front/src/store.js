@@ -126,8 +126,10 @@ export default new Vuex.Store({
             x.convs.forEach(cv=>{
               if(cv.works.notice === true){
                 if(cv.id === state.user.id){
+                  console.log('1111111111111')
                   //보낸알림 등록
                 }else{
+                  console.log('2222222222222')
                   //받은알림 등록
 
                 }
@@ -140,7 +142,7 @@ export default new Vuex.Store({
                   //요청작업 등록
                 }else{
                   //받은작업 등록
-                  console.log('222222222222222')
+                  console.log('@@@@@@@@@@@@@')
                   regWork(state.user.works.fromWork, cv, x.with)
 
                 }
