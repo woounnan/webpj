@@ -15,7 +15,6 @@ router.post('/getWorks', (req, res, next) =>{
 		if(!e){
 			list_check = []
 			//works를 제외한 나머지 일반 메시지 제거
-			//console.log('before::::', JSON.stringify(r.comu))
 			for(var i = 0; i< r.comu.length; i++){
 				for(var j = 0; j < r.comu[i].convs.length; j++){
 					if(r.comu[i].convs[j].works.notice == undefined){
@@ -29,7 +28,7 @@ router.post('/getWorks', (req, res, next) =>{
 			console.log('after:::::')
 			console.log('after:::::')
 			r.comu.forEach(x=>{
-				list_check.forEach(y=>{
+				x.convs.forEach(y=>{
 					console.log(y)
 				})
 				
