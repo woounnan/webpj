@@ -4,8 +4,26 @@ import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
 
-var regWork = (state, cv) => {
-  console.log('in regWork::::' , state.user)
+var regWork = (works, cv, to) => {
+  if(list_keys.indexOf(cv.date) == -1){
+    //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
+    //해당 작업은 등록되지 않았으므로 등록처리
+    works.push({
+      convs : cv,
+      to : [to], //대상,, 보낸: 받은사람 / 받은: 보낸사람
+      date : cv.date 
+    })
+  }else{
+    //이미 등록이 되어있다
+    //대상만 추가해준다.
+    for(x in works){
+      if(works[x].date === cv.date){
+        works[x].to.push(to)
+        console.log('already registered work')
+        return
+      }
+    }
+  }
 }
 
 export default new Vuex.Store({
@@ -23,6 +41,7 @@ export default new Vuex.Store({
       room: [],
       room_num: 5,
       works: {
+        list_keys : [], //date를 push해서 등록되잇는 work를 확인
         toWork: [{
           to: [],
           convs: undefined,
@@ -101,23 +120,29 @@ export default new Vuex.Store({
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
-            //console.log('with::::', x.with)
             x.convs.forEach(cv=>{
               if(cv.works.notice === true){
-                //알림 목록 등록
-                if(cv.works.to === true){
+                if(cv.id === state.user.id){
                   //보낸알림 등록
-                  this.regWork()
-                }else{//받은알림 등록
+                }else{
+                  //받은알림 등록
 
                 }
 
               }
               else{
-                regWork(state, cv)
-                //작업 목록 등록
-                //console.log('works::::', cv, '\n')
+                if(cv.id === state.user.id){
+                  regWork(state.user.works.toWork, cv, x.with)
+                  //요청작업 등록
+                }else{
+                  //받은작업 등록
+                  regWork(state.user.works.fromWork, cv, x.with)
+
+                }
+
               }
+
+              console.log('잘 등록되었나?::::', state.user.works)
             })
           })
         }) 
