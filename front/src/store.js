@@ -102,7 +102,7 @@ export default new Vuex.Store({
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
-            console.log('with::::', x.with)
+            //console.log('with::::', x.with)
             x.convs.forEach(cv=>{
               if(cv.works.notice === true){
                 //알림 목록 등록
@@ -115,8 +115,9 @@ export default new Vuex.Store({
 
               }
               else{
+                regWork()
                 //작업 목록 등록
-                console.log('works::::', cv, '\n')
+                //console.log('works::::', cv, '\n')
               }
             })
           })
