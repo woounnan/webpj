@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
-
+var list_keys = []
 var regWork = (works, cv, to) => {
   if(list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
