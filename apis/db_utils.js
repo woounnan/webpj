@@ -31,7 +31,7 @@ router.post('/getWorks', (req, res, next) =>{
 						list_check.push(r.comu[i].convs[j])
 						if(r.comu[i].convs.indexOf(r.comu[i].convs[j]) != -1)
 							console.log('@@@@@@@@@@@@@@@@@@same to ')
-						r.comu[i].convs.splice(j, 1)		
+						//r.comu[i].convs.splice(j, 1)		
 					}
 					
 				}
