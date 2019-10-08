@@ -16,26 +16,19 @@ router.post('/getWorks', (req, res, next) =>{
 			list_check = []
 			//works를 제외한 나머지 일반 메시지 제거
 			//console.log('before::::', JSON.stringify(r.comu))
-			for( var i=0; i<r.comu.length; i++){
-				var temp_comu = r.comu[i]
-				console.log('-------------------------')
-				console.log('<', r.comu[i].with, '>')
-				console.log('<', r.comu[i].with, '>')
-				console.log('<', r.comu[i].with, '>')
-				for(var j=0; j<r.comu[i].convs.length; j++){
-					var temp_convs = r.comu[i].convs[j]
-
-					console.log('###', r.comu[i].convs[j])
-					
-					if(r.comu[i].convs[j].works.notice == undefined){
-						console.log('@@@@@@@@@@@@@@@@@@same to ')
-						//r.comu[i].convs.splice(j, 1)		
-					}
-					
-				}
-			}
+			r.comu.forEach(x=>{
+				console.log('with::::', x.with)
+				console.log('with::::', x.with)
+				console.log('with::::', x.with)
+				x.convs.forEach(y=>{
+					console.log(y)
+					if(y.works.notice == undefined)
+						console.log('###same to')
+				})
+				console.log('----------------------')
+			})
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
-			
+			/*
 			console.log('after:::::')
 			console.log('after:::::')
 			console.log('after:::::')
@@ -44,12 +37,13 @@ router.post('/getWorks', (req, res, next) =>{
 			console.log('after:::::')
 			r.comu.forEach(x=>{
 				list_check.forEach(y=>{
-					//console.log(y)
+					console.log(y)
 					//if(x.convs.indexOf(y) != -1)
 						//console.log('###same to', y)
 				})
 				
 			})
+			*/
 			res.status(200).send({list_works: r.comu})
 		}else{
 			console.error('/getWorks error occurred::::', e)
