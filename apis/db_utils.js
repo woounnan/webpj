@@ -31,16 +31,22 @@ router.post('/getWorks', (req, res, next) =>{
 						list_check.push(r.comu[i].convs[j])
 						if(r.comu[i].convs.indexOf(r.comu[i].convs[j]) != -1)
 							console.log('@@@@@@@@@@@@@@@@@@same to ')
-						//r.comu[i].convs.splice(j, 1)		
+						r.comu[i].convs.splice(j, 1)		
 					}
 					
 				}
 			}
 			//console.log('These are consist of works maybe... ::::', JSON.stringify(r.comu))
 			
-			//console.log('after:::::')
+			console.log('after:::::')
+			console.log('after:::::')
+			console.log('after:::::')
+			console.log('after:::::')
+			console.log('after:::::')
+			console.log('after:::::')
 			r.comu.forEach(x=>{
 				list_check.forEach(y=>{
+					console.log(y)
 					//if(x.convs.indexOf(y) != -1)
 						//console.log('###same to', y)
 				})
