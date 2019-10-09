@@ -12,7 +12,7 @@
           <div class="flex-grow-1"></div>
           <v-btn depressed large color="error">미제출</v-btn>
           <v-btn depressed large color="primary">승인대기</v-btn>
-          <v-btn depressed large color="orange darken-1 white--text">승인거절</v-btn>
+          <v-btn depressed large color="orange darken-3 white--text">승인거절</v-btn>
           <v-btn depressed large color="green darken-1 white--text">승인완료</v-btn>
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
