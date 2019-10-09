@@ -1,5 +1,6 @@
-<v-app>
+
 <template>
+  <v-app id="inspire">
   <v-row justify="center">
     <v-col cols="12" sm="8">
       <v-card>
@@ -100,8 +101,8 @@
       </v-card>
     </v-col>
   </v-row>
-</template>
 </v-app>
+</template>
 <script>
   import ViewParts from './ViewParts.vue'
   import axios from 'axios'
