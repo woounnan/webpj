@@ -229,7 +229,7 @@
           diff= second - first ;
           one_hour= 60*60 ;
           console.log('diff hours::::',diff/one_hour)
-          works.due = diff/one_hour
+          x.due = diff/one_hour
         })
       },
       setItems(idx){
