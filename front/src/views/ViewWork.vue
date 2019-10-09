@@ -60,42 +60,47 @@
               
                   <v-list-item-content>
               <v-row >
-                <v-col cols="5">
+                <v-col cols="3">
                 <v-text-field 
                 v-model="items.startDate"
                 readonly
               />
             </v-col>
-            <v-col cols="2">
-              ~
-            </v-col>
-
-            <v-col cols="5">
+            ~
+            <v-col cols="3">
 
               <v-text-field 
                 v-model="items.endDate"
                 readonly
               />
             </v-col>
-                     
+                        <v-col cols="3">
+                <v-text-field 
+                v-model="items.startDate"
+                readonly
+              />
+            </v-col>
+            ~
+            <v-col cols="3">
+
+              <v-text-field 
+                v-model="items.endDate"
+                readonly
+              />
+            </v-col> 
             </v-row>
 
             </v-list-item-content>
           </v-list-item>
-          <!--
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
-
             <v-list-item-content align="center">
-
-          
 
             </v-list-item-content>
           </v-list-item>
-        -->
         </v-list>
       </v-card>
     </v-col>
