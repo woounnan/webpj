@@ -131,7 +131,7 @@
       return {
         items: {},
         items: [
-        { header: 'Today' },
+        { header: '대상' },
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
           title: 'Brunch this weekend?',
