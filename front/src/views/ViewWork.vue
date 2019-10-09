@@ -45,7 +45,6 @@
               />
             </v-list-item-content>
           </v-list-item>
-          <!--
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
@@ -58,7 +57,6 @@
               <v-row >
                 <v-col cols="6">
                 <v-text-field 
-                placeholder="시작일"
                 v-model="items.startDate"
                 v-on="on"
               />
@@ -68,7 +66,6 @@
             <v-col cols="6">
 
               <v-text-field 
-                placeholder="종료일"
                 v-model="items.endDate"
                 v-on="on"
               />
@@ -78,6 +75,7 @@
 
             </v-list-item-content>
           </v-list-item>
+          <!--
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
