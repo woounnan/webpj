@@ -120,6 +120,7 @@
 
       })
       */
+      console.log('ViewWork.vue::::', this.works)
     },
     methods: {
       closeWindow(){
