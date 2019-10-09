@@ -1,6 +1,5 @@
 
 <template>
-  <v-app>
   <v-row justify="center">
     <v-col cols="12" sm="8">
       <v-card>
@@ -14,7 +13,7 @@
           <v-btn depressed large color="error">미제출</v-btn>
           <v-btn depressed large color="primary">승인대기</v-btn>
           <v-btn depressed large color="amber darken-3">승인거절</v-btn>
-          <v-btn depressed large color="green darken-1">승인완료</v-btn>
+          <v-btn depressed large color="blue darken-1 white--text">승인완료</v-btn>
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
           </v-btn>
@@ -101,10 +100,6 @@
       </v-card>
     </v-col>
   </v-row>
-    <v-content>
-      <router-view/>
-    </v-content>
-</v-app>
 </template>
 <script>
   import ViewParts from './ViewParts.vue'
