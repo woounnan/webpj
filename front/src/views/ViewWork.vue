@@ -1,3 +1,4 @@
+<v-app>
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="8">
@@ -100,6 +101,7 @@
     </v-col>
   </v-row>
 </template>
+</v-app>
 <script>
   import ViewParts from './ViewParts.vue'
   import axios from 'axios'
