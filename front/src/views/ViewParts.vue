@@ -39,7 +39,6 @@
               >
               <template 
                 #activator="{ on: dialog}"
-                max-width="500px"
               >  
 	              <v-list-item-content v-on="dialog" @click="sendWork(item)">
 
