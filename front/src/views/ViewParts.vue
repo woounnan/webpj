@@ -114,8 +114,7 @@
 
       <v-list 
           two-line 
-          class="overflow-y-auto"  
-          style="max-height: 600px" >
+          class="overflow-y-auto">
         <v-list-item-group
           v-model="selected"
           multiple
