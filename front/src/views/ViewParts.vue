@@ -219,6 +219,7 @@
         console.log('@@@@@@@call sepItem::::', works)
         works.forEach(x=>{
           console.log('x:::::', x)
+          /*
           var sp = x.convs.works.endDate.split['-']
           console.log('endDate::::', sp)
           var v_y = sp[0]
@@ -231,6 +232,7 @@
           one_hour= 60*60 ;
           console.log('diff hours::::',diff/one_hour)
           x.due = diff/one_hour
+          */
         })
       },
       setItems(idx){
