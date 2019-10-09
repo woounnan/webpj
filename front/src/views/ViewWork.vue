@@ -9,7 +9,7 @@
 
           
           <div class="flex-grow-1"></div>
-          <v-btn depressed small color="error">미제출</v-btn>
+          <v-btn depressed large color="error">미제출</v-btn>
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
           </v-btn>
