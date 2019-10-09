@@ -120,7 +120,6 @@
 
       })
       */
-      this.items = 
     },
     methods: {
       closeWindow(){
