@@ -96,7 +96,6 @@
     </v-col>
   </v-row>
 </template>
-</template>
 <script>
   import ViewParts from './ViewParts.vue'
   import axios from 'axios'
