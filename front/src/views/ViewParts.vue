@@ -166,7 +166,7 @@
 	import Vue from 'vue'
   export default {
   	props:{
-    sep: undefined,
+    idx_sep: undefined,
   	},
     data: () => ({
       selected: [2],
@@ -215,19 +215,20 @@
     	})
     },
     methods: {
-      sepItem(works){
+      setTime(works){
         console.log('call sepItem::::')
-        var sp = works.convs.works.endDate
+        var sp = works.convs.works.endDate.split['-']
         console.log('endDate::::', sp)
-        /*var v_y = 
-        
-        first = new Date();
-        second = new Date(2012, 03, 08, 15, 40, 10); 
+        var v_y = sp[0]
+        var v_m = sp[1]
+        var v_d = sp[2]
+        var cur = new Date();
+        var end = new Date(v_y, v_m, v_d); 
         console.log((second.getTime())/1000); 
         diff= second - first ;
-        one_day_epoch = 24*60*60 ;
-        console.log(diff)
-        */
+        one_hour= 60*60 ;
+        console.log('diff hours::::',diff/one_hour)
+        works.due = diff/one_hour
       },
       setItems(idx){
         console.log('call setItems:::')
@@ -246,7 +247,7 @@
             break
         }
         //set due time
-
+        this.setTime(this.goings)
       }
     },
   }
