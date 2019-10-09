@@ -123,10 +123,13 @@
       ],
     }),
     created(){
-      this.setItems(this.sep)
+      console.log('idx_sep::::', idx_sep)
+      this.setItems(this.idx_sep)
     	this.title = this.titles[this.sep]
     	this.$store.state.bus.$on('setTitle', data => {		
     	this.title = this.titles[data.sep]
+      console.log('receive setTitle idx_sep::::', idx_sep)
+      this.setItems(data.idx_sep)
     	})
     },
     methods: {
@@ -149,6 +152,7 @@
             this.items = this.$store.getters.getUser.works.fromNotice
             break
         }
+        console.log('items:::', this.items)
       }
     },
   }
