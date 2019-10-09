@@ -26,7 +26,7 @@
         align="start"
         justify="space-between"
       >
-          <ViewParts :sep="cur" :idx_sep="idx_cur"/>
+          <ViewParts :idx_sep="idx_cur"/>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
@@ -61,7 +61,7 @@
         this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
         this.idx_cur = idx
         console.log('idx_cur View.vue::::', this.idx_cur)
-        this.$store.state.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice', idx_sep: idx})
+        this.$store.state.bus.$emit('setList', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice', idx_sep: idx})
       },
     },
 	}
