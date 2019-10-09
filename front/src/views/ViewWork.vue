@@ -113,13 +113,9 @@
       }
     },
     mounted(){
-      /*
-      this.$store.state.bus.$on('sendWork', data => {
-        console.log('receive a signal of sendWork::::', data)
-
-      })
-      */
       console.log('ViewWork.vue::::', this.works)
+      this.$store.commit("setToday")
+      setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )
     },
     methods: {
       closeWindow(){

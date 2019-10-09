@@ -33,6 +33,7 @@ export default new Vuex.Store({
   state: {
   	bus: new Vue(),
   	tk: undefined,
+    today: '',
     user: {
       id: '',
       position: '',
@@ -68,6 +69,11 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setToday(state){
+      state.today = new Date().toISOString().substr(0, 10)
+
+      console.log('setToday::::', state.today)
+    }
     delToken (state) {
     	state.tk = null
     },
