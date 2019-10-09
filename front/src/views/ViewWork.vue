@@ -9,6 +9,7 @@
 
           
           <div class="flex-grow-1"></div>
+          <v-btn depressed small color="error">미제출</v-btn>
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
           </v-btn>
@@ -58,6 +59,7 @@
                 <v-col cols="5">
                 <v-text-field 
                 v-model="items.startDate"
+                readonly
               />
             </v-col>
             <v-col cols="2">
@@ -68,6 +70,7 @@
 
               <v-text-field 
                 v-model="items.endDate"
+                readonly
               />
             </v-col>
                      
