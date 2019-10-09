@@ -35,11 +35,11 @@
               <v-dialog
                 v-model="viewWork"
                 class="overflow-y-auto"
-                hide-overlay
                 transition="dialog-bottom-transition"
               >
               <template 
                 #activator="{ on: dialog}"
+                max-width="500px"
               >  
 	              <v-list-item-content v-on="dialog" @click="sendWork(item)">
 
