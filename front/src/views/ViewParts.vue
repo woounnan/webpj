@@ -32,8 +32,17 @@
 	        active-class="pink--text"
 	      >
 	        <template v-for="(item, index) in goings">
-	          <v-list-item @click="nav(index)" :key="item.title">
+	          <v-list-item :key="item.title">
+             
+
 	            <template v-slot:default="{ active, toggle }">
+              <v-dialog
+                v-model="viewWork"
+                class="overflow-y-auto" 
+              >
+              <template 
+                #activator="{ on: dialog}"
+              >  
 	              <v-list-item-content>
 
 	                <v-list-item-title>
@@ -49,9 +58,12 @@
   	                <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
-
+              </template>
+              <ViewWork />
+            </v-dialog>
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
+
 	                <v-icon
 	                  v-if="!active"
 	                  color="grey lighten-1"
@@ -163,8 +175,12 @@
 
 </template>
 <script>
+  import ViewWork from 'ViewWork.vue'
 	import Vue from 'vue'
   export default {
+    components:{
+      ViewWork
+    },
   	props:{
     idx_sep: undefined,
   	},
