@@ -73,7 +73,7 @@ export default new Vuex.Store({
       state.today = new Date().toISOString().substr(0, 10)
 
       console.log('setToday::::', state.today)
-    }
+    },
     delToken (state) {
     	state.tk = null
     },
