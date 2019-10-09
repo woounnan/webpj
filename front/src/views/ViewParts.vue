@@ -36,7 +36,7 @@
                 v-model="viewWork"
                 class="overflow-y-auto"
                 fullscreen
-                hide-overlay
+                transition="dialog-bottom-transition"
               >
               <template 
                 #activator="{ on: dialog}"
