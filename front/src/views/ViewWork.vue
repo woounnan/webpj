@@ -55,15 +55,17 @@
               
                   <v-list-item-content>
               <v-row >
-                <v-col cols="6">
+                <v-col cols="5">
                 <v-text-field 
                 v-model="items.startDate"
                 v-on="on"
               />
             </v-col>
+            <v-col cols="2">
+              <span> ~ </span>
+            </v-col>
 
-
-            <v-col cols="6">
+            <v-col cols="5">
 
               <v-text-field 
                 v-model="items.endDate"
