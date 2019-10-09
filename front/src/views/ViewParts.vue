@@ -35,8 +35,7 @@
               <v-dialog
                 v-model="viewWork"
                 class="overflow-y-auto"
-                fullscreen
-                transition="dialog-bottom-transition"
+
               >
               <template 
                 #activator="{ on: dialog}"
