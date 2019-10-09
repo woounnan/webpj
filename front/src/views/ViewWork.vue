@@ -60,7 +60,7 @@
               
             <v-list-item-content>
               <v-row >
-                <v-col cols="5">
+                <v-col cols="6">
                 <v-text-field 
                 v-model="items.startDate"
                 readonly
@@ -69,7 +69,7 @@
             <v-list-item-action>
               <v-icon>date_range</v-icon>
             </v-list-item-action>
-            <v-col cols="5">
+            <v-col cols="6">
                 <v-text-field 
                 v-model="items.startDate"
                 readonly
