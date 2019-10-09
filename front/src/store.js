@@ -19,6 +19,7 @@ var regWork = (works, cv, to) => {
     //이미 등록이 되어있다
     //대상만 추가해준다.
     for(x in works){
+      console.log('date:::', works[x])
       if(works[x].date === cv.date){
         works[x].to.push(to)
         console.log('already registered work')
