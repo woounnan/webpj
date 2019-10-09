@@ -233,16 +233,16 @@
         console.log('call setItems:::')
         switch(idx){
           case 0:
-            this.items = this.$store.getters.getUser.works.toWork
+            this.goings = this.$store.getters.getUser.works.toWork
             break
           case 1:
-            this.items = this.$store.getters.getUser.works.fromWork
+            this.goings = this.$store.getters.getUser.works.fromWork
             break
           case 2:
-            this.items = this.$store.getters.getUser.works.toNotice
+            this.goings = this.$store.getters.getUser.works.toNotice
             break
           case 3:
-            this.items = this.$store.getters.getUser.works.fromNotice
+            this.goings = this.$store.getters.getUser.works.fromNotice
             break
         }
         //set due time
