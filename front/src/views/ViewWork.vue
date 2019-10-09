@@ -28,7 +28,6 @@
               ></v-text-field>
             </v-list-item-content>
           </v-list-item>
-        <!-- 
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
@@ -37,16 +36,16 @@
 
             <v-list-item-content>
                 <v-textarea 
-                placeholder="내용 입력"
-                v-model="items.contents"
+                v-model="works.contents"
                 counter
-                maxlength="120"
                 full-width
                 single-line
                 type="text"
+                readonly
               />
             </v-list-item-content>
           </v-list-item>
+          <!--
           <v-divider inset></v-divider>            
           <v-list-item @click="">
             <v-list-item-action>
