@@ -26,7 +26,7 @@
         align="start"
         justify="space-between"
       >
-          <ViewParts :sep="cur" />
+          <ViewParts :sep="cur" :idx_sep="idx_cur"/>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
@@ -40,13 +40,14 @@
     },
 		data(){
 			return {
+        idx_cur: undefined,
         cur: {
           type: String,
           default: undefined
         },
 				tab: null,
 		    tabs: [
-		      '받은작업', '요청작업', '받은알림', '보낸알림'
+		      '요청작업', '받은작업', '보낸알림', '받은알림'
 		    ],
 		    works: [],
 			}
@@ -57,7 +58,8 @@
     methods: {
       setCur(idx){
         this.cur = parseInt(idx/2) === 0 ? 'work' : 'notice'
-         this.$store.state.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice'})
+        this.idx_cur = idx
+        this.$store.state.bus.$emit('setTitle', {sep : parseInt(idx/2) === 0 ? 'work' : 'notice', idx_sep: idx})
       },
     },
 	}

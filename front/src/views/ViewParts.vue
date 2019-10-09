@@ -88,6 +88,7 @@
       	notice: ['진행중인 알림', '지나간 알림'],
       },
       items: [
+      /*
         {
           action: '15 min',
           headline: 'Brunch this weekend?',
@@ -118,17 +119,34 @@
           title: 'Britta Holt',
           subtitle: 'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
         },
+        */
       ],
     }),
     created(){
-
-    	 this.title = this.titles[this.sep]
-    	 this.$store.state.bus.$on('setTitle', data => {		
-    		this.title = this.titles[data.sep]
+      this.setItems(this.sep)
+    	this.title = this.titles[this.sep]
+    	this.$store.state.bus.$on('setTitle', data => {		
+    	this.title = this.titles[data.sep]
     	})
     },
     methods: {
-
+      setItems(idx){
+        console.log('call setItems:::')
+        switch(idx){
+          case 0:
+            this.items = this.$store.getters.getUser.works.toWork
+            break
+          case 1:
+            this.items = this.$store.getters.getUser.works.fromWork
+            break
+          case 2:
+            this.items = this.$store.getters.getUser.works.toNotice
+            break
+          case 3:
+            this.items = this.$store.getters.getUser.works.fromNotice
+            break
+        }
+      }
     },
   }
 </script>

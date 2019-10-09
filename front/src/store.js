@@ -8,7 +8,6 @@ var regWork = (works, cv, to) => {
   if(list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
-    console.log('######처음등록')
     works.push({
       convs : cv,
       to : [to], //대상,, 보낸: 받은사람 / 받은: 보낸사람
@@ -19,7 +18,6 @@ var regWork = (works, cv, to) => {
     //이미 등록이 되어있다
     //대상만 추가해준다.
     works.forEach(x =>{
-      console.log('forEach::::',x)
       if(x.date === cv.date){
         x.to.push(to)
         console.log('already registered work')
@@ -127,20 +125,19 @@ export default new Vuex.Store({
               if(cv.works.notice === true){
                 if(cv.id === state.user.id){
                   //보낸알림 등록
+                  regWork(state.user.works.toNotice, cv, x.with)
                 }else{
                   //받은알림 등록
-
+                  regWork(state.user.works.fromNotice, cv, x.with)
                 }
 
               }
               else{
                 if(cv.id === state.user.id){
-                  console.log('!!!!!!!!!!!!!!!!!')
-                  regWork(state.user.works.toWork, cv, x.with)
                   //요청작업 등록
+                  regWork(state.user.works.toWork, cv, x.with)
                 }else{
                   //받은작업 등록
-                  console.log('@@@@@@@@@@@@@')
                   regWork(state.user.works.fromWork, cv, x.with)
 
                 }
@@ -148,8 +145,6 @@ export default new Vuex.Store({
               }
             })
 
-
-            console.log('잘 등록되었나?::::', state.user.works)
           })
         }) 
         .catch(e=>{
