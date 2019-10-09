@@ -175,7 +175,7 @@
 
 </template>
 <script>
-  import ViewWork from 'ViewWork.vue'
+  import ViewWork from './ViewWork.vue'
 	import Vue from 'vue'
   export default {
     components:{
