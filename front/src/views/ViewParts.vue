@@ -107,7 +107,8 @@
       </v-toolbar>
 
       <v-list 
-          two-line 
+          two-line
+          style="max-height: 500px"
           class="overflow-y-auto">
         <v-list-item-group
           v-model="selected"
