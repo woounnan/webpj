@@ -35,7 +35,7 @@
               <v-dialog
                 v-model="viewWork"
                 class="overflow-y-auto"
-
+                fullscreen
               >
               <template 
                 #activator="{ on: dialog}"
