@@ -11,7 +11,9 @@ var regWork = (works, cv, to) => {
     works.push({
       convs : cv,
       to : [to], //대상,, 보낸: 받은사람 / 받은: 보낸사람
-      date : cv.date 
+      date : cv.date,
+      contents : cv.works.contents,
+      title : cv.works.title,
     })
     list_keys.push(cv.date)
   }else{
@@ -46,22 +48,34 @@ export default new Vuex.Store({
         toWork: [{
           to: [],
           convs: undefined,
-          date: String,
+          date: String, //primary key
+          due: String, //due date
+          title: String, 
+          contents: String,
         }], //요청작업
         fromWork:  [{
           to: [],
           convs: undefined,
           date: String,
+          due: String,
+          title: String,
+          contents: String,
         }], //받은작업
         toNotice:  [{
           to: [],
           convs: undefined,
           date: String,
+          due: String,
+          title: String,
+          contents: String,
         }], //보낸알림
         fromNotice: [{
           to: [],
           convs: undefined,
           date: String,
+          due: String,
+          title: String,
+          contents: String,
         }], //받은알림
       }, //array of convs
     },

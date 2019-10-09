@@ -36,12 +36,12 @@
 	            <template v-slot:default="{ active, toggle }">
 	              <v-list-item-content>
 	                <v-list-item-title v-text="item.title"></v-list-item-title>
-	                <v-list-item-subtitle class="text--primary" v-text="item.headline"></v-list-item-subtitle>
-	                <v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
+  	                <v-list-item-subtitle class="text--primary" >test</v-list-item-subtitle>
+	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
 
 	              <v-list-item-action>
-	                <v-list-item-action-text v-text="item.action"></v-list-item-action-text>
+	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
 	                <v-icon
 	                  v-if="!active"
 	                  color="grey lighten-1"
@@ -130,6 +130,9 @@
     	})
     },
     methods: {
+      setWork(){
+
+      },
       setItems(idx){
         console.log('call setItems:::')
         switch(idx){
