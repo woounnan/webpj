@@ -185,6 +185,7 @@
     idx_sep: undefined,
   	},
     data: () => ({
+      viewWork: false,
       selected: [2],
       goings: [
       /*
@@ -198,6 +199,9 @@
       ],
     }),
     created(){
+      this.$store.state.bus.$on('closeViewWork', ()=>{
+        this.viewWork = false
+      })
       console.log('idx_sep::::', this.idx_sep)
       this.setItems(this.idx_sep)
       setInterval(this.setItems(this.idx_sep),1000*60)

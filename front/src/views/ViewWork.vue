@@ -118,6 +118,10 @@
 
     },
     methods: {
+      closeWindow(){
+        console.log('call closeWindow in ViewWork.vue::::')
+        this.$store.state.bus.$emit('closeViewWork')
+      }
     },
   }
 </script>
