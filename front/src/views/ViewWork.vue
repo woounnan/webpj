@@ -1,6 +1,6 @@
 
 <template>
-  <v-app id="inspire">
+  <v-app>
   <v-row justify="center">
     <v-col cols="12" sm="8">
       <v-card>
@@ -101,6 +101,9 @@
       </v-card>
     </v-col>
   </v-row>
+    <v-content>
+      <router-view/>
+    </v-content>
 </v-app>
 </template>
 <script>
