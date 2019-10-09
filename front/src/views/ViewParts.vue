@@ -38,7 +38,7 @@
               <template 
                 #activator="{ on: dialog}"
               >  
-	              <v-list-item-content v-on="dialog" @click="">
+	              <v-list-item-content v-on="dialog" @click="sendWork(item)">
 
 	                <v-list-item-title>
 
@@ -54,7 +54,7 @@
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
               </template>
-              <ViewWork />
+              <ViewWork :idx_work="idx_work" />
             </v-dialog>
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
@@ -175,7 +175,8 @@
       ViewWork
     },
   	props:{
-    idx_sep: undefined,
+      idx_work: undefined,
+      idx_sep: undefined,
   	},
     data: () => ({
       viewWork: false,
@@ -204,6 +205,11 @@
     	})
     },
     methods: {
+      sendWork(idx){
+        console.log('call sendWork::::', idx)
+        this.idx_work = idx
+        //this.$store.state.bus.$emit('sendWork', idx)
+      },
       nav(idx){
         console.log('call nav::::', idx)
       },

@@ -3,12 +3,10 @@
     <v-col cols="12" sm="8">
       <v-card>
         <v-card-title class="cyan darken-1">
-          <div v-if="!notice">
-            <span class="headline white--text">작업 요청</span>
-          </div>
-          <div v-else>
-            <span class="headline white--text">알림 등록</span>
-          </div>
+
+            <span class="headline white--text">상세 보기</span>
+
+
           
           <div class="flex-grow-1"></div>
           <v-btn dark icon @click="closeWindow">
@@ -25,7 +23,7 @@
             <v-list-item-content>
               <v-text-field 
                 readonly
-                v-model="items.title"
+                v-model="works.title"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
@@ -107,15 +105,22 @@
     components:{
       ViewParts,
     },
+    props:{
+      works: undefined
+    },
     data(){
       return {
-        items: {
-          title: '테스트 제목'
-        }
+        items: {}
       }
     },
     mounted(){
+      /*
+      this.$store.state.bus.$on('sendWork', data => {
+        console.log('receive a signal of sendWork::::', data)
 
+      })
+      */
+      this.items = 
     },
     methods: {
       closeWindow(){
