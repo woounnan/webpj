@@ -5,7 +5,6 @@ import io from 'socket.io-client'
 Vue.use(Vuex)
 var list_keys = []
 var regWork = (works, cv, to) => {
-  list_keys.push(cv.date)
   console.log('works::::', works)
   console.log('cv::::', cv)
   if(list_keys.indexOf(cv.date) == -1){
@@ -17,6 +16,7 @@ var regWork = (works, cv, to) => {
       to : [to], //대상,, 보낸: 받은사람 / 받은: 보낸사람
       date : cv.date 
     })
+    list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
     //대상만 추가해준다.
