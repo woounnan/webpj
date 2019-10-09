@@ -216,7 +216,7 @@
     },
     methods: {
       setTime(works){
-        console.log('call sepItem::::')
+        console.log('call sepItem::::', works)
         var sp = works.convs.works.endDate.split['-']
         console.log('endDate::::', sp)
         var v_y = sp[0]
