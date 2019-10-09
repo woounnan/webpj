@@ -62,7 +62,7 @@
               />
             </v-col>
             <v-col cols="2">
-              <span> ~ </span>
+              ~
             </v-col>
 
             <v-col cols="5">
