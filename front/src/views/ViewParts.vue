@@ -34,8 +34,6 @@
 	        <template v-for="(item, index) in goings">
 	          <v-list-item :key="item.title">
              
-
-	            <template v-slot:default="{ active, toggle }">
               <v-dialog
                 v-model="viewWork"
                 class="overflow-y-auto" 
@@ -78,7 +76,6 @@
 	                  star
 	                </v-icon>
 	              </v-list-item-action>
-	          </template> 
 	          </v-list-item>
 
 	          <v-divider
