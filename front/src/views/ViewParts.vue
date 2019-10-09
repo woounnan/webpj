@@ -38,7 +38,7 @@
               <template 
                 #activator="{ on: dialog}"
               >  
-	              <v-list-item-content v-on="dialog">
+	              <v-list-item-content v-on="dialog" @click="">
 
 	                <v-list-item-title>
 
@@ -59,7 +59,7 @@
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
 	                <v-icon
-                    @click="!active"
+                    @click=""
 	                  v-if="!active"
 	                  color="grey lighten-1"
 	                >
