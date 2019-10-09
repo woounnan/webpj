@@ -70,7 +70,7 @@
 	          </v-list-item>
 
 	          <v-divider
-	            v-if="index + 1 < items.length"
+	            v-if="index + 1 < goings.length"
 	            :key="index"
 	          ></v-divider>
 	        </template>
@@ -148,7 +148,7 @@
             </v-list-item>
 
             <v-divider
-              v-if="index + 1 < items.length"
+              v-if="index + 1 < goings.length"
               :key="index"
             ></v-divider>
           </template>
