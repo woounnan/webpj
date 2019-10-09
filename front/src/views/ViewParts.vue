@@ -54,7 +54,7 @@
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
               </template>
-              <ViewWork :idx_work="idx_work" />
+              <ViewWork :works="thisWork" />
             </v-dialog>
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
@@ -179,6 +179,7 @@
       idx_sep: undefined,
   	},
     data: () => ({
+      thisWork: undefined,
       viewWork: false,
       selected: [2],
       goings: [
@@ -205,9 +206,9 @@
     	})
     },
     methods: {
-      sendWork(idx){
+      sendWork(works){
         console.log('call sendWork::::', idx)
-        this.idx_work = idx
+        this.thisWork = works
         //this.$store.state.bus.$emit('sendWork', idx)
       },
       nav(idx){
