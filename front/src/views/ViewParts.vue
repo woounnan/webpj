@@ -31,8 +31,8 @@
 	        multiple
 	        active-class="pink--text"
 	      >
-	        <template v-for="(item, index) in goings" @click="nav(index)">
-	          <v-list-item :key="item.title">
+	        <template v-for="(item, index) in goings">
+	          <v-list-item @click="nav(index)" :key="item.title">
 	            <template v-slot:default="{ active, toggle }">
 	              <v-list-item-content>
 
