@@ -140,11 +140,11 @@ export default new Vuex.Store({
                 if(cv.id === state.user.id){
                   //보낸알림 등록
                   regWork(state.user.works.toNotice, cv, x.with)
-                  state.user.works.toNotice.splice(0, 1)
+                  //state.user.works.toNotice.splice(0, 1)
                 }else{
                   //받은알림 등록
                   regWork(state.user.works.fromNotice, cv, x.with)
-                  state.user.works.fromNotice.splice(0, 1)
+                  //state.user.works.fromNotice.splice(0, 1)
                 }
 
               }
@@ -152,11 +152,11 @@ export default new Vuex.Store({
                 if(cv.id === state.user.id){
                   //요청작업 등록
                   regWork(state.user.works.toWork, cv, x.with)
-                  state.user.works.toWork.splice(0, 1)
+                  //state.user.works.toWork.splice(0, 1)
                 }else{
                   //받은작업 등록
                   regWork(state.user.works.fromWork, cv, x.with)
-                  state.user.works.fromWork.splice(0, 1)
+                  //state.user.works.fromWork.splice(0, 1)
 
                 }
 
