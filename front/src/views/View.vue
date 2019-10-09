@@ -55,6 +55,9 @@
     mounted(){
       this.cur = 'work'
       this.idx_cur = 0
+      //현재 시간 설정
+      this.$store.commit("setToday")
+      setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )
     },
     methods: {
       setCur(idx){
