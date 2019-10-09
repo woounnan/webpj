@@ -37,6 +37,7 @@
                 class="overflow-y-auto"
                 fullscreen
                 hide-overlay
+                transition="dialog-bottom-transition"
                 scrollable
               >
               <template 
