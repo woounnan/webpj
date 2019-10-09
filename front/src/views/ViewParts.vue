@@ -217,10 +217,10 @@
     methods: {
       setTime(works){
         console.log('@@@@@@@call sepItem::::', works)
-        works.forEach(x=>{
-          console.log('x:::::', x)
-          /*
-          var sp = x.convs.works.endDate.split['-']
+        for(var i = 0; i< works.length; i++){
+          console.log('x:::::', works[i])
+          
+          var sp = works[i].convs.works.endDate.split['-']
           console.log('endDate::::', sp)
           var v_y = sp[0]
           var v_m = sp[1]
@@ -231,9 +231,9 @@
           diff= second - first ;
           one_hour= 60*60 ;
           console.log('diff hours::::',diff/one_hour)
-          x.due = diff/one_hour
-          */
-        })
+          works[i].due = diff/one_hour
+          
+        }
       },
       setItems(idx){
         console.log('call setItems:::')
