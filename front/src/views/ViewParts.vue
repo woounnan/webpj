@@ -43,7 +43,7 @@
               <template 
                 #activator="{ on: dialog}"
               >  
-	              <v-list-item-content>
+	              <v-list-item-content v-on="dialog">
 
 	                <v-list-item-title>
 
