@@ -24,8 +24,8 @@ var regWork = (works, cv, to) => {
         x.to.push(to)
         console.log('already registered work')
         return
-      })
-    }
+      }
+    })
   }
 }
 
