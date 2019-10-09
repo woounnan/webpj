@@ -46,7 +46,7 @@
                   {{one}}
                 </v-chip>
                 </v-list-item-title>
-  	                <v-list-item-subtitle class="text--primary" >test</v-list-item-subtitle>
+  	                <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
 
