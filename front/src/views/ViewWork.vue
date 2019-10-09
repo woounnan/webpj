@@ -24,7 +24,7 @@
 
             <v-list-item-content>
               <v-text-field 
-                readonly="true"
+                readonly=true
                 v-model="items.title"
                 type="text"
               ></v-text-field>
