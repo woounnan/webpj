@@ -217,6 +217,7 @@
     methods: {
       setTime(works){
         console.log('@@@@@@@call sepItem::::', works)
+        console.log('왜안돼!!!!!!!!!!!!!!!:::', works.length)
         for(var i = 0; i< works.length; i++){
           console.log('x:::::', works[i])
           
