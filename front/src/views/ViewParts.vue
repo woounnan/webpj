@@ -25,7 +25,8 @@
 	    <v-list 
           two-line 
           class="overflow-y-auto"  
-          style="max-height: 600px" >
+          style="max-height: 500px" 
+        >
 	        <template v-for="(item, index) in goings">
 	          <v-list-item :key="item.title">
              
@@ -108,7 +109,7 @@
 
       <v-list 
           two-line
-          style="max-height: 400px"
+          style="max-height: 500px"
           class="overflow-y-auto">
         <v-list-item-group
           v-model="selected"
