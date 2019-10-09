@@ -26,14 +26,11 @@
           two-line 
           class="overflow-y-auto"  
           style="max-height: 600px" >
-	      <v-list-item-group
-	        v-model="selected"
-	        multiple
-	        active-class="pink--text"
-	      >
 	        <template v-for="(item, index) in goings">
 	          <v-list-item :key="item.title">
              
+
+	            <template v-slot:default="{ active, toggle }">
               <v-dialog
                 v-model="viewWork"
                 class="overflow-y-auto" 
@@ -76,6 +73,7 @@
 	                  star
 	                </v-icon>
 	              </v-list-item-action>
+	          </template> 
 	          </v-list-item>
 
 	          <v-divider
@@ -83,7 +81,6 @@
 	            :key="index"
 	          ></v-divider>
 	        </template>
-	      </v-list-item-group>
 	    </v-list>
 	  </v-card>
 
