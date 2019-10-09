@@ -58,10 +58,8 @@
             </v-dialog>
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
-
-                  <v-btn>
 	                <v-icon
-                    @click=""
+                    @click="!active"
 	                  v-if="!active"
 	                  color="grey lighten-1"
 	                >
@@ -74,7 +72,6 @@
 	                >
 	                  star
 	                </v-icon>
-                </v-btn>
 	              </v-list-item-action>
 	          </template> 
 	          </v-list-item>
