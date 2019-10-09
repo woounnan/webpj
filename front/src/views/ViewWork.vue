@@ -1,0 +1,123 @@
+<template>
+  <v-row justify="center">
+    <v-col cols="12" sm="8">
+      <v-card>
+        <v-card-title class="cyan darken-1">
+          <div v-if="!notice">
+            <span class="headline white--text">작업 요청</span>
+          </div>
+          <div v-else>
+            <span class="headline white--text">알림 등록</span>
+          </div>
+          
+          <div class="flex-grow-1"></div>
+          <v-btn dark icon @click="closeWindow">
+            <v-icon>cancel</v-icon>
+          </v-btn>
+        </v-card-title>
+
+        <v-list>
+          <v-list-item @click="">
+            <v-list-item-action>
+              <v-icon>title</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content>
+              <v-text-field 
+                readonly="true"
+                v-model="items.title"
+                type="text"
+              ></v-text-field>
+            </v-list-item-content>
+          </v-list-item>
+        <!-- 
+          <v-divider inset></v-divider>            
+          <v-list-item @click="">
+            <v-list-item-action>
+              <v-icon>text_fields</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content>
+                <v-textarea 
+                placeholder="내용 입력"
+                v-model="items.contents"
+                counter
+                maxlength="120"
+                full-width
+                single-line
+                type="text"
+              />
+            </v-list-item-content>
+          </v-list-item>
+          <v-divider inset></v-divider>            
+          <v-list-item @click="">
+            <v-list-item-action>
+              <v-icon>date_range</v-icon>
+            </v-list-item-action>
+
+            
+              
+                  <v-list-item-content>
+              <v-row >
+                <v-col cols="6">
+                <v-text-field 
+                placeholder="시작일"
+                v-model="items.startDate"
+                v-on="on"
+              />
+            </v-col>
+
+
+            <v-col cols="6">
+
+              <v-text-field 
+                placeholder="종료일"
+                v-model="items.endDate"
+                v-on="on"
+              />
+            </v-col>
+                     
+            </v-row>
+
+            </v-list-item-content>
+          </v-list-item>
+          <v-divider inset></v-divider>            
+          <v-list-item @click="">
+            <v-list-item-action>
+              <v-icon>system_update_alt</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content align="center">
+
+          
+
+            </v-list-item-content>
+          </v-list-item>
+        -->
+        </v-list>
+      </v-card>
+    </v-col>
+  </v-row>
+</template>
+</template>
+<script>
+  import ViewParts from './ViewParts.vue'
+  import axios from 'axios'
+  export default{
+    components:{
+      ViewParts,
+    },
+    data(){
+      return {
+        items: {
+          title: '테스트 제목'
+        }
+      }
+    },
+    mounted(){
+
+    },
+    methods: {
+    },
+  }
+</script>
