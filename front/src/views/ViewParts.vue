@@ -78,6 +78,7 @@
 	import Vue from 'vue'
   export default {
   	props:{
+      idx_sep: undefined,
     sep: undefined,
   	},
     data: () => ({
@@ -123,12 +124,12 @@
       ],
     }),
     created(){
-      console.log('idx_sep::::', idx_sep)
+      console.log('idx_sep::::', this.idx_sep)
       this.setItems(this.idx_sep)
     	this.title = this.titles[this.sep]
     	this.$store.state.bus.$on('setTitle', data => {		
     	this.title = this.titles[data.sep]
-      console.log('receive setTitle idx_sep::::', idx_sep)
+      console.log('receive setTitle idx_sep::::', data.idx_sep)
       this.setItems(data.idx_sep)
     	})
     },
