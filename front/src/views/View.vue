@@ -54,6 +54,7 @@
 		},
     mounted(){
       this.cur = 'work'
+      this.idx_cur = 0
     },
     methods: {
       setCur(idx){
