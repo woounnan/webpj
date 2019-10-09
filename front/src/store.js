@@ -45,38 +45,18 @@ export default new Vuex.Store({
       room_num: 5,
       works: {
         list_keys : [], //date를 push해서 등록되잇는 work를 확인
-        toWork: [{
+        schemaWork: [{
           to: [],
           convs: undefined,
           date: String, //primary key
           due: String, //due date
           title: String, 
           contents: String,
-        }], //요청작업
-        fromWork:  [{
-          to: [],
-          convs: undefined,
-          date: String,
-          due: String,
-          title: String,
-          contents: String,
-        }], //받은작업
-        toNotice:  [{
-          to: [],
-          convs: undefined,
-          date: String,
-          due: String,
-          title: String,
-          contents: String,
-        }], //보낸알림
-        fromNotice: [{
-          to: [],
-          convs: undefined,
-          date: String,
-          due: String,
-          title: String,
-          contents: String,
-        }], //받은알림
+        }], 
+        toWork: [], //요청작업
+        fromWork:  [], //받은작업
+        toNotice:  [], //보낸알림
+        fromNotice: [], //받은알림
       }, //array of convs
     },
     companys: [
