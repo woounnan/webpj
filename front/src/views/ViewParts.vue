@@ -35,7 +35,17 @@
 	          <v-list-item :key="item.title">
 	            <template v-slot:default="{ active, toggle }">
 	              <v-list-item-content>
-	                <v-list-item-title v-text="item.title"></v-list-item-title>
+
+	                <v-list-item-title>
+
+                 <v-chip
+                  class="ma-2"
+                  color="primary"
+                  v-for="one in item.to"
+                >
+                  {{one}}
+                </v-chip>
+                </v-list-item-title>
   	                <v-list-item-subtitle class="text--primary" >test</v-list-item-subtitle>
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
@@ -134,9 +144,6 @@
     	})
     },
     methods: {
-      setWork(){
-
-      },
       setItems(idx){
         console.log('call setItems:::')
         switch(idx){
