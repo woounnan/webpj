@@ -35,6 +35,7 @@
               <v-dialog
                 v-model="viewWork"
                 class="overflow-y-auto"
+                fullscreen
                 hide-overlay
                 transition="dialog-bottom-transition"
               >
