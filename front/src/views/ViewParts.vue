@@ -207,7 +207,7 @@
     },
     methods: {
       sendWork(works){
-        console.log('call sendWork::::', idx)
+        console.log('call sendWork::::', works)
         this.thisWork = works
         //this.$store.state.bus.$emit('sendWork', idx)
       },
