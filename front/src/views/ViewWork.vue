@@ -68,7 +68,7 @@
             </v-col>
             <v-col cols="2">
             <v-list-item-action>
-              <v-icon>date_range</v-icon>
+              <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
           </v-col>
             <v-col cols="5">
@@ -82,14 +82,6 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
-          <v-list-item @click="">
-            <v-list-item-action>
-              <v-icon>system_update_alt</v-icon>
-            </v-list-item-action>
-            <v-list-item-content align="center">
-
-            </v-list-item-content>
-          </v-list-item>
         </v-list>
       </v-card>
     </v-col>
