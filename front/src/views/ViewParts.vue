@@ -59,6 +59,7 @@
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
 
+                  <v-btn>
 	                <v-icon
                     @click=""
 	                  v-if="!active"
@@ -73,6 +74,7 @@
 	                >
 	                  star
 	                </v-icon>
+                </v-btn>
 	              </v-list-item-action>
 	          </template> 
 	          </v-list-item>
