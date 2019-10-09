@@ -5,8 +5,6 @@ import io from 'socket.io-client'
 Vue.use(Vuex)
 var list_keys = []
 var regWork = (works, cv, to) => {
-  console.log('works::::', works)
-  console.log('cv::::', cv)
   if(list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
@@ -147,9 +145,10 @@ export default new Vuex.Store({
                 }
 
               }
-
-              console.log('잘 등록되었나?::::', state.user.works)
             })
+
+
+            console.log('잘 등록되었나?::::', state.user.works)
           })
         }) 
         .catch(e=>{
