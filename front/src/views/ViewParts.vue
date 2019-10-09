@@ -34,7 +34,11 @@
 	            <template v-slot:default="{ active, toggle }">
               <v-dialog
                 v-model="viewWork"
-                class="overflow-y-auto" 
+                class="overflow-y-auto"
+                fullscreen
+                hide-overlay
+                transition="dialog-bottom-transition"
+                scrollable
               >
               <template 
                 #activator="{ on: dialog}"
