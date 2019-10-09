@@ -60,6 +60,7 @@
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
 
 	                <v-icon
+                    @click=""
 	                  v-if="!active"
 	                  color="grey lighten-1"
 	                >
