@@ -216,7 +216,7 @@
     },
     methods: {
       setTime(works){
-        console.log('call sepItem::::', works)
+        console.log('@@@@@@@call sepItem::::', works)
         works.forEach(x=>{
           console.log('x:::::', x)
           var sp = x.convs.works.endDate.split['-']
