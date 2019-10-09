@@ -218,6 +218,7 @@
       setTime(works){
         console.log('call sepItem::::', works)
         works.forEach(x=>{
+          console.log('x:::::', x)
           var sp = x.convs.works.endDate.split['-']
           console.log('endDate::::', sp)
           var v_y = sp[0]
