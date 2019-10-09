@@ -79,7 +79,7 @@
 	  </v-card>
 
 	</v-col>
-    <v-col cols="6"
+    <v-col cols="6">
       <v-card
         max-width="500"
         class="mx-auto"
