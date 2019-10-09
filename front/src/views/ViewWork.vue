@@ -58,7 +58,6 @@
                 <v-col cols="5">
                 <v-text-field 
                 v-model="items.startDate"
-                v-on="on"
               />
             </v-col>
             <v-col cols="2">
@@ -69,7 +68,6 @@
 
               <v-text-field 
                 v-model="items.endDate"
-                v-on="on"
               />
             </v-col>
                      
