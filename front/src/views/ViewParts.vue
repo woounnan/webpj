@@ -137,6 +137,7 @@
       console.log('idx_sep::::', this.idx_sep)
       this.setItems(this.idx_sep)
     	this.title = this.titles[this.sep]
+      setTimeout(this.test(this.idx_sep),1000)
     	this.$store.state.bus.$on('setTitle', data => {		
     	this.title = this.titles[data.sep]
       console.log('receive setTitle idx_sep::::', data.idx_sep)
@@ -144,6 +145,9 @@
     	})
     },
     methods: {
+      test(num){
+        console.log('test::::' , num)
+      },
       setItems(idx){
         console.log('call setItems:::')
         switch(idx){
