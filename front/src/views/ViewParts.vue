@@ -31,7 +31,7 @@
 	        multiple
 	        active-class="pink--text"
 	      >
-	        <template v-for="(item, index) in items">
+	        <template v-for="(item, index) in goings">
 	          <v-list-item :key="item.title">
 	            <template v-slot:default="{ active, toggle }">
 	              <v-list-item-content>
@@ -109,7 +109,7 @@
           multiple
           active-class="pink--text"
         >
-          <template v-for="(item, index) in items">
+          <template v-for="(item, index) in goings">
             <v-list-item :key="item.title">
               <template v-slot:default="{ active, toggle }">
                 <v-list-item-content>
