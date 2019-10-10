@@ -33,12 +33,11 @@
 
               <v-dialog
                 v-model="viewWork"
-                transition="dialog-bottom-transition"
               >
               <template 
-                #activator="{ on: dialog}"
+                v-slot:activator="{ on}"
               >  
-	              <v-list-item-content v-on="dialog" @click="sendWork(item)">
+	              <v-list-item-content v-on="on" @click="sendWork(item)">
 
 	                <v-list-item-title>
 
