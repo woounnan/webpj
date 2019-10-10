@@ -3,7 +3,6 @@
 	<v-row >
 	  <v-col cols="6">
       <v-card
-        max-width="500"
         class="mx-auto"
       >
         <v-app-bar
@@ -88,7 +87,6 @@
   </v-col>
     <v-col cols="6">
       <v-card
-        max-width="500"
         class="mx-auto"
       >
         <v-app-bar
