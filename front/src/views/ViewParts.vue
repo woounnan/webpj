@@ -1,94 +1,91 @@
 <template>
 	<v-container >
 	<v-row >
-	<v-col cols="6">
-		  <v-card
-		    max-width="500"
-		    class="mx-auto"
-		  >
-	     <v-app-bar
-        color="deep-purple accent-4"
-        dense
-        dark
-      >진행중</v-app-bar>
-	      <div class="flex-grow-1"></div>
+	  <v-col cols="6">
+      <v-card
+        max-width="500"
+        class="mx-auto"
+      >
+        <v-app-bar
+      color="deep-purple accent-4"
+      dense
+      dark
+    >진행중</v-app-bar>
+        <div class="flex-grow-1"></div>
 
-	      <v-btn icon>
-	        <v-icon>mdi-magnify</v-icon>
-	      </v-btn>
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
 
-	      <v-btn icon>
-	        <v-icon>mdi-checkbox-marked-circle</v-icon>
-	      </v-btn>
-	    </v-toolbar>
+        <v-btn icon>
+          <v-icon>mdi-checkbox-marked-circle</v-icon>
+        </v-btn>
+      </v-toolbar>
 
-	    <v-list 
-          two-line 
-          class="overflow-y-auto"  
-          style="max-height: 500px" 
-        >
-	        <template v-for="(item, index) in goings">
-	          <v-list-item :key="item.title">
-             
+      <v-dialog v-model="dialog" width="600px">
+        <template v-slot:activator="{ on:dial }">
+      <v-list 
+          two-line
+          style="max-height: 500px"
+          class="overflow-y-auto">
+          <div v-for="(item, index) in goings">
+            <v-list-item :key="item.title">
+              <template v-slot:default="{ active, toggle }">
 
-              <v-dialog
-                v-model="viewWork"
-                transition="dialog-bottom-transition"
-              >
-              <template 
-                v-slot:activator="{ on}"
-              >  
-	              <v-list-item-content v-on="on" @click="sendWork(item)">
+                <v-list-item-content v-on="dial"  @click="sendWork(item)">
 
-	                <v-list-item-title>
+                  <v-list-item-title>
 
                  <v-chip
                   class="ma-2"
                   color="primary"
-                  v-for="one in item.to"
+                  v-for="(one, idx) in item.to.slice(0,3)"
                 >
                   {{one}}
                 </v-chip>
+
+                  <v-icon
+                    v-if="item.to.length>3">more_horiz</v-icon>
+
                 </v-list-item-title>
-  	                <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
-	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
-	              </v-list-item-content>
-              </template>
-              <v-row justify="center">
-                <v-col cols="12">
-             <ViewWork :works="thisWork"/> 
-            </v-col>
-            </v-row>
-            </v-dialog>
-	              <v-list-item-action>
-	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
-	                <v-icon
-                    @click=""
+                    <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
+                  <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
+                </v-list-item-content>
 
+                <v-list-item-action>
+                  <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
+                  <v-icon
                     v-if="!active"
-	                  color="grey lighten-1"
-	                >
-	                  star_border
-	                </v-icon>
+                    color="grey lighten-1"
+                  >
+                    star_border
+                  </v-icon>
 
-	                <v-icon
-	                  v-else
-	                  color="yellow"
-	                >
-	                  star
-	                </v-icon>
-	              </v-list-item-action>
-	          </v-list-item>
+                  <v-icon
+                    v-else
+                    color="yellow"
+                  >
+                    star
+                  </v-icon>
+                </v-list-item-action>
 
-	          <v-divider
-	            v-if="index + 1 < goings.length"
-	            :key="index"
-	          ></v-divider>
-	        </template>
-	    </v-list>
-	  </v-card>
+      </template>
+            </v-list-item>
+       
 
-	</v-col>
+            <v-divider
+              v-if="index + 1 < goings.length"
+              :key="index"
+            ></v-divider>
+          </div>
+      </v-list>
+          </template> 
+           <ViewWork :works="thisWork"/> 
+
+    </v-dialog>
+    </v-card>
+
+  </v-col>
     <v-col cols="6">
       <v-card
         max-width="500"
