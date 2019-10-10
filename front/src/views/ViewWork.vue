@@ -102,27 +102,34 @@
           v-else
           :key="item.title"
         >
+        <v-row>
+          <v-col>
           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
-
+        </v-col>
           <v-list-item-content>
             <v-list-item-title v-html="item.title"></v-list-item-title>
             <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
           </v-list-item-content>
 
-          <v-list-item-content>
+          <v-col>
             <v-btn depressed small color="error">미제출</v-btn>
-       </v-list-item-content>
-          <v-list-item-content>
+          </v-col>
+
+          <v-col>
             <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
-          </v-list-item-content>
+          </v-col>
+
+          <v-col>
             <v-btn class="mx-2" fab dark small color="indigo">
               <v-icon dark>done</v-icon>
             </v-btn>
             <v-btn class="mx-2" fab dark small color="pink">
               <v-icon dark>close</v-icon>
             </v-btn>
+          </v-col>
+        </v-row>
         </v-list-item>
       </template>
     </v-list>              
