@@ -93,7 +93,7 @@
           </v-list-item>
         </template>
       <v-card>
-        <ViewWork />
+        <ViewWork :works="thisWork" />
         <!-- <Chat :title="cur"/> -->
       </v-card>
       </v-dialog>
@@ -115,6 +115,7 @@
     },
     data: () => {
       return {
+        thisWork: undefined,
         menu: null,
         dialog: null,
         showMenu: false,
@@ -125,6 +126,9 @@
         cur: '',
         dial: false
       }
+    },
+    mounted() {
+      this.thisWork = this.$store.getters.getUser.works.toWork
     },
     methods: {
       setThis:function(idx){
