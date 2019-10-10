@@ -2,7 +2,7 @@
 <template>
   <v-row>
     <v-col cols="12" sm="8">
-      <v-card max-width="500px">
+      <v-card>
         <v-card-title class="cyan darken-1">
 
             <span class="headline white--text">상세 보기</span>
