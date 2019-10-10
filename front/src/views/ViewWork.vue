@@ -1,8 +1,8 @@
 
 <template>
-  <v-row >
+  <v-row justify="center">
     <v-col cols="12" sm="8">
-      <v-card >
+      <v-card max-width="500px">
         <v-card-title class="cyan darken-1">
 
             <span class="headline white--text">상세 보기</span>
@@ -79,8 +79,9 @@
             </v-col>
             </v-row>
 
-            </v-list-item-content>  
-            </v-list-item>    
+            </v-list-item-content>
+          </v-list-item>
+
         </v-list>
         <v-list three-line
                   class="overflow-y-auto"  
