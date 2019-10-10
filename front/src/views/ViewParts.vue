@@ -31,7 +31,6 @@
 	          <v-list-item :key="item.title">
              
 
-	            <template v-slot:default="{ active, toggle }">
               <v-dialog
                 v-model="viewWork"
                 transition="dialog-bottom-transition"
@@ -74,7 +73,6 @@
 	                  star
 	                </v-icon>
 	              </v-list-item-action>
-	          </template> 
 	          </v-list-item>
 
 	          <v-divider
