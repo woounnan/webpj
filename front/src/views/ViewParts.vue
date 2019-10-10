@@ -115,7 +115,7 @@
           style="max-height: 500px"
           class="overflow-y-auto">
           <template v-for="(item, index) in goings">
-            <v-list-item @click="openViewWork" :key="item.title">
+            <v-list-item :key="item.title">
               <template v-slot:default="{ active, toggle }">
                 <v-list-item-content>
 
