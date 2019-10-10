@@ -54,8 +54,8 @@
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
               </template>
-              <!--<ViewWork :works="thisWork"/>-->
-              
+              <ViewWork :works="thisWork"/>
+
             </v-dialog>
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
@@ -230,7 +230,7 @@
           var end = new Date(v_y, v_m, v_d); 
           console.log((second.getTime())/1000); 
           diff= second - first ;
-          one_hour= 60*60 ;
+          var one_hour= 60*60 ;
           console.log('diff hours::::',diff/one_hour)
           works[i].due = diff/one_hour
           

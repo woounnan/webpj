@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-list>
-          <v-list-item @click="">
+          <v-list-item>
             <v-list-item-action>
               <v-icon>title</v-icon>
             </v-list-item-action>
@@ -34,7 +34,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
-          <v-list-item @click="">
+          <v-list-item>
             <v-list-item-action>
               <v-icon>text_fields</v-icon>
             </v-list-item-action>
@@ -51,7 +51,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider inset></v-divider>            
-          <v-list-item @click="">
+          <v-list-item>
             <v-list-item-action>
               <v-icon>date_range</v-icon>
             </v-list-item-action>
@@ -102,7 +102,6 @@
         <v-list-item
           v-else
           :key="item.title"
-          @click=""
         >
           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
@@ -121,18 +120,14 @@
   </v-row>
 </template>
 <script>
-  import ViewParts from './ViewParts.vue'
-  import axios from 'axios'
   export default{
     components:{
-      ViewParts,
     },
     props:{
       works: undefined
     },
     data(){
       return {
-        items: {},
         items: [
         { header: '대상' },
         {

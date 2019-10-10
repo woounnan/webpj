@@ -48,7 +48,7 @@
       </v-list-item>
       <v-divider></v-divider>
 
-        <div v-for="(div, idx) in $store.state.user.company_division">
+        <div v-for="(div) in $store.state.user.company_division">
           <v-subheader>{{div}}</v-subheader>
           <div
             v-for="(other, idx) in $store.state.others"
@@ -94,7 +94,7 @@
         </template>
       <v-card>
         <ViewWork :works="thisWork" />
-        <!-- <Chat :title="cur"/> -->
+        <Chat :title="cur"/>
       </v-card>
       </v-dialog>
       </v-list>
@@ -106,16 +106,13 @@
 
 <script>
   import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
-  import ViewWork from './ViewWork.vue'
   export default {
     
     components: {
       Chat,
-      ViewWork,
     },
     data: () => {
       return {
-        thisWork: undefined,
         menu: null,
         dialog: null,
         showMenu: false,
@@ -128,7 +125,6 @@
       }
     },
     mounted() {
-      this.thisWork = this.$store.getters.getUser.works.toWork
     },
     methods: {
       setThis:function(idx){
