@@ -21,7 +21,7 @@
         </v-btn>
       </v-toolbar>
 
-      <v-dialog v-model="viewWork" max-width="800px" width="800px"  justify="center">
+      <v-dialog v-model="viewWork" max-width="900px" width="900px"  justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
@@ -105,7 +105,7 @@
         </v-btn>
       </v-toolbar>
 
-      <v-dialog v-model="viewWork" max-width="800px" width="800px"  justify="center">
+      <v-dialog v-model="viewWork" max-width="900px" width="900px"  justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
