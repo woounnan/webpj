@@ -56,7 +56,7 @@
               </template>
               <v-row justify="center">
                 <v-col cols="12">
-              <ViewWork :works="thisWork"/>
+             <!-- <ViewWork :works="thisWork"/> -->
             </v-col>
             </v-row>
             </v-dialog>
