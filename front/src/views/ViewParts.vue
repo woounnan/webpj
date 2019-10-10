@@ -34,7 +34,6 @@
 	            <template v-slot:default="{ active, toggle }">
               <v-dialog
                 v-model="viewWork"
-                class="overflow-y-auto"
                 transition="dialog-bottom-transition"
               >
               <template 
