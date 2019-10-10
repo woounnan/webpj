@@ -56,7 +56,7 @@
               </template>
               <v-row justify="center">
                 <v-col cols="12">
-             <!-- <ViewWork :works="thisWork"/> -->
+             <ViewWork :works="thisWork"/> 
             </v-col>
             </v-row>
             </v-dialog>
@@ -149,8 +149,6 @@
                     star
                   </v-icon>
                 </v-list-item-action>
-
-            <modals-container hide-backdrop />
             </template> 
             </v-list-item>
 
@@ -176,7 +174,6 @@
       ViewWork
     },
     props:{
-      works: undefined,
       idx_work: undefined,
       idx_sep: undefined,
   	},
@@ -208,21 +205,6 @@
     	})
     },
     methods: {
-      openViewWork(){
-        
-        this.$modal.show(ViewWork,
-          {
-            modal : this.$modal,
-            works: this.thisWork
-          },
-          {
-            name: 'dynamic-modal',
-            width: '100%',
-            height: '100%',
-            draggable: true
-          }
-        )
-      },
       sendWork(works){
         console.log('call sendWork::::', works)
         this.thisWork = works
