@@ -138,6 +138,7 @@
     components:{
     },
     props:{
+      idx_sep: 0,
       works: undefined,
       test: undefined
     },
@@ -182,8 +183,8 @@
     },
     methods: {
       closeWindow(){
-        console.log('call closeWindow in ViewWork.vue::::')
-        this.$store.state.bus.$emit('closeViewWork')
+        console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
+        this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       }
     },
   }

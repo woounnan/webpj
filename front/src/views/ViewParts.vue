@@ -105,7 +105,7 @@
         </v-btn>
       </v-toolbar>
 
-      <v-dialog v-model="viewWork" width="1000px"  justify="center">
+      <v-dialog v-model="viewWork2" width="1000px"  justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
@@ -163,7 +163,7 @@
           </div>
       </v-list>
           </template> 
-           <ViewWork :works="thisWork"/> 
+           <ViewWork :works="thisWork" :idx_sep=2/> 
 
     </v-dialog>
     </v-card>
@@ -189,6 +189,7 @@
       active: undefined,
       thisWork: undefined,
       viewWork: false,
+      viewWork2: false,
       selected: [2],
       goings: [
       /*
@@ -202,8 +203,11 @@
       ],
     }),
     created(){
-      this.$store.state.bus.$on('closeViewWork', ()=>{
-        this.viewWork = false
+      this.$store.state.bus.$on('closeViewWork', (idx)=>{
+        if(idx == 1)
+          this.viewWork = false
+        else
+          this.viewWork2 = false
       })
       console.log('idx_sep::::', this.idx_sep)
       this.setItems(this.idx_sep)
