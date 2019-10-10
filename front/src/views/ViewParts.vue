@@ -163,8 +163,9 @@
             ></v-divider>
           </div>
       </v-list>
+          </template> 
            <ViewWork :works="thisWork"/> 
-    </template> 
+
     </v-dialog>
     </v-card>
 
