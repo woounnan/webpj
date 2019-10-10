@@ -79,7 +79,8 @@
             </v-col>
             </v-row>
 
-            </v-list-item-content>      
+            </v-list-item-content>  
+            </v-list-item>    
         </v-list>
         <v-list three-line
                   class="overflow-y-auto"  
