@@ -2,7 +2,7 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="8">
-      <v-card >
+      <v-card max-width="300px">
         <v-card-title class="cyan darken-1">
 
             <span class="headline white--text">상세 보기</span>
@@ -19,7 +19,7 @@
           </v-btn>
         </v-card-title>
 
-        <v-list max-height="300px" max-width="200px">
+        <v-list>
           <v-list-item @click="">
             <v-list-item-action>
               <v-icon>title</v-icon>
