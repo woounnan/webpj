@@ -83,6 +83,8 @@
           </v-list-item>
           <v-divider inset></v-divider>
         <v-list three-line
+                  class="overflow-y-auto"  
+          style="max-height: 300px" 
         >
       <template v-for="(item, index) in items">
         <v-subheader
