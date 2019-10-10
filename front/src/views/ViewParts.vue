@@ -64,6 +64,8 @@
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
 	                <v-icon
                     @click=""
+                    
+                    v-if="!active"
 	                  color="grey lighten-1"
 	                >
 	                  star_border
@@ -209,6 +211,7 @@
         this.$modal.show(ViewWork,
           {
             modal : this.$modal,
+
             works: this.thisWork
           },
           {
