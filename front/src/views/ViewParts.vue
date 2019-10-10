@@ -4,7 +4,7 @@
 	   <v-col cols="6">
       <v-card
         class="mx-auto"
-        @click="setThis(2)"
+        @click="setThis(1)"
       >
         <v-app-bar
       color="deep-purple accent-4"
