@@ -102,8 +102,7 @@
           v-else
           :key="item.title"
         >
-        <v-icon>reply</v-icon>
-          <v-list-item-avatar align="center" justify="center">
+          <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
 
@@ -113,6 +112,9 @@
           </v-list-item-content>
 
           <v-btn depressed small color="error">미제출</v-btn>
+          <v-list-item-content>
+            <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
+          </v-list-item-content>
         </v-list-item>
       </template>
     </v-list>              
