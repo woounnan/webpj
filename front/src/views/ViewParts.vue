@@ -127,7 +127,7 @@
                  <v-chip
                   class="ma-2"
                   color="primary"
-                  v-for="(one, idx) in item.to.slice(0,2)"
+                  v-for="(one, idx) in item.to.slice(0,3)"
                 >
                   {{one}}
                   <v-icon
