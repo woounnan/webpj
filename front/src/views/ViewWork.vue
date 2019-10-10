@@ -123,9 +123,9 @@
   export default{
     components:{
     },
-    props:[
+    props:{
       works: undefined
-    ],
+    },
     data(){
       return {
         items: [
