@@ -110,6 +110,8 @@
         </v-btn>
       </v-toolbar>
 
+      <v-dialog v-model="dialog" width="600px">
+        <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
           style="max-height: 500px"
@@ -117,8 +119,7 @@
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
               <template v-slot:default="{ active, toggle }">
-        <v-dialog v-model="dialog" width="600px">
-         <template v-slot:activator="{ on:dial }">
+
                 <v-list-item-content v-on="dial"  @click="sendWork(item)">
 
                   <v-list-item-title>
@@ -153,11 +154,8 @@
                 </v-list-item-action>
 
       </template>
-       
-             <ViewWork :works="thisWork"/> 
-    </v-dialog>
-            </template> 
             </v-list-item>
+       
 
             <v-divider
               v-if="index + 1 < goings.length"
@@ -165,6 +163,9 @@
             ></v-divider>
           </div>
       </v-list>
+           <ViewWork :works="thisWork"/> 
+    </template> 
+    </v-dialog>
     </v-card>
 
   </v-col>
