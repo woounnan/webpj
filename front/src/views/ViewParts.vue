@@ -64,7 +64,7 @@
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
 	                <v-icon
                     @click=""
-                    
+
                     v-if="!active"
 	                  color="grey lighten-1"
 	                >
@@ -175,7 +175,7 @@
     components:{
       ViewWork
     },
-  	props:{
+    props:{
       idx_work: undefined,
       idx_sep: undefined,
   	},
@@ -202,7 +202,7 @@
       this.setItems(this.idx_sep)
       setInterval(this.setItems(this.idx_sep),1000*60)
     	this.$store.state.bus.$on('setList', data => {		
-      console.log('receive setList idx_sep::::', data.idx_sep)
+        console.log('receive setList idx_sep::::', data.idx_sep)
       this.setItems(data.idx_sep)
     	})
     },
@@ -243,8 +243,8 @@
           var v_d = sp[2]
           var cur = new Date();
           var end = new Date(v_y, v_m, v_d); 
-          console.log((second.getTime())/1000); 
-          diff= second - first ;
+          console.log((end.getTime())/1000); 
+          var diff= end - cur ;
           var one_hour= 60*60 ;
           console.log('diff hours::::',diff/one_hour)
           works[i].due = diff/one_hour
