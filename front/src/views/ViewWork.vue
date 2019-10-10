@@ -2,8 +2,7 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="8">
-      <v-card 
-          class="overflow-y-auto">
+      <v-card >
         <v-card-title class="cyan darken-1">
 
             <span class="headline white--text">상세 보기</span>
