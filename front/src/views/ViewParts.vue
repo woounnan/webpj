@@ -127,9 +127,11 @@
                  <v-chip
                   class="ma-2"
                   color="primary"
-                  v-for="one in item.to"
+                  v-for="(one, idx) in item.to.slice(0,2)"
                 >
                   {{one}}
+                  <v-icon
+                    v-if="idx==2">more_horiz</v-icon>
                 </v-chip>
                 </v-list-item-title>
                     <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
