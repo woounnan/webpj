@@ -124,7 +124,7 @@
     components:{
     },
     props:[
-      works
+      works: undefined
     ],
     data(){
       return {
