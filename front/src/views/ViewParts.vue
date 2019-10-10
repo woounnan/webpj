@@ -148,7 +148,7 @@
                     star
                   </v-icon>
                 </v-list-item-action>
-          
+
             <modals-container hide-backdrop />
             </template> 
             </v-list-item>
@@ -209,8 +209,9 @@
       openViewWork(){
         this.$modal.show(ViewWork,
           {
-            //bus : this.ps.bus,
-            modal : this.$modal
+            bus : this.ps.bus,
+            modal : this.$modal,
+            works: this.thisWork
           },
           {
             name: 'dynamic-modal',
