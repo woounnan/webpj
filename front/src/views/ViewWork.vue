@@ -117,14 +117,12 @@
           <v-list-item-content>
             <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
           </v-list-item-content>
-          <v-list-item-content>
             <v-btn class="mx-2" fab dark small color="indigo">
               <v-icon dark>done</v-icon>
             </v-btn>
             <v-btn class="mx-2" fab dark small color="pink">
               <v-icon dark>close</v-icon>
             </v-btn>
-          </v-list-item-content>
         </v-list-item>
       </template>
     </v-list>              
