@@ -54,8 +54,9 @@
 	                <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
 	              </v-list-item-content>
               </template>
+              <v-row justify="center">
               <ViewWork :works="thisWork"/>
-
+            </v-row>
             </v-dialog>
 	              <v-list-item-action>
 	                <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
