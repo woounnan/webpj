@@ -115,6 +115,9 @@
             <v-btn depressed small color="error">미제출</v-btn>
        </v-list-item-content>
           <v-list-item-content>
+            <v-icon>insert_drive_file</v-icon>
+          </v-list-item-content>
+          <v-list-item-content>
             <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
           </v-list-item-content>
             <v-btn class="mx-2" fab dark small color="indigo">
