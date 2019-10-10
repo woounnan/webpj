@@ -81,10 +81,9 @@
 
             </v-list-item-content>
           </v-list-item>
-
-        </v-list>
+          <v-divider inset></v-divider>
         <v-list three-line
-                  class="overflow-y-auto"  
+          class="overflow-y-auto"  
           style="max-height: 200px" 
         >
       <template v-for="(item, index) in items">
@@ -115,7 +114,8 @@
           </v-list-item-content>
         </v-list-item>
       </template>
-    </v-list>      
+    </v-list>              
+        </v-list>
       </v-card>
     </v-col>
   </v-row>
