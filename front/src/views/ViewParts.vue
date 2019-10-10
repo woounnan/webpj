@@ -85,7 +85,7 @@
     </v-card>
 
   </v-col>
-    <v-col cols="6">
+  <v-col cols="6">
       <v-card
         class="mx-auto"
       >
@@ -93,7 +93,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >지나간</v-app-bar>
+    >진행중</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
@@ -105,7 +105,7 @@
         </v-btn>
       </v-toolbar>
 
-      <v-dialog v-model="dialog">
+      <v-dialog v-model="dialog" max-width="800px" width="800px"  justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
