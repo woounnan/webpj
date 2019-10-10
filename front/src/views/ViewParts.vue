@@ -209,7 +209,6 @@
       openViewWork(){
         this.$modal.show(ViewWork,
           {
-            bus : this.ps.bus,
             modal : this.$modal,
             works: this.thisWork
           },
