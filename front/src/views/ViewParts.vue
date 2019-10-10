@@ -114,7 +114,7 @@
           two-line
           style="max-height: 500px"
           class="overflow-y-auto">
-          <template v-for="(item, index) in goings">
+          <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
               <template v-slot:default="{ active, toggle }">
         <v-dialog v-model="dialog" width="600px">
@@ -163,7 +163,7 @@
               v-if="index + 1 < goings.length"
               :key="index"
             ></v-divider>
-          </template>
+          </div>
       </v-list>
     </v-card>
 
@@ -185,6 +185,7 @@
       idx_sep: undefined,
   	},
     data: () => ({
+      active: undefined,
       thisWork: undefined,
       viewWork: false,
       selected: [2],
