@@ -119,7 +119,7 @@
               <template v-slot:default="{ active, toggle }">
         <v-dialog v-model="dialog" width="600px">
          <template v-slot:activator="{ on:dial }">
-                <v-list-item-content v-on="dial">
+                <v-list-item-content v-on="dial"  @click="sendWork(item)">
 
                   <v-list-item-title>
 
