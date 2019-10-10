@@ -111,7 +111,9 @@
             <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
           </v-list-item-content>
 
-          <v-btn depressed small color="error">미제출</v-btn>
+          <v-list-action>
+            <v-btn depressed small color="error">미제출</v-btn>
+         </v-list-action>
           <v-list-item-content>
             <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
           </v-list-item-content>
