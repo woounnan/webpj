@@ -21,7 +21,7 @@
         </v-btn>
       </v-toolbar>
 
-      <v-dialog v-model="dialog" width="500px" align="center" justify="center">
+      <v-dialog v-model="dialog" width="800px"  justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
