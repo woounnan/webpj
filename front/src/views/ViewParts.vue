@@ -1,9 +1,10 @@
 <template>
 	<v-container >
 	<v-row >
-	  <v-col cols="6">
+	   <v-col cols="6">
       <v-card
         class="mx-auto"
+        @click="setThis(2)"
       >
         <v-app-bar
       color="deep-purple accent-4"
@@ -21,7 +22,7 @@
         </v-btn>
       </v-toolbar>
 
-      <v-dialog v-model="viewWork" max-width="900px" width="900px"  justify="center">
+      <v-dialog v-model="viewWork" width="1000px"  justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
@@ -79,12 +80,13 @@
           </div>
       </v-list>
           </template> 
-           <ViewWork :works="thisWork"/> 
+           <ViewWork :works="thisWork" :idx_sep="thisWindow"/> 
 
     </v-dialog>
     </v-card>
 
   </v-col>
+
   <v-col cols="6">
       <v-card
         class="mx-auto"
@@ -94,7 +96,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >진행중</v-app-bar>
+    >지나간</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
