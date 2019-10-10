@@ -111,6 +111,8 @@
             <v-list-item-title v-html="item.title"></v-list-item-title>
             <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
           </v-list-item-content>
+
+          <v-btn depressed small color="error">미제출</v-btn>
         </v-list-item>
       </template>
     </v-list>              
