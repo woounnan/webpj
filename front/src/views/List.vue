@@ -93,7 +93,8 @@
           </v-list-item>
         </template>
       <v-card>
-        <Chat :title="cur"/>
+        <ViewWork />
+        <!-- <Chat :title="cur"/> -->
       </v-card>
       </v-dialog>
       </v-list>
@@ -105,10 +106,12 @@
 
 <script>
   import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
+  import ViewWork from './ViewWork.vue'
   export default {
     
     components: {
-      Chat
+      Chat,
+      ViewWork,
     },
     data: () => {
       return {
