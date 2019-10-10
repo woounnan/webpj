@@ -124,7 +124,8 @@
     components:{
     },
     props:{
-      works: undefined
+      works: undefined,
+      test: undefined
     },
     data(){
       return {
