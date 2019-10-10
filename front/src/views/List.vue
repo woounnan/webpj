@@ -93,7 +93,6 @@
           </v-list-item>
         </template>
       <v-card>
-        <ViewWork :works="thisWork" />
         <Chat :title="cur"/>
       </v-card>
       </v-dialog>

@@ -43,7 +43,6 @@
                 <v-textarea 
                 v-model="works.contents"
                 counter
-                full-width
                 single-line
                 type="text"
                 readonly
