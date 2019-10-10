@@ -19,7 +19,7 @@
           </v-btn>
         </v-card-title>
 
-        <v-list>
+        <v-list max-height="300px" max-width="200px">
           <v-list-item @click="">
             <v-list-item-action>
               <v-icon>title</v-icon>
@@ -79,9 +79,8 @@
             </v-col>
             </v-row>
 
-            </v-list-item-content>
-          </v-list-item>
-          <v-divider inset></v-divider>
+            </v-list-item-content>      
+        </v-list>
         <v-list three-line
                   class="overflow-y-auto"  
           style="max-height: 200px" 
@@ -114,8 +113,7 @@
           </v-list-item-content>
         </v-list-item>
       </template>
-    </v-list>              
-        </v-list>
+    </v-list>      
       </v-card>
     </v-col>
   </v-row>
