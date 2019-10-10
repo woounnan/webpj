@@ -169,13 +169,14 @@
 
 </template>
 <script>
-  //import ViewWork from './ViewWork.vue'
+  import ViewWork from './ViewWork.vue'
 	import Vue from 'vue'
   export default {
     components:{
-      //ViewWork
+      ViewWork
     },
     props:{
+      works: undefined,
       idx_work: undefined,
       idx_sep: undefined,
   	},
@@ -208,11 +209,10 @@
     },
     methods: {
       openViewWork(){
-        /*
+        
         this.$modal.show(ViewWork,
           {
             modal : this.$modal,
-
             works: this.thisWork
           },
           {
@@ -221,7 +221,7 @@
             height: '100%',
             draggable: true
           }
-        )*/
+        )
       },
       sendWork(works){
         console.log('call sendWork::::', works)
