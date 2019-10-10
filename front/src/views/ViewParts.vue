@@ -113,13 +113,8 @@
           two-line
           style="max-height: 500px"
           class="overflow-y-auto">
-        <v-list-item-group
-          v-model="selected"
-          multiple
-          active-class="pink--text"
-        >
           <template v-for="(item, index) in goings">
-            <v-list-item :key="item.title">
+            <v-list-item @click="openViewWork" :key="item.title">
               <template v-slot:default="{ active, toggle }">
                 <v-list-item-content>
 
@@ -153,6 +148,8 @@
                     star
                   </v-icon>
                 </v-list-item-action>
+          
+            <modals-container hide-backdrop />
             </template> 
             </v-list-item>
 
@@ -161,7 +158,6 @@
               :key="index"
             ></v-divider>
           </template>
-        </v-list-item-group>
       </v-list>
     </v-card>
 
@@ -210,6 +206,20 @@
     	})
     },
     methods: {
+      openViewWork(){
+        this.$modal.show(ViewWork,
+          {
+            //bus : this.ps.bus,
+            modal : this.$modal
+          },
+          {
+            name: 'dynamic-modal',
+            width: '100%',
+            height: '100%',
+            draggable: true
+          }
+        )
+      },
       sendWork(works){
         console.log('call sendWork::::', works)
         this.thisWork = works
