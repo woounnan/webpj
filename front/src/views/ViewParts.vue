@@ -124,19 +124,17 @@
 
                   <v-list-item-title>
 
-                    <div
-                  v-for="(one, idx) in item.to.slice(0,3)"
-                    >
                  <v-chip
                   class="ma-2"
                   color="primary"
+                  v-for="(one, idx) in item.to.slice(0,3)"
                 >
                   {{one}}
                 </v-chip>
 
                   <v-icon
                     v-if="item.to.length>3">more_horiz</v-icon>
-              </div>
+
                 </v-list-item-title>
                     <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
                   <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
