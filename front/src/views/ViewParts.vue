@@ -88,6 +88,7 @@
   <v-col cols="6">
       <v-card
         class="mx-auto"
+        @click="setThis(2)"
       >
         <v-app-bar
       color="deep-purple accent-4"
@@ -163,7 +164,7 @@
           </div>
       </v-list>
           </template> 
-           <ViewWork :works="thisWork" :idx_sep=2/> 
+           <ViewWork :works="thisWork" :idx_sep="thisWindow"/> 
 
     </v-dialog>
     </v-card>
@@ -182,11 +183,11 @@
       ViewWork
     },
     props:{
-      idx_work: undefined,
       idx_sep: undefined,
   	},
     data: () => ({
       active: undefined,
+      thisWindow: undefined,
       thisWork: undefined,
       viewWork: false,
       viewWork2: false,
@@ -218,6 +219,9 @@
     	})
     },
     methods: {
+      setThis(idx){
+        this.thisWindow = idx
+      },
       sendWork(works){
         console.log('call sendWork::::', works)
         this.thisWork = works
