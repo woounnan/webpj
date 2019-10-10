@@ -103,7 +103,7 @@
           :key="item.title"
         >
         <v-icon>reply</v-icon>
-          <v-list-item-avatar>
+          <v-list-item-avatar height="10px">
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
 
