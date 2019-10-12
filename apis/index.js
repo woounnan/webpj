@@ -113,7 +113,6 @@ var saveMsg = function (to, from, newConvs){
 	newConvs.works['favor'] = false
 	console.log('notice:::', newConvs.works.notice)
 	console.log('flag_expired:::', newConvs.works.flag_expired)
-	console.log('by:::', newConvs.works.by)
 	if((newConvs.works.notice != undefined) && (newConvs.works.flag_expired == false)){
 		console.log('this is works that deadline has not yet passed!!!')
 		console.log('새로 works 가 등록되었을 때  flag_expired 값은::::', newConvs.works.flag_expired)
