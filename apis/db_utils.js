@@ -54,9 +54,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
 	var diff = 
     setTimeout((works)=>{
-    	  var sp = works.endDate.split['-']
+    	  var sp = works.endDate.split('-')
           console.log('endDate::::', works.endDate)
-          /*
           var v_y = sp[0]
           var v_m = sp[1]
           var v_d = sp[2]
@@ -65,7 +64,6 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
           diff= end - cur ;
           one_hour_epoch = 60*60*1000 ;  // calculating one epoch
           console.log('diff::::', diff/one_hour_epoch)
-          */
     }, 1000, works)
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
