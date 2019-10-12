@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema({
 			position: String,
 			image: String, //If works exists, then content must be empty.
 			works: {
+				by : String, //sender's id
 				title: String,
 				contents: String,
 				startDate: String,
@@ -27,9 +28,9 @@ const userSchema = new mongoose.Schema({
 				file_s_save: String,
 				file_s_real: String,
 				file_c_save: String,
-				fil_recv_real: String,
-				state_notice: String, //"미확인", "확인"
-				state_work: String, //"미제출", "승인대기", "승인거절", "승인완료"
+				file_c_real: String,
+				state: String, //"미제출", "승인대기", "승인거절", "승인완료"
+				//알림시 "미확인", "확인"
 				notice: Boolean, //true: notice false: work(required to ack)
 				favor: Boolean,
 			}

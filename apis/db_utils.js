@@ -46,8 +46,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		startDate : req.body.startDate,
 		endDate : req.body.endDate,
 		notice : req.body.notice,
-		state_work: req.body.state_work,
-		state_notice: req.body.state_notice,
+		state: req.body.state,
+		by : req.body.id,
 	}
 	if(req.body.flag_uploadFile == 'true'){
 		works['file_s_real'] = req.file.originalfilename

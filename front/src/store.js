@@ -10,7 +10,12 @@ var regWork = (works, cv, to) => {
     //해당 작업은 등록되지 않았으므로 등록처리
     works.push({
       convs : cv,
-      to : [to], //대상,, 보낸: 받은사람 / 받은: 보낸사람
+      to : [{
+        position: to,
+        file_save: works.file_c_save,
+        file_real: works.file_c_real,
+        state: works.state,
+      }], //대상,, 보낸: 받은사람 / 받은: 보낸사람
       date : cv.date,
       contents : cv.works.contents,
       title : cv.works.title,
@@ -49,7 +54,11 @@ export default new Vuex.Store({
       works: {
         list_keys : [], //date를 push해서 등록되잇는 work를 확인
         schemaWork: [{
-          to: [],
+          to: [
+            position: String,
+            file_save: String,
+            file_real: String,
+          ],
           convs: undefined,
           date: String, //primary key
           title: String, 
@@ -121,7 +130,7 @@ export default new Vuex.Store({
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
               if(cv.works.notice === true){
-                if(cv.id === state.user.id){
+                if(cv.works.by === state.user.id){
                   //보낸알림 등록
                   regWork(state.user.works.toNotice, cv, x.with)
                   //state.user.works.toNotice.splice(0, 1)
@@ -133,7 +142,7 @@ export default new Vuex.Store({
 
               }
               else{
-                if(cv.id === state.user.id){
+                if(cv.works.by === state.user.id){
                   //요청작업 등록
                   regWork(state.user.works.toWork, cv, x.with)
                   //state.user.works.toWork.splice(0, 1)

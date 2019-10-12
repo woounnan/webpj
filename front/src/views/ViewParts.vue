@@ -238,10 +238,7 @@
             break
         }
       },
-      computed:{
-          orderedUsers : function(){
-              return _.orderBy(this.users, ['name', 'last_login'], ['desc', 'asc']); 
-          }
+      mySort(){
       }
     },
   }
