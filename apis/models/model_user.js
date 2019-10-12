@@ -31,6 +31,7 @@ const userSchema = new mongoose.Schema({
 				state_notice: String, //"미확인", "확인"
 				state_work: String, //"미제출", "승인대기", "승인거절", "승인완료"
 				notice: Boolean, //true: notice false: work(required to ack)
+				favor: Boolean,
 			}
 		}]
 	}]

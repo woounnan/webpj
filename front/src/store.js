@@ -14,7 +14,9 @@ var regWork = (works, cv, to) => {
       date : cv.date,
       contents : cv.works.contents,
       title : cv.works.title,
+      favor : cv.works.favor,
     })
+    console.log('favor value ? regWork in store.js::::', works.favor)
     list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
@@ -50,9 +52,9 @@ export default new Vuex.Store({
           to: [],
           convs: undefined,
           date: String, //primary key
-          due: Number, //due date
           title: String, 
           contents: String,
+          favor: Boolean,
         }], 
         toWork: [], //요청작업
         fromWork:  [], //받은작업

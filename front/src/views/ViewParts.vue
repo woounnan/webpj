@@ -30,9 +30,8 @@
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
-              <template v-slot:default="{ active, toggle }">
 
-                <v-list-item-content v-on="dial"  @click="sendWork(item)">
+                <v-list-item-content v-on="dial"  @click="setThisWork(item)">
 
                   <v-list-item-title>
 
@@ -55,7 +54,7 @@
                 <v-list-item-action>
                   <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
                   <v-icon
-                    v-if="!active"
+                    v-if="!item.favor"
                     color="grey lighten-1"
                   >
                     star_border
@@ -68,8 +67,6 @@
                     star
                   </v-icon>
                 </v-list-item-action>
-
-      </template>
             </v-list-item>
        
 
@@ -115,7 +112,7 @@
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
-                <v-list-item-content v-on="dial"  @click="sendWork(item)" >
+                <v-list-item-content v-on="dial"  @click="setThisWork(item)" >
 
                   <v-list-item-title>
 
@@ -138,7 +135,7 @@
                 <v-list-item-action>
                   <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
                   <v-icon
-                    v-if="!active"
+                    v-if="!item.favor"
                     color="grey lighten-1"
                   >
                     star_border
@@ -220,28 +217,9 @@
       setThis(idx){
         this.thisWindow = idx
       },
-      sendWork(works){
-        console.log('call sendWork::::', works)
+      setThisWork(works){
+        console.log('call setThisWork::::', works)
         this.thisWork = works
-        //this.$store.state.bus.$emit('sendWork', idx)
-      },
-      nav(idx){
-        console.log('call nav::::', idx)
-      },
-      setTime(works){
-        console.log('@@@@@@@call sepItem::::', works)
-        console.log('왜안돼!!!!!!!!!!!!!!!:::', works.length)
-        for(var i = 0; i< works.length; i++){
-          console.log('x:::::', works[i])
-          
-          var cur = new Date();
-          var end = new Date(works[i].convs.works.endDate); 
-          cur = cur.getTime()
-          end = end.getTime()
-          diff= end - cur ;
-          one_hour_epoch = 60*60*1000 ; 
-          works[i].due = diff/one_hour_epoch - 9 //오전 9시가 기준이라 9 빼야함
-        }
       },
       setItems(idx){
         console.log('call setItems:::')
@@ -259,8 +237,6 @@
             this.goings = this.$store.getters.getUser.works.fromNotice
             break
         }
-        //set due time
-        this.setTime(this.goings)
       }
     },
   }
