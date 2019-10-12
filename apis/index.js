@@ -6,9 +6,9 @@ const User = require('./models/model_user')
 console.log('Here is at index.js in apis')
 
 
-var diffSec = () => {
+var diffSec = (endDate) => {
 	var cur = new Date();
-	var end = new Date(works.endDate); 
+	var end = new Date(endDate); 
 	cur = cur.getTime()
 	end = end.getTime()
 	diff= end - cur;

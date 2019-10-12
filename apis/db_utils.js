@@ -55,6 +55,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	}
 	else
 		console.log('not uploaded files')
+
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })
