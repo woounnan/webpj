@@ -5,10 +5,15 @@ const User = require('./models/model_user')
 
 console.log('Here is at index.js in apis')
 
-const sendMsg = function(data){
 
+var diffSec = () => {
+	var cur = new Date();
+	var end = new Date(works.endDate); 
+	cur = cur.getTime()
+	end = end.getTime()
+	diff= end - cur;
+	return diff
 }
-
 var app = express();
 var list_user = [{
 	id:'',
