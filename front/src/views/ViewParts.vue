@@ -1,5 +1,5 @@
 <template>
-	<v-container >
+	<v-container>
 	<v-row >
 	   <v-col cols="6">
       <v-card
@@ -20,7 +20,7 @@
         <v-btn icon>
           <v-icon>mdi-checkbox-marked-circle</v-icon>
         </v-btn>
-      </v-toolbar>
+      
 
       <v-dialog v-model="viewWork" width="1000px"  justify="center">
         <template v-slot:activator="{ on:dial }">
@@ -106,7 +106,6 @@
         <v-btn icon>
           <v-icon>mdi-checkbox-marked-circle</v-icon>
         </v-btn>
-      </v-toolbar>
 
       <v-dialog v-model="viewWork2" width="1000px"  justify="center">
         <template v-slot:activator="{ on:dial }">
@@ -116,7 +115,7 @@
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
-                <v-list-item-content v-on="dial"  @click="sendWork(item)">
+                <v-list-item-content v-on="dial"  @click="sendWork(item)" >
 
                   <v-list-item-title>
 
@@ -153,7 +152,6 @@
                   </v-icon>
                 </v-list-item-action>
 
-      </template>
             </v-list-item>
        
 
@@ -163,10 +161,10 @@
             ></v-divider>
           </div>
       </v-list>
-          </template> 
+      </template>
+    </v-dialog>
            <ViewWork :works="thisWork" :idx_sep="thisWindow"/> 
 
-    </v-dialog>
     </v-card>
 
   </v-col>
