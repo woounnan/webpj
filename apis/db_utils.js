@@ -51,8 +51,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		file_s_real: req.file.originalfilename,
 		file_s_save: req.file.filename,
 	}
-	//works.append('flag_expired', new Date().valueOf() < new Date(works.endDate).valueOf())
-    //setTimeOut((works)=>{console.log('here is in /work callback function ::::', works)}, 1000, works)
+	works.append('flag_expired', new Date().valueOf() < new Date(works.endDate).valueOf())
+    setTimeout((works)=>{console.log('here is in /work callback function ::::', works)}, 1000, works)
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })
