@@ -103,7 +103,7 @@ const msgSet = (to, from, newConvs)=>{
 var saveMsg = function (to, from, newConvs){
 	//if 메시지가 work라면
 	//expired callback을 걸어준다.
-	newConvs.works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
+	newConvs.works['flag_expired'] = new Date().valueOf() < new Date(newConvs.works.endDate).valueOf()
 	console.log('notice:::', newConvs.works.notice)
 	console.log('flag_expired:::', newConvs.works.flag_expired)
 	if((newConvs.works.notice != undefined) && (newConvs.works.flag_expired == true)){
