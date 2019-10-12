@@ -49,7 +49,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
 	}
-	console.log('flag_uploadfile::::', req.body.uploadFile)
+	console.log('flag_uploadfile::::', req.body.flag_uploadFile)
 	/*
 	console.log('/work::::', req.file)
 	if(req.file){
