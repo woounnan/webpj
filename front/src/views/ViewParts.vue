@@ -234,16 +234,13 @@
         for(var i = 0; i< works.length; i++){
           console.log('x:::::', works[i])
           
-          var sp = works[i].convs.works.endDate.split['-']
-          console.log('endDate::::', sp)
-          var v_y = sp[0]
-          var v_m = sp[1]
-          var v_d = sp[2]
           var cur = new Date();
-          var end = new Date(v_y, v_m, v_d); 
+          var end = new Date(works[i].convs.works.endDate); 
+          cur = cur.getTime()
+          end = end.getTime()
           diff= end - cur ;
-          one_day_epoch = 24*60*60*1000 ;  // calculating one epoch
-          console.log(diff/one_day_epoch)
+          one_hour_epoch = 60*60*1000 ; 
+          works[i].due = diff/one_hour_epoch - 9 //오전 9시가 기준이라 9 빼야함
         }
       },
       setItems(idx){

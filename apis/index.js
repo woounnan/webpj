@@ -17,6 +17,11 @@ var list_user = [{
 
 
 var saveMsg = function (to, from, newConvs){
+	//if 메시지가 work라면
+	//expired callback을 걸어준다.
+	if(newConvs.works.notice != undefined){
+		console.log('this is works!!!')
+	}
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('getUser Error in index.js:::: ', e)

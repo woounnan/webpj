@@ -50,7 +50,7 @@ export default new Vuex.Store({
           to: [],
           convs: undefined,
           date: String, //primary key
-          due: String, //due date
+          due: Number, //due date
           title: String, 
           contents: String,
         }], 
