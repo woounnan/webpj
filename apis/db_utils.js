@@ -49,11 +49,13 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
 	}
-	console.log('/work::::', req.file.originalfilename)
+	console.log('flag_uploadfile::::', req.body.uploadFile)
+	/*
+	console.log('/work::::', req.file)
 	if(req.file){
 		works['file_s_real'] = req.file.originalfilename
 		works['file_s_save'] = req.file.filename
-	}
+	}*/
 
 	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
 	var diffSec = () => {
