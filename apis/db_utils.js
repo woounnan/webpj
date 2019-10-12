@@ -57,17 +57,6 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		console.log('not uploaded files')
 
 	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
-	var diffSec = () => {
-		var cur = new Date();
-		var end = new Date(works.endDate); 
-		cur = cur.getTime()
-		end = end.getTime()
-		diff= end - cur;
-		return diff
-	}
-    setTimeout((works)=>{
-    	console.log('diffSec::::', diffSec())
-    }, 1000, works)
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })

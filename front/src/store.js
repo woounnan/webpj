@@ -94,10 +94,6 @@ export default new Vuex.Store({
     setState(state, st){
       state.user.state = st
     },
-    addComponents(state, k, v){
-      state.components[k] = v
-      console.log('verify: ', state.components[k])
-    },
     initCompanys(state){
       axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
       .then(r => {
@@ -150,7 +146,6 @@ export default new Vuex.Store({
             })
 
           })
-          console.log('store.js::::', state.user.works.toWork)
         }) 
         .catch(e=>{
           console.error('getWorks in View.vue::::', e)
@@ -166,7 +161,6 @@ export default new Vuex.Store({
         state.user.room.pop()
         state.user.room.push(to)
       }
-      console.log('add rooms : ', state.user.room)
     },
     closeRoom(state, idx){
       state.user.room.splice(idx, 1)
