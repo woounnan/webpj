@@ -28,7 +28,7 @@
           two-line
           style="max-height: 500px"
           class="overflow-y-auto">
-          <div v-for="(item, index) in goings | orderBy 'index'">
+          <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item)">
