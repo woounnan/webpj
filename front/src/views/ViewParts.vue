@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <template>
 	<v-container>
 	<v-row >
@@ -28,7 +29,7 @@
           two-line
           style="max-height: 500px"
           class="overflow-y-auto">
-          <div v-for="(item, index) in goings">
+          <div v-for="(item, index) in goings | orderBy 'index'">
             <v-list-item :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item)">
@@ -237,6 +238,11 @@
             this.goings = this.$store.getters.getUser.works.fromNotice
             break
         }
+      },
+      computed:{
+          orderedUsers : function(){
+              return _.orderBy(this.users, ['name', 'last_login'], ['desc', 'asc']); 
+          }
       }
     },
   }
