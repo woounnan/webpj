@@ -54,11 +54,11 @@ export default new Vuex.Store({
       works: {
         list_keys : [], //date를 push해서 등록되잇는 work를 확인
         schemaWork: [{
-          to: [
+          to: [{
             position: String,
             file_save: String,
             file_real: String,
-          ],
+          }],
           convs: undefined,
           date: String, //primary key
           title: String, 
