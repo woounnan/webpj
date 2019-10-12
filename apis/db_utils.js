@@ -61,6 +61,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
           var v_d = sp[2]
           var cur = new Date();
           var end = new Date(v_y, v_m, v_d); 
+          cur = cur.getTime()
+          end = end.getTime()
           diff= end - cur ;
           one_hour_epoch = 60*60*1000 ;  // calculating one epoch
           console.log('diff::::', diff/one_hour_epoch)
