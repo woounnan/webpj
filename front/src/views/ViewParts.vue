@@ -116,8 +116,6 @@
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
-              <template v-slot:default="{ active, toggle }">
-
                 <v-list-item-content v-on="dial"  @click="sendWork(item)">
 
                   <v-list-item-title>
@@ -245,12 +243,9 @@
           var v_d = sp[2]
           var cur = new Date();
           var end = new Date(v_y, v_m, v_d); 
-          console.log((end.getTime())/1000); 
-          var diff= end - cur ;
-          var one_hour= 60*60 ;
-          console.log('diff hours::::',diff/one_hour)
-          works[i].due = diff/one_hour
-          
+          diff= end - cur ;
+          one_day_epoch = 24*60*60*1000 ;  // calculating one epoch
+          console.log(diff/one_day_epoch)
         }
       },
       setItems(idx){

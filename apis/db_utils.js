@@ -48,8 +48,10 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		notice : req.body.notice,
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
+		file_s_real: req.file.originalfilename,
+		file_s_save: req.file.filename,
 	}
-	console.log('/work::::', JSON.stringify(req.file))
+
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })

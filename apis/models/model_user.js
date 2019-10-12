@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
 				contents: String,
 				startDate: String,
 				endDate: String,
-				flag_due: Boolean,
+				flag_expired: Boolean,
 				file_s_save: String,
 				file_s_real: String,
 				file_c_save: String,
