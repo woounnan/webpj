@@ -55,7 +55,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	var diff = 
     setTimeout((works)=>{
     	  var sp = works.endDate.split['-']
-          console.log('endDate::::', sp)
+          console.log('endDate::::', works.endDate)
           var v_y = sp[0]
           var v_m = sp[1]
           var v_d = sp[2]
