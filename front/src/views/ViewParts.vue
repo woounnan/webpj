@@ -162,9 +162,9 @@
           </div>
       </v-list>
       </template>
-    </v-dialog>
-           <ViewWork :works="thisWork" :idx_sep="thisWindow"/> 
+                 <ViewWork :works="thisWork" :idx_sep="thisWindow"/> 
 
+    </v-dialog>
     </v-card>
 
   </v-col>
