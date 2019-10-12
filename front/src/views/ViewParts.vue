@@ -40,7 +40,7 @@
                   color="primary"
                   v-for="(one, idx) in item.to.slice(0,3)"
                 >
-                  {{one}}
+                  {{one.position}}
                 </v-chip>
 
                   <v-icon

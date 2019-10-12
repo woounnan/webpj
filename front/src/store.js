@@ -144,6 +144,7 @@ export default new Vuex.Store({
               else{
                 if(cv.works.by === state.user.id){
                   //요청작업 등록
+                  console
                   regWork(state.user.works.toWork, cv, x.with)
                   //state.user.works.toWork.splice(0, 1)
                 }else{
