@@ -126,7 +126,7 @@ export default new Vuex.Store({
     },
     initWorks(state){
       state.user.works = {
-        list_keys : []
+        list_keys : [],
         toWork: [], //요청작업
         fromWork:  [], //받은작업
         toNotice:  [], //보낸알림
