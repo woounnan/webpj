@@ -55,8 +55,6 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	}
 	else
 		console.log('not uploaded files')
-
-	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })

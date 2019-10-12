@@ -103,17 +103,19 @@ const msgSet = (to, from, newConvs)=>{
 var saveMsg = function (to, from, newConvs){
 	//if 메시지가 work라면
 	//expired callback을 걸어준다.
+	newConvs.works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
 	console.log('notice:::', newConvs.works.notice)
 	console.log('flag_expired:::', newConvs.works.flag_expired)
-	if((newConvs.works.notice != undefined) && (newConvs.works.flag_expired == false)){
+	if((newConvs.works.notice != undefined) && (newConvs.works.flag_expired == true)){
 		console.log('this is works and deadline has not yet passed!!!')
 		console.log('새로 works 가 등록되었을 때  flag_expired 값은::::', newConvs.works.flag_expired)
-		setTimeout((works)=>{
+
+		setTimeout((newConvs)=>{
 	    	console.log('diffSec::::', diffSec(newConvs.endDate))
 	    	newConvs.works.flag_expired = true
 	    	//update db to set flag_expired value on true
 	    	msgSet(to, from, newConvs)
-		}, 1000 * 30, works)
+		}, 1000 * 30, newConvs)
 	}
 	//그 후 메시지를 저장한다.
 	msgPush(to, from, newConvs)
