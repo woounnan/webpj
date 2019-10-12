@@ -54,13 +54,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
 	var diff = 
     setTimeout((works)=>{
-    	  var sp = works.endDate.split('-')
-          console.log('endDate::::', sp)
-          var v_y = sp[0]
-          var v_m = sp[1]
-          var v_d = sp[2]
           var cur = new Date();
-          var end = new Date(v_y, v_m, v_d); 
+          var end = new Date(works.endDate); 
           cur = cur.getTime()
           end = end.getTime()
           diff= end - cur ;
