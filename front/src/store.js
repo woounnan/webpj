@@ -21,7 +21,6 @@ var regWork = (works, cv, to) => {
       title : cv.works.title,
       favor : cv.works.favor,
     })
-    console.log('favor value ? regWork in store.js::::', works.favor)
     list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
@@ -144,12 +143,12 @@ export default new Vuex.Store({
               else{
                 if(cv.works.by === state.user.id){
                   //요청작업 등록
-                  console.log('11111111111')
+                  console.log('11111111111::', cv)
                   regWork(state.user.works.toWork, cv, x.with)
                   //state.user.works.toWork.splice(0, 1)
                 }else{
                   //받은작업 등록
-                  console.log('222222222222')
+                  console.log('222222222222::', cv)
                   regWork(state.user.works.fromWork, cv, x.with)
                   //state.user.works.fromWork.splice(0, 1)
 
