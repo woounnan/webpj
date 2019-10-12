@@ -52,7 +52,19 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		file_s_save: req.file.filename,
 	}
 	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
-    setTimeout((works)=>{console.log('here is in /work callback function ::::', works)}, 1000, works)
+	var diff = 
+    setTimeout((works)=>{
+    	  var sp = works.endDate.split['-']
+          console.log('endDate::::', sp)
+          var v_y = sp[0]
+          var v_m = sp[1]
+          var v_d = sp[2]
+          var cur = new Date();
+          var end = new Date(v_y, v_m, v_d); 
+          diff= end - cur ;
+          one_hour_epoch = 60*60*1000 ;  // calculating one epoch
+          console.log('diff::::', diff/one_hour_epoch)
+    }, 1000, works)
 	res.status(200).send({works: works})
   // req.body will hold the text fields, if there were any
 })
