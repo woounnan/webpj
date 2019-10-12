@@ -49,13 +49,12 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		state_work: req.body.state_work,
 		state_notice: req.body.state_notice,
 	}
-	console.log('flag_uploadfile::::', req.body.flag_uploadFile)
-	/*
-	console.log('/work::::', req.file)
-	if(req.file){
+	if(req.body.flag_uploadFile == 'true'){
 		works['file_s_real'] = req.file.originalfilename
 		works['file_s_save'] = req.file.filename
-	}*/
+	}
+	else
+		console.log('not uploaded files')
 
 	works['flag_expired'] = new Date().valueOf() < new Date(works.endDate).valueOf()
 	var diffSec = () => {
