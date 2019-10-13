@@ -134,9 +134,11 @@
               </v-btn>
            </div>
         </v-list-item>
+      </template>
+      <template v-else>
         <v-list-item>
           <div class="flex-grow-1"></div>
-          <v-btn>제출하기</v-btn>
+          <v-btn depressed large color="cyan white--text">제출하기</v-btn>
         </v-list-item>
       </template>
     </v-list>              
