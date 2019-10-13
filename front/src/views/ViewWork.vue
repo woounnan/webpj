@@ -60,6 +60,7 @@
                 <v-col cols="5">
                 <v-text-field
                 :v-model="date"
+                @click="showDate"
                 readonly
               />
             </v-col>
@@ -162,13 +163,15 @@
     },
     mounted(){
       console.log('ViewWork.vue::::::', this.works)
-      console.log('date ~~~ ViewWork.vue::::::', this.works.convs.works.startDate)
     },
     methods: {
       closeWindow(){
         console.log('call closeWindow in ViewWork.vue@@@::::', this.idx_sep)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
-      }
+      },
+      showDate(){
+        console.log('date ::::', this.date)
+      },
     },
   }
 </script>
