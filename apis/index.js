@@ -117,9 +117,6 @@ var saveMsg = function (to, from, newConvs){
 	//expired callback을 걸어준다.
 	newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 	newConvs.works['favor'] = false
-	console.log('notice:::', newConvs.works.notice)
-	console.log('flag_expired:::', newConvs.works.flag_expired)
-	console.log('state:::', newConvs.works.state_s)
 	//msg가 works면
 	if(newConvs.works.notice != undefined){
 		//처음 생성된 works면
@@ -134,14 +131,19 @@ var saveMsg = function (to, from, newConvs){
 			}, 1000 * 30, newConvs)
 		}
 		else{
-			console.log('by::::', newConvs.works.by)
-			console.log('from::::', from)
-			if(newConvs.works.by != from){
+			if(newConvs.works.by != newConvs.works.id) {
+				//승인 대기
 				console.log('받은 작업임 in index.js')
-				msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
+				if(newConvs.works.by_position == to) //받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
+					msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
+				else //받은 작업이고 요청자에게 제출하는 메시지일 때, 수신자의 상태 변경
+					msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
 			}
 			else{
+				//승인 완료, 승인거절
 				console.log('요청 작업임 in index.js')
+				//요청자, 수신자 상태 모두 변경
+				msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
 				msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
 			}
 		}
