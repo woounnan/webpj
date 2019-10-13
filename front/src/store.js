@@ -20,8 +20,8 @@ var regWork = (state, works, cv, to) => {
   if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
-    var flag_c_upload = works.file_c_save != undefined
-    var flag_s_upload = works.file_s_save != undefined
+    var flag_c_upload = cv.works.file_c_save != undefined
+    var flag_s_upload = cv.works.file_s_save != undefined
     works.push({
       convs : cv,
       to : [{
@@ -41,8 +41,6 @@ var regWork = (state, works, cv, to) => {
       file_real: cv.works.file_s_real,
       flag_upload : flag_s_upload,
     })
-    console.log('rea:::', cv.works.file_s_real)
-    console.log('save:::', cv.works.file_s_save)
     state.user.works.list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
