@@ -117,10 +117,11 @@ var saveMsg = function (to, from, newConvs){
 	newConvs.works['favor'] = false
 	console.log('notice:::', newConvs.works.notice)
 	console.log('flag_expired:::', newConvs.works.flag_expired)
+	console.log('state:::', newConvs.works.state_s)
 	//msg가 works면
 	if(newConvs.works.notice != undefined){
 		//처음 생성된 works면
-		if((newConvs.works.flag_expired == false) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
+		if((newConvs.works.flag_expired == false) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state === "미확인"))){
 			console.log('this is works that deadline has not yet passed!!!')
 
 			setTimeout((newConvs)=>{
