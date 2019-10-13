@@ -62,7 +62,7 @@
                 <v-col cols="5">
                 <v-text-field 
                 readonly
-              >{{works.cv.works.startDate}}~{{works.cv.works.endDate}}</v-text-field>
+              >{{works.convs.works.startDate}}~{{works.convs.works.endDate}}</v-text-field>
             </v-col>
             <v-col cols="2">
             <v-list-item-action>
