@@ -62,6 +62,7 @@ export default{
 				data.convs.id = this.$store.getters.getUser.id
 				data.convs.position = this.$store.getters.getUser.position
 				var to = ''
+				console.log('data::::', data)
 				this.$store.getters.getOthers.forEach(x => {
 					if(x.id === data.convs.works.by){
 						console.log('to::: in sendWork::::', x.position)
