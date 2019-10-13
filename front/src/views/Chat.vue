@@ -50,10 +50,14 @@ export default{
 	},
    	mounted(){
    		this.$store.commit('initSocks')
+   		this.sendWork()
    	},
 	methods: {
-		testServ: function(){
-			
+		sendWork(){
+			this.$store.state.bus.$on('sendWork', (data)=>{
+				console.log('here is in sendWork::::')
+				
+			})
 		}
 	}
 };

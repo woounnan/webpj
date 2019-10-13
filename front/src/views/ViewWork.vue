@@ -181,11 +181,9 @@
       sendWorkToS(){
         console.log('call sendWorkToS::::')
         //update mine
-        const temp = JSON.parse(JSON.stringify(this.works))
-        temp.state_s = '승인대기'
-        temp.selects = [temp.to[0].position]
-        console.log('temp::::', temp.to[0].position)
-        this.$store.state.bus.$emit('work', temp)
+        var temp = JSON.parse(JSON.stringify(this.works))
+        console.log('temp::::', temp)
+        this.$store.state.bus.$emit('sendWork', temp)
       },
       showDate(){
 
