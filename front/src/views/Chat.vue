@@ -23,6 +23,7 @@
 </v-container>
 </template>
 <script>
+import moment from 'moment'
 import Chat from '../../node_modules/basic-vue-chat/src/components/basic-vue-chat/BasicVueChat.vue'
 import Bar from './Bar.vue'
 import List from './List.vue'
