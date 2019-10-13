@@ -185,7 +185,6 @@
         temp.state_s = '승인대기'
         console.log('temp::::', temp)
         this.$store.state.bus.$emit('work', temp)
-
       },
       showDate(){
 
