@@ -61,9 +61,8 @@
               <v-row >
                 <v-col cols="5">
                 <v-text-field 
-                v-model="items.startDate"
                 readonly
-              />
+              >{{works.cv.works.startDate}}~{{works.cv.works.endDate}}</v-text-field>
             </v-col>
             <v-col cols="2">
             <v-list-item-action>
@@ -136,12 +135,9 @@
 </template>
 <script>
   export default{
-    components:{
-    },
     props:{
       idx_sep: 0,
       works: undefined,
-      test: undefined
     },
     data(){
       return {
