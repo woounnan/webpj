@@ -46,8 +46,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		startDate : req.body.startDate,
 		endDate : req.body.endDate,
 		notice : req.body.notice,
-		state_c: req.body.state_c,
 		state_s: req.body.state_s,
+		state_c: req.body.state_c,
 		by : req.body.by,
 	}
 	if(req.body.flag_uploadFile == 'true'){

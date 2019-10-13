@@ -87,7 +87,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			//해당 work 메시지를 검색
 			if(x.date == newConvs.date){
 				console.log('work 찾음!!!::::', JSON.stringify(x))
-				x.works['fieldName'] = value
+				x.works[fieldName] = value
 			}
 		})
 		//바꾼 값으로 update
