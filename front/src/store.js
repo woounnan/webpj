@@ -4,7 +4,6 @@ import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
 var regWork = (list_keys, works, cv, to) => {
-  console.log('??????????????????????????')
   if(list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
@@ -152,13 +151,11 @@ export default new Vuex.Store({
               }
               else{
                 if(cv.works.by === state.user.id){
-                  console.log('111111111111111')
                   //요청작업 등록
                   regWork(state.user.works.list_keys, state.user.works.toWork, cv, x.with)
                   //state.user.works.toWork.splice(0, 1)
                 }else{
                   //받은작업 등록
-                  console.log('222222222222222')
                   regWork(state.user.works.list_keys, state.user.works.fromWork, cv, x.with)
                   //state.user.works.fromWork.splice(0, 1)
 

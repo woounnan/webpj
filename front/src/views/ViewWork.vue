@@ -180,7 +180,7 @@
       }
     },
     mounted(){
-      console.log('ViewWork.vue::::', this.works)
+      console.log('ViewWork.vue::::::', this.works)
     },
     methods: {
       closeWindow(){
