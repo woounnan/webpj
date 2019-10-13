@@ -69,9 +69,11 @@
           </v-col>
             <v-col cols="5">
                 <v-chip
-                v-model="works.file_real"
-                readonly
-              />
+                color="deep-purple"
+                text-color="white"
+              >
+              {{works.file_real}}
+            </v-chip>
             </v-col>
             </v-row>
 
