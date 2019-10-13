@@ -89,6 +89,10 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				console.log('work 찾음!!!::::', JSON.stringify(x))
 				x.works[fieldName] = value
 			}
+			else{
+				console.log('work 못찾음 ㅠㅠ')
+				return
+			}
 		})
 		//바꾼 값으로 update
 		User.update({
