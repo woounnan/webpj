@@ -19,8 +19,8 @@ var regWork = (list_keys, works, cv, to) => {
       contents : cv.works.contents,
       title : cv.works.title,
       favor : cv.works.favor,
+      state : cv.works.state,
     })
-    console.log
     list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
