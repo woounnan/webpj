@@ -41,6 +41,8 @@ var regWork = (state, works, cv, to) => {
       file_real: cv.works.file_s_real,
       flag_upload : flag_s_upload,
     })
+    console.log('rea:::', cv.works.file_s_real)
+    console.log('rea:::', cv.works.file_s_save)
     state.user.works.list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
