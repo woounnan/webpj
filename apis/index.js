@@ -68,7 +68,7 @@ const msgPush = (to, from, newConvs)=>{
 	})
 }
 
-const msgSet = (to, from, newConvs)=>{
+const msgSet = (to, from, newConvs, fieldName, value)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
@@ -87,7 +87,7 @@ const msgSet = (to, from, newConvs)=>{
 			//해당 work 메시지를 검색
 			if(x.date == newConvs.date){
 				console.log('work 찾음!!!::::', JSON.stringify(x))
-				x.works.flag_expired = true
+				x.works['fieldName'] = value
 			}
 		})
 		//바꾼 값으로 update
@@ -113,16 +113,25 @@ var saveMsg = function (to, from, newConvs){
 	newConvs.works['favor'] = false
 	console.log('notice:::', newConvs.works.notice)
 	console.log('flag_expired:::', newConvs.works.flag_expired)
-	if((newConvs.works.notice != undefined) && (newConvs.works.flag_expired == false)){
-		console.log('this is works that deadline has not yet passed!!!')
-		console.log('새로 works 가 등록되었을 때  flag_expired 값은::::', newConvs.works.flag_expired)
+	//msg가 works면
+	if(newConvs.works.notice != undefined){
+		//처음 생성된 works면
+		if((newConvs.works.flag_expired == false) && ((newConvs.works.state === "미제출") || (newConvs.works.state === "미확인"))){
+			console.log('this is works that deadline has not yet passed!!!')
 
-		setTimeout((newConvs)=>{
-	    	console.log('diffSec::::', diffSec(newConvs.endDate))
-	    	newConvs.works.flag_expired = true
-	    	//update db to set flag_expired value on true
-	    	msgSet(to, from, newConvs)
-		}, 1000 * 30, newConvs)
+			setTimeout((newConvs)=>{
+		    	console.log('diffSec::::', diffSec(newConvs.endDate))
+		    	newConvs.works.flag_expired = true
+		    	//update db to set flag_expired value on true
+		    	msgSet(to, from, newConvs, 'flag_expired', true)
+			}, 1000 * 30, newConvs)
+		}
+		else{
+			if(newConvs.works.by != from){
+				console.log('받은 작업임 in index.js')
+				msgSet(to, from, newConvs, 'state_c', '승인대기')
+			}
+		}
 	}
 	//그 후 메시지를 저장한다.
 	msgPush(to, from, newConvs)

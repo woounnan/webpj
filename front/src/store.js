@@ -26,7 +26,7 @@ var regWork = (state, works, cv, to) => {
         position: to,
         file_save: cv.works.file_c_save,
         file_real: cv.works.file_c_real,
-        state: cv.works.state, //각 클라이언트 state
+        state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
         flag_upload : flag_c_upload,
       }], //대상,, 보낸: 받은사람 / 받은: 보낸사람
@@ -34,7 +34,7 @@ var regWork = (state, works, cv, to) => {
       contents : cv.works.contents,
       title : cv.works.title,
       favor : cv.works.favor,
-      state : cv.works.state,
+      state : cv.works.state_s,
       file_save: cv.works.file_s_save,
       file_real: cv.works.file_s_real,
       flag_upload : flag_s_upload,

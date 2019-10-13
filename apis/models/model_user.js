@@ -29,8 +29,8 @@ const userSchema = new mongoose.Schema({
 				file_s_real: String,
 				file_c_save: String,
 				file_c_real: String,
-				state: String, //"미제출", "승인대기", "승인거절", "승인완료"
-				//알림시 "미확인", "확인"
+				state_c: String, //"미제출", "승인대기", "승인거절", "승인완료"
+				state_s: String, //알림시 "미확인", "확인"
 				notice: Boolean, //true: notice false: work(required to ack)
 				favor: Boolean,
 			}
