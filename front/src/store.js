@@ -15,7 +15,7 @@ var regWork = (state, works, cv, to) => {
   if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
-    var flag_upload = !works.file_c_save
+    var flag_upload = works.file_c_save != undefined
     console.log('flag_upload::::', flag_upload)
     works.push({
       convs : cv,
