@@ -70,7 +70,6 @@
             </v-list-item-action>
           </v-col>
             <v-col cols="5">
-              <v-list-item-contents>
                 <v-chip
                 v-if="works.flag_upload"
                 color="deep-purple"
@@ -79,7 +78,6 @@
               >
               {{works.file_real}}
             </v-chip>
-          </v-list-item-contents>
             </v-col>
             </v-row>
 
