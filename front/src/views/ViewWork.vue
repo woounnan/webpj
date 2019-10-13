@@ -68,7 +68,7 @@
             </v-list-item-action>
           </v-col>
             <v-col cols="5">
-                <v-text-field 
+                <v-chip
                 v-model="works.file_real"
                 readonly
               />
@@ -155,6 +155,7 @@
     },
     mounted(){
       console.log('ViewWork.vue::::::', this.works)
+      console.log('date ~~~ ViewWork.vue::::::', this.works.convs.works.startDate)
     },
     methods: {
       closeWindow(){
