@@ -219,7 +219,7 @@
       },
       setThisWork(works){
         console.log('call setThisWork::::', works)
-        this.thisWork = this.works
+        this.thisWork = works
       },
       setItems(idx){
         console.log('call setItems:::')
