@@ -75,6 +75,8 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		}
 		var flag = 0
 		var idx = -1
+		var findDate = newConvs.works.flag_onlyView == true ? newConvs.works.flag_date : newConvs.Date
+		console.log('findDate ::::', findDate)
 		for(x in r.comu){
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
@@ -85,7 +87,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		}
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
-			if(x.date == newConvs.date){
+			if(x.date == findDate){
 				console.log('work 찾음!!!::::', JSON.stringify(x))
 				x.works[fieldName] = value
 			}
