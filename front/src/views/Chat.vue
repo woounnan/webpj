@@ -58,11 +58,11 @@ export default{
 			this.$store.state.bus.$on('sendWork', (data)=>{
 				console.log('here is in sendWork::::', data)
 				data.convs.date = moment().format('HH:mm:ss')
-				data.convs.works.state = '승인대기'
+				data.convs.works.state_s = '승인대기'
 				data.convs.id = this.$store.getters.getUser.id
 				data.convs.position = this.$store.getters.getUser.position
 				var to = ''
-				console.log('data::::', data)
+				console.log('data_by::::', data.convs.works.by)
 				this.$store.getters.getOthers.forEach(x => {
 					if(x.id === data.convs.works.by){
 						console.log('to::: in sendWork::::', x.position)
