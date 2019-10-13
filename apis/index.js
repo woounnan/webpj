@@ -117,6 +117,7 @@ var saveMsg = function (to, from, newConvs){
 	newConvs.works['favor'] = false
 	console.log('notice:::', newConvs.works.notice)
 	console.log('flag_expired:::', newConvs.works.flag_expired)
+	console.log('state:::', newConvs.works.state)
 	//msg가 works면
 	if(newConvs.works.notice != undefined){
 		//처음 생성된 works면
