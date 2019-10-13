@@ -76,6 +76,7 @@
                 color="deep-purple"
                 text-color="white"
                 @click="showUpload"
+                width="10px"
               >
               {{works.file_real}}
             </v-chip>
