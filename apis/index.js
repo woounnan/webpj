@@ -134,6 +134,8 @@ var saveMsg = function (to, from, newConvs){
 			}, 1000 * 30, newConvs)
 		}
 		else{
+			console.log('by::::', newConvs.works.by)
+			console.log('from::::', from)
 			if(newConvs.works.by != from){
 				console.log('받은 작업임 in index.js')
 				msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
