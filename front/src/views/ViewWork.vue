@@ -182,7 +182,7 @@
         console.log('call sendWorkToS::::')
         //update mine
         const temp = JSON.parse(JSON.stringify(this.works))
-        temp.state = '승인대기'
+        temp.state_s = '승인대기'
         console.log('temp::::', temp)
         //this.$store.state.bus.$emit('work', temp)
 
