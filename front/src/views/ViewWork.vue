@@ -69,6 +69,7 @@
           </v-col>
             <v-col cols="5">
                 <v-chip
+                v-if="works.flag_upload"
                 color="deep-purple"
                 text-color="white"
               >
