@@ -86,8 +86,7 @@
         >
       <template v-for="(item, index) in works.to">
         <v-subheader
-          v-text="대상"
-        ></v-subheader>
+        >대상</v-subheader>
 
         <v-divider
           :key="index"

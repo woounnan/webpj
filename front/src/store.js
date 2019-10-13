@@ -6,7 +6,7 @@ Vue.use(Vuex)
 var getAvatar = (state, position)=>{
   state.others.forEach(x => {
     if(x.position === position){
-      console.log('getAvatar:::find it !!!! :::')
+      console.log('getAvatar:::find it !!!! :::', x.image)
       return x.image
     }
   })
