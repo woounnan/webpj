@@ -184,7 +184,7 @@
         const temp = JSON.parse(JSON.stringify(this.works))
         temp.state_s = '승인대기'
         console.log('temp::::', temp)
-        //this.$store.state.bus.$emit('work', temp)
+        this.$store.state.bus.$emit('work', temp)
 
       },
       showDate(){
