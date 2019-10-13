@@ -175,15 +175,13 @@
     },
     methods: {
       closeWindow(){
-        console.log('call closeWindow in ViewWork.vue@@@::::', this.idx_sep)
+        console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(){
         console.log('call sendWorkToS::::')
         //update mine
-        var temp = JSON.parse(JSON.stringify(this.works))
-        console.log('temp::::', temp)
-        this.$store.state.bus.$emit('sendWork', temp)
+        this.$store.state.bus.$emit('sendWork', this.works)
       },
       showDate(){
 

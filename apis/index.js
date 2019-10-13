@@ -134,11 +134,11 @@ var saveMsg = function (to, from, newConvs){
 		else{
 			if(newConvs.works.by != from){
 				console.log('받은 작업임 in index.js')
-				msgSet(to, from, newConvs, 'state_s', '승인대기')
+				msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
 			}
 			else{
 				console.log('요청 작업임 in index.js')
-				msgSet(to, from, newConvs, 'state_c', '승인대기')
+				msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
 			}
 		}
 	}

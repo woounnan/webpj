@@ -55,8 +55,27 @@ export default{
 	methods: {
 		sendWork(){
 			this.$store.state.bus.$on('sendWork', (data)=>{
-				console.log('here is in sendWork::::')
-				
+				console.log('here is in sendWork::::', data)
+				console.log('temp::::', temp)
+				data.convs.date = moment().format('HH:mm:ss')
+				data.convs.works.state = '승인대기'
+				data.convs.id = this.$store.getters.getUser.id
+				data.convs.position = this.$store.getters.getUser.position
+				var to = ''
+				this.$store.getters.getOthers.forEach(x => {
+					if(x.id === data.convs.works.by){
+						console.log('to::: in sendWork::::', x.position)
+						to = x.position
+						return
+					}
+				})
+				const header = {
+				to : to,
+				from : this.$store.getters.getUser.position
+				}
+				this.$store.state.socks.sock.emit('msg', {msg: msg, header: header})
+
+				console.log('이사람에게 보냈어::::', to)
 			})
 		}
 	}
