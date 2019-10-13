@@ -55,24 +55,16 @@
               <v-icon>date_range</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-                <v-col cols="5">
                 <v-text-field 
                 readonly
               >{{works.convs.works.startDate}}~{{works.convs.works.endDate}}</v-text-field>
-            </v-col>
-            <v-row >
-            <v-col cols="2">
             <v-list-item-action>
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
-          </v-col>
-            <v-col cols="5">
                 <v-text-field 
                 v-model="items.startDate"
                 readonly
               />
-            </v-col>
-            </v-row>
 
             </v-list-item-content>
           </v-list-item>
