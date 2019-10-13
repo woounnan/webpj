@@ -139,7 +139,7 @@
       <template v-else>
         <v-list-item>
           <div class="flex-grow-1"></div>
-          <v-btn @click="sendWorkToS" depressed large color="cyan lighten-4 white--text">제출하기</v-btn>
+          <v-btn @click="sendWorkToS" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
         </v-list-item>
       </template>
     </v-list>              
@@ -181,9 +181,14 @@
       sendWorkToS(){
         console.log('call sendWorkToS::::')
         //update mine
-        axios.post('/')
+        const temp = JSON.parse(JSON.stringify(this.works))
+        temp.state = '승인대기'
+        console.log('temp::::', temp)
+        //this.$store.state.bus.$emit('work', temp)
+
       },
       showDate(){
+
         console.log('date ::::', this.date)
       },
       showUpload(){

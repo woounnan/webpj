@@ -127,10 +127,9 @@ var saveMsg = function (to, from, newConvs){
 			}, 1000 * 30, newConvs)
 		}
 		else{
-			if(newConvs.works.by != from){
-				console.log('받은 작업임 in index.js')
-				msgSet(to, from, newConvs, 'state_c', '승인대기')
-			}
+			console.log('받은 작업임 in index.js')
+			msgSet(to, from, newConvs, 'state_c', '승인대기')
+
 		}
 	}
 	//그 후 메시지를 저장한다.
