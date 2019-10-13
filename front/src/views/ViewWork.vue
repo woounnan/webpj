@@ -138,7 +138,7 @@
       <template v-else>
         <v-list-item>
           <div class="flex-grow-1"></div>
-          <v-btn depressed large color="cyan lighten-1 white--text">제출하기</v-btn>
+          <v-btn @click="sendWorkToS" depressed large color="cyan lighten-1 white--text">제출하기</v-btn>
         </v-list-item>
       </template>
     </v-list>              
@@ -176,6 +176,9 @@
       closeWindow(){
         console.log('call closeWindow in ViewWork.vue@@@::::', this.idx_sep)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
+      },
+      sendWorkToS(){
+        console.log('call sendWorkToS::::')
       },
       showDate(){
         console.log('date ::::', this.date)
