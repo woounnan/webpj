@@ -4,8 +4,7 @@ import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
 var getAvatar = (state, position)=>{
-  console.log('getOthers in getAvatar::::', state)
-  state.getters.getOthers.forEach(x => {
+  state.others.forEach(x => {
     if(x.position === position){
       console.log('getAvatar:::find it !!!! :::')
       return x.image
