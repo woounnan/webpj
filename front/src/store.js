@@ -16,7 +16,7 @@ var regWork = (state, works, cv, to) => {
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
     var flag_upload = works.file_c_save != undefined
-    console.log('flag_upload::::', flag_upload)
+    console.log('getAvatar::::', getAvatar(state, to))
     works.push({
       convs : cv,
       to : [{
