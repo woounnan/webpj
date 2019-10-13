@@ -89,7 +89,7 @@
           class="overflow-y-auto"  
           style="max-height: 200px" 
         >
-      <template v-if="works.convs.works.by === $store.getters.getUser.position" v-for="(item, index) in works.to">
+      <template v-if="works.convs.works.by === $store.getters.getUser.id" v-for="(item, index) in works.to">
         <v-subheader
         >대상</v-subheader>
 
