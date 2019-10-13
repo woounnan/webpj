@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
-var getAvatar = (state, position)=>{
+var getAvatar = function(state, position){
   state.others.forEach(x => {
     if(x.position === position){
       console.log('getAvatar:::find it !!!! :::', x.image)
@@ -11,12 +11,17 @@ var getAvatar = (state, position)=>{
     }
   })
 }
+var testRet = function(){
+  return "hi!"
+}
 var regWork = (state, works, cv, to) => {
   if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
+    console.log('test::::', testRet())
     var flag_upload = works.file_c_save != undefined
     console.log('getAvatar::::', getAvatar(state, to))
+    console.log('works.state::::', works.state)
     works.push({
       convs : cv,
       to : [{

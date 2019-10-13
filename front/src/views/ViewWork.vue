@@ -90,7 +90,7 @@
 
         <v-divider
           :key="index"
-          inset=true
+          :inset="inset"
         ></v-divider>
 
         <v-list-item
@@ -143,6 +143,7 @@
     },
     data(){
       return {
+        inset: true,
         items: [
         { header: '대상' },
         {
