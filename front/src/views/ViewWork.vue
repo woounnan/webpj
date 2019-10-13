@@ -76,7 +76,7 @@
                 color="deep-purple"
                 text-color="white"
                 @click="showUpload"
-                width="10px"
+                width="5px"
               >
               {{works.file_real}}
             </v-chip>
@@ -133,6 +133,10 @@
                 <v-icon dark>close</v-icon>
               </v-btn>
            </div>
+        </v-list-item>
+        <v-list-item>
+          <div class="flex-grow-1"></div>
+          <v-btn>제출하기</v-btn>
         </v-list-item>
       </template>
     </v-list>              

@@ -104,7 +104,7 @@
           <v-icon>mdi-checkbox-marked-circle</v-icon>
         </v-btn>
 
-      <v-dialog v-model="viewWork2" width="1000px"  justify="center">
+      <v-dialog v-model="viewWork2" justify="center">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
