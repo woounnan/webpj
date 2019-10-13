@@ -56,7 +56,6 @@ export default{
 		sendWork(){
 			this.$store.state.bus.$on('sendWork', (data)=>{
 				console.log('here is in sendWork::::', data)
-				console.log('temp::::', temp)
 				data.convs.date = moment().format('HH:mm:ss')
 				data.convs.works.state = '승인대기'
 				data.convs.id = this.$store.getters.getUser.id
