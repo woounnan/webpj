@@ -7,7 +7,8 @@ var getAvatar = function(state, position){
   state.others.forEach(x => {
     if(x.position === position){
       console.log('getAvatar:::find it !!!! :::', x.image)
-      return x.image
+      var strs = x.image
+      return strs
     }
   })
 }
@@ -21,7 +22,7 @@ var regWork = (state, works, cv, to) => {
     console.log('test::::', testRet())
     var flag_upload = works.file_c_save != undefined
     console.log('getAvatar::::', getAvatar(state, to))
-    console.log('works.state::::', works.state)
+    console.log('works.state::::', works)
     works.push({
       convs : cv,
       to : [{
