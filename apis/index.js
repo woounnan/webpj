@@ -76,6 +76,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		var flag = 0
 		var idx = -1
 		var findDate = newConvs.works.flag_onlyView == true ? newConvs.works.flag_date : newConvs.Date
+		console.log('flag_onlyView::::', newConvs.works.flag_onlyView)
 		console.log('findDate ::::', findDate)
 		for(x in r.comu){
 			if(r.comu[x].with === to){
