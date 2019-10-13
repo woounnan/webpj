@@ -56,7 +56,7 @@
             <v-list-item-action>
               <v-icon>date_range</v-icon>
             </v-list-item-action>
-
+          </v-col>
                 <v-col cols="4">
                 <v-text-field 
                 readonly
