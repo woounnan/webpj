@@ -55,13 +55,13 @@
               <v-icon>date_range</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-row >
                 <v-col cols="5">
                 <v-text-field 
                 readonly
               >{{works.convs.works.startDate}}~{{works.convs.works.endDate}}</v-text-field>
             </v-col>
-            <v-col v-if="works.flag_upload" cols="2">
+            <v-row >
+            <v-col cols="2">
             <v-list-item-action>
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
