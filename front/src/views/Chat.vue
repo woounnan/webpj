@@ -73,7 +73,7 @@ export default{
 				to : to,
 				from : this.$store.getters.getUser.position
 				}
-				this.$store.state.socks.sock.emit('msg', {msg: msg, header: header})
+				this.$store.state.socks.sock.emit('msg', {msg: data, header: header})
 
 				console.log('이사람에게 보냈어::::', to)
 			})
