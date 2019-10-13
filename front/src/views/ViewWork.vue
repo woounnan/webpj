@@ -75,6 +75,7 @@
                 v-if="works.flag_upload"
                 color="deep-purple"
                 text-color="white"
+                @click="showUpload"
               >
               {{works.file_real}}
             </v-chip>
@@ -171,6 +172,9 @@
       },
       showDate(){
         console.log('date ::::', this.date)
+      },
+      showUpload(){
+        console.log('flag_upload ::::', this.works.flag_upload)
       },
     },
   }
