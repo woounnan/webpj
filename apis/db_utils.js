@@ -52,6 +52,8 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	if(req.body.flag_uploadFile == 'true'){
 		works['file_s_real'] = req.file.originalfilename
 		works['file_s_save'] = req.file.filename
+		console.log('work save in db_utils::::', works.file_s_save)
+		console.log('work real in db_utils::::', works.file_s_real)
 	}
 	else
 		console.log('not uploaded files')
