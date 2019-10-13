@@ -183,7 +183,8 @@
         //update mine
         const temp = JSON.parse(JSON.stringify(this.works))
         temp.state_s = '승인대기'
-        console.log('temp::::', temp)
+        temp.selects = [temp.to[0].position]
+        console.log('temp::::', temp.to[0].position)
         this.$store.state.bus.$emit('work', temp)
       },
       showDate(){
