@@ -59,7 +59,7 @@
           </v-col>
                 <v-col cols="5">
                 <v-text-field
-                :v-text="date"
+                v-model="date"
                 @click="showDate"
                 readonly
               />
