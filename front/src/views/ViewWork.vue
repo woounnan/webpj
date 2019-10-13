@@ -18,7 +18,6 @@
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
           </v-btn>
-          <
         </v-card-title>
 
         <v-list>
