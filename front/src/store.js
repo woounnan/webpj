@@ -3,17 +3,29 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import io from 'socket.io-client'
 Vue.use(Vuex)
-var regWork = (list_keys, works, cv, to) => {
-  if(list_keys.indexOf(cv.date) == -1){
+var getAvatar = (state, position)=>{
+  state.getters.getOthers.forEach(x => {
+    if(x.position === position){
+      console.log('getAvatar:::find it !!!! :::')
+      return x.image
+    }
+  })
+}
+var regWork = (state, works, cv, to) => {
+  if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
+    var flag_upload = works.file_c_save.length > 0
+    console.log('flag_upload::::', flag_upload)
     works.push({
       convs : cv,
       to : [{
         position: to,
         file_save: works.file_c_save,
         file_real: works.file_c_real,
-        state: works.state,
+        state: works.state, //각 클라이언트 state
+        avatar: getAvatar(state, to),
+        flag_upload : 
       }], //대상,, 보낸: 받은사람 / 받은: 보낸사람
       date : cv.date,
       contents : cv.works.contents,
@@ -21,7 +33,7 @@ var regWork = (list_keys, works, cv, to) => {
       favor : cv.works.favor,
       state : cv.works.state,
     })
-    list_keys.push(cv.date)
+    state.user.works.list_keys.push(cv.date)
   }else{
     //이미 등록이 되어있다
     //대상만 추가해준다.
@@ -57,6 +69,8 @@ export default new Vuex.Store({
             position: String,
             file_save: String,
             file_real: String,
+            avatar: String,
+            state: String,
           }],
           convs: undefined,
           date: String, //primary key

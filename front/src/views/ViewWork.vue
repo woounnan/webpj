@@ -84,47 +84,50 @@
           class="overflow-y-auto"  
           style="max-height: 200px" 
         >
-      <template v-for="(item, index) in items">
+      <template v-for="(item, index) in works.to">
         <v-subheader
-          v-if="item.header"
-          :key="item.header"
-          v-text="item.header"
+          v-text="대상"
         ></v-subheader>
 
         <v-divider
-          v-else-if="item.divider"
           :key="index"
-          :inset="item.inset"
+          inset=true
         ></v-divider>
 
         <v-list-item
-          v-else
-          :key="item.title"
+          :key="item.position"
         >
           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
 
           <v-list-item-content>
-            <v-list-item-title v-html="item.title"></v-list-item-title>
+            <v-list-item-title v-html="item.position"></v-list-item-title>
+            <!--
             <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+          -->
           </v-list-item-content>
 
           <v-list-item-content>
-            <v-btn depressed small color="error">미제출</v-btn>
-       </v-list-item-content>
+            <v-btn v-if="item.state === '미제출'" depressed small color="error">미제출</v-btn>
+            <v-btn v-if="item.state === '승인대기'" depressed small color="primary">승인대기</v-btn>
+            <v-btn v-if="item.state === '승인거절'" depressed small color="orange darken-3 white--text">승인거절</v-btn>
+            <v-btn v-if="item.state === '승인완료'" depressed small color="green darken-1 white--text">승인완료</v-btn>
+         </v-list-item-content>
           <v-list-item-content>
-            <v-icon>insert_drive_file</v-icon>
+            <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
           </v-list-item-content>
           <v-list-item-content>
             <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
           </v-list-item-content>
-            <v-btn class="mx-2" fab dark small color="indigo">
-              <v-icon dark>done</v-icon>
-            </v-btn>
-            <v-btn class="mx-2" fab dark small color="pink">
-              <v-icon dark>close</v-icon>
-            </v-btn>
+            <div v-if="item.state === '승인대기'">
+              <v-btn class="mx-2" fab dark small color="indigo">
+                <v-icon dark>done</v-icon>
+              </v-btn>
+              <v-btn class="mx-2" fab dark small color="pink">
+                <v-icon dark>close</v-icon>
+              </v-btn>
+           </div>
         </v-list-item>
       </template>
     </v-list>              
