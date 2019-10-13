@@ -20,7 +20,8 @@ var regWork = (state, works, cv, to) => {
   if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
-    var flag_upload = works.file_c_save != undefined
+    var flag_c_upload = works.file_c_save != undefined
+    var flag_s_upload = works.file_s_save != undefined
     works.push({
       convs : cv,
       to : [{
@@ -29,13 +30,16 @@ var regWork = (state, works, cv, to) => {
         file_real: cv.works.file_c_real,
         state: cv.works.state, //각 클라이언트 state
         avatar: getAvatar(state, to),
-        flag_upload : flag_upload,
+        flag_upload : flag_c_upload,
       }], //대상,, 보낸: 받은사람 / 받은: 보낸사람
       date : cv.date,
       contents : cv.works.contents,
       title : cv.works.title,
       favor : cv.works.favor,
       state : cv.works.state,
+      file_save: cv.works.file_s_save,
+      file_real: cv.works.file_s_real,
+      flag_upload : flag_s_upload,
     })
     state.user.works.list_keys.push(cv.date)
   }else{
@@ -75,17 +79,21 @@ export default new Vuex.Store({
             file_real: String,
             avatar: String,
             state: String,
+            flag_upload : Boolean,
           }],
           convs: undefined,
           date: String, //primary key
           title: String, 
           contents: String,
           favor: Boolean,
+          file_save: String,
+          file_real: String,
         }], 
         toWork: [], //요청작업
         fromWork:  [], //받은작업
         toNotice:  [], //보낸알림
         fromNotice: [], //받은알림
+        flag_upload : Boolean,
       }, //array of convs
     },
     companys: [

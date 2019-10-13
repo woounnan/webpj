@@ -40,7 +40,7 @@
             </v-list-item-action>
 
             <v-list-item-content>
-                <v-textarea 
+              <v-textarea 
                 v-model="works.contents"
                 counter
                 single-line
@@ -54,9 +54,6 @@
             <v-list-item-action>
               <v-icon>date_range</v-icon>
             </v-list-item-action>
-
-            
-              
             <v-list-item-content>
               <v-row >
                 <v-col cols="5">
@@ -64,7 +61,7 @@
                 readonly
               >{{works.convs.works.startDate}}~{{works.convs.works.endDate}}</v-text-field>
             </v-col>
-            <v-col cols="2">
+            <v-col v-if="works.flag_upload" cols="2">
             <v-list-item-action>
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
@@ -84,7 +81,7 @@
           class="overflow-y-auto"  
           style="max-height: 200px" 
         >
-      <template v-for="(item, index) in works.to">
+      <template v-if="works.convs.works.by === $store.getters.getUser.position" v-for="(item, index) in works.to">
         <v-subheader
         >대상</v-subheader>
 
