@@ -5,7 +5,7 @@
       <v-card>
         <v-card-title class="cyan darken-1">
 
-            <span class="headline white--text">상세 보기</span>
+            <span class="headline white--text">상세 보기{{works.state}}</span>
 
 
           
@@ -184,7 +184,6 @@
         this.$store.state.bus.$emit('sendWork', this.works)
       },
       showDate(){
-
         console.log('date ::::', this.date)
       },
       showUpload(){
