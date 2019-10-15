@@ -64,6 +64,7 @@ export default{
 				data.convs.works.flag_onlyView = true
 				data.convs.works.flag_date = data.convs.date
 				console.log('data::::', data)
+				console.log('flag_date::::', flag_date)
 				var to = ''
 				this.$store.getters.getOthers.forEach(x => {
 					if(x.id === data.convs.works.by){
