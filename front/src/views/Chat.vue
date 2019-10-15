@@ -62,6 +62,7 @@ export default{
 				data.convs.id = this.$store.getters.getUser.id
 				data.convs.position = this.$store.getters.getUser.position
 				data.convs.works.flag_onlyView = true
+				data.convs.works.flag_date = data.convs.date
 				console.log('data::::', data)
 				var to = ''
 				this.$store.getters.getOthers.forEach(x => {
