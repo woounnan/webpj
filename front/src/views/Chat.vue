@@ -48,11 +48,11 @@ export default{
 		}
 	},
 	created(){
-	},
-   	mounted(){
    		console.log('TTTTTTTTTTTTTTTT:::', this.$store.state.bus)
    		this.$store.commit('initSocks')
    		this.sendWork()
+	},
+   	mounted(){
    	},
 	methods: {
 		//첫 등록 이외의 모든 작업 socket 처리
