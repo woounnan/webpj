@@ -148,7 +148,7 @@
       <template v-else>
         <v-list-item>
           <div class="flex-grow-1"></div>
-          <div v-if="item.state='미제출'">
+          <div v-if="jobs.convs.works.state_c='미제출'">
             <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
           </div>
         </v-list-item>
