@@ -140,7 +140,7 @@ var saveMsg = function (to, from, newConvs){
 			*/
 		}
 		else{
-			if(newConvs.works.by != newConvs.works.id) {
+			if(newConvs.works.by_position != to) {
 				//승인 대기
 				console.log('받은 작업임 in index.js')
 				if(newConvs.works.by_position == to) {//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
