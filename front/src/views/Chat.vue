@@ -50,6 +50,7 @@ export default{
 	created(){
 	},
    	mounted(){
+   		console.log('TTTTTTTTTTTTTTTT:::', this.$store.state.bus)
    		this.$store.commit('initSocks')
    		this.sendWork()
    	},
