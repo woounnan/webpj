@@ -82,7 +82,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		console.log('Date ::::', newConvs.date)
 		for(x in r.comu){
 			if(r.comu[x].with === to){
-				console.log('find idx ::')
+				console.log('find idx ::', r.comu[x].with)
 				idx = x
 				flag = 1
 				break
