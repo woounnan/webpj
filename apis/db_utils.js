@@ -50,9 +50,10 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		state_c: req.body.state_c,
 		by : req.body.by,
 		by_position: req.body.by_position,
+		flag_uploadFile : req.body.flag_uploadFile === 'true'
 	}
 	console.log('/work :::', JSON.stringify(works))
-	if(req.body.flag_uploadFile == 'true'){
+	if(works.flag_uploadFile == true){
 		works['file_s_real'] = req.file.originalname
 		works['file_s_save'] = req.file.filename
 	}

@@ -73,6 +73,8 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
 		}
+		
+		console.log('----------------------------')
 		var flag = 0
 		var idx = -1
 		var findDate = newConvs.works.flag_onlyView == true ? newConvs.works.flag_date : newConvs.date
@@ -88,16 +90,13 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				break
 			}
 		}
-		console.log('----------------------------')
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
-			console.log('contents :::', JSON.stringify(x))
 			if(x.date == findDate){
 				console.log('work 찾음!!!::::', JSON.stringify(x))
 				x.works[fieldName] = value
 			}
 			else{
-				console.log('work 못찾음 ㅠㅠ')
 				return
 			}
 		})
@@ -126,7 +125,7 @@ var saveMsg = function (to, from, newConvs){
 	console.log('saveMsg :::', newConvs.works)
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
-		if((newConvs.works.flag_expired == false) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
+		if((newConvs.works.flag_onlyView != true) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
