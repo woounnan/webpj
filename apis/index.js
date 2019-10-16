@@ -119,14 +119,14 @@ var saveMsg = function (to, from, newConvs){
 	//saveMsg에서 추가하는 속성 flag_expired, favor - Work.vue에서 제어하지 않는 값들
 	//if 메시지가 work라면
 	//expired callback을 걸어준다.
-	newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
-	newConvs.works['favor'] = false
+
 	//msg가 works면
 	if(newConvs.works.notice != undefined){
 		//처음 생성된 works면
 		if((newConvs.works.flag_expired == false) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state === "미확인"))){
 			console.log('this is works that deadline has not yet passed!!!')
-
+			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
+			newConvs.works['favor'] = false
 			setTimeout((newConvs)=>{
 		    	console.log('diffSec::::', diffSec(newConvs.endDate))
 		    	newConvs.works.flag_expired = true
