@@ -88,6 +88,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				break
 			}
 		}
+		console.log('----------------------------')
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
 			console.log('contents :::', JSON.stringify(x))
@@ -100,6 +101,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				return
 			}
 		})
+		console.log('----------------------------')
 		//바꾼 값으로 update
 		User.update({
 				position : from
@@ -130,10 +132,13 @@ var saveMsg = function (to, from, newConvs){
 			newConvs.works['favor'] = false
 			setTimeout((newConvs)=>{
 		    	console.log('diffSec::::', diffSec(newConvs.endDate))
+		    	console.log('diffSec::::', diffSec(newConvs.endDate))
+		    	console.log('diffSec::::', diffSec(newConvs.endDate))
+		    	
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
-			}, 1000 * 30, newConvs)
+			}, 1000 * 10, newConvs)
 		}
 		else{
 			if(newConvs.works.by != newConvs.works.id) {
