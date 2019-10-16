@@ -45,7 +45,14 @@ var regWork = (state, works, cv, to) => {
     //대상만 추가해준다.
     works.forEach(x =>{
       if(x.date === cv.date){
-        x.to.push(to)
+        x.to.push({
+        position: to,
+        file_save: cv.works.file_c_save,
+        file_real: cv.works.file_c_real,
+        state: cv.works.state_c, //각 클라이언트 state
+        avatar: getAvatar(state, to),
+        flag_upload : cv.works.flag_c_upload,
+      })
         console.log('already registered work')
         return
       }
