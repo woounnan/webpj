@@ -10,7 +10,7 @@
 
           
             <div class="flex-grow-1"></div>
-            <div v-if="jobs.convs.works.flag_date != jobs.convs.date">
+            <div v-if="jobs.convs.works.by != $store.getters.getUser.id">
               <v-btn v-if="jobs.convs.works.state_c === '미제출'" depressed large color="error">미제출</v-btn>
               <v-btn v-if="jobs.convs.works.state_c === '승인대기'" depressed large color="primary">승인대기</v-btn>
               <v-btn v-if="jobs.convs.works.state_c === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
