@@ -189,9 +189,9 @@ export default new Vuex.Store({
                   //state.user.works.toWork.splice(0, 1)
                 }else{
                   //받은작업 등록
-                  console.log('title::: ', cv.convs.works.title)
-                  console.log('state_c::: ', cv.convs.works.state_c)
-                  console.log('state_s::: ', cv.convs.works.state_s)
+                  console.log('title::: ', cv.works.title)
+                  console.log('state_c::: ', cv.works.state_c)
+                  console.log('state_s::: ', cv.works.state_s)
                   regWork(state, state.user.works.fromWork, cv, x.with)
                   //state.user.works.fromWork.splice(0, 1)
 
