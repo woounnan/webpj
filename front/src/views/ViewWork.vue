@@ -11,9 +11,9 @@
           
             <div class="flex-grow-1"></div>
             <v-btn v-if="jobs.convs.works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
-            <v-btn v-if="jobs.convs.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
-            <v-btn v-if="jobs.convs.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
-            <v-btn v-if="jobs.convs.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+            <v-btn v-if="jobs.convs.works.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
+            <v-btn v-if="jobs.convs.works.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
+            <v-btn v-if="jobs.convs.works.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
 
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
@@ -29,7 +29,7 @@
             <v-list-item-content>
               <v-text-field 
                 readonly
-                v-model="jobs.convs.title"
+                v-model="jobs.convs.works.title"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
@@ -42,7 +42,7 @@
 
             <v-list-item-content>
               <v-textarea 
-                v-model="jobs.convs.contents"
+                v-model="jobs.convs.works.contents"
                 counter
                 single-line
                 type="text"
@@ -73,13 +73,13 @@
             <v-col cols="5">
               <v-list-item-content>
                 <v-chip
-                v-if="jobs.convs.flag_upload"
+                v-if="jobs.convs.works.flag_upload"
                 color="deep-purple"
                 text-color="white"
                 @click="showUpload"
                 width="5px"
               >
-              {{works.file_real}}
+              {{jobs.convs.works.file_s_real}}
             </v-chip>
           </v-list-item-content>
             </v-col>
