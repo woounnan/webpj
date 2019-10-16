@@ -89,6 +89,8 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				break
 			}
 		}
+		console.log('--------------------- before')
+		console.log(r.comu[idx].convs)
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
 			if(x.date == findDate){
@@ -99,8 +101,8 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				return
 			}
 		})
-		console.log('----------------------------')
 		console.log(r.comu[idx].convs)
+		console.log('----------------------------')
 		//바꾼 값으로 update
 		User.update({
 				position : from
