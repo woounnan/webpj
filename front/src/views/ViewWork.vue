@@ -10,10 +10,18 @@
 
           
             <div class="flex-grow-1"></div>
-            <v-btn v-if="jobs.convs.works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
-            <v-btn v-if="jobs.convs.works.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
-            <v-btn v-if="jobs.convs.works.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
-            <v-btn v-if="jobs.convs.works.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+            <div v-if="jobs.convs.works.flag_date != jobs.convs.date">
+              <v-btn v-if="jobs.convs.works.state_c === '미제출'" depressed large color="error">미제출</v-btn>
+              <v-btn v-if="jobs.convs.works.state_c === '승인대기'" depressed large color="primary">승인대기</v-btn>
+              <v-btn v-if="jobs.convs.works.state_c === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
+              <v-btn v-if="jobs.convs.works.state_c === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+            </div>
+            <div v-else>
+              <v-btn v-if="jobs.convs.works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
+              <v-btn v-if="jobs.convs.works.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
+              <v-btn v-if="jobs.convs.works.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
+              <v-btn v-if="jobs.convs.works.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+            </div>
 
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
@@ -140,7 +148,9 @@
       <template v-else>
         <v-list-item>
           <div class="flex-grow-1"></div>
-          <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+          <div v-if="item.state='미제출'">
+            <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+          </div>
         </v-list-item>
       </template>
     </v-list>              
