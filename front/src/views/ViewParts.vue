@@ -184,7 +184,7 @@
       period: '',
       active: undefined,
       thisWindow: undefined,
-      thisWork: undefined,
+      thisJob: undefined,
       viewWork: false,
       viewWork2: false,
       selected: [2],
