@@ -59,9 +59,9 @@ export default{
 				console.log('here is in sendWork::::', data)
 				data.convs.works.flag_date = data.convs.date
 				data.convs.date = moment().format('HH:mm:ss')
-				data.convs.works.state_s = '승인대기'
 				data.convs.id = this.$store.getters.getUser.id
 				data.convs.position = this.$store.getters.getUser.position
+				if(data.convs.works.)
 				data.convs.works.flag_onlyView = true
 				var to = ''
 				this.$store.getters.getOthers.forEach(x => {

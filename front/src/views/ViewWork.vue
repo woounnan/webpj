@@ -5,15 +5,15 @@
       <v-card>
         <v-card-title class="cyan darken-1">
 
-            <span class="headline white--text">상세 보기{{works}}</span>
+            <span class="headline white--text">상세 보기</span>
 
 
           
             <div class="flex-grow-1"></div>
-            <v-btn v-if="works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
-            <v-btn v-if="works.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
-            <v-btn v-if="works.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
-            <v-btn v-if="works.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+            <v-btn v-if="jobs.convs.works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
+            <v-btn v-if="jobs.convs.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
+            <v-btn v-if="jobs.convs.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
+            <v-btn v-if="jobs.convs.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
 
           <v-btn dark icon @click="closeWindow">
             <v-icon>cancel</v-icon>
@@ -29,7 +29,7 @@
             <v-list-item-content>
               <v-text-field 
                 readonly
-                v-model="works.title"
+                v-model="jobs.convs.title"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
@@ -42,7 +42,7 @@
 
             <v-list-item-content>
               <v-textarea 
-                v-model="works.contents"
+                v-model="jobs.convs.contents"
                 counter
                 single-line
                 type="text"
@@ -60,7 +60,7 @@
           </v-col>
                 <v-col cols="5">
                 <v-text-field
-                v-model="date"
+                v-model="period"
                 @click="showDate"
                 readonly
               />
@@ -73,7 +73,7 @@
             <v-col cols="5">
               <v-list-item-content>
                 <v-chip
-                v-if="works.flag_upload"
+                v-if="works.convs.flag_upload"
                 color="deep-purple"
                 text-color="white"
                 @click="showUpload"
@@ -91,7 +91,8 @@
           class="overflow-y-auto"  
           style="max-height: 200px" 
         >
-      <template v-if="works.convs.works.by === $store.getters.getUser.id" v-for="(item, index) in works.to">
+        <!-- 받은 작업이면 -->
+      <template v-if="jobs.convs.works.by === $store.getters.getUser.id" v-for="(item, index) in jobs.to">
         <v-subheader
         >대상</v-subheader>
 
@@ -139,7 +140,7 @@
       <template v-else>
         <v-list-item>
           <div class="flex-grow-1"></div>
-          <v-btn @click="sendWorkToS" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+          <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
         </v-list-item>
       </template>
     </v-list>              
@@ -152,8 +153,8 @@
   export default{
     props:{
       idx_sep: 0,
-      works: undefined,
-      date: '',
+      jobs: undefined,
+      period: '',
     },
     data(){
       return {
@@ -171,20 +172,21 @@
       }
     },
     mounted(){
-      console.log('ViewWork.vue::::::', this.works)
+      console.log('ViewWork.vue::::::', this.jobs)
     },
     methods: {
       closeWindow(){
         console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
-      sendWorkToS(){
+      sendWorkToS(state){
         console.log('call sendWorkToS::::')
         //update mine
-        this.$store.state.bus.$emit('sendWork', this.works)
+        this.jobs.convs.works.state_c = state
+        this.$store.state.bus.$emit('sendWork', this.jobs)
       },
       showDate(){
-        console.log('date ::::', this.date)
+        console.log('date ::::', this.period)
       },
       showUpload(){
         console.log('flag_upload ::::', this.works.flag_upload)

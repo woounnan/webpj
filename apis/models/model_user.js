@@ -21,13 +21,15 @@ const userSchema = new mongoose.Schema({
 			works: {
 				by : String, //sender's id
 				by_position : String,
-				flag_onlyView: Boolean, //true면 채팅창에 표시만 하는용도, workslist에 포함시키지 않음.
-				flag_date: String,
 				title: String,
 				contents: String,
 				startDate: String,
 				endDate: String,
 				flag_expired: Boolean,
+				flag_onlyView: Boolean, //true면 채팅창에 표시만 하는용도, workslist에 포함시키지 않음.
+				flag_date: String,				
+				flag_c_upload: Boolean,
+				flag_s_upload: Boolean,
 				file_s_save: String,
 				file_s_real: String,
 				file_c_save: String,

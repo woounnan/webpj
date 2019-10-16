@@ -77,7 +77,7 @@
           </div>
       </v-list>
           </template> 
-           <ViewWork :works="thisWork" :idx_sep="thisWindow" :date="convDate" /> 
+           <ViewWork  :jobs="thisJob" :idx_sep="thisWindow" :period="period" /> 
 
     </v-dialog>
     </v-card>
@@ -159,7 +159,7 @@
           </div>
       </v-list>
       </template>
-                 <ViewWork :works="thisWork" :idx_sep="thisWindow" :date="convDate"/> 
+                 <ViewWork :jobs="thisJob" :idx_sep="thisWindow" :period="period"/> 
 
     </v-dialog>
     </v-card>
@@ -181,7 +181,7 @@
       idx_sep: undefined,
   	},
     data: () => ({
-      convDate: '',
+      period: '',
       active: undefined,
       thisWindow: undefined,
       thisWork: undefined,
@@ -218,10 +218,10 @@
       setThis(idx){
         this.thisWindow = idx
       },
-      setThisWork(works){
-        console.log('call setThisWork::::', works)
-        this.thisWork = works
-        this.convDate = works.convs.works.startDate + '~' + works.convs.works.endDate
+      setThisWork(jobs){
+        console.log('call setThisWork::::', jobs)
+        this.thisJob = jobs
+        this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
       },
       setItems(idx){
         console.log('call setItems:::')
