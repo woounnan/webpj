@@ -121,7 +121,6 @@ var saveMsg = function (to, from, newConvs){
 	//expired callback을 걸어준다.
 
 	//msg가 works면
-	console.log('saveMsg :::', newConvs)
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
 		if((newConvs.works.flag_date == newConvs.date) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
