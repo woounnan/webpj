@@ -128,14 +128,14 @@
                     v-if="item.to.length>3">more_horiz</v-icon>
 
                 </v-list-item-title>
-                    <v-list-item-subtitle class="text--primary" >{{item.title}}</v-list-item-subtitle>
-                  <v-list-item-subtitle v-text="item.contents"></v-list-item-subtitle>
+                    <v-list-item-subtitle class="text--primary" >{{item.convs.works.title}}</v-list-item-subtitle>
+                  <v-list-item-subtitle v-text="item.convs.works.contents"></v-list-item-subtitle>
                 </v-list-item-content>
 
                 <v-list-item-action>
-                  <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
+                  <v-list-item-action-text v-text="item.convs.works.due"></v-list-item-action-text>
                   <v-icon
-                    v-if="!item.favor"
+                    v-if="!item.convs.works.favor"
                     color="grey lighten-1"
                   >
                     star_border
