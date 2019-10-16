@@ -73,7 +73,6 @@
             ></v-divider>
           </div>
       </v-list>
-           <ViewWork  :jobs="thisJob" :idx_sep="thisWindow" :period="period" /> 
 
             <modals-container hide-backdrop />
     </v-card>
