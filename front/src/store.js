@@ -26,7 +26,7 @@ var regWork = (state, works, cv, to) => {
         file_real: cv.works.file_c_real,
         state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
-        flag_upload : flag_c_upload,
+        flag_upload : cv.works.flag_c_upload,
       }], //대상,, 보낸: 받은사람 / 받은: 보낸사람
       /*
       date : cv.date,
