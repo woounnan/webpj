@@ -165,7 +165,6 @@ export default new Vuex.Store({
 
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
-          console.log('getworks:::', r)
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
               if(cv.date != cv.works.flag_date){
@@ -190,6 +189,9 @@ export default new Vuex.Store({
                   //state.user.works.toWork.splice(0, 1)
                 }else{
                   //받은작업 등록
+                  console.log('title::: ', cv.convs.works.title)
+                  console.log('state_c::: ', cv.convs.works.state_c)
+                  console.log('state_s::: ', cv.convs.works.state_s)
                   regWork(state, state.user.works.fromWork, cv, x.with)
                   //state.user.works.fromWork.splice(0, 1)
 
