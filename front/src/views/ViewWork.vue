@@ -187,7 +187,6 @@
     methods: {
       closeWindow(){
         console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
-        if(this.$store.)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(state){
