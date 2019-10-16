@@ -77,8 +77,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		console.log('----------------------------')
 		var flag = 0
 		var idx = -1
-		var findDate = newConvs.works.flag_onlyView == true ? newConvs.works.flag_date : newConvs.date
-		console.log('flag_onlyView::::', newConvs.works.flag_onlyView)
+		var findDate = newConvs.works.flag_date != newConvs.date ? newConvs.works.flag_date : newConvs.date
 		console.log('flag_date::::', newConvs.works.flag_date)
 		console.log('findDate ::::', findDate)
 		console.log('Date ::::', newConvs.date)
@@ -125,7 +124,7 @@ var saveMsg = function (to, from, newConvs){
 	console.log('saveMsg :::', newConvs.works)
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
-		if((newConvs.works.flag_date != newConvs.date) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
+		if((newConvs.works.flag_date == newConvs.date) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
