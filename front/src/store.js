@@ -162,9 +162,9 @@ export default new Vuex.Store({
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
               if(cv.date != cv.works.flag_date){
-                console.log('diff work ::: store.js :::', cv)
                 return
               }
+                console.log('diff work ::: store.js :::', cv)
               if(cv.works.notice === true){
                 if(cv.works.by === state.user.id){
                   //보낸알림 등록
