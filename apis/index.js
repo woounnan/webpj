@@ -79,7 +79,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		console.log('flag_onlyView::::', newConvs.works.flag_onlyView)
 		console.log('flag_date::::', newConvs.works.flag_date)
 		console.log('findDate ::::', findDate)
-		console.log('Date ::::', date)
+		console.log('Date ::::', newConvs.date)
 		for(x in r.comu){
 			if(r.comu[x].with === to){
 				console.log('find idx ::')
