@@ -54,6 +54,7 @@ export default{
    		this.sendWork()
    	},
 	methods: {
+		//첫 등록 이외의 모든 작업 socket 처리
 		sendWork(){
 			this.$store.state.bus.$on('sendWork', (data)=>{
 				console.log('here is in sendWork::::', data)
@@ -61,8 +62,6 @@ export default{
 				data.convs.date = moment().format('HH:mm:ss')
 				data.convs.id = this.$store.getters.getUser.id
 				data.convs.position = this.$store.getters.getUser.position
-				if(data.convs.works.)
-				data.convs.works.flag_onlyView = true
 				var to = ''
 				this.$store.getters.getOthers.forEach(x => {
 					if(x.id === data.convs.works.by){

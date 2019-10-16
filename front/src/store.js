@@ -161,7 +161,7 @@ export default new Vuex.Store({
           console.log('getworks:::', r)
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
-              if(cv.works.flag_onlyView == true)
+              if(cv.date != cv.works.flag_date)
                 return
               if(cv.works.notice === true){
                 if(cv.works.by === state.user.id){

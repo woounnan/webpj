@@ -26,8 +26,7 @@ const userSchema = new mongoose.Schema({
 				startDate: String,
 				endDate: String,
 				flag_expired: Boolean,
-				flag_onlyView: Boolean, //true면 채팅창에 표시만 하는용도, workslist에 포함시키지 않음.
-				flag_date: String,				
+				flag_date: String, //원본 work를 찾기위함				
 				flag_c_upload: Boolean,
 				flag_s_upload: Boolean,
 				file_s_save: String,
