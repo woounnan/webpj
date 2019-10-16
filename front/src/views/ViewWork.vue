@@ -73,7 +73,7 @@
             <v-col cols="5">
               <v-list-item-content>
                 <v-chip
-                v-if="works.convs.flag_upload"
+                v-if="jobs.convs.flag_upload"
                 color="deep-purple"
                 text-color="white"
                 @click="showUpload"
