@@ -21,6 +21,9 @@
           <v-icon>mdi-checkbox-marked-circle</v-icon>
         </v-btn>
       
+
+      <v-dialog v-model="viewWork" width="1000px"  justify="center">
+        <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
           style="max-height: 500px"
@@ -28,7 +31,7 @@
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
 
-                <v-list-item-content @click="setThisWork(item)">
+                <v-list-item-content v-on="dial"  @click="setThisWork(item)">
 
                   <v-list-item-title>
 
@@ -73,8 +76,10 @@
             ></v-divider>
           </div>
       </v-list>
+          </template> 
+           <ViewWork  :jobs="thisJob" :idx_sep="thisWindow" :period="period" /> 
 
-            <modals-container hide-backdrop />
+    </v-dialog>
     </v-card>
 
   </v-col>
@@ -217,22 +222,6 @@
         console.log('call setThisWork::::', jobs)
         this.thisJob = jobs
         this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
-
-        this.$modal.show(ViewWork,
-          {
-            //bus : this.ps.bus,
-            modal : this.$modal,
-            jobs:this.thisJob,
-            idx_sep:this.thisWindow,
-            period:this.period,
-          },
-          {
-            name: 'dynamic-modal',
-            width: '100%',
-            height: '100%',
-            draggable: true
-          }
-        )
       },
       setItems(idx){
         console.log('call setItems:::')
