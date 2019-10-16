@@ -90,8 +90,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		}
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
-			console.log('contents :::', x.contents)
-			console.log('date:', x.date, '::: find_date:', findDate)
+			console.log('contents :::', JSON.stringif(x))
 			if(x.date == findDate){
 				console.log('work 찾음!!!::::', JSON.stringify(x))
 				x.works[fieldName] = value
