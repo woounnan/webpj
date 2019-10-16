@@ -200,7 +200,7 @@
       ],
     }),
     created(){
-      this.$store.state.bus.$on('closeViewWork', (idx)=>{
+      this.$store.commit('myOn', 'closeViewWork', (idx)=>{
         if(idx == 1)
           this.viewWork = false
         else

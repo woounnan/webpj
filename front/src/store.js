@@ -65,6 +65,7 @@ export default new Vuex.Store({
   	bus: new Vue(),
   	tk: undefined,
     today: '',
+    mountedCheck: [],
     user: {
       id: '',
       position: '',
@@ -219,7 +220,13 @@ export default new Vuex.Store({
     },
     closeRoom(state, idx){
       state.user.room.splice(idx, 1)
-    }
+    },
+    myOn(state, eve, func){
+        if(state.mountedCheck.indexOf(eve) == -1)
+          return state.bus.$emit(eve, func)
+        else
+          return console.error('already mounted events! ::: store.js')
+    },
   },
   getters: {
     getUser(state){
@@ -242,6 +249,9 @@ export default new Vuex.Store({
     },
     getWorks(state){
       return state.user.works
+    },
+    getMountedCheck(state){
+      return state.mountedCheck
     },
   },
   actions: {

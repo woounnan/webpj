@@ -57,7 +57,7 @@ export default{
 	methods: {
 		//첫 등록 이외의 모든 작업 socket 처리
 		sendWork(){
-			this.$store.state.bus.$on('sendW', (data)=>{
+			this.$store.commit('myOn', 'sendW', (data)=>{
 				console.log('here is in sendWork::::', data)
 				data.convs.works.flag_date = data.convs.date
 				data.convs.date = moment().format('HH:mm:ss')
