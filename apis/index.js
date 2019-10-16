@@ -100,6 +100,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			}
 		})
 		console.log('----------------------------')
+		console.log(r.comu)
 		//바꾼 값으로 update
 		User.update({
 				position : from
