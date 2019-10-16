@@ -171,7 +171,7 @@ io.on('connection', function(socket){
 
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
-		console.log(JSON.stringify(data))
+		console.log(data)
 		saveMsg(data.header.to, data.header.from, data.msg)
 		saveMsg(data.header.from, data.header.to, data.msg)
 		//send all clients except for sender
