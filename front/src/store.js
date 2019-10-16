@@ -164,8 +164,6 @@ export default new Vuex.Store({
               if(cv.date != cv.works.flag_date){
                 return
               }
-              if(x.with==='정보보호병')
-                console.log('diff work ::: store.js :::', cv)
               if(cv.works.notice === true){
                 if(cv.works.by === state.user.id){
                   //보낸알림 등록

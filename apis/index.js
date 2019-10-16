@@ -121,7 +121,7 @@ var saveMsg = function (to, from, newConvs){
 	//expired callback을 걸어준다.
 
 	//msg가 works면
-	console.log('saveMsg :::', newConvs.works)
+	console.log('saveMsg :::', newConvs.convs)
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
 		if((newConvs.works.flag_date == newConvs.date) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
@@ -142,8 +142,10 @@ var saveMsg = function (to, from, newConvs){
 			if(newConvs.works.by != newConvs.works.id) {
 				//승인 대기
 				console.log('받은 작업임 in index.js')
-				if(newConvs.works.by_position == to) //받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
+				if(newConvs.works.by_position == to) {//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
+					console.log(newConvs)
 					msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
+				}
 				else //받은 작업이고 요청자에게 제출하는 메시지일 때, 수신자의 상태 변경
 					msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
 			}
