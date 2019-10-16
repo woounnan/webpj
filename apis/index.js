@@ -128,6 +128,7 @@ var saveMsg = function (to, from, newConvs){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
+			/*
 			setTimeout((newConvs)=>{
 		    	console.log('diffSec::::', diffSec(newConvs.endDate))
 		    	console.log('diffSec::::', diffSec(newConvs.endDate))
@@ -137,6 +138,7 @@ var saveMsg = function (to, from, newConvs){
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
 			}, 1000 * 10, newConvs)
+			*/
 		}
 		else{
 			if(newConvs.works.by != newConvs.works.id) {
