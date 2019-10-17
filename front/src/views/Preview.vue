@@ -113,8 +113,7 @@
 				this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
 			},
 			myNext(){
-				console.log('myNext:::', this.idx_sep)
-				this.$store.state.bus.$emit('nextView', this.idx_sep)
+				this.$store.commit('initIdxView', this.idx_sep)
 				this.$router.push('/view')
 			},
 		}

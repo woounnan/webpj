@@ -1,7 +1,7 @@
 <template>
 	<v-card color="basil">
     <v-tabs
-      v-model="tab"
+      v-model="$store.state.idxView"
       background-color="transparent"
       color="basil"
       grow
@@ -51,16 +51,8 @@
 			}
 		},
     mounted(){
-      var eve = 'nextView'
-      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
-          this.$store.commit('pushMountedCheck', eve)
-          this.$store.state.bus.$on(eve,  (idx)=>{
-          console.log('call nextView :::', idx)
-          this.tab = idx
-          this.setCur(idx)
-        })
-      }
       //현재 시간 설정
+      this.setWorks(this.$store.getters.getIdxView)
       this.$store.commit("setToday")
       setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )
     },
