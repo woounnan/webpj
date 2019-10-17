@@ -108,7 +108,7 @@
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
-          style="max-height: 500px"
+          style="max-height: 400px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
@@ -216,6 +216,10 @@
             this.viewWork2 = false
         })
       }
+
+      this.$store.state.bus.$on('setList', (idx)=>{
+        this.setItems(idx)
+      })
       this.setItems(this.idx_sep)
     },
     methods: {
