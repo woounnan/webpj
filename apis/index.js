@@ -92,10 +92,11 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 			console.log(x.date, '------', x.works.title)
 			if(x.date == findDate){
 				//x.works['fieldName'] = value
-				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
 				//console.log('x.date:::', x.date)
 				//console.log('work 찾음!!!::::', r.comu[idx].convs[i])
+				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				r.comu[idx].convs[i].works[fieldName] = value
+				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				//console.log('work 찾음2222!!!::::', x)
 				
 			}
@@ -131,14 +132,14 @@ var saveMsg = function (to, from, newConvs){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
-
+/*
 			setTimeout((newConvs)=>{
 		    	
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
 			}, 1000 * 10, newConvs)
-
+*/
 		}
 		else{
 			if((newConvs.works.by_position != newConvs.position) && (newConvs.position === to)) {
