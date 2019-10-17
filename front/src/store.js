@@ -222,8 +222,10 @@ export default new Vuex.Store({
       state.user.room.splice(idx, 1)
     },
     myOn(state, eve, func){
-        if(state.mountedCheck.indexOf(eve) == -1)
+        if(state.mountedCheck.indexOf(eve) == -1){
+          console.log('enroll callback in bus')
           return state.bus.$emit(eve, func)
+        }
         else
           return console.error('already mounted events! ::: store.js')
     },
