@@ -20,7 +20,6 @@
 				    	<v-icon :color="$store.state.user.active ? 'deep-purple accent-4' : 'grey'">work</v-icon>
 				    </v-toolbar-title>
 				</v-toolbar>
-				    <v-card-text>I'm card text</v-card-text>
 				    <v-card-actions>
 				      <v-btn text>더보기</v-btn>
 				    </v-card-actions>
