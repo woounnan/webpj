@@ -68,12 +68,12 @@ const msgPush = (to, from, newConvs)=>{
 	})
 }
 
-const msgSet = (to, from, newConvs, fieldName, value)=>{
+const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
 		}
-		console.log('----------------------------')
+		console.log('----------------------------', test)
 		var flag = 0
 		var idx = -1
 		var findDate = newConvs.works.flag_date != newConvs.date ? newConvs.works.flag_date : newConvs.date
@@ -145,10 +145,8 @@ var saveMsg = function (to, from, newConvs){
 				console.log('1: ', newConvs.works.by_position)
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
-				console.log('4: ', newConvs.works)
-				console.log('@@@@@@@@@@@@@@@@@@@@@@@')
 				if(to === newConvs.position) {//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
-					msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c)
+					msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c, '@@@@@@@@@@@@@@')
 				}
 			}
 			else{
@@ -158,8 +156,8 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
-				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s)
-				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c)
+				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s, '################')
+				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c, '################')
 			}
 		}
 	}
