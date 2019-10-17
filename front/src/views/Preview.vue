@@ -76,16 +76,15 @@
 <script>
 	export default {
 		props:{
-			works: [],
+			goings: [],
 			title: '',
-			period: '',
-			thisWindow: undefined,
-			thisJob: undefined,
 		},
 		data(){
 			return {
 				viewWork: false,
 				dial: '',
+				period: '',
+				thisJob: undefined,
 			}
 		},
 		created(){
