@@ -9,7 +9,7 @@
 			<v-container>
 		<v-row row wrap>
 			<v-col cols="6">
-			<Preview :goings="$store.state.user.works.fromWork" :title="title"/>
+			<Preview @click="showState" :goings="$store.state.user.works.fromWork" :title="title"/>
 				
 			</v-col>
 			<v-col cols="6">
@@ -100,6 +100,9 @@ export default{
 					console.log('이사람에게 보냈어::::', to)
 				})
 			}
+		},
+		showState(){
+			console.log(this.$store.state.user.works.fromWork)
 		}
 	}
 };
