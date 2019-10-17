@@ -205,7 +205,7 @@
         this.$store.commit('pushMountedCheck', eve)
         console.log('TTTTTTTT')
         this.$store.state.bus.$on(eve,  (idx)=>{
-          console.log('##############')
+          console.log('##############', idx)
           if(idx == 1)
             this.viewWork = false
           else
