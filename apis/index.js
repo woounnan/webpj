@@ -92,11 +92,10 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 
 			if((x.date == findDate) && (x.date == x.works.flag_date)){
 				//x.works['fieldName'] = value
-				x.works.append('test', 123123)
 				console.log('x.date:::', x.date)
 
-				console.log('work 찾음!!!::::', r.comu[idx].convs[i])
-				console.log('work 찾음2222!!!::::', x)
+				console.log('work 찾음!!!::::', r.comu[idx].convs[i].works)
+				console.log('work 찾음2222!!!::::', x.works)
 				
 			}
 			else{
