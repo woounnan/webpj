@@ -14,8 +14,8 @@
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
-          height="200px"
-			max-height="200px"
+          height="150px"
+			max-height="150px"
 	        class="overflow-y-auto"
       >
           <div v-for="(item, index) in goings.slice(0,3)">
