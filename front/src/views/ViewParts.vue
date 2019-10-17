@@ -2,10 +2,6 @@
 	<v-container>
 	<v-row >
 	   <v-col cols="6">
-
-          <template v-for="(item, index) in goings">
-            {{item.title}}
-          </template>
       <v-card
         class="mx-auto"
         @click="setThis(1)"
@@ -233,6 +229,7 @@
           this.setItems(idx)
         })
       }
+      this.setItems(this.idx_sep)
     },
     methods: {
       setThis(idx){
