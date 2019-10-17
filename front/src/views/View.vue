@@ -35,7 +35,7 @@
       ViewParts,
     },
     props:{
-    },0
+    },
 		data(){
 			return {
         idx_cur: undefined,
