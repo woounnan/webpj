@@ -227,6 +227,7 @@
     },
     methods: {
       setThis(idx){
+        console.log('setThis :::', idx)
         this.thisWindow = idx
       },
       setThisWork(jobs){
