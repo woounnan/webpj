@@ -178,6 +178,7 @@
     },
     props:{
       idx_sep: undefined,
+      goings: [],
   	},
     data: () => ({
       period: '',
@@ -187,16 +188,17 @@
       viewWork: false,
       viewWork2: false,
       selected: [2],
+          /*
       goings: [
-      /*
         {
           action: '15 min',
           headline: 'Brunch this weekend?',
           title: 'Ali Connors',
           subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
         },
-        */
+
       ],
+      */
     }),
     created(){
       console.log('mount ViewParts :::', this.idx_sep)
@@ -222,20 +224,6 @@
             this.viewWork2 = false
         })
       }
-      /*
-      var eve = 'setList'
-      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
-          this.$store.commit('pushMountedCheck', eve)
-          this.$store.state.bus.$on(eve,  (idx)=>{
-          console.log('setList:::', idx)
-          this.setItems(idx)
-        })
-      }
-      */
-      if(this.idx_sep != undefined){
-        console.log('set@@@@@@@@@@@@@@@@')
-        this.setItems(this.idx_sep)
-      }
     },
     methods: {
       setThis(idx){
@@ -245,27 +233,6 @@
         console.log('call setThisWork::::', jobs)
         this.thisJob = jobs
         this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
-      },
-      setItems(idx){
-        console.log('call setItems:::', idx)
-        switch(idx){
-          case 0:
-            this.goings = this.$store.getters.getUser.works.toWork
-            console.log('0000000000 ::: ', this.goings)
-            break
-          case 1:
-            this.goings = this.$store.getters.getUser.works.fromWork
-            console.log('111111111 ::: ', this.goings)
-            break
-          case 2:
-            this.goings = this.$store.getters.getUser.works.toNotice
-            console.log('222222222 ::: ', this.goings)
-            break
-          case 3:
-            this.goings = this.$store.getters.getUser.works.fromNotice
-            console.log('33333333 ::: ', this.goings)
-            break
-        }
       },
       mySort(){
       }

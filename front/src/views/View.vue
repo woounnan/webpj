@@ -9,7 +9,7 @@
       <v-tab
         v-for="(item,idx) in tabs"
         :key="item"
-        @click="setCur(idx)"
+        @click="setWorks(idx)"
       >
         {{ item }}
       </v-tab>
@@ -22,7 +22,7 @@
         align="start"
         justify="space-between"
       >
-          <ViewParts :idx_sep="idx_cur"/>
+          <ViewParts :goings="goings"/>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
@@ -47,7 +47,7 @@
 		    tabs: [
 		      '요청작업', '받은작업', '보낸알림', '받은알림'
 		    ],
-		    works: [],
+		    goings: [],
 			}
 		},
     mounted(){
@@ -65,10 +65,21 @@
       setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )
     },
     methods: {
-      setCur(idx){
-        console.log('setCur:::', idx)
-        this.idx_cur = idx
-        //this.$store.state.bus.$emit('setList', idx)
+      setWorks(idx){
+        switch(idx){
+          case 0:
+            this.goings = this.$store.getters.getUser.works.toWork
+            break
+          case 1:
+            this.goings = this.$store.getters.getUser.works.fromWork
+            break
+          case 2:
+            this.goings = this.$store.getters.getUser.works.toNotice
+            break
+          case 3:
+            this.goings = this.$store.getters.getUser.works.fromNotice
+            break
+        }
       },
     },
 	}
