@@ -143,18 +143,18 @@ var saveMsg = function (to, from, newConvs){
 				//승인 대기
 				console.log('받은 작업임 in index.js')
 				if(newConvs.works.by_position == to) {//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
-					msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
+					msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s)
 				}
 				else{ //받은 작업이고 요청자에게 제출하는 메시지일 때, 수신자의 상태 변경
-					msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
+					msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c)
 				}
 			}
 			else{
 				//승인 완료, 승인거절
 				console.log('요청 작업임 in index.js')
 				//요청자, 수신자 상태 모두 변경
-				msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
-				msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
+				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s)
+				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c)
 			}
 		}
 	}
