@@ -221,7 +221,7 @@
           else
             this.viewWork2 = false
         })
-      }/*
+      }
       var eve = 'setList'
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
           this.$store.commit('pushMountedCheck', eve)
@@ -229,7 +229,7 @@
           console.log('setList:::', idx)
           this.setItems(idx)
         })
-      }*/
+      }
       this.setItems(this.idx_sep)
     },
     methods: {
