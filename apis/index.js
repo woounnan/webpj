@@ -92,12 +92,10 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 
 			if((x.date == findDate) && (x.date == x.works.flag_date)){
 				//x.works['fieldName'] = value
-				r.comu[idx].convs[i].works.test = 12312312312312312312312313123123
-				r.comu[idx].convs[i].works['test2'] = 12312312312312312312312313123123
-				Object.assign(r.comu[idx].convs[i].works, {'test3': 123123123123123})
-				console.log('x.date:::', x.date)
 
+				console.log('x.date:::', x.date)
 				console.log('work 찾음!!!::::', r.comu[idx].convs[i].works)
+				r.comu[idx].convs[i].works.favor = '테스트로 바꿔봅니다.'
 				console.log('work 찾음2222!!!::::', x.works)
 				
 			}
@@ -134,9 +132,6 @@ var saveMsg = function (to, from, newConvs){
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
 			setTimeout((newConvs)=>{
-		    	console.log('diffSec::::', diffSec(newConvs.endDate))
-		    	console.log('diffSec::::', diffSec(newConvs.endDate))
-		    	console.log('diffSec::::', diffSec(newConvs.endDate))
 		    	
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
