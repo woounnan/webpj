@@ -73,7 +73,6 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
 		}
-
 		console.log('----------------------------')
 		var flag = 0
 		var idx = -1
@@ -89,22 +88,17 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				break
 			}
 		}
-		console.log('--------------------- before')
-		console.log(r.comu[idx].convs)
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
-				console.log('@@@@@@@@@@@@@@@@@@@@')
 			if(x.date == findDate){
 				console.log('work 찾음!!!::::', x)
-				x.works[fieldName] = value
+				//x.works['fieldName'] = value
+				x.works['test~!'] = 123123123123
 			}
 			else{
 				return
 			}
-				console.log('@@@@@@@@@@@@@@@@@@@@')
 		})
-		console.log(r.comu[idx].convs)
-		console.log('----------------------------')
 		//바꾼 값으로 update
 		User.update({
 				position : from
@@ -125,6 +119,8 @@ var saveMsg = function (to, from, newConvs){
 	//if 메시지가 work라면
 	//expired callback을 걸어준다.
 
+
+	console.log('()()()()()()()()()()()()()()(')
 	//msg가 works면
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
@@ -132,7 +128,6 @@ var saveMsg = function (to, from, newConvs){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
-			/*
 			setTimeout((newConvs)=>{
 		    	console.log('diffSec::::', diffSec(newConvs.endDate))
 		    	console.log('diffSec::::', diffSec(newConvs.endDate))
@@ -142,18 +137,17 @@ var saveMsg = function (to, from, newConvs){
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
 			}, 1000 * 10, newConvs)
-			*/
 		}
 		else{
 			if(newConvs.works.by_position != to) {
 				//승인 대기
 				console.log('받은 작업임 in index.js')
 				if(newConvs.works.by_position == to) {//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
-					console.log(newConvs)
 					msgSet(to, from, newConvs, 'state_c', newConvs.works.state)
 				}
-				else //받은 작업이고 요청자에게 제출하는 메시지일 때, 수신자의 상태 변경
+				else{ //받은 작업이고 요청자에게 제출하는 메시지일 때, 수신자의 상태 변경
 					msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
+
 			}
 			else{
 				//승인 완료, 승인거절
