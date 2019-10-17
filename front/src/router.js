@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './views/Login.vue'
-import Register from './views/enroll/Register.vue'
-import Home from './views/Chat.vue'
 import store from './store'
 
 
@@ -32,7 +30,7 @@ export default new Router({
 		{
 			path: '/',
 			name: 'home',
-			component: Home,
+      component: () => import('./views/Chat.vue'),
       beforeEnter: requireAuth
 		},
     {
@@ -40,11 +38,6 @@ export default new Router({
       name: 'view',
       component: () => import('./views/View.vue'),
       beforeEnter: requireAuth
-    },
-    {
-      path: '/reg',
-      name: 'register',
-      component: Register
     },
   ]
 })

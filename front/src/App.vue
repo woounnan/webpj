@@ -8,7 +8,7 @@
         <v-list-item 
           v-for="(item, i) in items"
           :key="i"
-          @click="myNext(item.to.path)"
+          @click="$router.push(item.to.path)"
           >
           <v-list-item-action>
             <v-icon v-html="item.icon"></v-icon>
@@ -95,10 +95,7 @@ export default {
   },
   methods: {
     myNext(path){
-      if(path === '/view'){
-        //this.$store.state.bus.$emit('nextView', 0)
         this.$router.push(path)
-      }
     },
     logOut(){
       console.log('call logOut function')
