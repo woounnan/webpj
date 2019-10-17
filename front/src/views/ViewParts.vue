@@ -217,7 +217,7 @@
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
         this.$store.state.bus.$on('closeViewWork',  (idx)=>{
-          console.log('closeViewWork!!')
+          console.log('closeViewWork!!', idx)
           if(idx == 1)
             this.viewWork = false
           else
