@@ -58,6 +58,7 @@
     },
     methods: {
       setWorks(idx){
+        console.log('setWorks!!!')
         switch(idx){
           case 0:
             this.goings = this.$store.getters.getUser.works.toWork
