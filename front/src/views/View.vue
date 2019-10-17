@@ -73,6 +73,7 @@
             this.goings = this.$store.getters.getUser.works.fromNotice
             break
         }
+        console.log('goings ::: ',this.goings)
       },
     },
 	}
