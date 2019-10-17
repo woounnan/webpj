@@ -68,7 +68,7 @@ const msgPush = (to, from, newConvs)=>{
 	})
 }
 
-const msgSet = (to, from, newConvs, fieldName, value, test)=>{
+const msgSet = (to, from, newConvs, fieldName, value)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
@@ -131,12 +131,14 @@ var saveMsg = function (to, from, newConvs){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
+			/*
 			setTimeout((newConvs)=>{
 		    	
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
 			}, 1000 * 10, newConvs)
+			*/
 		}
 		else{
 			if(newConvs.works.by_position != newConvs.position) {
