@@ -199,8 +199,9 @@
       ],
     }),
     created(){
-      /*
+      
       var eve = 'closeViewWork'
+      /*
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
         this.$store.state.bus.$on(eve,  (idx)=>{
