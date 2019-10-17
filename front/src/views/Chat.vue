@@ -52,9 +52,6 @@ export default{
 		Preview
 	},
 	props:{
-		title: '처리할일',
-		title2: '요청한일',
-		title3: '받은알림',
 	},
 	data: function (){
 		return {
@@ -63,7 +60,10 @@ export default{
 			layout: [
 	          ['toolbar', 1, 1, 'list'],
 	          [0, 0, 0, 0],
-        	]
+        	],
+			title: '처리할일',
+			title2: '요청한일',
+			title3: '받은알림',
 		}
 	},
 	created(){
