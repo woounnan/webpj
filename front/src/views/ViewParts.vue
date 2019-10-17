@@ -202,17 +202,14 @@
     created(){
       var eve = 'closeViewWork'
       this.$store.state.bus.$on(eve,  (idx)=>{
-          console.log('@@@@@@@@@@@@@', idx)
           if(idx == 1)
             this.viewWork = false
           else
             this.viewWork2 = false
-        })
+      })
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
-        console.log('TTTTTTTT')
         this.$store.state.bus.$on('closeViewWork',  (idx)=>{
-          console.log('##############', idx)
           if(idx == 1)
             this.viewWork = false
           else

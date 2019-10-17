@@ -9,14 +9,14 @@
 			<v-container>
 		<v-row row wrap>
 			<v-col cols="6">
-			<Preview />
+			<Preview :goings="$store.state.user.works.fromWork" :title="title"/>
 				
 			</v-col>
 			<v-col cols="6">
-				<Preview />
+				<Preview :goings="$store.state.user.works.toWork" :title="title2"/>
 			</v-col>
 			<v-col cols="12">
-				<Preview />
+				<Preview :goings="$store.state.user.works.fromNotice" :title="title3"/>
 			</v-col>
 		</v-row>
 
@@ -50,6 +50,11 @@ export default{
 		List,
 		Bar,
 		Preview
+	},
+	props:{
+		title: '처리할일',
+		title2: '요청한일',
+		title3: '받은알림',
 	},
 	data: function (){
 		return {
