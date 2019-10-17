@@ -245,15 +245,19 @@
         switch(idx){
           case 0:
             this.goings = this.$store.getters.getUser.works.toWork
+            console.log('0000000000 ::: ', this.goings)
             break
           case 1:
             this.goings = this.$store.getters.getUser.works.fromWork
+            console.log('111111111 ::: ', this.goings)
             break
           case 2:
             this.goings = this.$store.getters.getUser.works.toNotice
+            console.log('222222222 ::: ', this.goings)
             break
           case 3:
             this.goings = this.$store.getters.getUser.works.fromNotice
+            console.log('33333333 ::: ', this.goings)
             break
         }
       },
