@@ -3,6 +3,7 @@
 	>
 		<v-toolbar
 			color="deep-purple accent-2"
+			height="30px"
 			dark 
 		>
 			<v-toolbar-title>
