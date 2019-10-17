@@ -1,6 +1,7 @@
 <template>
 	<v-card
 		class="mx-auto"
+		max-height="300px"
 	>
 		<v-toolbar
 			color="deep-purple accent-2"
@@ -14,7 +15,6 @@
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
-          style="max-height: 500px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings.slice(0,3)">
             <v-list-item :key="item.title">
@@ -74,7 +74,11 @@
 </template>
 
 <script>
+	import ViewWork from 'ViewWork.vue'
 	export default {
+		components:{
+			ViewWork,
+		},
 		props:{
 			goings: undefined,
 			title: '',
