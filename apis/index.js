@@ -139,7 +139,7 @@ var saveMsg = function (to, from, newConvs){
 			}, 1000 * 10, newConvs)
 		}
 		else{
-			if(newConvs.works.by_position != to) {
+			if(newConvs.works.by_position != newConvs.position) {
 				//승인 대기
 				console.log('받은 작업임 in index.js')
 				console.log('1: ', newConvs.works.by_position)
