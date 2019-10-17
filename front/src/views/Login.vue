@@ -138,13 +138,13 @@
                 company: u.company
                 })
               return axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
-              
             }
           })
           .then(r => {
             this.$store.commit('initOthers', r.data.users)
             this.$store.commit('setTk')
             this.$store.commit('initDivisions')
+            this.$store.commit('initWorks')
             this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))

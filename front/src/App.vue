@@ -90,7 +90,6 @@ export default {
     ]
   }),
   mounted(){
-    this.$store.commit('initWorks')
     this.$store.commit('initSocks')
     this.$store.commit('initCompanys')
   },
