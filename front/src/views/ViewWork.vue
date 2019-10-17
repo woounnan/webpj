@@ -193,7 +193,7 @@
         console.log('call sendWorkToS::::')
         //update mine
         this.jobs.convs.works.state_c = state
-        this.$store.state.bus.$emit('sendW', this.jobs)
+        this.$store.state.bus.$emit('sendWork', this.jobs)
       },
       showDate(){
         console.log('date ::::', this.period)
