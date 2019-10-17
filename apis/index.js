@@ -92,6 +92,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 
 			if((x.date == findDate) && (x.date == x.works.flag_date)){
 				//x.works['fieldName'] = value
+				Object.assign(x.works, {fieldName: value});
 				console.log('x.date:::', x.date)
 
 				console.log('work 찾음!!!::::', r.comu[idx].convs[i].works)
