@@ -159,7 +159,7 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
-				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s,'^^^^^^^^^^^^^^^')
+				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, 200,to, from, newConvs, 'state_s', newConvs.works.state_s, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
 				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, 300,to, from, newConvs, 'state_c', newConvs.works.state_c, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
 			}
 		}
