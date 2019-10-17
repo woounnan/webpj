@@ -20,7 +20,7 @@
         <v-btn icon>
           <v-icon>mdi-checkbox-marked-circle</v-icon>
         </v-btn>
-      
+      {{goings}}
 
       <v-dialog v-model="viewWork" width="1000px"  justify="center">
         <template v-slot:activator="{ on:dial }">
@@ -74,7 +74,6 @@
               v-if="index + 1 < goings.length"
               :key="index"
             ></v-divider>
-            !@#!@#{{item.title}}
           </div>
       </v-list>
           </template> 
