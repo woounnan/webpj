@@ -51,12 +51,16 @@
 			}
 		},
     mounted(){
-        this.$store.state.bus.$on('nextView',  (idx)=>{
+      var eve = 'nextView'
+      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
+          this.$store.commit('pushMountedCheck', eve)
+          this.$store.state.bus.$on(eve,  (idx)=>{
           console.log('call nextView :::', idx)
           this.tab = idx
           this.setCur(idx)
           console.log('??? 왜 호출안돼 ㅡㅡ')
         })
+      }
       //현재 시간 설정
       this.$store.commit("setToday")
       setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )

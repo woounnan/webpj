@@ -200,6 +200,7 @@
       ],
     }),
     created(){
+      /*
       var eve = 'closeViewWork'
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
@@ -210,20 +211,25 @@
               this.viewWork2 = false
         })
       }
+      */
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
         this.$store.state.bus.$on('closeViewWork',  (idx)=>{
+          console.log('closeViewWork!!')
           if(idx == 1)
             this.viewWork = false
           else
             this.viewWork2 = false
         })
       }
-
-      this.$store.state.bus.$on('setList', (idx)=>{
-        console.log('setList:::', idx)
-        this.setItems(idx)
-      })
+      var eve = 'setList'
+      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
+          this.$store.commit('pushMountedCheck', eve)
+          this.$store.state.bus.$on(eve,  (idx)=>{
+          console.log('setList:::', idx)
+          this.setItems(idx)
+        })
+      }
       this.setItems(this.idx_sep)
     },
     methods: {
