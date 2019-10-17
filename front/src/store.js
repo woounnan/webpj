@@ -222,6 +222,7 @@ export default new Vuex.Store({
       state.user.room.splice(idx, 1)
     },
     myOn(state, eve, func){
+      console.log('ret:::', state.mountedCheck.indexOf(eve))
         if(state.mountedCheck.indexOf(eve) == -1){
           console.log('enroll callback in bus')
           state.mountedCheck.push(eve)
