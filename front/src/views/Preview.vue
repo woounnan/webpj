@@ -19,7 +19,7 @@
 	        class="overflow-y-auto"
       >
           <div v-for="(item, index) in goings.slice(0,3)">
-            <v-list-item :key="item.title">
+            <v-list-item height="30px" :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item)">
 

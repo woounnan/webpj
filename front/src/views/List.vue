@@ -25,7 +25,7 @@
     </v-toolbar>
 
     <v-list subheader
-        style="max-height: 300px" 
+        style="max-height: 450px" 
         class="overflow-y-auto" 
     >
       <v-subheader>나</v-subheader>
