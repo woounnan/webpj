@@ -200,6 +200,12 @@
       ],
     }),
     created(){
+      this.$store.state.bus.$on('closeViewWork',  (idx)=>{
+          if(idx == 1)
+            this.viewWork = false
+          else
+            this.viewWork2 = false
+        })
       var eve = 'closeViewWork'
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
