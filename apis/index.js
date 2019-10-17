@@ -94,7 +94,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			if(x.date == findDate){
 				console.log('work 찾음!!!::::', x)
 				//x.works['fieldName'] = value
-				x[i].works['test'] = 123123123123
+				r.comu[idx].convs[i].works['test'] = 123123123123
 			}
 			else{
 				return
