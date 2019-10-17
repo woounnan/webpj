@@ -10,7 +10,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >진행중{{idx.sep}}</v-app-bar>
+    >진행중{{idx_sep}}</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
