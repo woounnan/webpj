@@ -95,7 +95,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 
 				console.log('x.date:::', x.date)
 				console.log('work 찾음!!!::::', r.comu[idx].convs[i].works)
-				r.comu[idx].convs[i].works.favor = true
+				r.comu[idx].convs[i].works['favor'] = true
 				console.log('work 찾음2222!!!::::', x.works)
 				
 			}
