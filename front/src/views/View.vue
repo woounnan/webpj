@@ -55,7 +55,7 @@
         this.$store.state.bus.$on('nextView',  (idx)=>{
           console.log('call nextView :::', idx)
           this.tab = idx
-          this.idx_cur = idx
+          this.setCur(idx)
         })
       //현재 시간 설정
       this.$store.commit("setToday")
