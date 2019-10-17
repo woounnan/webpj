@@ -9,7 +9,6 @@
 			<v-container>
 		<v-row row wrap>
 			<v-col cols="6">
-				<v-btn @click="showState" ></v-btn>
 			<Preview :goings="$store.state.user.works.fromWork" :title="title"/>
 				
 			</v-col>

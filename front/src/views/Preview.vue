@@ -5,7 +5,6 @@
 		<v-toolbar
 			color="deep-purple accent-2"
 			dark
-			@click="showGoings"
 		>
 			<v-toolbar-title>
 				{{title}}
@@ -17,7 +16,7 @@
           two-line
           style="max-height: 500px"
           class="overflow-y-auto">
-          <div v-for="(item, index) in goings">
+          <div v-for="(item, index) in goings.slice(0,3)">
             <v-list-item :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item)">
@@ -98,10 +97,6 @@
 			setThisWork(jobs){
 				this.thisJob = jobs
 				this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
-			},
-			showGoings(){
-				console.clear()
-				console.log(this.goings)
 			}
 		}
 	}

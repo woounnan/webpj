@@ -216,9 +216,11 @@
             this.viewWork2 = false
         })
       }
-      console.log('bus:::', this.$store.state.bus)
       this.setItems(this.idx_sep)
-      setInterval(this.setItems,1000*30, this.idx_sep)
+      setInterval((idx)=>{
+        this.$store.commit('initWorks')
+        this.setItems(idx)
+      },1000*30, this.idx_sep)
     },
     methods: {
       setThis(idx){
