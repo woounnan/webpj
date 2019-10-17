@@ -2,7 +2,7 @@
 <v-container>
 	<v-row 
 		row wrap
-		height="700px"
+		height="550px"
 	>
 		<v-col
 			cols="9">
