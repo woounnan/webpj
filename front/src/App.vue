@@ -95,7 +95,10 @@ export default {
   },
   methods: {
     myNext(path){
-      this.$router.push(path)
+      if(path === '/view'){
+        this.$store.state.bus.$emit('nextView', 0)
+        this.$router.push(path)
+      }
     },
     logOut(){
       console.log('call logOut function')

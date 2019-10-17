@@ -57,8 +57,6 @@
           this.tab = idx
           this.idx_cur = idx
         })
-      this.tab=2
-      this.idx_cur = 0
       //현재 시간 설정
       this.$store.commit("setToday")
       setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )
