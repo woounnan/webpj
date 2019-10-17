@@ -200,7 +200,7 @@
       ],
       */
     }),
-    created(){
+    mounted(){
       console.log('mount ViewParts :::', this.idx_sep)
       var eve = 'closeViewWork'
       /*
