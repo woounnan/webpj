@@ -89,7 +89,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 		var i =0
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
-			console.log(x.date)
+			console.log(x.date, '------', x.works.title)
 			if(x.date == findDate){
 				//x.works['fieldName'] = value
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
@@ -158,8 +158,8 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
-				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s)
-				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c)
+				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s,'^^^^^^^^^^^^^^^')
+				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c, '^^^^^^^^^^^^^^^^^')
 			}
 		}
 	}
