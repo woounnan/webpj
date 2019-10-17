@@ -221,6 +221,7 @@
       }
 
       this.$store.state.bus.$on('setList', (idx)=>{
+        console.log('setList:::', idx)
         this.setItems(idx)
       })
       this.setItems(this.idx_sep)
@@ -238,19 +239,15 @@
         console.log('call setItems:::', idx)
         switch(idx){
           case 0:
-          console.log('!!!!!')
             this.goings = this.$store.getters.getUser.works.toWork
             break
           case 1:
-          console.log('222222')
             this.goings = this.$store.getters.getUser.works.fromWork
             break
           case 2:
-          console.log('33333')
             this.goings = this.$store.getters.getUser.works.toNotice
             break
           case 3:
-          console.log('44444')
             this.goings = this.$store.getters.getUser.works.fromNotice
             break
         }
