@@ -15,7 +15,7 @@
       </v-tab>
     </v-tabs>
 
-    <v-tabs-items v-model="tab">
+    <v-tabs-items v-model="$store.state.idxView">
       <v-tab-item
         v-for="(item, idx) in tabs"
         :key="item"
