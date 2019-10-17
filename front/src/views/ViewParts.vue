@@ -74,6 +74,7 @@
               v-if="index + 1 < goings.length"
               :key="index"
             ></v-divider>
+            !@#!@#{{item.title}}
           </div>
       </v-list>
           </template> 
