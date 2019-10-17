@@ -174,7 +174,7 @@
 	import Vue from 'vue'
   export default {
     components:{
-      ViewWork
+      ViewWork,
     },
     props:{
       idx_sep: undefined,

@@ -124,6 +124,7 @@
           </v-list-item-content>
 
           <v-list-item-content>
+            {{to}}
             <v-btn v-if="item.state === '미제출'" depressed small color="error">미제출</v-btn>
             <v-btn v-if="item.state === '승인대기'" depressed small color="primary">승인대기</v-btn>
             <v-btn v-if="item.state === '승인거절'" depressed small color="orange darken-3 white--text">승인거절</v-btn>
