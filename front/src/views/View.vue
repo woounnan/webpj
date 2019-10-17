@@ -58,7 +58,6 @@
           console.log('call nextView :::', idx)
           this.tab = idx
           this.setCur(idx)
-          console.log('??? 왜 호출안돼 ㅡㅡ')
         })
       }
       //현재 시간 설정
@@ -69,7 +68,7 @@
       setCur(idx){
         console.log('setCur:::', idx)
         this.idx_cur = idx
-        this.$store.state.bus.$emit('setList', idx)
+        //this.$store.state.bus.$emit('setList', idx)
       },
     },
 	}

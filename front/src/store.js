@@ -66,6 +66,7 @@ export default new Vuex.Store({
   	tk: undefined,
     today: '',
     mountedCheck: [],
+    idxView: undefined,
     user: {
       id: '',
       position: '',
@@ -204,6 +205,9 @@ export default new Vuex.Store({
           console.error('getWorks in View.vue::::', e)
         })
     },
+    initIdxView(state, idx){
+      state.idxView = idx
+    },
     addRoom(state, to){
       if(state.user.room.indexOf(to) != -1) return 
       if(state.user.room.length < state.user.room_num){
@@ -246,6 +250,9 @@ export default new Vuex.Store({
     },
     getMountedCheck(state){
       return state.mountedCheck
+    },
+    getIdxView(state){
+      return state.idxView
     },
   },
   actions: {

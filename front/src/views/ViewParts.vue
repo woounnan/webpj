@@ -10,7 +10,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >진행중</v-app-bar>
+    >진행중{{idx.sep}}</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
@@ -222,6 +222,7 @@
             this.viewWork2 = false
         })
       }
+      /*
       var eve = 'setList'
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
           this.$store.commit('pushMountedCheck', eve)
@@ -230,8 +231,11 @@
           this.setItems(idx)
         })
       }
-      if(this.idx_sep != undefined)
+      */
+      if(this.idx_sep != undefined){
+        console.log('set@@@@@@@@@@@@@@@@')
         this.setItems(this.idx_sep)
+      }
     },
     methods: {
       setThis(idx){
