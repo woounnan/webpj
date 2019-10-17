@@ -152,6 +152,9 @@ var saveMsg = function (to, from, newConvs){
 			else{
 				//승인 완료, 승인거절
 				console.log('요청 작업임 in index.js')
+				console.log('1: ', newConvs.works.by_position)
+				console.log('2: ', to)
+				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
 				msgSet(to, from, newConvs, 'state_s', newConvs.works.state_s)
 				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c)
