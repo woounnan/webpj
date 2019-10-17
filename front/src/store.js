@@ -127,7 +127,7 @@ export default new Vuex.Store({
       state.user.position = info.position,
       state.user.division = info.division,
       state.user.company = info.company,
-      state.user.image = info.image,
+      state.user.idmage = info.image,
       state.user.state = '출근'
     },
     initOthers(state, info){

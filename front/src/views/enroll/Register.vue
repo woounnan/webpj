@@ -94,11 +94,11 @@
               <v-list-item-action>
                 <v-icon>people</v-icon>
               </v-list-item-action>
-                 <v-menu
-        v-model="divMenu"
-        absolute
-        offset-y
-      >
+              <v-menu
+                v-model="divMenu"
+                absolute
+                offset-y
+              >
         <template v-slot:activator="{ on }">
               <v-list-item-content>
                 <v-text-field 

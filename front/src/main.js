@@ -7,18 +7,7 @@ import VModal from 'vue-js-modal'
 import VueSocketIO from 'vue-socket.io'
 import io from 'socket.io-client'
 import axios from 'axios'
- /*
-Vue.use(new VueSocketIO({
-    debug: true,
-    connection: 'http://webhacker.xyz:8082',
-    vuex: {
-        store,
-        actionPrefix: 'SOCKET_',
-        mutationPrefix: 'SOCKET_'
-    }
-}))
 
-*/
 
 Vue.use(VModal, { dynamic: true })
 

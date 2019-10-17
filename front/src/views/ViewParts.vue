@@ -206,6 +206,7 @@
         else
           this.viewWork2 = false
       })
+      console.log('bus ::: ViewParts.vue ::: ', this.$store.state.bus)
       console.log('idx_sep::::', this.idx_sep)
       this.setItems(this.idx_sep)
       setInterval(this.setItems(this.idx_sep),1000*60)

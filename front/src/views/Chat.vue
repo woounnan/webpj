@@ -48,7 +48,6 @@ export default{
 		}
 	},
 	created(){
-   		console.log('TTTTTTTTTTTTTTTT:::', this.$store.state.bus)
    		this.$store.commit('initSocks')
    		this.sendWork()
 	},
