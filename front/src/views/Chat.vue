@@ -54,7 +54,6 @@ export default{
 	},
 	data: function (){
 		return {
-			cur: 
 			message: {},
 			test : '',
 			layout: [
