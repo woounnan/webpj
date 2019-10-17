@@ -63,6 +63,7 @@
     },
     methods: {
       setCur(idx){
+        console.log('setCur:::', idx)
         this.idx_cur = idx
         console.log('idx_cur View.vue::::', this.idx_cur)
         this.$store.state.bus.$emit('setList', idx)
