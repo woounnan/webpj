@@ -199,7 +199,7 @@
       ],
     }),
     created(){
-      
+      console.log('mount ViewParts')
       var eve = 'closeViewWork'
       /*
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
