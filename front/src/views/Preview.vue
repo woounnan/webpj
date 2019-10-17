@@ -5,6 +5,7 @@
 		<v-toolbar
 			color="deep-purple accent-2"
 			dark
+			@click="showGoings"
 		>
 			<v-toolbar-title>
 				{{title}}
@@ -76,7 +77,7 @@
 <script>
 	export default {
 		props:{
-			goings: [],
+			goings: undefined,
 			title: '',
 		},
 		data(){
@@ -98,6 +99,10 @@
 				this.thisJob = jobs
 				this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
 			},
+			showGoings(){
+				console.clear()
+				console.log(this.goings)
+			}
 		}
 	}
 </script>
