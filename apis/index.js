@@ -93,6 +93,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		console.log(r.comu[idx].convs)
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
+				console.log('@@@@@@@@@@@@@@@@@@@@')
 			if(x.date == findDate){
 				console.log('work 찾음!!!::::', x)
 				x.works[fieldName] = value
@@ -100,6 +101,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			else{
 				return
 			}
+				console.log('@@@@@@@@@@@@@@@@@@@@')
 		})
 		console.log(r.comu[idx].convs)
 		console.log('----------------------------')
