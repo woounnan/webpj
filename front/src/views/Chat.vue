@@ -56,27 +56,31 @@ export default{
 	methods: {
 		//첫 등록 이외의 모든 작업 socket 처리
 		sendWork(){
-			this.$store.commit('myOn', 'sendW', (data)=>{
-				console.log('here is in sendWork::::', data)
-				data.convs.works.flag_date = data.convs.date
-				data.convs.date = moment().format('HH:mm:ss')
-				data.convs.id = this.$store.getters.getUser.id
-				data.convs.position = this.$store.getters.getUser.position
-				var to = ''
-				this.$store.getters.getOthers.forEach(x => {
-					if(x.id === data.convs.works.by){
-						to = x.position
-						return
+			var eve = 'sendWork'
+			if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
+				this.$store.commit('pushMountedCheck', eve)
+				this.$store.state.bus.$on(eve,  (data)=>{
+					console.log('here is in sendWork::::', data)
+					data.convs.works.flag_date = data.convs.date
+					data.convs.date = moment().format('HH:mm:ss')
+					data.convs.id = this.$store.getters.getUser.id
+					data.convs.position = this.$store.getters.getUser.position
+					var to = ''
+					this.$store.getters.getOthers.forEach(x => {
+						if(x.id === data.convs.works.by){
+							to = x.position
+							return
+						}
+					})
+					const header = {
+					to : to,
+					from : this.$store.getters.getUser.position
 					}
-				})
-				const header = {
-				to : to,
-				from : this.$store.getters.getUser.position
-				}
-				this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
+					this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
 
-				console.log('이사람에게 보냈어::::', to)
-			})
+					console.log('이사람에게 보냈어::::', to)
+				})
+			}
 		}
 	}
 };

@@ -190,9 +190,6 @@ export default new Vuex.Store({
                   //state.user.works.toWork.splice(0, 1)
                 }else{
                   //받은작업 등록
-                  console.log('title::: ', cv.works.title)
-                  console.log('state_c::: ', cv.works.state_c)
-                  console.log('state_s::: ', cv.works.state_s)
                   regWork(state, state.user.works.fromWork, cv, x.with)
                   //state.user.works.fromWork.splice(0, 1)
 
@@ -221,15 +218,8 @@ export default new Vuex.Store({
     closeRoom(state, idx){
       state.user.room.splice(idx, 1)
     },
-    myOn(state, eve, func){
-      console.log('ret:::', state.mountedCheck.indexOf(eve))
-        if(state.mountedCheck.indexOf(eve) == -1){
-          console.log('enroll callback in bus')
-          state.mountedCheck.push(eve)
-          return state.bus.$emit(eve, func)
-        }
-        else
-          return console.error('already mounted events! ::: store.js')
+    pushMountedCheck(state, eve){
+      state.mountedCheck.push(eve)
     },
   },
   getters: {

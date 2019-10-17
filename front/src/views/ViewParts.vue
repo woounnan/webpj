@@ -200,20 +200,18 @@
       ],
     }),
     created(){
-      this.$store.commit('myOn', 'closeViewWork', (idx)=>{
-        if(idx == 1)
-          this.viewWork = false
-        else
-          this.viewWork2 = false
-      })
-      console.log('bus ::: ViewParts.vue ::: ', this.$store.state.bus)
-      console.log('idx_sep::::', this.idx_sep)
+      var eve = 'closeViewWork'
+      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
+        this.$store.commit('pushMountedCheck', eve)
+        this.$store.state.bus.$on(eve,  (idx)=>{
+          if(idx == 1)
+            this.viewWork = false
+          else
+            this.viewWork2 = false
+        })
+      }
       this.setItems(this.idx_sep)
-      setInterval(this.setItems(this.idx_sep),1000*60)
-    	this.$store.state.bus.$on('setList', data => {		
-        console.log('receive setList idx_sep::::', data.idx_sep)
-      this.setItems(data.idx_sep)
-    	})
+      setInterval(this.setItems,1000*30, this.idx_sep)
     },
     methods: {
       setThis(idx){
