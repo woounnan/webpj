@@ -74,7 +74,7 @@
 </template>
 
 <script>
-	import ViewWork from 'ViewWork.vue'
+	import ViewWork from './ViewWork.vue'
 	export default {
 		components:{
 			ViewWork,
