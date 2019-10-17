@@ -201,6 +201,7 @@
     }),
     created(){
       this.$store.state.bus.$on('closeViewWork',  (idx)=>{
+        console.log('@@@@@@@@@@@@@')
           if(idx == 1)
             this.viewWork = false
           else
@@ -211,6 +212,7 @@
         this.$store.commit('pushMountedCheck', eve)
         console.log('TTTTTTTT')
         this.$store.state.bus.$on(eve,  (idx)=>{
+          console.log('##############')
           if(idx == 1)
             this.viewWork = false
           else
