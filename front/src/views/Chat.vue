@@ -8,14 +8,14 @@
 			<v-container>
 		<v-row row wrap>
 			<v-col cols="6">
-			<Preview :goings="$store.state.user.works.fromWork" :title="title"/>
+			<Preview :goings="$store.state.user.works.fromWork" :idx_sep="idx1"/>
 				
 			</v-col>
 			<v-col cols="6">
-				<Preview :goings="$store.state.user.works.toWork" :title="title2"/>
+				<Preview :goings="$store.state.user.works.toWork" :idx_sep="idx2"/>
 			</v-col>
 			<v-col cols="12">
-				<Preview :goings="$store.state.user.works.fromNotice" :title="title3"/>
+				<Preview :goings="$store.state.user.works.fromNotice" :idx_sep="idx3"/>
 			</v-col>
 		</v-row>
 
@@ -54,15 +54,16 @@ export default{
 	},
 	data: function (){
 		return {
+			cur: 
 			message: {},
 			test : '',
 			layout: [
 	          ['toolbar', 1, 1, 'list'],
 	          [0, 0, 0, 0],
         	],
-			title: '처리할일',
-			title2: '요청한일',
-			title3: '받은알림',
+        	idx1: 0,
+        	idx2: 1,
+        	idx3: 3,
 		}
 	},
 	created(){

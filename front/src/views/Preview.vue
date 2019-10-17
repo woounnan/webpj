@@ -70,7 +70,7 @@
            <ViewWork  :jobs="thisJob" :period="period" /> 
     </v-dialog>
 		<v-card-actions>
-			<v-btn text>더보기</v-btn>
+			<v-btn @click="myNext()" text>더보기</v-btn>
 		</v-card-actions>
 	</v-card>
 </template>
@@ -83,10 +83,17 @@
 		},
 		props:{
 			goings: undefined,
-			title: '',
+			idx_sep: undefined,
 		},
 		data(){
 			return {
+				title: '',
+				titles: [
+					'처리할일',
+					'요청한일',
+					'',
+					'받은알림',
+				],
 				viewWork: false,
 				dial: '',
 				period: '',
@@ -94,6 +101,7 @@
 			}
 		},
 		created(){
+			this.title = this.titles[this.idx_sep]
 			var eve = 'closeViewWork'
 			this.$store.state.bus.$on(eve,  (idx)=>{
 			    this.viewWork = false
