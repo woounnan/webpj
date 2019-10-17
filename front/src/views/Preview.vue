@@ -1,7 +1,5 @@
 <template>
 	<v-card
-		max-height="250px"
-        class="overflow-y-auto"
 	>
 		<v-toolbar
 			color="deep-purple accent-2"
@@ -15,6 +13,8 @@
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
+			max-height="250px"
+	        class="overflow-y-auto"
       >
           <div v-for="(item, index) in goings.slice(0,3)">
             <v-list-item :key="item.title">
