@@ -52,7 +52,7 @@
 		},
     mounted(){
 
-        this.$store.state.bus.$on(eve,  (idx)=>{
+        this.$store.state.bus.$on('nextView',  (idx)=>{
           console.log('call nextView :::', idx)
           this.tab = idx
           this.idx_cur = idx
