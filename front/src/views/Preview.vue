@@ -13,6 +13,7 @@
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
+          height="250px"
 			max-height="250px"
 	        class="overflow-y-auto"
       >
