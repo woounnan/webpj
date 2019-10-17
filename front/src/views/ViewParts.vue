@@ -230,7 +230,6 @@
           this.setItems(idx)
         })
       }
-      this.setItems(this.idx_sep)
     },
     methods: {
       setThis(idx){
