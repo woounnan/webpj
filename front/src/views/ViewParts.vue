@@ -201,7 +201,7 @@
     }),
     created(){
       var eve = 'closeViewWork'
-      this.$store.state.bus.$on('closeViewWork',  (idx)=>{
+      this.$store.state.bus.$on(eve,  (idx)=>{
           console.log('@@@@@@@@@@@@@', idx)
           if(idx == 1)
             this.viewWork = false
