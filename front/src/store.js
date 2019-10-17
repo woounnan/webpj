@@ -207,7 +207,7 @@ export default new Vuex.Store({
     },
     initIdxView(state, idx){
       state.idxView = idx
-      this.$store.commit('initWorks')
+      console.log('initIdxView :::', this)
     },
     addRoom(state, to){
       if(state.user.room.indexOf(to) != -1) return 
