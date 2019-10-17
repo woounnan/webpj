@@ -232,7 +232,7 @@
         this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
       },
       setItems(idx){
-        console.log('call setItems:::')
+        console.log('call setItems:::', idx)
         switch(idx){
           case 0:
           console.log('!!!!!')
