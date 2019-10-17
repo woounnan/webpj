@@ -51,15 +51,13 @@
 			}
 		},
     mounted(){
-      var eve = 'nextView'
-      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
-        this.$store.commit('pushMountedCheck', eve)
+
         this.$store.state.bus.$on(eve,  (idx)=>{
           console.log('call nextView :::', idx)
           this.tab = idx
           this.idx_cur = idx
         })
-      }
+    
       this.idx_cur = 0
       //현재 시간 설정
       this.$store.commit("setToday")
