@@ -96,7 +96,7 @@ export default {
   methods: {
     myNext(path){
       if(path === '/view'){
-        this.$store.state.bus.$emit('nextView', 0)
+        //this.$store.state.bus.$emit('nextView', 0)
         this.$router.push(path)
       }
     },
