@@ -70,7 +70,7 @@
            <ViewWork  :jobs="thisJob" :period="period" /> 
     </v-dialog>
 		<v-card-actions>
-			<v-btn @click="myNext()" text>더보기</v-btn>
+			<v-btn @click="myNext" text>더보기</v-btn>
 		</v-card-actions>
 	</v-card>
 </template>
@@ -89,8 +89,8 @@
 			return {
 				title: '',
 				titles: [
-					'처리할일',
 					'요청한일',
+					'처리할일',
 					'',
 					'받은알림',
 				],
@@ -111,7 +111,11 @@
 			setThisWork(jobs){
 				this.thisJob = jobs
 				this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
-			}
+			},
+			myNext(){
+				this.$store.state.bus.$emit('nextView', this.idx_sep)
+				this.$router.push('/view')
+			},
 		}
 	}
 </script>

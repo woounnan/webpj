@@ -60,8 +60,8 @@ export default{
 	          ['toolbar', 1, 1, 'list'],
 	          [0, 0, 0, 0],
         	],
-        	idx1: 0,
-        	idx2: 1,
+        	idx1: 1,
+        	idx2: 0,
         	idx3: 3,
 		}
 	},
