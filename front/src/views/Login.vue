@@ -64,9 +64,6 @@
   import axios from 'axios'
   export default {
     mounted() {
-      console.log('mounted!')
-      console.log('state : '+ this.wd.state)
-      this.$store.commit('initCompanys')
     },
     data () {
       return {
@@ -147,7 +144,6 @@
           .then(r => {
             this.$store.commit('initOthers', r.data.users)
             this.$store.commit('setTk')
-            this.$store.commit('initSocks')
             this.$store.commit('initDivisions')
             this.$router.push('/')
           }) 

@@ -89,13 +89,13 @@ export default {
         }
     ]
   }),
+  mounted(){
+    this.$store.commit('initWorks')
+    this.$store.commit('initSocks')
+    this.$store.commit('initCompanys')
+  },
   methods: {
     myNext(path){
-      console.log(path)
-      if(path == '/view'){
-        this.$store.commit('initWorks')
-        console.log('true!!!')
-      }
       this.$router.push(path)
     },
     logOut(){
