@@ -117,7 +117,6 @@
         showMenu: false,
         sub: [
           { title: '대화하기' },
-          { title: '상태 확인' },
         ],
         cur: '',
         dial: false
@@ -137,17 +136,11 @@
           case 0:
             this.conversation()
             break
-          case 1:
-            this.showState()
-            break
         }
       },
       conversation(){
         console.log('call conversation')
         this.$store.commit('addRoom', this.cur)
-      },
-      showState(){
-        console.log('call showState')
       },
     },
     mounted(){
