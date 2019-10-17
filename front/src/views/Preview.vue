@@ -5,7 +5,7 @@
 	>
 		<v-toolbar
 			color="deep-purple accent-2"
-			dark
+			dark 
 		>
 			<v-toolbar-title>
 				{{title}}
