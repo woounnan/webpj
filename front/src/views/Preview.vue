@@ -1,6 +1,5 @@
 <template>
 	<v-card
-		class="mx-auto"
 		max-height="250px"
         class="overflow-y-auto"
 	>
