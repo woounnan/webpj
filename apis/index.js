@@ -76,7 +76,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 		console.log('----------------------------', test)
 		var flag = 0
 		var idx = -1
-		var findDate = newConvs.works.flag_date != newConvs.date ? newConvs.works.flag_date : newConvs.date
+		var findDate = newConvs.works.flag_date
 		console.log('findDate:::', findDate)
 		for(x in r.comu){
 			if(r.comu[x].with === to){
@@ -90,13 +90,13 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
 
-			if((x.date == findDate) && (x.date == x.works.flag_date)){
+			if(x.date == x.works.flag_date){
 				//x.works['fieldName'] = value
 
 				console.log('x.date:::', x.date)
-				console.log('work 찾음!!!::::', r.comu[idx].convs[i].works)
+				console.log('work 찾음!!!::::', r.comu[idx].convs[i])
 				r.comu[idx].convs[i].works[fieldName] = value
-				console.log('work 찾음2222!!!::::', x.works)
+				console.log('work 찾음2222!!!::::', x)
 				
 			}
 			else{
