@@ -147,7 +147,7 @@ var saveMsg = function (to, from, newConvs){
 				}
 				else{ //받은 작업이고 요청자에게 제출하는 메시지일 때, 수신자의 상태 변경
 					msgSet(to, from, newConvs, 'state_s', newConvs.works.state)
-
+				}
 			}
 			else{
 				//승인 완료, 승인거절
