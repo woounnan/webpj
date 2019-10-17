@@ -9,7 +9,8 @@
 			<v-container>
 		<v-row row wrap>
 			<v-col cols="6">
-			<Preview @click="showState" :goings="$store.state.user.works.fromWork" :title="title"/>
+				<v-btn @click="showState" ></v-btn>
+			<Preview :goings="$store.state.user.works.fromWork" :title="title"/>
 				
 			</v-col>
 			<v-col cols="6">
