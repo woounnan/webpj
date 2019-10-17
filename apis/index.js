@@ -77,9 +77,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		var flag = 0
 		var idx = -1
 		var findDate = newConvs.works.flag_date != newConvs.date ? newConvs.works.flag_date : newConvs.date
-		console.log('flag_date::::', newConvs.works.flag_date)
-		console.log('findDate ::::', findDate)
-		console.log('Date ::::', newConvs.date)
+
 		for(x in r.comu){
 			if(r.comu[x].with === to){
 				console.log('find idx ::', r.comu[x].with)
@@ -91,7 +89,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 		var i =0
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색
-			if(x.date == findDate){
+			if((x.date == findDate) && (x.date == x.works.flag_date)){
 				console.log('work 찾음!!!::::', r.comu[idx].convs[i].works['test'])
 				//x.works['fieldName'] = value
 				r.comu[idx].convs[i].works['test'] = 123123123123
@@ -123,7 +121,6 @@ var saveMsg = function (to, from, newConvs){
 	//expired callback을 걸어준다.
 
 
-	console.log('()()()()()()()()()()()()()()(')
 	//msg가 works면
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
