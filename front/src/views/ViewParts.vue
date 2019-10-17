@@ -230,6 +230,8 @@
           this.setItems(idx)
         })
       }
+      if(this.idx_sep != undefined)
+        this.setItems(this.idx_sep)
     },
     methods: {
       setThis(idx){
