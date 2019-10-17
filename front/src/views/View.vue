@@ -1,12 +1,5 @@
 <template>
 	<v-card color="basil">
-    <v-card-title 
-    class="text-center justify-center py-6" 
-      height="100px"
-      >
-      <h3 class="font-weight-bold display-3 basil--text">목록</h3>
-    </v-card-title>
-
     <v-tabs
       v-model="tab"
       background-color="transparent"
