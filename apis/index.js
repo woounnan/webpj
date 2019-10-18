@@ -88,7 +88,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 		}
 		var i =0
 
-
+		console.log('YYYYYYYYY ---', r.comu[idx])
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
 			if(x.date == findDate){
