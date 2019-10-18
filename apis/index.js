@@ -86,19 +86,15 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 				break
 			}
 		}
+		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', r.comu)
 		var i =0
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
-			console.log(x.date, '------', x.works.title)
 			if(x.date == findDate){
 				//x.works['fieldName'] = value
-				console.log('x.date:::', x.date)
 				//console.log('work 찾음!!!::::', r.comu[idx].convs[i])
-				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', value, '---', fieldName)
-				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				r.comu[idx].convs[i].works[fieldName] = value
 				r.comu[idx].convs[i].works['favor'] = true
-				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				//console.log('work 찾음2222!!!::::', x)
 				
 			}
@@ -106,6 +102,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 			}
 			i++
 		})
+		console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu)
 		//바꾼 값으로 update
 		User.update({
 				position : from
