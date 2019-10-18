@@ -83,14 +83,16 @@ export default{
 					data.convs.date = moment().format('HH:mm:ss')
 					data.convs.id = this.$store.getters.getUser.id
 					data.convs.position = this.$store.getters.getUser.position
-					var to = data.to.position
-					const header = {
-					to : to,
-					from : this.$store.getters.getUser.position
-					}
-					this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
+					data.to.forEach(x=>{
+						var to = x.position
+						const header = {
+						to : to,
+						from : this.$store.getters.getUser.position
+						}
+						this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
 
-					console.log('이사람에게 보냈어::::', to)
+						console.log('이사람에게 보냈어::::', to)
+					})
 				})
 			}
 		},
