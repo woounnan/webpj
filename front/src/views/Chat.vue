@@ -84,6 +84,8 @@ export default{
 					data.convs.id = this.$store.getters.getUser.id
 					data.convs.position = this.$store.getters.getUser.position
 					data.to.forEach(x=>{
+
+						console.log('::::', x)
 						var to = x.position
 						const header = {
 						to : to,
