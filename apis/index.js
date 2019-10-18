@@ -143,7 +143,7 @@ var saveMsg = function (to, from, newConvs){
 */
 		}
 		else{
-			if((newConvs.works.by_position != newConvs.position) && (newConvs.position === to)) {
+			if(newConvs.works.by_position != newConvs.position) {
 				//승인 대기
 				console.log('받은 작업임 in index.js')
 				console.log('1: ', newConvs.works.by_position)
@@ -161,7 +161,6 @@ var saveMsg = function (to, from, newConvs){
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
 				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, 30,to, from, newConvs, 'state_s', newConvs.works.state_s, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, 50,to, from, newConvs, 'state_c', newConvs.works.state_c, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
 			}
 		}
 	}
