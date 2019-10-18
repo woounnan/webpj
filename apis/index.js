@@ -92,7 +92,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 			console.log(x.date, '------', x.works.title)
 			if(x.date == findDate){
 				//x.works['fieldName'] = value
-				//console.log('x.date:::', x.date)
+				console.log('x.date:::', x.date)
 				//console.log('work 찾음!!!::::', r.comu[idx].convs[i])
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', value, '---', fieldName)
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
