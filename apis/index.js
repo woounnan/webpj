@@ -4,7 +4,14 @@ const createError = require('http-errors')
 const User = require('./models/model_user')
 
 console.log('Here is at index.js in apis')
+var timeCount = 0
+var getTimeCount = function(){
+	timeCount += 30
+	if(timeCount > 100)
+		timeCount = 0
 
+	return timeCount
+}
 
 var diffSec = (endDate) => {
 	var cur = new Date();
@@ -161,7 +168,8 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
-				msgSet(to, from, newConvs, 'state_c', newConvs.works.state_c, '@@@@@@@@@@@@@')
+				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c, '@@@@@@@@@@@@@')
+
 				
 			}
 			else{
@@ -171,7 +179,7 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, 30,to, from, newConvs, 'state_s', newConvs.works.state_s, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
+				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_s', newConvs.works.state_s, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
 			}
 		}
 	}
