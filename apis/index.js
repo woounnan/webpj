@@ -197,7 +197,7 @@ io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
 
 	socket.on('sock_initWorks', (data) =>{
-		socket.broadcast.emit('msg', data)
+		socket.broadcast.emit('sock_initWorks')
 	})
 
 	socket.on('msg', (data) =>{
