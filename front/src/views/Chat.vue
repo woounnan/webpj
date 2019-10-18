@@ -83,13 +83,7 @@ export default{
 					data.convs.date = moment().format('HH:mm:ss')
 					data.convs.id = this.$store.getters.getUser.id
 					data.convs.position = this.$store.getters.getUser.position
-					var to = ''
-					this.$store.getters.getOthers.forEach(x => {
-						if(x.id === data.convs.works.by){
-							to = x.position
-							return
-						}
-					})
+					var to = data.to.position
 					const header = {
 					to : to,
 					from : this.$store.getters.getUser.position
