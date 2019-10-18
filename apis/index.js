@@ -86,8 +86,15 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 				break
 			}
 		}
-		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', r.comu)
 		var i =0
+		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+		r.comu[idx].convs.forEach(x => {
+			//해당 work 메시지를 검색				
+			console.log(x)
+		})
+
+		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
 			if(x.date == findDate){
@@ -102,7 +109,13 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 			}
 			i++
 		})
-		console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu)
+		console.log('#############################################$')
+		r.comu[idx].convs.forEach(x => {
+			//해당 work 메시지를 검색				
+			console.log(x)
+		})
+
+		console.log('#############################################$')
 		//바꾼 값으로 update
 		User.update({
 				position : from
