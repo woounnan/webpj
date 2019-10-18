@@ -97,6 +97,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', value, '---', fieldName)
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				r.comu[idx].convs[i].works[fieldName] = value
+				r.comu[idx].convs[i].works['favor'] = true
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				//console.log('work 찾음2222!!!::::', x)
 				
