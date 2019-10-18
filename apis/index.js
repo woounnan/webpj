@@ -196,6 +196,10 @@ const io = require('socket.io')(server)
 io.on('connection', function(socket){
 	console.log('id: ' + socket.id)
 
+	socket.on('sock_initWorks', (data) =>{
+		socket.broadcast.emit('msg', data)
+	})
+
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(data)

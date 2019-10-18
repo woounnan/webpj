@@ -67,7 +67,17 @@ export default{
 	},
 	created(){
    		this.$store.commit('initSocks')
+   		this.$store.commit('initWorks')
    		this.sendWork()
+
+		var eve = 'sock_initWorks'
+		if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
+			this.$store.commit('pushMountedCheck', eve)
+	   		this.$store.state.socks.sock.on(eve, ()=>{
+	   			console.log('call sock_initWorks')
+		   		this.$store.commit('initWorks')
+	   		})
+   		}
 	},
    	mounted(){
    	},
@@ -95,8 +105,10 @@ export default{
 
 						console.log('이사람에게 보냈어::::', to)
 					})
+					this.$store.state.socks.sock.emit('sock_initWorks')
 				})
 			}
+
 		},
 		showState(){
 			console.log(this.$store.state.user.works.fromWork)
