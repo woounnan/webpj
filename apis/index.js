@@ -94,7 +94,7 @@ const msgSet = (to, from, newConvs, fieldName, value, test)=>{
 				//x.works['fieldName'] = value
 				//console.log('x.date:::', x.date)
 				//console.log('work 찾음!!!::::', r.comu[idx].convs[i])
-				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', value)
+				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', value, '---', fieldName)
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
 				r.comu[idx].convs[i].works[fieldName] = value
 				console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', r.comu[idx].convs[i].works[fieldName])
