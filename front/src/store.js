@@ -212,10 +212,9 @@ export default new Vuex.Store({
             var count = 0
             console.log('check routine ::: store.js :::')
             x.to.forEach(y => {
-              console.log('state - to::: check routine ::: store.js :::', x.to)
-              console.log('state - to::: check routine ::: store.js :::', x.to.state)
+              console.log('state - to::: check routine ::: store.js :::', y.state)
               console.log('state - server::: check routine ::: store.js :::', x.convs.works.state_s)
-              if(x.to.state != x.convs.works.state_s){
+              if(y.state != x.convs.works.state_s){
                 console.log('true :::')
                 count++
               }
@@ -223,7 +222,7 @@ export default new Vuex.Store({
             if(count == x.to.length){
               console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
               x.convs.works.state_s = x.convs.works.state_c
-              //state.bus.$emit('sendWork', x)
+              state.bus.$emit('sendWork', x)
             }
           })
         }) 
