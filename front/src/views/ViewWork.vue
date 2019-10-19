@@ -100,7 +100,7 @@
           style="max-height: 200px" 
         >
           <!-- 요청 작업이면 -->
-        <template v-if="jobs.convs.works.by === $store.getters.getUser.id" v-for="(item, index) in jobs.to">
+        <template v-for="(item, index) in jobs.to">
             <v-subheader
             >대상</v-subheader>
 
