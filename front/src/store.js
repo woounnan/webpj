@@ -226,7 +226,7 @@ export default new Vuex.Store({
               console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
               console.log('count ::: store.js :::', count)
               x.convs.works.state_s = x.convs.works.state_c
-              state.bus.$emit('sendWork', x)
+              //state.bus.$emit('sendWork', x)
             }
           })
         }) 
