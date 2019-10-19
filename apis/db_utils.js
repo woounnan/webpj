@@ -57,6 +57,7 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 	*/
 	var temp = req.body
 	console.log('/work :::', JSON.stringify(temp))
+	temp.flag_s_upload = temp.flag_s_upload === 'true'
 	if(temp.flag_s_upload == true){
 		temp['file_s_real'] = req.file.originalname
 		temp['file_s_save'] = req.file.filename
