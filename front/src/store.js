@@ -14,6 +14,20 @@ var getAvatar = function(state, position){
   return ret
 }
 
+var getDiff = function(startDate, endDate) {
+    var diff_start = startDate instanceof Date ? startDate :new Date(startDate)
+    var diff_end = endDate instanceof Date ? endDate :new Date(endDate)
+ 
+    diff_start = new Date(diff_start.getFullYear(), diff_start.getMonth()+1, diff_start.getDate())
+    diff_end = new Date(diff_end.getFullYear(), diff_end.getMonth()+1, diff_end.getDate())
+ 
+    var diff = Math.abs(diff_end.getTime() - diff_start.getTime())
+    diff = Math.ceil(diff / (1000 * 3600 * 24))
+ 
+    return diff;
+}
+
+
 var regWork = (state, works, cv, to) => {
   if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
@@ -27,17 +41,8 @@ var regWork = (state, works, cv, to) => {
         state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
-      }], //대상,, 보낸: 받은사람 / 받은: 보낸사람
-      /*
-      date : cv.date,
-      contents : cv.works.contents,
-      title : cv.works.title,
-      favor : cv.works.favor,
-      state : cv.works.state_s,
-      file_save: cv.works.file_s_save,
-      file_real: cv.works.file_s_real,
-      flag_upload : flag_s_upload,
-      */
+      }], 
+      due : getDiff((new Date().toISOString().substr(0, 10)), cv.works.endDate),
     })
     state.user.works.list_keys.push(cv.date)
   }else{
