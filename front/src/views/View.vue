@@ -51,6 +51,8 @@
 			}
 		},
     mounted(){
+      console.log('goings ::: View.vue :::', this.goings)
+      console.log('idx ::: View.vue :::', this.$store.getters.getIdxView)
       this.setWorks(this.$store.getters.getIdxView)
     },
     methods: {
