@@ -171,6 +171,7 @@ export default new Vuex.Store({
         toNotice:  [], //보낸알림
         fromNotice: [], //받은알림
       }
+        console.log('call initWorks :::')
 
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
@@ -213,6 +214,7 @@ export default new Vuex.Store({
 
       //요청작업에 대해서, 모든 Client 상태를 검사한다
       //모든 Client 상태가 변경되었을 경우 Server 상태 변경
+      console.log('toWorks ::: initWorks :::', state.user.works.toWork)
       state.user.works.toWork.forEach(x=>{
         var count = 0
         console.log('check routine ::: store.js :::')
