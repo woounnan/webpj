@@ -13,7 +13,7 @@ var getAvatar = function(state, position){
   })
   return ret
 }
-function sleep(sleep){
+function sleep(s){
   ts1 = new Date().getTime() + s*1000;
   do ts2 = new Date().getTime(); while (ts2<ts1);
 }
