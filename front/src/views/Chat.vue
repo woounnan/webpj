@@ -80,6 +80,8 @@ export default{
    		}
 	},
    	mounted(){
+		this.$store.commit("setToday")
+		setInterval(()=>{this.$store.commit("setToday")},  3600 * 1000 )
    	},
 	methods: {
 		//첫 등록 이외의 모든 작업 socket 처리

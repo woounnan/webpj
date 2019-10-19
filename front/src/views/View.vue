@@ -51,10 +51,7 @@
 			}
 		},
     mounted(){
-      //현재 시간 설정
       this.setWorks(this.$store.getters.getIdxView)
-      this.$store.commit("setToday")
-      setInterval(()=>{this.$store.commit("setToday")}, 0.5 * 3600 * 1000 )
     },
     methods: {
       setWorks(idx){
