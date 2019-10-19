@@ -51,10 +51,11 @@
                 </v-list-item-content>
 
                 <v-list-item-action>
-                  <v-list-item-action-text v-text="item.convs.works.due"></v-list-item-action-text>
+                  <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
                   <v-icon
                     v-if="!item.favor"
                     color="grey lighten-1"
+                    @click="showItem(item)"
                   >
                     star_border
                   </v-icon>
@@ -132,7 +133,7 @@
                 </v-list-item-content>
 
                 <v-list-item-action>
-                  <v-list-item-action-text v-text="item.convs.works.due"></v-list-item-action-text>
+                  <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
                   <v-icon
                     v-if="!item.convs.works.favor"
                     color="grey lighten-1"
@@ -234,6 +235,9 @@
         console.log('call setThisWork::::', jobs)
         this.thisJob = jobs
         this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
+      },
+      showItem(item){
+        console.log('item ::: ViewParts.vue :::', item)
       },
       mySort(){
       }
