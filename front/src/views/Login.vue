@@ -144,7 +144,6 @@
             this.$store.commit('initOthers', r.data.users)
             this.$store.commit('setTk')
             this.$store.commit('initDivisions')
-            this.$store.commit('initWorks')
             this.$router.push('/')
           }) 
           .catch(e => console.error(e.message))
