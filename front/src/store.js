@@ -214,10 +214,9 @@ export default new Vuex.Store({
 
       //요청작업에 대해서, 모든 Client 상태를 검사한다
       //모든 Client 상태가 변경되었을 경우 Server 상태 변경
+      console.log('toWorks ::: initWorks :::', state.user.works.toWork)
       console.log('toWorks ::: initWorks :::', state.user.works.toWork.length)
-      for(var i=0; i<state.user.works.toWork.length; i++){
-        console.log('뭐지?:::', state.user.works.toWork[i])
-      }
+
       state.user.works.toWork.forEach(x=>{
         var count = 0
         console.log('check routine ::: store.js :::')
