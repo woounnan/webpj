@@ -160,6 +160,18 @@
                         outlined
                         :show-size="1000"
                       >
+                        <template v-slot:selection="{ index, text }">
+                          <v-chip
+                          v-if="index < 2"
+                          color="deep-purple accent-4"
+                          dark
+                          label
+                          small
+                          >
+                          {{ text }}
+                          </v-chip>
+                        </template>
+                      </v-file-input>
                     </v-list-item-content>
                     <v-list-item-content>
                         <div class="flex-grow-1"></div>

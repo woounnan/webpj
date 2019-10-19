@@ -105,13 +105,11 @@ export default{
 						from : this.$store.getters.getUser.position
 						}
 						this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
-
 						console.log('이사람에게 보냈어::::', to)
 					})
 					this.$store.state.socks.sock.emit('sock_initWorks')
 				})
 			}
-
 		},
 		showState(){
 			console.log(this.$store.state.user.works.fromWork)
