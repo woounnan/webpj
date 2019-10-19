@@ -162,7 +162,8 @@ var saveMsg = function (to, from, newConvs){
 		}
 		else{
 			if(newConvs.workSender != 'checkPage') {
-				//승인 대기
+				//C, S가 보내는 모든 중간 작업 메시지
+				//state_c만 변경된다
 				console.log('받은 작업임 in index.js')
 				console.log('1: ', newConvs.works.by_position)
 				console.log('2: ', to)
@@ -171,14 +172,14 @@ var saveMsg = function (to, from, newConvs){
 				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c)	
 			}
 			else{
-				//승인 완료, 승인거절
+				//store.js에서 initWorks시 loop 돌면서 모든 c의 상태가 변경되었을 때 checkPage가 업데이트 보내면 실행되는 루프
+				//state_s의 상태를 변경한다.
 				console.log('요청 작업임 in index.js')
 				console.log('1: ', newConvs.works.by_position)
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
 				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_s', newConvs.works.state_s)
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c)
 			}
 		}
 	}

@@ -205,12 +205,26 @@ export default new Vuex.Store({
 
               }
             })
-
           })
         }) 
         .catch(e=>{
           console.error('getWorks in View.vue::::', e)
         })
+
+      //요청작업에 대해서, 모든 Client 상태를 검사한다
+      //모든 Client 상태가 변경되었을 경우 Server 상태 변경
+      state.user.works.toWork.forEach(x=>{
+        var count = 0
+        x.to.forEach(y => {
+          if(to.state != x.convs.works.state_s)
+            count++
+        })
+        if(count == x.to.length){
+          console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
+          x.convs.works.state_s = x.convs.works.state_c
+          state.bus.$emit('sendWork', x)
+        }
+      })
     },
     initIdxView(state, idx){
       state.idxView = idx
