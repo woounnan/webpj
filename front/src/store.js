@@ -221,8 +221,8 @@ export default new Vuex.Store({
             if(count == x.to.length){
               console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
               x.convs.works.state_s = x.convs.works.state_c
-             // state.bus.$emit('sendWork', x)
-              //state.socks.sock.emit('sock_initWorks')
+              state.bus.$emit('sendWork', x)
+              state.socks.sock.emit('sock_initWorks')
             }
           })
         }) 
