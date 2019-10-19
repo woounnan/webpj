@@ -43,7 +43,7 @@ var regWork = (state, works, cv, to) => {
         state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
-        file_c_sendTime : cv.works.file_c_sendTime,  //새로추가
+        flag_sendDate : cv.works.flag_sendDate,  //새로추가
       }], 
       due : '- ' + String(diff) + ' days',
     })
@@ -60,7 +60,7 @@ var regWork = (state, works, cv, to) => {
         state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
-        file_c_sendTime : cv.works.file_c_sendTime, //새로추가  보낸시간
+        flag_sendDate : cv.works.flag_sendDate, //새로추가  보낸시간
       })
         console.log('already registered work')
         return

@@ -134,7 +134,7 @@
                       <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
                   </v-list-item-content>
                   <v-list-item-content>
-                      <v-list-item-subtitle >{{item.flag_sendTime}}</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
                     <div v-if="item.state === '승인대기'">
                         <v-btn class="mx-2" fab dark small color="indigo">
@@ -146,8 +146,8 @@
                    </div>
                 </template>
                 <template v-else>
-
-                  <div v-if="jobs.convs.works.state_c=='미제출'">
+                  <!-- 미제출시 -->
+                  <div v-if="jobs.convs.works.state_c==='미제출'">
                     <v-list-item-content>
                       <v-file-input
                         v-model="upFiles"
@@ -179,9 +179,23 @@
                         
                     </v-list-item-content>
                   <v-list-item-content>
-                      <v-list-item-subtitle >{{item.flag_sendTime}}</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
                   </div>
+                  <div v-else>
+                    <v-list-item-content>
+                        <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
+                    </v-list-item-content> 
+                    <v-list-item-content>
+                      <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
+                    </v-list-item-content>                                       
+                  </div>
+                  <div v-if="jobs.convs.works.state_c==='승인대기'">
+                    <v-list-item-content>
+                      <v-icon v-on="showComment" :color="item.comment ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+                    </v-list-item-content>
+                  </div>                    
+                               
                 </template>
           </v-list-item>
         </template>

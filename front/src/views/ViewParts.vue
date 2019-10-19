@@ -21,7 +21,7 @@
           <v-icon>mdi-checkbox-marked-circle</v-icon>
         </v-btn>
 
-      <v-dialog v-model="viewWork" width="1000px"  justify="center">
+      <v-dialog v-model="viewWork">
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line

@@ -95,7 +95,7 @@ export default{
 					data.convs.date = moment().format('HH:mm:ss')
 					data.convs.id = this.$store.getters.getUser.id
 					data.convs.position = this.$store.getters.getUser.position
-					data.convs.works.flag_sendTime = this.$store.getters.getToday
+					data.convs.works.flag_sendDate = this.$store.getters.getToday
 					data.to.forEach(x=>{
 
 						console.log('::::', x)
