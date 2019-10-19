@@ -47,7 +47,7 @@
 		    tabs: [
 		      '요청작업', '받은작업', '보낸알림', '받은알림'
 		    ],
-		    goings: [],
+		    goings: undefined,
 			}
 		},
     mounted(){

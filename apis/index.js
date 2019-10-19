@@ -94,13 +94,6 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			}
 		}
 		var i =0
-		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-		r.comu[idx].convs.forEach(x => {
-			//해당 work 메시지를 검색				
-			console.log(x)
-		})
-
-		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
@@ -116,13 +109,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			}
 			i++
 		})
-		console.log('#############################################$')
-		r.comu[idx].convs.forEach(x => {
-			//해당 work 메시지를 검색				
-			console.log(x)
-		})
 
-		console.log('#############################################$')
 		//바꾼 값으로 update
 		User.update({
 				position : from
