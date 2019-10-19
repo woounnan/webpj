@@ -55,15 +55,16 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		flag_c_upload : false,
 	}
 	*/
-	console.log('/work :::', JSON.stringify(req.body))
-	if(req.body.flag_s_upload == true){
-		req.body['file_s_real'] = req.file.originalname
-		req.body['file_s_save'] = req.file.filename
+	var temp = req.body
+	console.log('/work :::', JSON.stringify(temp))
+	if(temp.flag_s_upload == true){
+		temp['file_s_real'] = req.file.originalname
+		temp['file_s_save'] = req.file.filename
 	}
 	else
 		console.log('not uploaded files')
 
-	res.status(200).send({req.body})
+	res.status(200).send({temp})
   // req.body will hold the text fields, if there were any
 })
 
