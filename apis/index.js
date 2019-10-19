@@ -6,8 +6,8 @@ const User = require('./models/model_user')
 console.log('Here is at index.js in apis')
 var timeCount = 0
 var getTimeCount = function(){
-	timeCount += 30
-	if(timeCount > 100)
+	timeCount += 15
+	if(timeCount > 30)
 		timeCount = 0
 
 	return timeCount
@@ -75,12 +75,12 @@ const msgPush = (to, from, newConvs)=>{
 	})
 }
 
-const msgSet = (to, from, newConvs, fieldName, value, test)=>{
+const msgSet = (to, from, newConvs, fieldName, value)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
 		}
-		console.log('----------------------------', test)
+		console.log('----------------------------')
 		var flag = 0
 		var idx = -1
 		var findDate = newConvs.works.flag_date
@@ -151,26 +151,24 @@ var saveMsg = function (to, from, newConvs){
 			console.log('this is works that deadline has not yet passed!!!')
 			newConvs.works['flag_expired'] = new Date().valueOf() > new Date(newConvs.works.endDate).valueOf()
 			newConvs.works['favor'] = false
-/*
+
 			setTimeout((newConvs)=>{
 		    	
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
 			}, 1000 * 10, newConvs)
-*/
+
 		}
 		else{
-			if(newConvs.works.by_position != newConvs.position) {
+			if(newConvs.workSender != 'checkPage') {
 				//승인 대기
 				console.log('받은 작업임 in index.js')
 				console.log('1: ', newConvs.works.by_position)
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c, '@@@@@@@@@@@@@')
-
-				
+				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c)	
 			}
 			else{
 				//승인 완료, 승인거절
@@ -179,7 +177,8 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_s', newConvs.works.state_s, '@!#@#!@#!@#!@#!@#!@#!@#!@#^')
+				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_s', newConvs.works.state_s)
+				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c)
 			}
 		}
 	}

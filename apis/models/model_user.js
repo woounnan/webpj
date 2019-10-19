@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
 				contents: String,
 				startDate: String,
 				endDate: String,
+				comment: String,
 				flag_expired: Boolean,
 				flag_date: String, //원본 work를 찾기위함				
 				flag_c_upload: Boolean,

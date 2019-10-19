@@ -39,6 +39,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/work', upload.single('bin'), function (req, res, next) {
   // req.file is the `avatar` file
+  	/*
   	var works = {
 		title : req.body.title,
 		selects : req.body.selects.split(','),
@@ -53,15 +54,16 @@ router.post('/work', upload.single('bin'), function (req, res, next) {
 		flag_s_upload : req.body.flag_s_upload === 'true',
 		flag_c_upload : false,
 	}
-	console.log('/work :::', JSON.stringify(works))
-	if(works.flag_s_upload == true){
-		works['file_s_real'] = req.file.originalname
-		works['file_s_save'] = req.file.filename
+	*/
+	console.log('/work :::', JSON.stringify(req.body))
+	if(req.body.flag_s_upload == true){
+		req.body['file_s_real'] = req.file.originalname
+		req.body['file_s_save'] = req.file.filename
 	}
 	else
 		console.log('not uploaded files')
 
-	res.status(200).send({works: works})
+	res.status(200).send({req.body})
   // req.body will hold the text fields, if there were any
 })
 
