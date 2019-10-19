@@ -43,6 +43,7 @@ var regWork = (state, works, cv, to) => {
         state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
+        file_c_sendTime : cv.works.file_c_sendTime,  //새로추가
       }], 
       due : '- ' + String(diff) + ' days',
     })
@@ -59,6 +60,7 @@ var regWork = (state, works, cv, to) => {
         state: cv.works.state_c, //각 클라이언트 state
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
+        file_c_sendTime : cv.works.file_c_sendTime, //새로추가  보낸시간
       })
         console.log('already registered work')
         return
@@ -279,6 +281,9 @@ export default new Vuex.Store({
     },
     getIdxView(state){
       return state.idxView
+    },
+    getIdxView(state){
+      return state.today
     },
   },
   actions: {

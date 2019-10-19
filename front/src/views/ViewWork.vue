@@ -134,7 +134,7 @@
                       <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
                   </v-list-item-content>
                   <v-list-item-content>
-                      <v-list-item-subtitle >{{item.file_c_time}}</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.flag_sendTime}}</v-list-item-subtitle>
                   </v-list-item-content>
                     <div v-if="item.state === '승인대기'">
                         <v-btn class="mx-2" fab dark small color="indigo">
@@ -166,6 +166,9 @@
                           <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
                         
                     </v-list-item-content>
+                  <v-list-item-content>
+                      <v-list-item-subtitle >{{item.flag_sendTime}}</v-list-item-subtitle>
+                  </v-list-item-content>
                   </div>
                 </template>
           </v-list-item>
