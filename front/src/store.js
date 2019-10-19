@@ -206,37 +206,29 @@ export default new Vuex.Store({
 
               }
             })
+
+          })
+          state.user.works.toWork.forEach(x=>{
+            var count = 0
+            console.log('check routine ::: store.js :::')
+            x.to.forEach(y => {
+              console.log('state - to::: check routine ::: store.js :::', to.state)
+              console.log('state - server::: check routine ::: store.js :::', x.convs.works.state_s)
+              if(to.state != x.convs.works.state_s)
+              console.log('true :::')
+              count++
+            })
+            if(count == x.to.length){
+              console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
+              x.convs.works.state_s = x.convs.works.state_c
+              state.bus.$emit('sendWork', x)
+              state.socks.sock.emit('sock_initWorks')
+            }
           })
         }) 
         .catch(e=>{
           console.error('getWorks in View.vue::::', e)
         })
-
-      //요청작업에 대해서, 모든 Client 상태를 검사한다
-      //모든 Client 상태가 변경되었을 경우 Server 상태 변경
-      console.log('toWorks ::: initWorks :::', state.user.works.toWork)
-      console.log('toWorks ::: initWorks :::', state.user.works.toWork.length)
-      var test = state.user.works.toWork
-      test.forEach(x=>{
-        console.log('test :::',x)
-      })
-      state.user.works.toWork.forEach(x=>{
-        var count = 0
-        console.log('check routine ::: store.js :::')
-        x.to.forEach(y => {
-          console.log('state - to::: check routine ::: store.js :::', to.state)
-          console.log('state - server::: check routine ::: store.js :::', x.convs.works.state_s)
-          if(to.state != x.convs.works.state_s)
-          console.log('true :::')
-            count++
-        })
-        if(count == x.to.length){
-          console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
-          x.convs.works.state_s = x.convs.works.state_c
-          state.bus.$emit('sendWork', x)
-          state.socks.sock.emit('sock_initWorks')
-        }
-      })
     },
     initIdxView(state, idx){
       state.idxView = idx

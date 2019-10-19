@@ -99,60 +99,68 @@
           class="overflow-y-auto"  
           style="max-height: 200px" 
         >
-        <!-- 받은 작업이면 -->
-      <template v-if="jobs.convs.works.by === $store.getters.getUser.id" v-for="(item, index) in jobs.to">
-        <v-subheader
-        >대상</v-subheader>
+          <!-- 요청 작업이면 -->
+        <template v-if="jobs.convs.works.by === $store.getters.getUser.id" v-for="(item, index) in jobs.to">
+            <v-subheader
+            >대상</v-subheader>
 
-        <v-divider
-          :key="index"
-          :inset="inset"
-        ></v-divider>
+            <v-divider
+              :key="index"
+              :inset="inset"
+            ></v-divider>
 
-        <v-list-item
-          :key="item.position"
-        >
-          <v-list-item-avatar>
-            <v-img :src="item.avatar"></v-img>
-          </v-list-item-avatar>
+            <v-list-item
+              :key="item.position"
+            >
+                <v-list-item-avatar>
+                <v-img :src="item.avatar"></v-img>
+                </v-list-item-avatar>
 
-          <v-list-item-content>
-            <v-list-item-title v-html="item.position"></v-list-item-title>
-            <!--
-            <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-          -->
-          </v-list-item-content>
+                <v-list-item-content>
+                <v-list-item-title v-html="item.position"></v-list-item-title>
+                <!--
+                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                -->
+                </v-list-item-content>
 
-          <v-list-item-content @click="showState(item)">
-            <v-btn v-if="item.state === '미제출'" depressed small color="error">미제출</v-btn>
-            <v-btn v-if="item.state === '승인대기'" depressed small color="primary">승인대기</v-btn>
-            <v-btn v-if="item.state === '승인거절'" depressed small color="orange darken-3 white--text">승인거절</v-btn>
-            <v-btn v-if="item.state === '승인완료'" depressed small color="green darken-1 white--text">승인완료</v-btn>
-         </v-list-item-content>
-          <v-list-item-content>
-            <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
-          </v-list-item-content>
-          <v-list-item-content>
-            <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
-          </v-list-item-content>
-            <div v-if="item.state === '승인대기'">
-              <v-btn class="mx-2" fab dark small color="indigo">
-                <v-icon dark>done</v-icon>
-              </v-btn>
-              <v-btn class="mx-2" fab dark small color="pink">
-                <v-icon dark>close</v-icon>
-              </v-btn>
-           </div>
-        </v-list-item>
-      </template>
-      <template v-else>
-        <v-list-item>
-          <div class="flex-grow-1"></div>
-          <div v-if="jobs.convs.works.state_c=='미제출'">
-            <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
-          </div>
-        </v-list-item>
-      </template>
+                <template v-if="jobs.convs.works.by === $store.getters.getUser.id">
+                  <v-list-item-content @click="showState(item)">
+                    <v-btn v-if="item.state === '미제출'" depressed small color="error">미제출</v-btn>
+                    <v-btn v-if="item.state === '승인대기'" depressed small color="primary">승인대기</v-btn>
+                    <v-btn v-if="item.state === '승인거절'" depressed small color="orange darken-3 white--text">승인거절</v-btn>
+                    <v-btn v-if="item.state === '승인완료'" depressed small color="green darken-1 white--text">승인완료</v-btn>
+                 </v-list-item-content>
+                  <v-list-item-content>
+                      <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
+                  </v-list-item-content>
+                  <v-list-item-content>
+                      <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
+                  </v-list-item-content>
+                    <div v-if="item.state === '승인대기'">
+                        <v-btn class="mx-2" fab dark small color="indigo">
+                          <v-icon dark>done</v-icon>
+                        </v-btn>
+                        <v-btn class="mx-2" fab dark small color="pink">
+                          <v-icon dark>close</v-icon>
+                        </v-btn>
+                   </div>
+                </template>
+                <template v-else>
+
+                  <div v-if="jobs.convs.works.state_c=='미제출'">
+                  <v-list-item-content>
+
+                  </v-list-item-content>
+                  <v-list-item-content>
+                      <div class="flex-grow-1"></div>
+                        <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+                      
+                  </v-list-item-content>
+                </div>
+                </template>
+          </v-list-item>
+        </template>
+      
     </v-list>              
         </v-list>
       </v-card>
