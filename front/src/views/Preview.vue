@@ -42,7 +42,7 @@
                 </v-list-item-content>
 
                 <v-list-item-action>
-                  <v-list-item-action-text v-text="item.convs.works.due"></v-list-item-action-text>
+                  <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
                   <v-icon
                     v-if="!item.favor"
                     color="grey lighten-1"
