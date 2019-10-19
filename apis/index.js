@@ -148,7 +148,7 @@ var saveMsg = function (to, from, newConvs){
 
 		}
 		else{
-			if(newConvs.workSender != 'checkPage') {
+			if(newConvs.flag_sender != 'checkPage') {
 				//C, S가 보내는 모든 중간 작업 메시지
 				//state_c만 변경된다
 				console.log('받은 작업임 in index.js')

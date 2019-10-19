@@ -138,13 +138,13 @@
                       <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
                     <div v-if="item.state === '승인대기'">
-                        <v-btn class="mx-2" fab dark small color="indigo">
+                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS('승인완료')">
                           <v-icon dark>done</v-icon>
                         </v-btn>
 
                         <v-dialog v-model="reject" scrollable max-width="300px">
                           <template v-slot:activator="{ on:rej }">
-                            <v-btn class="mx-2" fab dark small color="pink" v-on="rej">
+                            <v-btn class="mx-2" fab dark small color="pink" v-on="rej" @click="sendWorkToS('승인거절')">
                               <v-icon dark>close</v-icon>
                             </v-btn>
                           </template>
@@ -153,7 +153,7 @@
                             <v-divider></v-divider>
                                 <v-textarea 
                                     placeholder="내용 입력"
-                                    v-model="v_work.contents"
+                                    v-model="item.comment"
                                     counter
                                     maxlength="120"
                                     full-width

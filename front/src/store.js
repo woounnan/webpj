@@ -45,6 +45,7 @@ var regWork = (state, works, cv, to) => {
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
         flag_sendDate : cv.works.flag_sendDate,  //새로추가
+        comment: cv.works.comment,
       }], 
       due : '- ' + String(diff) + ' days',
     })
@@ -226,7 +227,8 @@ export default new Vuex.Store({
               console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
               console.log('count ::: store.js :::', count)
               x.convs.works.state_s = x.convs.works.state_c
-              //state.bus.$emit('sendWork', x)
+              x.convs.works.flag_sender = 'checkPage'
+              state.bus.$emit('sendWork', x)
             }
           })
         }) 

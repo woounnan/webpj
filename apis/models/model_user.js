@@ -26,6 +26,7 @@ const userSchema = new mongoose.Schema({
 				startDate: String,
 				endDate: String,
 				comment: String,
+				flag_sender: String, //checkPage or undefined, if flag_sender is flag_sender then save the state_s to server, else do not
 				flag_expired: Boolean,
 				flag_date: String, //원본 work를 찾기위함				
 				flag_c_upload: Boolean,
