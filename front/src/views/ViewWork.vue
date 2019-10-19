@@ -141,9 +141,32 @@
                         <v-btn class="mx-2" fab dark small color="indigo">
                           <v-icon dark>done</v-icon>
                         </v-btn>
-                        <v-btn class="mx-2" fab dark small color="pink">
-                          <v-icon dark>close</v-icon>
-                        </v-btn>
+
+                        <v-dialog v-model="reject" scrollable max-width="300px">
+                          <template v-slot:activator="{ on:rej }">
+                            <v-btn class="mx-2" fab dark small color="pink" v-on="rej">
+                              <v-icon dark>close</v-icon>
+                            </v-btn>
+                          </template>
+                          <v-card>
+                            <v-card-title>거절 사유를 입력하세요.</v-card-title>
+                            <v-divider></v-divider>
+                                <v-textarea 
+                                    placeholder="내용 입력"
+                                    v-model="v_work.contents"
+                                    counter
+                                    maxlength="120"
+                                    full-width
+                                    single-line
+                                    type="text"
+                                />
+                            <v-divider></v-divider>
+                            <v-card-actions>
+                              <v-btn color="blue darken-1" text @click="dialog = false">취소</v-btn>
+                              <v-btn color="blue darken-1" text @click="dialog = false">확인</v-btn>
+                            </v-card-actions>
+                          </v-card>
+                        </v-dialog>
                    </div>
                 </template>
                 <template v-else>
@@ -223,9 +246,10 @@
           title: 'Brunch this weekend?',
           subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
         },
-      ],
-      */
-      upFiles: [],
+        ],
+        */
+        upFiles: [],
+        reject: false,
       }  
     },
     mounted(){
