@@ -13,6 +13,10 @@ var getAvatar = function(state, position){
   })
   return ret
 }
+function sleep(sleep){
+  ts1 = new Date().getTime() + s*1000;
+  do ts2 = new Date().getTime(); while (ts2<ts1);
+}
 
 var getDiff = function(startDate, endDate) {
     var diff_start = startDate instanceof Date ? startDate :new Date(startDate)
@@ -223,6 +227,8 @@ export default new Vuex.Store({
             })
             if(count == x.to.length){
               console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
+              console.log('count ::: store.js :::', count)
+              sleep(3)
               x.convs.works.state_s = x.convs.works.state_c
               state.bus.$emit('sendWork', x)
             }
