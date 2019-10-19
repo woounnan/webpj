@@ -219,9 +219,10 @@ export default new Vuex.Store({
         var count = 0
         console.log('check routine ::: store.js :::')
         x.to.forEach(y => {
-          if(to.state != x.convs.works.state_s)
           console.log('state - to::: check routine ::: store.js :::', to.state)
           console.log('state - server::: check routine ::: store.js :::', x.convs.works.state_s)
+          if(to.state != x.convs.works.state_s)
+          console.log('true :::')
             count++
         })
         if(count == x.to.length){
