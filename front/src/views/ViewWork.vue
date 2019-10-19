@@ -190,11 +190,9 @@
                       <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                     </v-list-item-content>                                       
                   </div>
-                  <div v-if="jobs.convs.works.state_c==='승인대기'">
-                    <v-list-item-content>
+                    <v-list-item-content v-if="jobs.convs.works.state_c==='승인거절'">
                       <v-icon v-on="showComment" :color="item.comment ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
-                    </v-list-item-content>
-                  </div>                    
+                    </v-list-item-content>              
                                
                 </template>
           </v-list-item>
