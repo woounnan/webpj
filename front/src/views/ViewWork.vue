@@ -134,7 +134,7 @@
                       <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
                   </v-list-item-content>
                   <v-list-item-content>
-                      <v-list-item-subtitle >2019-10-09-14:00</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.file_c_time}}</v-list-item-subtitle>
                   </v-list-item-content>
                     <div v-if="item.state === '승인대기'">
                         <v-btn class="mx-2" fab dark small color="indigo">
@@ -148,15 +148,25 @@
                 <template v-else>
 
                   <div v-if="jobs.convs.works.state_c=='미제출'">
-                  <v-list-item-content>
-
-                  </v-list-item-content>
-                  <v-list-item-content>
-                      <div class="flex-grow-1"></div>
-                        <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
-                      
-                  </v-list-item-content>
-                </div>
+                    <v-list-item-content>
+                      <v-file-input
+                        v-model="upFiles"
+                        id="bin"
+                        color="deep-purple accent-4"
+                        counter
+                        label="File input"
+                        multiple
+                        placeholder="Select your files"
+                        outlined
+                        :show-size="1000"
+                      >
+                    </v-list-item-content>
+                    <v-list-item-content>
+                        <div class="flex-grow-1"></div>
+                          <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+                        
+                    </v-list-item-content>
+                  </div>
                 </template>
           </v-list-item>
         </template>

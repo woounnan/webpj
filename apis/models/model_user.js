@@ -34,6 +34,7 @@ const userSchema = new mongoose.Schema({
 				file_s_real: String,
 				file_c_save: String,
 				file_c_real: String,
+				file_c_time: String,
 				state_s: String, //"미제출", "승인대기", "승인거절", "승인완료"
 				state_c: String,//알림시 "미확인", "확인"
 				notice: Boolean, //true: notice false: work(required to ack)
