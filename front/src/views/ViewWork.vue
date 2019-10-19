@@ -74,7 +74,9 @@
               />
             </v-col>
             <v-col cols="1">
-            <v-list-item-action>
+            <v-list-item-action 
+              @click="showUpload"
+            >
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
           </v-col>
@@ -84,7 +86,6 @@
                 v-if="jobs.convs.works.flag_upload"
                 color="deep-purple"
                 text-color="white"
-                @click="showUpload"
                 width="5px"
               >
               {{jobs.convs.works.file_s_real}}
@@ -224,7 +225,8 @@
         },
       ],
       */
-      }
+      upFiles: [],
+      }  
     },
     mounted(){
       console.log('ViewWork.vue::::::', this.jobs)
