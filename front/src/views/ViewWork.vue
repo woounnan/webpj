@@ -1,5 +1,6 @@
 
 <template>
+  <div v-if="($store.state.user.works.toWork.length + $store.state.user.works.fromWork.length + $store.state.user.works.toNotice.length + $store.state.user.works.fromNotice.length) > 0">
   <v-row>
     <v-col cols="12" sm="8">
       <v-card>
@@ -227,6 +228,7 @@
       </v-card>
     </v-col>
   </v-row>
+  </div>
 </template>
 <script>
   export default{

@@ -120,6 +120,7 @@
       }
     },
     mounted() {
+      
     },
     methods: {
       setThis:function(idx){
