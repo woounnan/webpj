@@ -138,7 +138,7 @@
                       <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
                     <div v-if="item.state === '승인대기'">
-                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS(item, '승인완료')">
+                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS([{'state_c':'승인완료'}])">
                           <v-icon dark>done</v-icon>
                         </v-btn>
 
@@ -153,17 +153,17 @@
                             <v-divider></v-divider>
                                 <v-textarea 
                                     placeholder="내용 입력"
-                                    v-model="item.comment"
+                                    v-model="comment"
                                     counter
-                                    maxlength="120"
+                                    maxlength="80"
                                     full-width
                                     single-line
                                     type="text"
                                 />
                             <v-divider></v-divider>
                             <v-card-actions>
-                              <v-btn color="blue darken-1" text @click="dialog = false">취소</v-btn>
-                              <v-btn color="blue darken-1" text @click="sendRej(item)">확인</v-btn>
+                              <v-btn color="blue darken-1" text @click="reject = false">취소</v-btn>
+                              <v-btn color="blue darken-1" text @click="sendRej">확인</v-btn>
                             </v-card-actions>
                           </v-card>
                         </v-dialog>
@@ -199,7 +199,7 @@
                     </v-list-item-content>
                     <v-list-item-content>
                         <div class="flex-grow-1"></div>
-                          <v-btn @click="sendWorkToS(item, '승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+                          <v-btn @click="sendWorkToS([{'state_c':'승인대기'}])" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
                         
                     </v-list-item-content>
                   <v-list-item-content>
@@ -250,6 +250,7 @@
         upFiles: [],
         reject: false,
         dialog: false,
+        comment: '',
       }  
     },
     mounted(){
@@ -260,12 +261,18 @@
         console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
-      sendWorkToS(item, state){
+      sendWorkToS(arr_dic){
         console.log('call sendWorkToS::::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
 
         //update mine
-        item.state = state
-        this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_c = state
+        //item.state = state
+        arr_dic.forEach(x=>{
+          console.log('ViewWork ::: sendWorkTos ::: key :', x.key)
+          console.log('ViewWork ::: sendWorkTos ::: value :', x.value)
+          this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works[x.key] = x.value
+        })
+        
+        //this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works[key] = value
         this.$store.state.bus.$emit('sendWork', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
       },
       showDate(){
@@ -275,9 +282,9 @@
         console.log('showState - item :::', item)
         console.log('showState - convs :::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs)
       },
-      sendRej(item){
-        this.dialog = false
-        this.sendWorkToS(item, '승인거절')
+      sendRej(){
+        this.reject = false
+        this.sendWorkToS([{'state_c':'승인거절'}, {'comment': this.comment}])
       },
     },
   }
