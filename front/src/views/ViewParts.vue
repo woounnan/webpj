@@ -28,7 +28,7 @@
           style="max-height: 400px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
-            <div v-if="item.convs.works.flag_expired == false">
+            <div v-if="item.convs.works.flag_expired == true">
             <v-list-item :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
@@ -79,7 +79,7 @@
           </div>
       </v-list>
           </template> 
-           <ViewWork  :jobs="thisJob" :idx_sep="thisWindow" :period="period" /> 
+           <ViewWork  :idx_sep="thisWindow" :period="period" /> 
 
     </v-dialog>
     </v-card>
@@ -163,7 +163,7 @@
           </div>
       </v-list>
       </template>
-                 <ViewWork :jobs="thisJob" :idx_sep="thisWindow" :period="period"/> 
+                 <ViewWork :idx_sep="thisWindow" :period="period"/> 
     </v-dialog>
     </v-card>
 
@@ -206,17 +206,7 @@
     }),
     mounted(){
       var eve = 'closeViewWork'
-      /*
-      if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
-        this.$store.commit('pushMountedCheck', eve)
-        this.$store.state.bus.$on(eve,  (idx)=>{
-            if(idx == 1)
-              this.viewWork = false
-            else
-              this.viewWork2 = false
-        })
-      }
-      */
+
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
         this.$store.commit('pushMountedCheck', eve)
         this.$store.state.bus.$on('closeViewWork',  (idx)=>{
@@ -237,7 +227,6 @@
         this.$store.commit('init_idxWork', idx_work)
 
         console.log('call setThisWork::::', jobs)
-        this.thisJob = jobs
         this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
       },
       showItem(item){
