@@ -2,8 +2,18 @@ const express = require('express')
 const router = express.Router()
 const createError = require('http-errors')
 const User = require('./models/model_user')
+var app = express();
 
 console.log('Here is at index.js in apis')
+var timeCount = 0
+var getTimeCount = function(){
+	timeCount += 15
+	if(timeCount > 30)
+		timeCount = 0
+
+	return timeCount
+}
+
 var g_socket = undefined
 
 const server = app.listen(8082, () => {
@@ -29,14 +39,6 @@ io.on('connection', function(socket){
 	})
 })
 
-var timeCount = 0
-var getTimeCount = function(){
-	timeCount += 15
-	if(timeCount > 30)
-		timeCount = 0
-
-	return timeCount
-}
 
 var diffSec = (endDate) => {
 	var cur = new Date();
@@ -46,7 +48,6 @@ var diffSec = (endDate) => {
 	diff= end - cur;
 	return diff
 }
-var app = express();
 var list_user = [{
 	id:'',
 	sock:undefined
@@ -201,7 +202,6 @@ var saveMsg = function (to, from, newConvs){
 	//그 후 메시지를 저장한다.
 	msgPush(to, from, newConvs)
 }
-
 
 
 
