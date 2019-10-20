@@ -125,7 +125,7 @@
     methods: {
       setThis:function(idx){
         this.cur = this.$store.getters.getOthers[idx].position
-      console.log('List.vue ::: new others :::', this.$store.getOthers)
+      console.log('List.vue ::: new others :::', this.$store.getters.getOthers)
       },
       openDial(){
         this.$store.state.bus.$emit('openDial')
