@@ -30,6 +30,7 @@ var getDiff = function(startDate, endDate) {
 
 
 var regWork = (state, works, cv, to) => {
+  console.log('')
   if(state.user.works.list_keys.indexOf(cv.date) == -1){
     //여기서 등록이란건 변수에 저장을 했다는 의미(관리를 위해)
     //해당 작업은 등록되지 않았으므로 등록처리
@@ -218,9 +219,10 @@ export default new Vuex.Store({
             })
 
           })
+          /*
           state.user.works.toWork.forEach(x=>{
             var count = 0
-            console.log('check routine ::: store.js :::')
+            console.log('check routine ::: store.js :::' )
             x.to.forEach(y => {
               if(y.state != x.convs.works.state_s){
                 count++
@@ -237,6 +239,7 @@ export default new Vuex.Store({
         .catch(e=>{
           console.error('getWorks in View.vue::::', e)
         })
+        */
     },
     find_work(state, convs){
       if(convs.works.notice === true){
