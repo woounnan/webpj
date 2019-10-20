@@ -144,8 +144,7 @@
 
                         <v-dialog v-model="reject" scrollable max-width="300px">
                           <template v-slot:activator="{ on:rej }">
-                            <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS(item, '승인완료')">
-                            <v-icon dark>done</v-icon>
+                            
                             <v-btn class="mx-2" fab dark small color="pink" v-on="rej" @click="sendWorkToS(item, '승인거절')">
                               <v-icon dark>close</v-icon>
                             </v-btn>
