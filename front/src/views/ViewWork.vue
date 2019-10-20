@@ -111,40 +111,40 @@
             ></v-divider>
 
             <v-list-item
-              :key="jobs.to[index].position"
+              :key="item.position"
             >
                 <v-list-item-avatar>
-                <v-img :src="jobs.to[index].avatar"></v-img>
+                <v-img :src="item.avatar"></v-img>
                 </v-list-item-avatar>
 
                 <v-list-item-content>
-                <v-list-item-title v-html="jobs.to[index].position"></v-list-item-title>
+                <v-list-item-title v-html="item.position"></v-list-item-title>
                 <!--
-                <v-list-item-subtitle v-html="jobs.to[index].subtitle"></v-list-item-subtitle>
+                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
                 -->
                 </v-list-item-content>
 
                 <template v-if="jobs.convs.works.by === $store.getters.getUser.id">
                   <v-list-item-content @click="showState(item)">
-                    <v-btn v-if="jobs.to[index].state === '미제출'" depressed small color="error">미제출</v-btn>
-                    <v-btn v-if="jobs.to[index].state === '승인대기'" depressed small color="primary">승인대기</v-btn>
-                    <v-btn v-if="jobs.to[index].state === '승인거절'" depressed small color="orange darken-3 white--text">승인거절</v-btn>
-                    <v-btn v-if="jobs.to[index].state === '승인완료'" depressed small color="green darken-1 white--text">승인완료</v-btn>
+                    <v-btn v-if="item.state === '미제출'" depressed small color="error">미제출</v-btn>
+                    <v-btn v-if="item.state === '승인대기'" depressed small color="primary">승인대기</v-btn>
+                    <v-btn v-if="item.state === '승인거절'" depressed small color="orange darken-3 white--text">승인거절</v-btn>
+                    <v-btn v-if="item.state === '승인완료'" depressed small color="green darken-1 white--text">승인완료</v-btn>
                  </v-list-item-content>
                   <v-list-item-content>
-                      <v-icon :color="jobs.to[index].flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
+                      <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
                   </v-list-item-content>
                   <v-list-item-content>
-                      <v-list-item-subtitle >{{jobs.to[index].flag_sendDate}}</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
-                    <div v-if="jobs.to[index].state === '승인대기'">
-                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS('승인완료')">
+                    <div v-if="item.state === '승인대기'">
+                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS(item, '승인완료')">
                           <v-icon dark>done</v-icon>
                         </v-btn>
 
                         <v-dialog v-model="reject" scrollable max-width="300px">
                           <template v-slot:activator="{ on:rej }">
-                            <v-btn class="mx-2" fab dark small color="pink" v-on="rej" @click="sendWorkToS('승인거절')">
+                            <v-btn class="mx-2" fab dark small color="pink" v-on="rej" @click="sendWorkToS(item, '승인거절')">
                               <v-icon dark>close</v-icon>
                             </v-btn>
                           </template>
@@ -153,7 +153,7 @@
                             <v-divider></v-divider>
                                 <v-textarea 
                                     placeholder="내용 입력"
-                                    v-model="jobs.to[index].comment"
+                                    v-model="item.comment"
                                     counter
                                     maxlength="120"
                                     full-width
@@ -171,7 +171,7 @@
                 </template>
                 <template v-else>
                   <!-- 미제출시 -->
-                  <div v-if="jobs.to[index].state==='미제출'">
+                  <div v-if="item.state==='미제출'">
                     <v-list-item-content>
                       <v-file-input
                         v-model="upFiles"
@@ -199,23 +199,23 @@
                     </v-list-item-content>
                     <v-list-item-content>
                         <div class="flex-grow-1"></div>
-                          <v-btn @click="sendWorkToS('승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+                          <v-btn @click="sendWorkToS(item, '승인대기')" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
                         
                     </v-list-item-content>
                   <v-list-item-content>
-                      <v-list-item-subtitle >{{jobs.to[index].flag_sendDate}}</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
                   </div>
                   <div v-else>
                     <v-list-item-content>
-                        <v-icon :color="jobs.to[index].flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
+                        <v-icon :color="item.flag_upload ? 'deep-purple accent-4' : 'grey'">insert_drive_file</v-icon>
                     </v-list-item-content> 
                     <v-list-item-content>
-                      <v-list-item-subtitle >{{jobs.to[index].flag_sendDate}}</v-list-item-subtitle>
+                      <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                     </v-list-item-content>                                       
                   </div>
-                    <v-list-item-content v-if="jobs.to[index].state==='승인거절'">
-                      <v-icon v-on="showComment" :color="jobs.to[index].comment ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
+                    <v-list-item-content v-if="item.state==='승인거절'">
+                      <v-icon v-on="showComment" :color="item.comment ? 'deep-purple accent-4' : 'grey'">chat_bubble</v-icon>
                     </v-list-item-content>              
                                
                 </template>
@@ -260,9 +260,10 @@
         console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
-      sendWorkToS(state){
+      sendWorkToS(item, state){
         console.log('call sendWorkToS::::', state)
         //update mine
+        item.state = state
         this.jobs.convs.works.state_c = state
         this.$store.state.bus.$emit('sendWork', this.jobs)
       },
