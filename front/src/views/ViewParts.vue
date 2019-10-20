@@ -28,6 +28,7 @@
           style="max-height: 400px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
+            <div v-if="item.convs.works.flag_expired == false">
             <v-list-item :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
@@ -74,6 +75,7 @@
               v-if="index + 1 < goings.length"
               :key="index"
             ></v-divider>
+            </div>
           </div>
       </v-list>
           </template> 
@@ -111,6 +113,7 @@
           style="max-height: 400px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
+            <div v-if="item.convs.works.flag_expired == true">
             <v-list-item :key="item.title">
                 <v-list-item-content v-on="dial"  @click="setThisWork(item)" >
 
@@ -156,6 +159,7 @@
               v-if="index + 1 < goings.length"
               :key="index"
             ></v-divider>
+            </div>
           </div>
       </v-list>
       </template>
