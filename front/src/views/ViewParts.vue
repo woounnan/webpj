@@ -114,7 +114,7 @@
           style="max-height: 400px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
-            <div v-if="item.convs.works.flag_expired == false">
+            <div v-if="item.convs.works.flag_expired == true">
             <v-list-item :key="item.title">
 
                 <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
