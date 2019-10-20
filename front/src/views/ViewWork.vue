@@ -252,11 +252,7 @@
       }  
     },
     mounted(){
-        console.log('ViewWork.vue::::::', this.jobs)
 
-        this.$store.state.bus.$on('openViewWork', (data)=>{
-        
-      })
     },
     methods: {
       closeWindow(){

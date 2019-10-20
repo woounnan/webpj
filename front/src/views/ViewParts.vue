@@ -219,7 +219,7 @@
           console.log('closeViewWork!!', idx)
           if(idx == 1)
             this.viewWork = false
-          else
+          else if(idx == 2)
             this.viewWork2 = false
         })
       }
