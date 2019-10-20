@@ -260,28 +260,17 @@ export default new Vuex.Store({
       var jobs = state.user.works[state.p_work.idxSepKey]
       console.log('find jobs ::: find_work ::: store.js :::', jobs)
       console.log('length ::: find_work ::: store.js :::', jobs.length)
-
+    
       var i = 0
       var ret = 0
       for(; i<jobs.length; i++){
-        if(x.works.flag_date === convs.works.flag_date){
+        if(jobs[i].convs.works.flag_date === convs.works.flag_date){
           state.p_work.idxWork = i
           console.log('find works ::: find_work ::: store.js :::', jobs[state.p_work.idxWork])
           break
         }
       }
-      /*
-      jobs.convs.forEach(x=>{
-        if(ret == 1)
-          return
-        if(x.works.flag_date === convs.works.flag_date){
-          state.p_work.idxWork = i
-          console.log('find works ::: find_work ::: store.js :::', jobs[state.p_work.idxWork])
-          ret = 1
-        }
-        i++
-      })
-      */
+
     },
     init_idxWork(state, idx_work){
       state.p_work.idxWork = idx_work
