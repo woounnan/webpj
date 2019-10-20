@@ -71,21 +71,12 @@ export default{
    		this.sendWork()
 
 		var eve = 'sock_initWorks'
-		/*
-		var cb = function(){
-			console.log('call sock_initWorks')
-			this.$store.commit('initWorks')
-		}
 
-   		this.$store.commit('myOn', eve, cb)
-   		*/
 		if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
 			this.$store.commit('pushMountedCheck', eve)
 	   		this.$store.state.socks.sock.on(eve, ()=>{
 	   			console.log('call sock_initWorks:::',this.$store)
-
 		   		this.$store.commit('initWorks')
-
 	   		})
    		}
 	},

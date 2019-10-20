@@ -261,7 +261,7 @@
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(state){
-        console.log('call sendWorkToS::::')
+        console.log('call sendWorkToS::::', state)
         //update mine
         this.jobs.convs.works.state_c = state
         this.$store.state.bus.$emit('sendWork', this.jobs)
