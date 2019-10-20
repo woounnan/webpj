@@ -112,6 +112,7 @@
       <v-list 
           two-line
           style="max-height: 400px"
+          v-bind:style="{color: 'gray'}
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
             <div v-if="item.convs.works.flag_expired == true">
