@@ -240,11 +240,9 @@ export default new Vuex.Store({
     find_work(state, convs){
       if(convs.works.notice === true){
         if(convs.works.by === state.user.id){
-          //보낸알림 등록
           state.p_work.idxSep = 2
           state.p_work.idxSepKey = 'toNotice'
         }else{
-          //받은알림 등록
           state.p_work.idxSep = 3
           state.p_work.idxSepKey = 'fromNotice'
         }
@@ -252,20 +250,27 @@ export default new Vuex.Store({
       }
       else{
         if(convs.works.by === state.user.id){
-          //요청작업 등록
           state.p_work.idxSep = 0
           state.p_work.idxSepKey = 'toWork'
         }else{
-          //받은작업 등록
           state.p_work.idxSep = 1
           state.p_work.idxSepKey = 'fromWork'
         }
       }
       var jobs = state.user.works[state.p_work.idxSepKey]
       console.log('find jobs ::: find_work ::: store.js :::', jobs)
+      console.log('length ::: find_work ::: store.js :::', jobs.length)
 
       var i = 0
       var ret = 0
+      for(; i<jobs.length; i++){
+        if(x.works.flag_date === convs.works.flag_date){
+          state.p_work.idxWork = i
+          console.log('find works ::: find_work ::: store.js :::', jobs[state.p_work.idxWork])
+          break
+        }
+      }
+      /*
       jobs.convs.forEach(x=>{
         if(ret == 1)
           return
@@ -276,6 +281,7 @@ export default new Vuex.Store({
         }
         i++
       })
+      */
     },
     init_idxWork(state, idx_work){
       state.p_work.idxWork = idx_work
