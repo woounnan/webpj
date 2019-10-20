@@ -51,13 +51,6 @@ var list_user = [{
 	id:'',
 	sock:undefined
 }]
-function printObj(obj){
-	console.log('######################')
-	obj.forEach(x=>{
-		console.log(x)
-	})
-	console.log('######################')
-}
 const msgPush = (to, from, newConvs)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
@@ -161,6 +154,7 @@ var saveMsg = function (to, from, newConvs){
 	//expired callback을 걸어준다.
 
 	//msg가 works면
+	console.log('flag_sendDate :::', newConvs.works)
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
 		if((newConvs.works.flag_date == newConvs.date) && ((newConvs.works.state_s === "미제출") || (newConvs.works.state_s === "미확인"))){
