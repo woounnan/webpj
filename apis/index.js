@@ -101,7 +101,7 @@ const msgSet = (to, from, newConvs, fieldName, value, sep)=>{
 			}
 		}
 		var i =0
-		printObj(r.comu[idx].works)
+		printObj(r.comu[idx].convs)
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
 			if(x.date == findDate){
@@ -115,7 +115,7 @@ const msgSet = (to, from, newConvs, fieldName, value, sep)=>{
 			}
 			i++
 		})
-		printObj(r.comu[idx].works)
+		printObj(r.comu[idx].convs)
 		console.log('----------------------------')
 		//바꾼 값으로 update
 		User.update({
