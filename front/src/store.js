@@ -287,7 +287,7 @@ export default new Vuex.Store({
     getIdxView(state){
       return state.idxView
     },
-    getIdxView(state){
+    getToday(state){
       return state.today
     },
   },
