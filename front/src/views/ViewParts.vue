@@ -108,7 +108,7 @@
         </v-btn>
 
       <v-dialog v-model="viewWork2">
-        <template v-slot:activator="{ on:dial }">
+        <template v-slot:activator="{ on:dial2 }">
       <v-list 
           two-line
           style="max-height: 400px"
@@ -189,6 +189,8 @@
       goings: undefined,
   	},
     data: () => ({
+      dial: false,
+      dial2: false,
       period: '',
       active: undefined,
       thisWindow: undefined,
