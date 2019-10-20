@@ -60,11 +60,11 @@ var initializeWork = function(state){
       }], 
       due : '',    
   }]
+  console.log('state ::: initializeWork :::', state)
   state.user.works['toWork'] = works
   state.user.works['fromWork'] = works
   state.user.works['toNotice'] = works
   state.user.works['fromNotice'] = works
-
 }
 var getDiff = function(startDate, endDate) {
     var diff_start = startDate instanceof Date ? startDate :new Date(startDate)
