@@ -12,6 +12,7 @@ var getTimeCount = function(){
 
 	return timeCount
 }
+var g_socket = undefined
 
 var diffSec = (endDate) => {
 	var cur = new Date();
@@ -147,8 +148,8 @@ var saveMsg = function (to, from, newConvs){
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
-		    	socket.broadcast('sock_initWorks')
-			}, 1000 * 30, newConvs)
+		    	g_socket.broadcast('sock_initWorks')
+			}, 1000 * 20, newConvs)
 		}
 		else{
 			if(newConvs.works.flag_sender != 'checkPage') {
@@ -184,6 +185,7 @@ const server = app.listen(8082, () => {
 
 const io = require('socket.io')(server)
 io.on('connection', function(socket){
+	g_socket = socket
 	console.log('id: ' + socket.id)
 
 	socket.on('sock_initWorks', (data) =>{
@@ -198,6 +200,22 @@ io.on('connection', function(socket){
 		//send all clients except for sender
 		socket.broadcast.emit('msg', data)
 	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
 
 
