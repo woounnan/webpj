@@ -30,7 +30,7 @@
 
         <v-list>
           <v-list-item>
-            <v-list-item-action>
+            <v-list-item-action @click="showState">
               <v-icon>title</v-icon>
             </v-list-item-action>
 
@@ -274,7 +274,8 @@
         console.log('flag_upload ::::', this.works.flag_upload)
       },
       showState(item){
-        console.log('showState :::', item)
+        console.log('showState - item :::', item)
+        console.log('showState - jobs.convs :::', this.jobs.convs)
       },
     },
   }
