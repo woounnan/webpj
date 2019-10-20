@@ -241,6 +241,14 @@ export default new Vuex.Store({
       state.idxView = idx
       this.commit('initWorks')
     },
+    myEmit(state, eve, func){
+      if(state.mountedCheck.indexOf(eve) == -1){
+        if(eve.indexOf('sock_') != -1)
+          state.socks.sock.on(eve, func)
+        else
+          state.bus.$on(eve, func)
+      }
+    },
     addRoom(state, to){
       if(state.user.room.indexOf(to) != -1) return 
       if(state.user.room.length < state.user.room_num){

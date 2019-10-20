@@ -71,13 +71,21 @@ export default{
    		this.sendWork()
 
 		var eve = 'sock_initWorks'
+		var cb = function(){
+			console.log('call sock_initWorks')
+			this.$store.commit('initWorks')
+		}
+		
+   		this.$store.commit('myEmit', eve, cb)
+   		/*
 		if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
 			this.$store.commit('pushMountedCheck', eve)
-	   		this.$store.state.socks.sock.on(eve, ()=>{
+	   		this.$store.state.socks.sock.on(eve, function(){
 	   			console.log('call sock_initWorks')
 		   		this.$store.commit('initWorks')
 	   		})
    		}
+   		*/
 	},
    	mounted(){
 		this.$store.commit("setToday")
@@ -107,7 +115,7 @@ export default{
 						this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
 						console.log('이사람에게 보냈어::::', to)
 					})
-					//setTimeout(this.$store.state.socks.sock.emit('sock_initWorks'), 300)
+					setTimeout(this.$store.state.socks.sock.emit('sock_initWorks', {id: this.$store.getters.getUser.id}), 1000)
 				})
 			}
 		},
