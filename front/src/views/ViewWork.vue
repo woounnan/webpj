@@ -139,7 +139,7 @@
                       <v-list-item-subtitle >{{item.flag_sendDate}}</v-list-item-subtitle>
                   </v-list-item-content>
                     <div v-if="item.state === '승인대기'">
-                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS([{'state_c':'승인완료'}])">
+                        <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS([{key : 'state_c', value :'승인완료'}])">
                           <v-icon dark>done</v-icon>
                         </v-btn>
 
@@ -200,7 +200,7 @@
                     </v-list-item-content>
                     <v-list-item-content>
                         <div class="flex-grow-1"></div>
-                          <v-btn @click="sendWorkToS([{'state_c':'승인대기'}])" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
+                          <v-btn @click="sendWorkToS([{key: 'state_c', value :'승인대기'}])" depressed large color="cyan darken-4 white--text">제출하기</v-btn>
                         
                     </v-list-item-content>
                   <v-list-item-content>
@@ -286,7 +286,7 @@
       },
       sendRej(){
         this.reject = false
-        this.sendWorkToS([{'state_c':'승인거절'}, {'comment': this.comment}])
+        this.sendWorkToS([{key : 'state_c', value :'승인거절'}, {key : 'comment', value : this.comment}])
       },
     },
   }
