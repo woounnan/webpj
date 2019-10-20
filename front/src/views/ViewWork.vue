@@ -264,7 +264,7 @@
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(arr_dic){
-        console.log('call sendWorkToS::::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
+        console.log('call sendWorkToS::::', arr_dic)
 
         //update mine
         //item.state = state
