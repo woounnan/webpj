@@ -81,10 +81,11 @@ export default{
    		*/
 		if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
 			this.$store.commit('pushMountedCheck', eve)
-	   		this.$store.state.socks.sock.on(eve, function(){
+	   		this.$store.state.socks.sock.on(eve, ()=>{
 	   			console.log('call sock_initWorks:::',this.$store)
 
 		   		this.$store.commit('initWorks')
+
 	   		})
    		}
 	},
