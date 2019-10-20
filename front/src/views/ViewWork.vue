@@ -264,6 +264,7 @@
         item.state = state
         var jobs = this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork]
         jobs.convs.works.state_c = state
+        console.log('jobs::::::::: ViewWork :::', jobs)
         this.$store.state.bus.$emit('sendWork', jobs)
       },
       showDate(){
@@ -271,10 +272,6 @@
       },
       showUpload(){
         console.log('flag_upload ::::', this.works.flag_upload)
-      },
-      showState(item){
-        console.log('showState - item :::', item)
-        console.log('showState - jobs.convs :::', this.jobs.convs)
       },
     },
   }
