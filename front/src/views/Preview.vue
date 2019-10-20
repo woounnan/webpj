@@ -109,6 +109,7 @@
 		},
 		methods:{
 			setThisWork(jobs){
+        		this.$store.commit('init_idxSepKey', this.idx_sep)
 				this.thisJob = jobs
 				this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
 			},
