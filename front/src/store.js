@@ -175,7 +175,9 @@ export default new Vuex.Store({
       state.socks.sock = io('webhacker.xyz:8082')
     },
     addNewMsg(state){
-      state.others.
+      state.others.forEach(x=>{
+        //새메시지 상태 추가
+      })
     },
     initWorks(state){
       state.user.works = {
