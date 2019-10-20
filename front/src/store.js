@@ -221,17 +221,12 @@ export default new Vuex.Store({
             var count = 0
             console.log('check routine ::: store.js :::')
             x.to.forEach(y => {
-              console.log('title:::', x.convs.works.title)
-              console.log('state - to::: check routine ::: store.js :::', y.state)
-              console.log('state - server::: check routine ::: store.js :::', x.convs.works.state_s)
               if(y.state != x.convs.works.state_s){
-                console.log('true :::')
                 count++
               }
             })
             if(count == x.to.length){
               console.log('서버 상태 업데이트 시키께 ::: store.js :::', x.convs.works.title)
-              console.log('count ::: store.js :::', count)
               x.convs.works.state_s = x.convs.works.state_c
               x.convs.works.flag_sender = 'checkPage'
               state.bus.$emit('sendWork', x)
