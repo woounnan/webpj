@@ -117,7 +117,7 @@ export default{
 						this.$store.state.socks.sock.emit('msg', {msg: data.convs, header: header})
 						console.log('이사람에게 보냈어::::', to)
 					})
-					//setTimeout(this.$store.state.socks.sock.emit('sock_initWorks', {id: this.$store.getters.getUser.id}), 1000)
+					setTimeout(this.$store.state.socks.sock.emit('sock_initWorks', {id: this.$store.getters.getUser.id}), 50)
 				})
 			}
 		},
