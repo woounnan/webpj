@@ -28,7 +28,6 @@ io.on('connection', function(socket){
 	socket.on('sock_initWorks', (data) =>{
 		socket.broadcast.emit('sock_initWorks')
 	})
-
 	socket.on('msg', (data) =>{
 		console.log('recv msg')
 		console.log(data)
@@ -173,7 +172,6 @@ var saveMsg = function (to, from, newConvs){
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
-		    	g_socket.broadcast('sock_initWorks')
 			}, 1000 * 20, newConvs)
 		}
 		else{
