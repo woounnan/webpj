@@ -202,7 +202,6 @@
       */
     }),
     mounted(){
-      console.log('mount ViewParts :::', this.idx_sep)
       var eve = 'closeViewWork'
       /*
       if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
@@ -232,8 +231,6 @@
         this.thisWindow = idx
       },
       setThisWork(jobs, idx_work){
-        console.log('this.idx_sep ::: setThisWork :::', this.idx_sep)
-        this.$store.commit('init_idxSepKey', this.idx_sep)
         this.$store.commit('init_idxWork', idx_work)
 
         console.log('call setThisWork::::', jobs)
