@@ -96,7 +96,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >지나간{{idx_sep}}</v-app-bar>
+    >진행중{{idx_sep}}</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
@@ -108,17 +108,16 @@
         </v-btn>
 
       <v-dialog v-model="viewWork2">
-        <template v-slot:activator="{ on:dial2 }">
+        <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
           style="max-height: 400px"
-          v-bind:style="{color: 'gray'}
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
-            <div v-if="item.convs.works.flag_expired == true">
+            <div v-if="item.convs.works.flag_expired == false">
             <v-list-item :key="item.title">
 
-                <v-list-item-content v-on="dial2"  @click="setThisWork(item, index)">
+                <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
 
                   <v-list-item-title>
 
