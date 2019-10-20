@@ -7,8 +7,6 @@
 
             <span class="headline white--text">상세 보기</span>
 
-
-          
             <div class="flex-grow-1"></div>
             <div v-if="jobs.convs.works.by != $store.getters.getUser.id">
               <v-btn v-if="jobs.convs.works.state_c === '미제출'" depressed large color="error">미제출</v-btn>
@@ -254,6 +252,9 @@
     },
     mounted(){
       console.log('ViewWork.vue::::::', this.jobs)
+      console.log('idxSepKey ::: setWorks ::: ViewWork :::', this.$store.state.p_work.idxSepKey)
+      console.log('idxWork ::: setWorks ::: ViewWork :::', this.$store.state.p_work.idxWork)
+      console.log('thisWorks ::: setWorks ::: ViewWork :::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
     },
     methods: {
       closeWindow(){

@@ -30,7 +30,7 @@
           <div v-for="(item, index) in goings">
             <v-list-item :key="item.title">
 
-                <v-list-item-content v-on="dial"  @click="setThisWork(item)">
+                <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
 
                   <v-list-item-title>
 
@@ -231,7 +231,10 @@
         console.log('setThis :::', idx)
         this.thisWindow = idx
       },
-      setThisWork(jobs){
+      setThisWork(jobs, idx_work){
+        this.$store.commit('init_idxSepKey', this.idx_sep)
+        this.$store.commit('init_idxWork', idx_work)
+
         console.log('call setThisWork::::', jobs)
         this.thisJob = jobs
         this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate

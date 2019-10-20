@@ -78,6 +78,11 @@ export default new Vuex.Store({
     today: '',
     mountedCheck: [],
     idxView: undefined,
+    p_work: {
+      idxWork: undefined,
+      idxSep: undefined,
+      idxSepKey: undefined,
+    },
     user: {
       id: '',
       position: '',
@@ -237,18 +242,28 @@ export default new Vuex.Store({
           console.error('getWorks in View.vue::::', e)
         })
     },
+    init_idxWork(state, idx_work){
+      state.p_work.idxWork = idx_work
+    }, 
+    init_idxSepKey(state, idx_sep){
+      switch(idx_sep){
+        case 0:
+          state.p_work.idxSepKey = 'toWork'
+          break
+        case 1:
+          state.p_work.idxSepKey = 'fromWork'
+          break
+        case 2:
+          state.p_work.idxSepKey = 'toNotice'
+          break
+        case 3:
+          state.p_work.idxSepKey = 'fromNotice'
+          break
+      }
+    }, 
     initIdxView(state, idx){
       state.idxView = idx
       this.commit('initWorks')
-    },
-    myOn(state, eve, func){
-      console.log('myEmit ::: store.js :::@@@@@@@@')
-      if(state.mountedCheck.indexOf(eve) == -1){
-        if(eve.indexOf('sock_') != -1)
-          state.socks.sock.on(eve, func)
-        else
-          state.bus.$on(eve, func)
-      }
     },
     addRoom(state, to){
       if(state.user.room.indexOf(to) != -1) return 
