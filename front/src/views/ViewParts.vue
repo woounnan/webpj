@@ -232,6 +232,7 @@
         this.thisWindow = idx
       },
       setThisWork(jobs, idx_work){
+        console.log('this.idx_sep ::: setThisWork :::', this.idx_sep)
         this.$store.commit('init_idxSepKey', this.idx_sep)
         this.$store.commit('init_idxWork', idx_work)
 
