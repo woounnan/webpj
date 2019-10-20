@@ -152,7 +152,7 @@ var saveMsg = function (to, from, newConvs){
 			}, 1000 * 10, newConvs)
 		}
 		else{
-			console.log('sender:::', newconvs.flag_sender)
+			console.log('sender:::', newConvs.flag_sender)
 			if(newConvs.flag_sender != 'checkPage') {
 				//C, S가 보내는 모든 중간 작업 메시지
 				//state_c만 변경된다
