@@ -21,7 +21,7 @@
           <div v-for="(item, index) in goings.slice(0,3)">
             <v-list-item height="30px" :key="item.title">
 
-                <v-list-item-content v-on="dial"  @click="setThisWork(item)">
+                <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
 
                   <v-list-item-title>
 
@@ -108,8 +108,9 @@
 			})
 		},
 		methods:{
-			setThisWork(jobs){
+			setThisWork(jobs, idx_work){
         		this.$store.commit('init_idxSepKey', this.idx_sep)
+        		this.$store.commit('init_idxWork', idx_work)
 				this.thisJob = jobs
 				this.period = jobs.convs.works.startDate + '~' + jobs.convs.works.endDate
 			},
