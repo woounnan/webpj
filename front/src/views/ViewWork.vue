@@ -251,10 +251,7 @@
       }  
     },
     mounted(){
-      console.log('ViewWork.vue::::::', this.jobs)
-      console.log('idxSepKey ::: setWorks ::: ViewWork :::', $store.state.p_work.idxSepKey)
-      console.log('idxWork ::: setWorks ::: ViewWork :::', $store.state.p_work.idxWork)
-      console.log('thisWorks ::: setWorks ::: ViewWork :::', $store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
+
     },
     methods: {
       closeWindow(){
