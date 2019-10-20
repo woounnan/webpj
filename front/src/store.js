@@ -63,6 +63,7 @@ var regWork = (state, works, cv, to) => {
         avatar: getAvatar(state, to),
         flag_upload : cv.works.flag_c_upload,
         flag_sendDate : cv.works.flag_sendDate, //새로추가  보낸시간
+        comment: cv.works.comment,
       })
         console.log('already registered work')
         return
