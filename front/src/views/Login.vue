@@ -75,7 +75,7 @@
         wd: {
           msg: '',
           state: false,
-          type: ''
+          type: 'error'
         }/*,
         ps:{
           bus : new Vue()

@@ -256,14 +256,14 @@
     methods: {
       closeWindow(){
         console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
-        $store.state.bus.$emit('closeViewWork', this.idx_sep)
+        this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(item, state){
         console.log('call sendWorkToS::::', state)
         //update mine
         item.state = state
         this.jobs.convs.works.state_c = state
-        $store.state.bus.$emit('sendWork', this.jobs)
+        this.$store.state.bus.$emit('sendWork', this.jobs)
       },
       showDate(){
         console.log('date ::::', this.period)
