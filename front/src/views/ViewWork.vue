@@ -30,7 +30,7 @@
 
         <v-list>
           <v-list-item>
-            <v-list-item-action @click="showState">
+            <v-list-item-action>
               <v-icon>title</v-icon>
             </v-list-item-action>
 
@@ -113,7 +113,7 @@
             <v-list-item
               :key="item.position"
             >
-                <v-list-item-avatar>
+                <v-list-item-avatar  @click="showState(item)">
                 <v-img :src="item.avatar"></v-img>
                 </v-list-item-avatar>
 
