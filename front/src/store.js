@@ -246,6 +246,7 @@ export default new Vuex.Store({
       state.p_work.idxWork = idx_work
     }, 
     init_idxSepKey(state, idx_sep){
+      console.log('call init_idxSepkey :::', idx_sep)
       switch(idx_sep){
         case 0:
           state.p_work.idxSepKey = 'toWork'
