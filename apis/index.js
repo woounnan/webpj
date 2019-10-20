@@ -101,7 +101,6 @@ const msgSet = (to, from, newConvs, fieldName, value, sep)=>{
 			}
 		}
 		var i =0
-		printObj(r.comu[idx].convs)
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
 			if(x.date == findDate){
@@ -115,7 +114,6 @@ const msgSet = (to, from, newConvs, fieldName, value, sep)=>{
 			}
 			i++
 		})
-		printObj(r.comu[idx].convs)
 		console.log('----------------------------')
 		//바꾼 값으로 update
 		User.update({
@@ -152,8 +150,7 @@ var saveMsg = function (to, from, newConvs){
 			}, 1000 * 10, newConvs)
 		}
 		else{
-			console.log('sender:::', newConvs.flag_sender)
-			if(newConvs.flag_sender != 'checkPage') {
+			if(newConvs.works.flag_sender != 'checkPage') {
 				//C, S가 보내는 모든 중간 작업 메시지
 				//state_c만 변경된다
 				console.log('받은 작업임 in index.js')
