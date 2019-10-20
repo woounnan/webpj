@@ -241,8 +241,8 @@ export default new Vuex.Store({
       state.idxView = idx
       this.commit('initWorks')
     },
-    myEmit(state, eve, func){
-      console.log('myEmit ::: store.js :::')
+    myOn(state, eve, func){
+      console.log('myEmit ::: store.js :::@@@@@@@@')
       if(state.mountedCheck.indexOf(eve) == -1){
         if(eve.indexOf('sock_') != -1)
           state.socks.sock.on(eve, func)

@@ -75,8 +75,8 @@ export default{
 			console.log('call sock_initWorks')
 			this.$store.commit('initWorks')
 		}
-		
-   		this.$store.commit('myEmit', eve, cb)
+
+   		this.$store.commit('myOn', eve, cb)
    		/*
 		if(this.$store.getters.getMountedCheck.indexOf(eve) == -1){
 			this.$store.commit('pushMountedCheck', eve)
