@@ -179,7 +179,7 @@
     },
     props:{
       idx_sep: undefined,
-      goings: [],
+      goings: undefined,
   	},
     data: () => ({
       period: '',
