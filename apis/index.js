@@ -26,6 +26,13 @@ var list_user = [{
 	id:'',
 	sock:undefined
 }]
+function printObj(obj){
+	console.log('######################')
+	obj.forEach(x=>{
+		console.log(x)
+	})
+	console.log('######################')
+}
 const msgPush = (to, from, newConvs)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
@@ -75,12 +82,12 @@ const msgPush = (to, from, newConvs)=>{
 	})
 }
 
-const msgSet = (to, from, newConvs, fieldName, value)=>{
+const msgSet = (to, from, newConvs, fieldName, value, sep)=>{
 	User.findOne({position: from}, (e, r) => {
 		if(e){
 			console.error('findOne Error in index.js:::: ', e)
 		}
-		console.log('----------------------------')
+		console.log('----------------------------',sep)
 		var flag = 0
 		var idx = -1
 		var findDate = newConvs.works.flag_date
@@ -94,7 +101,7 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 			}
 		}
 		var i =0
-
+		printObj(r.comu)
 		r.comu[idx].convs.forEach(x => {
 			//해당 work 메시지를 검색				
 			if(x.date == findDate){
@@ -102,14 +109,14 @@ const msgSet = (to, from, newConvs, fieldName, value)=>{
 				//console.log('work 찾음!!!::::', r.comu[idx].convs[i])
 				r.comu[idx].convs[i].works[fieldName] = value
 				r.comu[idx].convs[i].works['favor'] = true
-				//console.log('work 찾음2222!!!::::', x)
-				
+				//console.log('work 찾음2222!!!::::', x)		
 			}
 			else{
 			}
 			i++
 		})
-
+		printObj(r.comu)
+		console.log('----------------------------')
 		//바꾼 값으로 update
 		User.update({
 				position : from
@@ -130,7 +137,6 @@ var saveMsg = function (to, from, newConvs){
 	//if 메시지가 work라면
 	//expired callback을 걸어준다.
 
-
 	//msg가 works면
 	if(newConvs.works != undefined){
 		//처음 생성된 works면
@@ -140,14 +146,13 @@ var saveMsg = function (to, from, newConvs){
 			newConvs.works['favor'] = false
 
 			setTimeout((newConvs)=>{
-		    	
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
 			}, 1000 * 10, newConvs)
-
 		}
 		else{
+			console.log('sender:::', newconvs.flag_sender)
 			if(newConvs.flag_sender != 'checkPage') {
 				//C, S가 보내는 모든 중간 작업 메시지
 				//state_c만 변경된다
@@ -156,7 +161,7 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//받은 작업이고 요청자에게 제출하는 메시지일 때, 요청자의 상태 변경
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c)	
+				setTimeout((to, from, newConvs, fieldName, value, sep)=>{msgSet(to, from, newConvs, fieldName, value, sep)}, getTimeCount(),to, from, newConvs, 'state_c', newConvs.works.state_c, '111111111111111111111111111111')	
 			}
 			else{
 				//store.js에서 initWorks시 loop 돌면서 모든 c의 상태가 변경되었을 때 checkPage가 업데이트 보내면 실행되는 루프
@@ -166,7 +171,7 @@ var saveMsg = function (to, from, newConvs){
 				console.log('2: ', to)
 				console.log('3: ', newConvs.position)
 				//요청자, 수신자 상태 모두 변경
-				setTimeout((to, from, newConvs, fieldName, value, test)=>{msgSet(to, from, newConvs, fieldName, value, test)}, getTimeCount(),to, from, newConvs, 'state_s', newConvs.works.state_s)
+				setTimeout((to, from, newConvs, fieldName, value, sep)=>{msgSet(to, from, newConvs, fieldName, value,sep)}, getTimeCount(),to, from, newConvs, 'state_s', newConvs.works.state_s, '2222222222222222222222222222222')
 			}
 		}
 	}
