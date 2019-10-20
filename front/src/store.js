@@ -14,7 +14,58 @@ var getAvatar = function(state, position){
   return ret
 }
 
+var initializeWork = function(state){
 
+ var works = [{
+      convs: [{
+          id: '',
+          date:  '',
+          imageUrl:  '',
+          contents:  '',
+          position:  '',
+          image:  '', //If works exists, then content must be empty.
+          works: {
+            by :  '', //sender's id
+            by_position :  '',
+            title:  '',
+            contents:  '',
+            startDate:  '',
+            endDate:  '',
+            comment:  '',
+            flag_sender:  '', //checkPage or undefined, if flag_sender is flag_sender then save the state_s to server, else do not
+            flag_expired: false,
+            flag_date:  '', //원본 work를 찾기위함        
+            flag_c_upload: false,
+            flag_s_upload: false,
+            file_s_save:  '',
+            file_s_real:  '',
+            file_c_save:  '',
+            file_c_real:  '',
+            file_c_sendTime:  '',
+            state_s: '', //"미제출", "승인대기", "승인거절", "승인완료"
+            state_c: '',//알림시 "미확인", "확인"
+            notice: '', //true: notice false: work(required to ack)
+            favor: '',
+          }
+      }],
+      to : [{
+        position: '',
+        file_save: '',
+        file_real: '',
+        state: '', //각 클라이언트 state
+        avatar: '',
+        flag_upload :  false,
+        flag_sendDate :  false,  //새로추가
+        comment: '',
+      }], 
+      due : '',    
+  }]
+  state.user.works['toWork'] = works
+  state.user.works['fromWork'] = works
+  state.user.works['toNotice'] = works
+  state.user.works['fromNotice'] = works
+
+}
 var getDiff = function(startDate, endDate) {
     var diff_start = startDate instanceof Date ? startDate :new Date(startDate)
     var diff_end = endDate instanceof Date ? endDate :new Date(endDate)
@@ -175,20 +226,15 @@ export default new Vuex.Store({
       state.socks.sock = io('webhacker.xyz:8082')
     },
     initWorks(state){
-      state.user.works = {
-        list_keys : [],
-        toWork: [], //요청작업
-        fromWork:  [], //받은작업
-        toNotice:  [], //보낸알림
-        fromNotice: [], //받은알림
-      }
-        console.log('call initWorks :::')
+      console.log('call initWorks :::')
+      initializeWork()
+      console.log('call initWorks :::')
 
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{
-              if(cv.date != cv.works.flag_date){
+              if((cv.date != cv.works.flag_date) || cv.works.flag_date == undefined){
                 return
               }
               if(cv.works.notice === true){
@@ -219,7 +265,7 @@ export default new Vuex.Store({
             })
 
           })
-          /*
+
           state.user.works.toWork.forEach(x=>{
             var count = 0
             console.log('check routine ::: store.js :::' )
@@ -239,7 +285,7 @@ export default new Vuex.Store({
         .catch(e=>{
           console.error('getWorks in View.vue::::', e)
         })
-        */
+
     },
     find_work(state, convs){
       if(convs.works.notice === true){
