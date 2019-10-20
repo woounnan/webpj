@@ -85,20 +85,19 @@
     methods: {
       reg(){
         console.log('call reg function');
-        //location.href = '/reg' //normal move
-        //this.ps.bus.$on('exit', (code) => {
-          
+          //location.href = '/reg' //normal move
+          //this.ps.bus.$on('exit', (code) => {
           this.$store.state.bus.$on('exit', (code) => {
           console.log('code:' + code)
           if(code == 1){
             this.wd.type = 'success'
             this.wd.state = true
             this.wd.msg = '등록 성공'
-        }else{
-          this.wd.type = 'error'
-          this.wd.state = true
-          this.wd.msg = '등록 실패'
-        }
+          }else{
+            this.wd.type = 'error'
+            this.wd.state = true
+            this.wd.msg = '등록 실패'
+          }
         })
         this.$modal.show(Register,
           {

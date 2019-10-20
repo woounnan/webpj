@@ -160,7 +160,6 @@
       </v-list>
       </template>
                  <ViewWork :jobs="thisJob" :idx_sep="thisWindow" :period="period"/> 
-
     </v-dialog>
     </v-card>
 
