@@ -121,11 +121,11 @@
     },
     mounted() {
       this.$store.commit('addNewMsg')
-      console.log('List.vue ::: new others :::', this.$store.getOthers)
     },
     methods: {
       setThis:function(idx){
         this.cur = this.$store.getters.getOthers[idx].position
+      console.log('List.vue ::: new others :::', this.$store.getOthers)
       },
       openDial(){
         this.$store.state.bus.$emit('openDial')
