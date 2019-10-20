@@ -227,7 +227,7 @@ export default new Vuex.Store({
     },
     initWorks(state){
       console.log('call initWorks :::')
-      initializeWork()
+      initializeWork(state)
       console.log('call initWorks :::')
 
       axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
