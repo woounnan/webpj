@@ -4,6 +4,31 @@ const createError = require('http-errors')
 const User = require('./models/model_user')
 
 console.log('Here is at index.js in apis')
+var g_socket = undefined
+
+const server = app.listen(8082, () => {
+	console.log('server running on port 8082')
+})
+
+const io = require('socket.io')(server)
+io.on('connection', function(socket){
+	g_socket = socket
+	console.log('id: ' + socket.id)
+
+	socket.on('sock_initWorks', (data) =>{
+		socket.broadcast.emit('sock_initWorks')
+	})
+
+	socket.on('msg', (data) =>{
+		console.log('recv msg')
+		console.log(data)
+		saveMsg(data.header.to, data.header.from, data.msg)
+		saveMsg(data.header.from, data.header.to, data.msg)
+		//send all clients except for sender
+		socket.broadcast.emit('msg', data)
+	})
+})
+
 var timeCount = 0
 var getTimeCount = function(){
 	timeCount += 15
@@ -12,7 +37,6 @@ var getTimeCount = function(){
 
 	return timeCount
 }
-var g_socket = undefined
 
 var diffSec = (endDate) => {
 	var cur = new Date();
@@ -179,44 +203,6 @@ var saveMsg = function (to, from, newConvs){
 }
 
 
-const server = app.listen(8082, () => {
-	console.log('server running on port 8082')
-})
-
-const io = require('socket.io')(server)
-io.on('connection', function(socket){
-	g_socket = socket
-	console.log('id: ' + socket.id)
-
-	socket.on('sock_initWorks', (data) =>{
-		socket.broadcast.emit('sock_initWorks')
-	})
-
-	socket.on('msg', (data) =>{
-		console.log('recv msg')
-		console.log(data)
-		saveMsg(data.header.to, data.header.from, data.msg)
-		saveMsg(data.header.from, data.header.to, data.msg)
-		//send all clients except for sender
-		socket.broadcast.emit('msg', data)
-	})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
 
 
 
