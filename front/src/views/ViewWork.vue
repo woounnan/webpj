@@ -8,17 +8,17 @@
             <span class="headline white--text">상세 보기</span>
 
             <div class="flex-grow-1"></div>
-            <div v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.by != $store.getters.getUser.id">
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_c === '미제출'" depressed large color="error">미제출</v-btn>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_c === '승인대기'" depressed large color="primary">승인대기</v-btn>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_c === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_c === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+            <div v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.by != $store.getters.getUser.id">
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_c === '미제출'" depressed large color="error">미제출</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_c === '승인대기'" depressed large color="primary">승인대기</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_c === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_c === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
             </div>
             <div v-else>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
-              <v-btn v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_s === '미제출'" depressed large color="error">미제출</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_s === '승인대기'" depressed large color="primary">승인대기</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_s === '승인거절'" depressed large color="orange darken-3 white--text">승인거절</v-btn>
+              <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_s === '승인완료'" depressed large color="green darken-1 white--text">승인완료</v-btn>
             </div>
 
           <v-btn dark icon @click="closeWindow">
@@ -35,7 +35,7 @@
             <v-list-item-content>
               <v-text-field 
                 readonly
-                v-model="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.title"
+                v-model="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.title"
                 type="text"
               ></v-text-field>
             </v-list-item-content>
@@ -48,7 +48,7 @@
 
             <v-list-item-content>
               <v-textarea 
-                v-model="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.contents"
+                v-model="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.contents"
                 counter
                 single-line
                 type="text"
@@ -81,12 +81,12 @@
             <v-col cols="5">
               <v-list-item-content>
                 <v-chip
-                v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.flag_upload"
+                v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.flag_upload"
                 color="deep-purple"
                 text-color="white"
                 width="5px"
               >
-              {{$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.file_s_real}}
+              {{$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.file_s_real}}
             </v-chip>
           </v-list-item-content>
             </v-col>
@@ -122,7 +122,7 @@
                 -->
                 </v-list-item-content>
 
-                <template v-if="$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.by === $store.getters.getUser.id">
+                <template v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.by === $store.getters.getUser.id">
                   <v-list-item-content @click="showState(item)">
                     <v-btn v-if="item.state === '미제출'" depressed small color="error">미제출</v-btn>
                     <v-btn v-if="item.state === '승인대기'" depressed small color="primary">승인대기</v-btn>
@@ -252,21 +252,21 @@
     },
     mounted(){
       console.log('ViewWork.vue::::::', this.jobs)
-      console.log('idxSepKey ::: setWorks ::: ViewWork :::', this.$store.state.p_work.idxSepKey)
-      console.log('idxWork ::: setWorks ::: ViewWork :::', this.$store.state.p_work.idxWork)
-      console.log('thisWorks ::: setWorks ::: ViewWork :::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
+      console.log('idxSepKey ::: setWorks ::: ViewWork :::', $store.state.p_work.idxSepKey)
+      console.log('idxWork ::: setWorks ::: ViewWork :::', $store.state.p_work.idxWork)
+      console.log('thisWorks ::: setWorks ::: ViewWork :::', $store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
     },
     methods: {
       closeWindow(){
         console.log('call closeWindow in ViewWork.vue::::', this.idx_sep)
-        this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
+        $store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(item, state){
         console.log('call sendWorkToS::::', state)
         //update mine
         item.state = state
         this.jobs.convs.works.state_c = state
-        this.$store.state.bus.$emit('sendWork', this.jobs)
+        $store.state.bus.$emit('sendWork', this.jobs)
       },
       showDate(){
         console.log('date ::::', this.period)
