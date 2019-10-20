@@ -7,6 +7,8 @@
 
             <span class="headline white--text">상세 보기</span>
 
+
+          
             <div class="flex-grow-1"></div>
             <div v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.by != $store.getters.getUser.id">
               <v-btn v-if="$store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].convs.works.state_c === '미제출'" depressed large color="error">미제출</v-btn>
@@ -73,7 +75,7 @@
             </v-col>
             <v-col cols="1">
             <v-list-item-action 
-              @click="showUpload"
+              @click=""
             >
               <v-icon>system_update_alt</v-icon>
             </v-list-item-action>
@@ -99,7 +101,7 @@
           style="max-height: 200px" 
         >
           <!-- 요청 작업이면 -->
-        <template v-for="(item, index) in jobs.to">
+        <template v-for="(item, index) in $store.state.user.works[$store.state.p_work.idxSepKey][$store.state.p_work.idxWork].to">
             <v-subheader
             >대상</v-subheader>
 
@@ -139,7 +141,7 @@
                         <v-btn class="mx-2" fab dark small color="indigo" @click="sendWorkToS(item, '승인완료')">
                           <v-icon dark>done</v-icon>
                         </v-btn>
-          
+
                         <v-dialog v-model="reject" scrollable max-width="300px">
                           <template v-slot:activator="{ on:rej }">
                             <v-btn class="mx-2" fab dark small color="pink" v-on="rej" @click="sendWorkToS(item, '승인거절')">
@@ -230,7 +232,6 @@
   export default{
     props:{
       idx_sep: 0,
-      jobs: undefined,
       period: '',
     },
     data(){
@@ -251,7 +252,11 @@
       }  
     },
     mounted(){
+        console.log('ViewWork.vue::::::', this.jobs)
 
+        this.$store.state.bus.$on('openViewWork', (data)=>{
+        
+      })
     },
     methods: {
       closeWindow(){
@@ -259,19 +264,19 @@
         this.$store.state.bus.$emit('closeViewWork', this.idx_sep)
       },
       sendWorkToS(item, state){
-        console.log('call sendWorkToS::::', state)
+        console.log('call sendWorkToS::::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
+
         //update mine
         item.state = state
-        var jobs = this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork]
-        jobs.convs.works.state_c = state
-        console.log('jobs::::::::: ViewWork :::', jobs)
-        this.$store.state.bus.$emit('sendWork', jobs)
+        this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs.works.state_c = state
+        this.$store.state.bus.$emit('sendWork', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork])
       },
       showDate(){
         console.log('date ::::', this.period)
       },
-      showUpload(){
-        console.log('flag_upload ::::', this.works.flag_upload)
+      showState(item){
+        console.log('showState - item :::', item)
+        console.log('showState - convs :::', this.$store.state.user.works[this.$store.state.p_work.idxSepKey][this.$store.state.p_work.idxWork].convs)
       },
     },
   }
