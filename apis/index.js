@@ -147,7 +147,7 @@ var saveMsg = function (to, from, newConvs){
 		    	newConvs.works.flag_expired = true
 		    	//update db to set flag_expired value on true
 		    	msgSet(to, from, newConvs, 'flag_expired', true)
-			}, 1000 * 10, newConvs)
+			}, 1000 * 30, newConvs)
 		}
 		else{
 			if(newConvs.works.flag_sender != 'checkPage') {
