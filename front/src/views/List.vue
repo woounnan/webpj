@@ -120,7 +120,8 @@
       }
     },
     mounted() {
-      
+      this.$store.commit('addNewMsg')
+      console.log('List.vue ::: new others :::', this.$store.getOthers)
     },
     methods: {
       setThis:function(idx){
