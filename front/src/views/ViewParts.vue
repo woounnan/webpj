@@ -86,6 +86,7 @@
 
   </v-col>
 
+  
   <v-col cols="6">
       <v-card
         class="mx-auto"
@@ -95,7 +96,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >지나간</v-app-bar>
+    >지나간{{idx_sep}}</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
@@ -115,7 +116,8 @@
           <div v-for="(item, index) in goings">
             <div v-if="item.convs.works.flag_expired == true">
             <v-list-item :key="item.title">
-                <v-list-item-content v-on="dial"  @click="setThisWork(item)" >
+
+                <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
 
                   <v-list-item-title>
 
@@ -138,8 +140,9 @@
                 <v-list-item-action>
                   <v-list-item-action-text v-text="item.due"></v-list-item-action-text>
                   <v-icon
-                    v-if="!item.convs.works.favor"
+                    v-if="!item.favor"
                     color="grey lighten-1"
+                    @click="showItem(item)"
                   >
                     star_border
                   </v-icon>
@@ -151,7 +154,6 @@
                     star
                   </v-icon>
                 </v-list-item-action>
-
             </v-list-item>
        
 
@@ -162,8 +164,9 @@
             </div>
           </div>
       </v-list>
-      </template>
-                 <ViewWork :idx_sep="thisWindow" :period="period"/> 
+          </template> 
+           <ViewWork  :idx_sep="thisWindow" :period="period" /> 
+
     </v-dialog>
     </v-card>
 
