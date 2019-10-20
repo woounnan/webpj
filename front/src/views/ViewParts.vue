@@ -96,7 +96,7 @@
       color="deep-purple accent-4"
       dense
       dark
-    >진행중{{idx_sep}}</v-app-bar>
+    >마감된{{idx_sep}}</v-app-bar>
         <div class="flex-grow-1"></div>
 
         <v-btn icon>
@@ -111,6 +111,7 @@
         <template v-slot:activator="{ on:dial }">
       <v-list 
           two-line
+          v-bind:style="{color: 'gray'}"
           style="max-height: 400px"
           class="overflow-y-auto">
           <div v-for="(item, index) in goings">
