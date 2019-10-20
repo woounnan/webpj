@@ -57,8 +57,8 @@
     },
     methods: {
       setWorks(idx){
-        console.log('this.idx_sep ::: View.vue :::', this.idx_sep)
-        this.$store.commit('init_idxSepKey', this.idx_sep)
+        console.log('this.idx_sep ::: View.vue :::', idx)
+        this.$store.commit('init_idxSepKey', idx)
         switch(idx){
           case 0:
             this.goings = this.$store.getters.getUser.works.toWork
