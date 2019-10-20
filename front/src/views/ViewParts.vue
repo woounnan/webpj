@@ -118,7 +118,7 @@
             <div v-if="item.convs.works.flag_expired == true">
             <v-list-item :key="item.title">
 
-                <v-list-item-content v-on="dial"  @click="setThisWork(item, index)">
+                <v-list-item-content v-on="dial2"  @click="setThisWork(item, index)">
 
                   <v-list-item-title>
 
