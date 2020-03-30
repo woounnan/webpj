@@ -22,3 +22,6 @@
 - workview : 작업, 알림의 상세 페이지
 
 ### 미리보기
+![login](img/login.jpg)
+![home](img/home.jpg)
+![view](img/view.jpg)
