@@ -155,7 +155,7 @@ export default {
     sub(){
       var ret = 0
       console.log('call the sub function');
-      axios.post(`http://localhost:3000/apis/db/addUser`, this.v_user)
+      axios.post(`http://192.168.132.129:3000/apis/db/addUser`, this.v_user)
       .then(r => {
         ret = r.data.code
         //this.bus.$emit('exit', ret)
