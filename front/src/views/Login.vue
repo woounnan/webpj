@@ -119,7 +119,7 @@
         this.login(id.split(' ').join(''), pw.split(' ').join(''))
       },
       login(id, pw){
-        axios.post(`http://webhacker.xyz:8000/apis/login`, {id: id, pw: pw})
+        axios.post(`http://localhost:3000/apis/login`, {id: id, pw: pw})
           .then(r => {
             if(r.data.code != '1'){
               this.wd.state = true
@@ -136,7 +136,7 @@
                 division: u.division,
                 company: u.company
                 })
-              return axios.post('http://webhacker.xyz:8000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
+              return axios.post('http://localhost:3000/apis/db/getUsers', {id: this.$store.getters.getUser.id})
             }
           })
           .then(r => {

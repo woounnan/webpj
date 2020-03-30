@@ -156,7 +156,7 @@ export default new Vuex.Store({
       state.user.state = st
     },
     initCompanys(state){
-      axios.post(`http://webhacker.xyz:8000/apis/db/getCp`)
+      axios.post(`http://localhost:3000/apis/db/getCp`)
       .then(r => {
         if(Object.keys(r.data).length > 0){
           state.companys = r.data
@@ -172,7 +172,7 @@ export default new Vuex.Store({
       })
     },
     initSocks(state){
-      state.socks.sock = io('webhacker.xyz:8082')
+      state.socks.sock = io('localhost:8082')
     },
     addNewMsg(state){
       var i = 0
@@ -196,7 +196,7 @@ export default new Vuex.Store({
       }
         console.log('call initWorks :::')
 
-      axios.post('http://webhacker.xyz:8000/apis/db/getWorks', {id: state.user.id})
+      axios.post('http://localhost:3000/apis/db/getWorks', {id: state.user.id})
         .then(r =>{
           r.data.list_works.forEach(x=>{
             x.convs.forEach(cv=>{

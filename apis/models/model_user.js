@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+dconst mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
 	id: { type: String, required: true, unique: true, trim: true, index: true},
