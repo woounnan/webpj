@@ -56,3 +56,25 @@ export const blurActiveElement = () => {
 
   return false
 }
+// Different browsers handle innerWidth/clientWidth differently, 
+// this function tries to return the smallest width (assuming that it excludes
+// scrollbar width)
+export const windowWidthWithoutScrollbar = () => {
+  const { innerWidth } = window
+  const { clientWidth } = document.documentElement
+
+  if (innerWidth && clientWidth) {
+    return Math.min(innerWidth, clientWidth)
+  }
+
+  return clientWidth || innerWidth
+}
+
+export const stringStylesToObject = (styles) => {
+  const lines = styles.split(';').map(line => line.trim()).filter(Boolean)
+  const entries = lines.map(line => line.split(':'))
+
+  return entries.reduce((styles, [key, value]) => {
+    return { ...styles, [key]: value }
+  }, {})
+}

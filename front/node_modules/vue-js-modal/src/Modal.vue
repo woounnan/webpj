@@ -32,6 +32,8 @@
               v-if="resizable && !isAutoHeight"
               :min-width="minWidth"
               :min-height="minHeight"
+              :max-width="maxWidth"
+              :max-height="maxHeight"
               @resize="handleModalResize"
             />
           </div>
@@ -47,7 +49,9 @@ import {
   inRange,
   createModalEvent,
   getMutationObserver,
-  blurActiveElement
+  blurActiveElement,
+  windowWidthWithoutScrollbar,
+  stringStylesToObject
 } from './utils'
 import { parseNumber, validateNumber } from './parser'
 
@@ -97,6 +101,9 @@ export default {
       type: [String, Array],
       default: 'v--modal'
     },
+    styles: {
+      type: [String, Array, Object],
+    },
     minWidth: {
       type: Number,
       default: 0,
@@ -113,11 +120,11 @@ export default {
     },
     maxWidth: {
       type: Number,
-      default: Infinity
+      default: Number.MAX_SAFE_INTEGER
     },
     maxHeight: {
       type: Number,
-      default: Infinity
+      default: Number.MAX_SAFE_INTEGER
     },
     width: {
       type: [Number, String],
@@ -171,7 +178,7 @@ export default {
         renderedHeight: 0
       },
 
-      window: {
+      viewport: {
         width: 0,
         height: 0
       },
@@ -224,6 +231,9 @@ export default {
         this.mutationObserver = new MutationObserver(mutations => {
           this.updateRenderedHeight()
         })
+      } else {
+        console.warn('MutationObserver was not found. Vue-js-modal automatic resizing relies ' +
+          'heavily on MutationObserver. Please make sure to provide shim for it.')
       }
     }
 
@@ -261,7 +271,7 @@ export default {
      */
     position () {
       const {
-        window,
+        viewport,
         shift,
         pivotX,
         pivotY,
@@ -269,8 +279,8 @@ export default {
         trueModalHeight
       } = this
 
-      const maxLeft = window.width - trueModalWidth
-      const maxTop = window.height - trueModalHeight
+      const maxLeft = viewport.width - trueModalWidth
+      const maxTop = viewport.height - trueModalHeight
 
       const left = shift.left + pivotX * maxLeft
       const top = shift.top + pivotY * maxTop
@@ -285,13 +295,13 @@ export default {
      * fits the window
      */
     trueModalWidth () {
-      const { window, modal, adaptive, minWidth, maxWidth } = this
+      const { viewport, modal, adaptive, minWidth, maxWidth } = this
 
       const value = modal.widthType === '%'
-        ? window.width / 100 * modal.width
+        ? viewport.width / 100 * modal.width
         : modal.width
 
-      const max = Math.min(window.width, maxWidth)
+      const max = Math.max(minWidth, Math.min(viewport.width, maxWidth))
 
       return adaptive
         ? inRange(minWidth, max, value)
@@ -304,10 +314,10 @@ export default {
      * Returns modal.renderedHeight if height set as "auto"
      */
     trueModalHeight () {
-      const { window, modal, isAutoHeight, adaptive, maxHeight } = this
+      const { viewport, modal, isAutoHeight, adaptive, minHeight, maxHeight } = this
 
       const value = modal.heightType === '%'
-        ? window.height / 100 * modal.height
+        ? viewport.height / 100 * modal.height
         : modal.height
 
       if (isAutoHeight) {
@@ -315,10 +325,10 @@ export default {
         return this.modal.renderedHeight
       }
 
-      const max = Math.min(window.height, maxHeight)
+      const max = Math.max(minHeight, Math.min(viewport.height, maxHeight))
 
       return adaptive
-        ? inRange(this.minHeight, max, value)
+        ? inRange(minHeight, max, value)
         : value
     },
     /**
@@ -336,16 +346,21 @@ export default {
     modalClass () {
       return ['v--modal-box', this.classes]
     },
+    stylesProp () {
+      return typeof this.styles === 'string'
+        ? stringStylesToObject(this.styles)
+        : this.styles
+    },
     /**
      * CSS styles for position and size of the modal
      */
     modalStyle () {
-      return {
+      return [this.stylesProp, {
         top: this.position.top + 'px',
         left: this.position.left + 'px',
         width: this.trueModalWidth + 'px',
         height: this.isAutoHeight ? 'auto' : this.trueModalHeight + 'px'
-      }
+      }, ]
     }
   },
   watch: {
@@ -356,8 +371,11 @@ export default {
      * This fixes `$refs.modal` `undefined` bug (fixes #15)
      */
     visible (value) {
+      // console.log('Activating visible watcher, value: ', value)
+
       if (value) {
         this.visibility.overlay = true
+
         setTimeout(() => {
           this.visibility.modal = true
           this.$nextTick(() => {
@@ -367,6 +385,7 @@ export default {
         }, this.delay)
       } else {
         this.visibility.modal = false
+
         setTimeout(() => {
           this.visibility.overlay = false
           this.$nextTick(() => {
@@ -411,8 +430,8 @@ export default {
     },
 
     handleWindowResize () {
-      this.window.width = window.innerWidth
-      this.window.height = window.innerHeight
+      this.viewport.width = windowWidthWithoutScrollbar()
+      this.viewport.height = window.innerHeight
 
       this.ensureShiftInWindowBounds()
     },
@@ -560,7 +579,8 @@ export default {
         const handleDraggableMousedown = event => {
           let target = event.target
 
-          if (target && target.nodeName === 'INPUT') {
+          if (target &&
+              (target.nodeName === 'INPUT' || target.nodeName === 'TEXTAREA')) {
             return
           }
 
@@ -657,7 +677,7 @@ export default {
 
     ensureShiftInWindowBounds () {
       const {
-        window,
+        viewport,
         shift,
         pivotX,
         pivotY,
@@ -665,8 +685,8 @@ export default {
         trueModalHeight
       } = this
 
-      const maxLeft = window.width - trueModalWidth
-      const maxTop = window.height - trueModalHeight
+      const maxLeft = viewport.width - trueModalWidth
+      const maxTop = viewport.height - trueModalHeight
 
       const left = shift.left + pivotX * maxLeft
       const top = shift.top + pivotY * maxTop

@@ -127,13 +127,10 @@ describe('activatable.ts', () => {
       },
     })
 
-    const activatorElement = wrapper.vm.activatorElement as any
-
     await wrapper.vm.$nextTick()
 
     expect(wrapper.vm.isActive).toBe(false)
-    expect(el).toEqual(activatorElement)
-    activatorElement.dispatchEvent(new Event('click'))
+    el.dispatchEvent(new Event('click'))
     expect(wrapper.vm.isActive).toBe(true)
 
     wrapper.setProps({ openOnHover: true, value: false })
@@ -141,13 +138,13 @@ describe('activatable.ts', () => {
     await wrapper.vm.$nextTick()
 
     expect(wrapper.vm.isActive).toBe(false)
-    activatorElement.dispatchEvent(new Event('mouseenter'))
+    el.dispatchEvent(new Event('mouseenter'))
 
     await new Promise(resolve => setTimeout(resolve, wrapper.vm.openDelay))
 
     expect(wrapper.vm.isActive).toBe(true)
 
-    activatorElement.dispatchEvent(new Event('mouseleave'))
+    el.dispatchEvent(new Event('mouseleave'))
     await new Promise(resolve => setTimeout(resolve, wrapper.vm.leaveDelay))
 
     expect(wrapper.vm.isActive).toBe(false)
@@ -177,5 +174,17 @@ describe('activatable.ts', () => {
     expect(wrapper.vm.listeners).toEqual({})
 
     document.body.removeChild(el)
+  })
+
+  it('should stop event propagation when activator is clicked', () => {
+    const wrapper = mountFunction()
+
+    const stopPropagation = jest.fn()
+    const onClick = { stopPropagation }
+    const listeners = wrapper.vm.genActivatorListeners()
+
+    listeners.click(onClick as any)
+
+    expect(stopPropagation).toHaveBeenCalled()
   })
 })
