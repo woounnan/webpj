@@ -14,12 +14,12 @@
 - 개발언어 : Vue.js + Express + MongoDB
 
 ### 페이지 구성
-- login : 로그인 페이지
-- register : 회원가입 페이지
-- home : main 페이지, 사용자 목록 및 작업 목록이 출력됨
-- chat : 메신저 페이지, 메시지 송수신 및 작업 요청, 수신 가능
-- view : 작업 현황 페이지, 요청작업 받은 작업 보낸 알림 받은 알림을 상세히 확인 가능
-- workview : 작업, 알림의 상세 페이지
+- login.vue : 로그인 페이지
+- register.vue : 회원가입 페이지
+- home.vue : main 페이지, 사용자 목록 및 작업 목록이 출력됨
+- chat.vue : 메신저 페이지, 메시지 송수신 및 작업 요청, 수신 가능
+- view.vue : 작업 현황 페이지, 요청작업 받은 작업 보낸 알림 받은 알림을 상세히 확인 가능
+- workview.vue : 작업, 알림의 상세 페이지
 
 ### 미리보기
 ![login](img/login.jpg)
